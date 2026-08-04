@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perception-Aware 3D Mesh Simplification — Cristian Turcan</title>
+  <meta name="description" content="From-scratch C++ QEM mesh-simplification solver for Huawei's 2nd IMC Challenge.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-nav">
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="../index.html">Cristian Turcan</a>
+      <nav aria-label="Main">
+        <a href="../experience.html">Experience</a>
+        <a href="../projects.html" class="is-active" aria-current="page">Projects</a>
+        <a href="../events.html">Events</a>
+        <a href="../papers.html">Papers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <a class="back-link" href="../projects.html">← Back to projects</a>
+
+      <article class="case">
+        <h1 class="case__title">Perception-Aware 3D Mesh Simplification</h1>
+        <p class="case__summary">A from-scratch C++ solver for Huawei's 2nd IMC Challenge — simplify large 3D meshes while preserving how they look to a viewer.</p>
+
+        <dl class="case__meta">
+          <div><dt>Context</dt><dd>Huawei 2nd IMC Challenge</dd></div>
+          <div><dt>Role</dt><dd>Sole author</dd></div>
+          <div><dt>Stack</dt><dd>C++, computational geometry</dd></div>
+        </dl>
+
+        <img class="case__cover" src="../img/placeholder.svg" alt="Mesh simplification before/after">
+
+        <h2>Overview</h2>
+        <p>The challenge: reduce a mesh's triangle count as far as possible while keeping it visually faithful, scored by a hidden judge combining structural similarity and geometric error. With no access to the judge, the hard part is being able to <em>predict your own score</em> before submitting.</p>
+
+        <h2>What I built</h2>
+        <p>A quadric error metric (QEM) edge-collapse simplifier driven by a best-first priority queue, so the cheapest-error collapses happen first. To self-score against the hidden judge I implemented my own software renderer, plus from-scratch SSIM and Hausdorff-distance metrics — then used identity probes to reverse-engineer how the scorer weighted them. The pipeline is size-adaptive (separate small/large paths) and includes visibility / screen-coverage weighting and crease constraints so silhouettes survive aggressive decimation.</p>
+
+        <h2>Highlights</h2>
+        <ul class="entry__points">
+          <li>Compressed closed-manifold meshes up to 1.1M vertices.</li>
+          <li>Judge score of 87.49 with all 7 test cases accepted.</li>
+          <li>Backed by a C++ unit-test suite; OBJ visualizers and amalgamation/submit tooling around the core.</li>
+        </ul>
+
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <figure><img src="../img/placeholder.svg" alt="Original vs simplified mesh"><figcaption>[Original vs. simplified]</figcaption></figure>
+          <figure><img src="../img/placeholder.svg" alt="Software renderer output"><figcaption>[Custom renderer view]</figcaption></figure>
+        </div>
+      </article>
+
+      <a class="back-link" href="../projects.html">← Back to projects</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
+        <span aria-hidden="true">·</span>
+        Cristian Turcan
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

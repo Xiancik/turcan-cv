@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Cristian Turcan</title>
-  <meta name="description" content="Selected embedded and software projects — Cristian Turcan.">
+  <meta name="description" content="Selected projects — 3D mesh simplification, algorithmic trading, automation bots, and a Brainfuck JIT.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,36 +26,45 @@
     <div class="container">
       <div class="page-head">
         <h1>Projects</h1>
-        <p>Selected work across firmware, hardware, and backend. Click any project for the full write-up.</p>
+        <p>Selected personal and competition work. Click any project for the full write-up.</p>
       </div>
 
       <section class="section" aria-label="Project list">
         <div class="project-grid">
 
-          <a class="project-card" href="projects/nrf9151.html">
+          <a class="project-card" href="projects/mesh-simplification.html">
             <img class="project-card__thumb" src="img/placeholder.svg" alt="">
             <div class="project-card__body">
-              <div class="project-card__name">nRF9151 LTE test platform</div>
-              <p class="project-card__desc">Cellular IoT test firmware — LTE-M / NB-IoT connectivity and modem bring-up.</p>
-              <div class="tags"><span class="tag">C</span><span class="tag">nRF Connect SDK</span><span class="tag">LTE-M</span></div>
+              <div class="project-card__name">Perception-Aware 3D Mesh Simplification</div>
+              <p class="project-card__desc">From-scratch QEM mesh solver for Huawei's 2nd IMC Challenge — score 87.49, all 7 cases accepted.</p>
+              <div class="tags"><span class="tag">C++</span><span class="tag">Computational geometry</span><span class="tag">QEM</span></div>
             </div>
           </a>
 
-          <a class="project-card" href="projects/aura-sense.html">
+          <a class="project-card" href="projects/prosperity4.html">
             <img class="project-card__thumb" src="img/placeholder.svg" alt="">
             <div class="project-card__body">
-              <div class="project-card__name">aura-sense firmware</div>
-              <p class="project-card__desc">Sensor-node firmware on Zephyr — acquisition, low power, wireless reporting.</p>
-              <div class="tags"><span class="tag">Zephyr</span><span class="tag">C</span><span class="tag">BLE</span></div>
+              <div class="project-card__name">IMC Prosperity 4 — Algorithmic Trading</div>
+              <p class="project-card__desc">Options market-making with Black-Scholes pricing, an IV smile fit, and a time-series test library.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">pandas</span><span class="tag">SciPy</span></div>
             </div>
           </a>
 
-          <a class="project-card" href="projects/event-aggregator.html">
+          <a class="project-card" href="projects/automation-bots.html">
             <img class="project-card__thumb" src="img/placeholder.svg" alt="">
             <div class="project-card__body">
-              <div class="project-card__name">event-aggregator</div>
-              <p class="project-card__desc">Backend that collects events and delivers them to a Telegram bot.</p>
-              <div class="tags"><span class="tag">Python</span><span class="tag">Celery</span><span class="tag">PostgreSQL</span></div>
+              <div class="project-card__name">Telegram &amp; Automation Bots</div>
+              <p class="project-card__desc">Change-tracking alerts, an SSO booking bot, and a broker-based event-aggregation microservice.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">aiogram</span><span class="tag">Celery</span><span class="tag">Playwright</span></div>
+            </div>
+          </a>
+
+          <a class="project-card" href="projects/brainfuck-jit.html">
+            <img class="project-card__thumb" src="img/placeholder.svg" alt="">
+            <div class="project-card__body">
+              <div class="project-card__name">JIT Compiler for Brainfuck</div>
+              <p class="project-card__desc">A just-in-time compiler for Brainfuck written entirely in assembly — a low-level codegen deep dive.</p>
+              <div class="tags"><span class="tag">Assembly</span><span class="tag">JIT</span><span class="tag">Compilers</span></div>
             </div>
           </a>
 

@@ -34,47 +34,72 @@
 
         <article class="entry">
           <div class="entry__head">
-            <h3 class="entry__role">[Job title]</h3>
-            <span class="entry__meta">[Company] · [City] · [2023–Present]</span>
+            <h3 class="entry__role">Software Engineer</h3>
+            <span class="entry__meta">Offroad Apps (VitalsIQ) · Netherlands · Jan 2026 – Present</span>
           </div>
           <ul class="entry__points">
-            <li>[Key responsibility or achievement — start with a verb, quantify where you can.]</li>
-            <li>[Another accomplishment, ideally with impact or scale.]</li>
-            <li>[Technologies or systems you owned.]</li>
+            <li>Built a .NET 10 Android binding of Garmin's native Health SDK (Standard SDK 4.7.0) and a .NET MAUI companion app that pairs Garmin wearables and streams 7 live vital-sign types (heart rate, HRV, SpO₂, respiration, stress, steps, accelerometer) to the VitalsIQ backend.</li>
+            <li>Authored the Java-to-C# binding transforms resolving R8, Guava, SQLCipher, and Gson interop conflicts, plus an Android foreground service for resilient background sync.</li>
+            <li>Built a CivTAK (civilian ATAK) plugin in Java that surfaces wearable vitals as an in-app pane and map marker, on a device-independent, JUnit-tested core with a bound-service Messenger IPC bridge to the MAUI app.</li>
+            <li>Ported the full JABCode colour 2D-barcode library (encoder and decoder with error correction) from C to C#.</li>
           </ul>
         </article>
 
         <article class="entry">
           <div class="entry__head">
-            <h3 class="entry__role">[Previous job title]</h3>
-            <span class="entry__meta">[Company] · [City] · [2021–2023]</span>
+            <h3 class="entry__role">Embedded Software Engineer</h3>
+            <span class="entry__meta">Insyght.io · Delft, Netherlands · Aug 2025 – Present</span>
           </div>
           <ul class="entry__points">
-            <li>[Accomplishment.]</li>
-            <li>[Accomplishment.]</li>
+            <li>Built the end-to-end noise-classifier model pipeline (data preparation, training, evaluation, and firmware integration) for on-device inference on constrained hardware; the classifier achieved 92% accuracy at a size of only 40 KB.</li>
+            <li>Developed <em>AuraSense</em> firmware in C/C++ on Zephyr RTOS / nRF Connect SDK for a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor, architecting 11 self-contained driver components (~3K LOC).</li>
+            <li>Built a real-time acoustic sound-level-metering pipeline: A-weighted (3-stage biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM MEMS microphones, with calibrated dB-SPL and clipping detection.</li>
+            <li>Cut measured idle current from ~960 µA to ~189 µA via PPK2 differential power profiling, root-causing the LTE-modem floor, an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.</li>
+            <li>Implemented an LTE-M / NB-IoT uplink (nRF9151 serial modem, AT sockets, hand-written JSON codec) to a Node.js / Express telemetry backend.</li>
           </ul>
         </article>
 
         <article class="entry">
           <div class="entry__head">
-            <h3 class="entry__role">[Earlier job title]</h3>
-            <span class="entry__meta">[Company] · [City] · [2019–2021]</span>
+            <h3 class="entry__role">Machine Learning Engineer Intern</h3>
+            <span class="entry__meta">Altix Capital · Amsterdam, Netherlands · Apr 2025 – Jun 2025</span>
           </div>
           <ul class="entry__points">
-            <li>[Accomplishment.]</li>
+            <li>Built an AI document-ingestion pipeline to parse PDFs, spreadsheets, and images (with OCR), then auto-summarise and classify content — cutting manual screening from 10 minutes per document to 2.</li>
+            <li>Shipped a REST service and lightweight web UI that streamlined analyst review, cutting document navigation and handling time by roughly 60%.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">Machine Learning Engineer Intern</h3>
+            <span class="entry__meta">Huawei · Amsterdam, Netherlands · Dec 2024 – May 2025</span>
+          </div>
+          <ul class="entry__points">
+            <li>Designed an English keyword-spotting pipeline — precision went from 92% to 94% and WER dropped by 1.1%.</li>
+            <li>Built, cleaned, and validated large-scale audio datasets with forced alignment and transfer learning; expanded coverage from 100 to 300+ hours and reduced corrupted data from 10% to 2%.</li>
+            <li>Built a reproducible benchmarking pipeline for ASR/TTS candidates, cutting evaluation time from 4 hours to 1.</li>
           </ul>
         </article>
       </section>
 
       <section class="section" aria-labelledby="edu-h">
         <h2 class="section__title" id="edu-h">Education</h2>
+
         <article class="entry">
           <div class="entry__head">
-            <h3 class="entry__role">[Degree, field]</h3>
-            <span class="entry__meta">[University] · [Year]</span>
+            <h3 class="entry__role">MSc Data Science &amp; Artificial Intelligence Technology</h3>
+            <span class="entry__meta">Delft University of Technology · Sep 2026 – Jun 2028</span>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry__head">
+            <h3 class="entry__role">BSc (Honours) Computer Science &amp; Engineering</h3>
+            <span class="entry__meta">Delft University of Technology · Sep 2023 – Jun 2026</span>
           </div>
           <ul class="entry__points">
-            <li>[Optional: thesis, focus, honors, relevant coursework.]</li>
+            <li>Honours Programme. Minor in Finance (Sep 2025 – Jan 2026).</li>
           </ul>
         </article>
       </section>
