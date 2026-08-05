@@ -173,6 +173,16 @@ img { max-width: 100%; height: auto; display: block; }
   .btn { padding: 0.8rem 1.1rem; }
 }
 
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 /* ---- Print ---- */
 @media print {
   :root { --bg: #fff; --text: #000; --text-muted: #333; --accent: #14213d; --border: #ccc; --surface: #fff; }
