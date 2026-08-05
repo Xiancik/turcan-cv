@@ -83,7 +83,7 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 .hero__tagline { margin: 0.9rem 0 0; max-width: 42ch; color: var(--text); }
 .hero__contacts { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center; }
 .hero__contacts a { font-size: 0.95rem; }
-.hero__photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); margin-bottom: 1rem; }
+.hero__photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); margin-bottom: 1.1rem; }
 
 .btn { display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--accent); border-radius: 8px; color: var(--accent); font-size: 0.9rem; line-height: 1; }
 .btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
