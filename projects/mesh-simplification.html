@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perception-Aware 3D Mesh Simplification — Cristian Turcan</title>
+  <title>Perception-Aware 3D Mesh Simplification · Cristian Turcan</title>
   <meta name="description" content="From-scratch C++ QEM mesh-simplification solver for Huawei's 2nd IMC Challenge.">
   <link rel="stylesheet" href="../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
@@ -29,7 +29,7 @@
 
       <article class="case">
         <h1 class="case__title">Perception-Aware 3D Mesh Simplification</h1>
-        <p class="case__summary">A from-scratch C++ solver for Huawei's 2nd IMC Challenge — simplify large 3D meshes while preserving how they look to a viewer.</p>
+        <p class="case__summary">A from-scratch C++ solver for Huawei's 2nd IMC Challenge: simplify large 3D meshes while preserving how they look to a viewer.</p>
 
         <dl class="case__meta">
           <div><dt>Context</dt><dd>Huawei 2nd IMC Challenge</dd></div>
@@ -43,7 +43,7 @@
         <p>The challenge: reduce a mesh's triangle count as far as possible while keeping it visually faithful, scored by a hidden judge combining structural similarity and geometric error. With no access to the judge, the hard part is being able to <em>predict your own score</em> before submitting.</p>
 
         <h2>What I built</h2>
-        <p>A quadric error metric (QEM) edge-collapse simplifier driven by a best-first priority queue, so the cheapest-error collapses happen first. To self-score against the hidden judge I implemented my own software renderer, plus from-scratch SSIM and Hausdorff-distance metrics — then used identity probes to reverse-engineer how the scorer weighted them. The pipeline is size-adaptive (separate small/large paths) and includes visibility / screen-coverage weighting and crease constraints so silhouettes survive aggressive decimation.</p>
+        <p>A quadric error metric (QEM) edge-collapse simplifier driven by a best-first priority queue, so the cheapest-error collapses happen first. To self-score against the hidden judge I implemented my own software renderer, plus from-scratch SSIM and Hausdorff-distance metrics, then used identity probes to reverse-engineer how the scorer weighted them. The pipeline is size-adaptive (separate small/large paths) and includes visibility / screen-coverage weighting and crease constraints so silhouettes survive aggressive decimation.</p>
 
         <h2>Highlights</h2>
         <ul class="entry__points">
