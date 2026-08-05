@@ -166,7 +166,11 @@ img { max-width: 100%; height: auto; display: block; }
   .skills, .cards, .project-grid, .gallery { grid-template-columns: 1fr; }
   .entry__meta { white-space: normal; }
   .event { grid-template-columns: 1fr; gap: 0.15rem; }
-  .site-nav__inner { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  .site-nav__inner { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+  /* Roomier tap targets on touch: stacked nav links and the CV button. */
+  .site-nav nav { gap: 0 1.15rem; }
+  .site-nav nav a { padding: 0.45rem 0; }
+  .btn { padding: 0.8rem 1.1rem; }
 }
 
 /* ---- Print ---- */
