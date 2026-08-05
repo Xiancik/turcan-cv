@@ -88,6 +88,9 @@ img { max-width: 100%; height: auto; display: block; }
 .section__title { margin: 0 0 1rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
 .section p { margin: 0 0 0.5rem; }
 
+/* Keep prose at a comfortable reading measure (~66 chars) rather than full width. */
+.section p, .entry__points, .paper p { max-width: 68ch; }
+
 /* Skills */
 .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2rem; }
 .skills__label { margin: 0 0 0.25rem; font-size: 0.95rem; font-weight: 600; color: var(--accent); }
