@@ -173,6 +173,20 @@ img { max-width: 100%; height: auto; display: block; }
   .btn { padding: 0.8rem 1.1rem; }
 }
 
+/* ---- Touch: guarantee 44px tap targets on coarse pointers ---- */
+@media (pointer: coarse) {
+  .site-nav nav a,
+  .hero__contacts a,
+  .paper__links a,
+  .footer p a,
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .theme-toggle { width: 44px; height: 44px; }
+}
+
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
