@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Project preview">
   <defs>
     <pattern id="dots" width="38" height="38" patternUnits="userSpaceOnUse">
-      <circle cx="4" cy="4" r="4" fill="#14213d" opacity="0.05"/>
+      <circle cx="4" cy="4" r="4" fill="#cdd9f0" opacity="0.06"/>
     </pattern>
   </defs>
-  <rect width="1200" height="675" fill="#faf9f7"/>
+  <rect width="1200" height="675" fill="#1b1e24"/>
   <rect width="1200" height="675" fill="url(#dots)"/>
-  <rect x="1" y="1" width="1198" height="673" fill="none" stroke="#e6e3dc" stroke-width="2"/>
+  <rect x="1" y="1" width="1198" height="673" fill="none" stroke="#2a2e36" stroke-width="2"/>
   <g transform="translate(600 300)">
-    <rect x="-66" y="-66" width="132" height="132" rx="30" fill="#14213d"/>
-    <text x="0" y="23" text-anchor="middle" fill="#f5f4f1"
+    <rect x="-66" y="-66" width="132" height="132" rx="30" fill="#cdd9f0"/>
+    <text x="0" y="23" text-anchor="middle" fill="#14161a"
           font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
           font-size="66" font-weight="600" letter-spacing="-2">CT</text>
   </g>
-  <text x="600" y="432" text-anchor="middle" fill="#5a5a5a"
+  <text x="600" y="432" text-anchor="middle" fill="#a0a0a0"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
         font-size="25" font-weight="600" letter-spacing="1">turcan.nl</text>
 </svg>
