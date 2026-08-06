@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img"
+     aria-label="Automation bots architecture: sources to scheduling and browser automation to change detection to Telegram delivery">
+  <defs>
+    <style>
+      .bg   { fill:#0d1017; }
+      .card { fill:#161b26; stroke:#252c3a; stroke-width:1.5; }
+      .ttl  { fill:#e6ebf2; font-weight:600; }
+      .sub  { fill:#8894a8; }
+      .eyebrow { fill:#8894a8; letter-spacing:3px; font-weight:600; }
+      .accent { fill:#4da3ff; }
+      text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
+    </style>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4da3ff"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1200" height="675"/>
+
+  <!-- header -->
+  <text class="eyebrow" x="60" y="70" font-size="18">AUTOMATION BOTS</text>
+  <text class="ttl" x="60" y="104" font-size="30">One pattern, three bots</text>
+
+  <!-- stage boxes -->
+  <!-- x pitch: 40,330,620,910 ; box 250x230 ; center y 300 -> y 205..435 -->
+  <g>
+    <!-- 1 Sources -->
+    <rect class="card" x="40" y="205" width="250" height="230" rx="16"/>
+    <text class="accent" x="66" y="252" font-size="24" font-weight="600">Sources</text>
+    <text class="sub" x="66" y="292" font-size="19">Paginated 3rd-party API</text>
+    <text class="sub" x="66" y="322" font-size="19">TU Delft NetID portal</text>
+    <text class="sub" x="66" y="352" font-size="19">Local event feeds</text>
+
+    <!-- 2 Schedule & drive -->
+    <rect class="card" x="330" y="205" width="250" height="230" rx="16"/>
+    <text class="accent" x="356" y="252" font-size="24" font-weight="600">Schedule &amp; drive</text>
+    <text class="sub" x="356" y="292" font-size="19">Celery beat — polling</text>
+    <text class="sub" x="356" y="322" font-size="19">Playwright headless</text>
+    <text class="sub" x="356" y="352" font-size="19">browser (SSO login)</text>
+
+    <!-- 3 Detect & process -->
+    <rect class="card" x="620" y="205" width="250" height="230" rx="16"/>
+    <text class="accent" x="646" y="252" font-size="24" font-weight="600">Detect &amp; process</text>
+    <text class="sub" x="646" y="292" font-size="19">Snapshot + diff</text>
+    <text class="sub" x="646" y="322" font-size="19">Instant slot grab</text>
+    <text class="sub" x="646" y="352" font-size="19">Dedupe + aggregate</text>
+
+    <!-- 4 Notify -->
+    <rect class="card" x="910" y="205" width="250" height="230" rx="16"/>
+    <text class="accent" x="936" y="252" font-size="24" font-weight="600">Notify</text>
+    <text class="sub" x="936" y="292" font-size="19">aiogram bot</text>
+    <text class="sub" x="936" y="322" font-size="19">→ Telegram user</text>
+    <text class="sub" x="936" y="352" font-size="19">alerts · bookings · feed</text>
+  </g>
+
+  <!-- arrows between stages -->
+  <g stroke="#4da3ff" stroke-width="2.5" fill="none">
+    <line x1="292" y1="320" x2="326" y2="320" marker-end="url(#ah)"/>
+    <line x1="582" y1="320" x2="616" y2="320" marker-end="url(#ah)"/>
+    <line x1="872" y1="320" x2="906" y2="320" marker-end="url(#ah)"/>
+  </g>
+
+  <!-- tech chips -->
+  <g>
+    <text class="sub" x="60" y="520" font-size="16" letter-spacing="2" font-weight="600">STACK</text>
+    <g font-size="18" fill="#c7d0de">
+      <rect x="60"  y="540" width="96"  height="40" rx="20" fill="none" stroke="#252c3a"/>
+      <text x="108" y="566" text-anchor="middle">Python</text>
+      <rect x="170" y="540" width="110" height="40" rx="20" fill="none" stroke="#252c3a"/>
+      <text x="225" y="566" text-anchor="middle">aiogram</text>
+      <rect x="294" y="540" width="96"  height="40" rx="20" fill="none" stroke="#252c3a"/>
+      <text x="342" y="566" text-anchor="middle">Celery</text>
+      <rect x="404" y="540" width="128" height="40" rx="20" fill="none" stroke="#252c3a"/>
+      <text x="468" y="566" text-anchor="middle">Playwright</text>
+      <rect x="546" y="540" width="90"  height="40" rx="20" fill="none" stroke="#252c3a"/>
+      <text x="591" y="566" text-anchor="middle">Redis</text>
+    </g>
+  </g>
+</svg>
