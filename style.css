@@ -291,7 +291,7 @@ svg.note-arrow { display: none; }
 /* ---- Scatter: on wide screens, throw the scribbles into both margins at
    varied tilts and heights so they read as hand-annotations across the page,
    not a tidy right-hand column. Narrower screens keep the clean stacked flow. */
-@media (min-width: 1000px) {
+@media (min-width: 1100px) {
   /* Anchor each note to its own entry, not the viewport. */
   .role, .paper, .event { position: relative; }
   /* Centre each entry's content so both margins open up for scribbles. */
