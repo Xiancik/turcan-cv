@@ -283,7 +283,10 @@ a.role__company:hover { text-decoration: underline; }
 }
 
 /* Give every handwritten note a slight default tilt (never ruler-straight). */
-.role__note, .note-hand { transform: rotate(-2deg); }
+.role__note, .note-hand { transform: rotate(-1.2deg); }
+/* Hand-drawn connector arrows (some notes point at what they comment on).
+   Only shown on wide screens where the note sits out in the margin. */
+svg.note-arrow { display: none; }
 
 /* ---- Scatter: on wide screens, throw the scribbles into both margins at
    varied tilts and heights so they read as hand-annotations across the page,
@@ -310,20 +313,27 @@ a.role__company:hover { text-decoration: underline; }
   /* Vary tilt + vertical drop on a 4-cycle so no two neighbours match. */
   .roles .role:nth-child(4n+1) .role__note,
   .paper:nth-child(4n+1) .note-hand,
-  .event:nth-child(4n+1) .note-hand { transform: rotate(-5deg); top: 2rem; }
+  .event:nth-child(4n+1) .note-hand { transform: rotate(-2.5deg); top: 2rem; }
   .roles .role:nth-child(4n+2) .role__note,
   .paper:nth-child(4n+2) .note-hand,
-  .event:nth-child(4n+2) .note-hand { transform: rotate(4deg); top: 3.6rem; }
+  .event:nth-child(4n+2) .note-hand { transform: rotate(2deg); top: 3.6rem; }
   .roles .role:nth-child(4n+3) .role__note,
   .paper:nth-child(4n+3) .note-hand,
-  .event:nth-child(4n+3) .note-hand { transform: rotate(-2.5deg); top: 2.7rem; }
+  .event:nth-child(4n+3) .note-hand { transform: rotate(-1.2deg); top: 2.7rem; }
   .roles .role:nth-child(4n+4) .role__note,
   .paper:nth-child(4n+4) .note-hand,
-  .event:nth-child(4n+4) .note-hand { transform: rotate(6deg); top: 3.1rem; }
+  .event:nth-child(4n+4) .note-hand { transform: rotate(2.6deg); top: 3.1rem; }
 
-  /* Page-head + home asides: just a livelier tilt, kept in their spot. */
-  .page-head--noted > .note-hand { transform: rotate(3.5deg); }
-  .intro .note-hand { transform: rotate(-3.5deg); }
+  /* Page-head + home asides: just a gentle tilt, kept in their spot. */
+  .page-head--noted > .note-hand { transform: rotate(1.8deg); }
+  .intro .note-hand { transform: rotate(-1.8deg); }
+
+  /* Connector arrows: a note carries an optional SVG that reaches from the
+     margin toward the content it annotates. --dl points down-left (from a
+     right-margin note), --dr points down-right (from a left-margin note). */
+  svg.note-arrow { display: block; position: absolute; width: 78px; height: 56px; color: var(--ink); overflow: visible; pointer-events: none; }
+  svg.note-arrow--dl { left: -58px; bottom: -40px; }
+  svg.note-arrow--dr { right: -58px; bottom: -40px; }
 }
 
 /* ---- Touch: guarantee 44px tap targets on coarse pointers ---- */
