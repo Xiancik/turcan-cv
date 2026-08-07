@@ -26,38 +26,45 @@
 
   <main id="main">
     <div class="container">
-      <div class="page-head">
+      <div class="page-head page-head--noted">
         <h1>Papers</h1>
         <p>Research from TU Delft: decision-focused learning and graph neural networks.</p>
+        <p class="note-hand"><span class="arw">&larr;</span> research is where I get to be greedy about understanding <em>why</em></p>
       </div>
 
       <section class="section" aria-label="Publication list">
 
         <article class="paper">
-          <h2 class="paper__title">Learning Feasible Decisions Directly from Features for Combinatorial Optimization</h2>
-          <p class="paper__authors"><span class="me">Cristian Turcan</span> (first author)</p>
-          <p class="paper__venue">TU Delft Honours Programme · under review at BNAIC 2026</p>
-          <p>
-            Proposes <strong>LR-STE</strong>, a solver-free predict-then-optimize method that projects a
-            neural predictor's output onto the problem's linear relaxation and applies a feasibility-correction
-            layer, trained end-to-end with a straight-through estimator to minimise decision regret rather than
-            prediction error. Benchmarked on 0/1 Knapsack and the Travelling Salesperson Problem against SPO+,
-            two-stage predict-then-optimize, and projection-free (STE) baselines.
-          </p>
+          <div class="paper__body">
+            <h2 class="paper__title">Learning Feasible Decisions Directly from Features for Combinatorial Optimization</h2>
+            <p class="paper__authors"><span class="me">Cristian Turcan</span> (first author)</p>
+            <p class="paper__venue">TU Delft Honours Programme · under review at BNAIC 2026</p>
+            <p>
+              Proposes <strong>LR-STE</strong>, a solver-free predict-then-optimize method that projects a
+              neural predictor's output onto the problem's linear relaxation and applies a feasibility-correction
+              layer, trained end-to-end with a straight-through estimator to minimise decision regret rather than
+              prediction error. Benchmarked on 0/1 Knapsack and the Travelling Salesperson Problem against SPO+,
+              two-stage predict-then-optimize, and projection-free (STE) baselines.
+            </p>
+          </div>
+          <p class="note-hand"><span class="arw">&larr;</span> my honours thesis &mdash; skip the solver, optimise end to end</p>
         </article>
 
         <article class="paper">
-          <h2 class="paper__title">Heterophilic Methods on Multi-Label Graphs</h2>
-          <p class="paper__authors"><span class="me">Cristian Turcan</span> (sole author)</p>
-          <p class="paper__venue">TU Delft Bachelor Research Project (CSE3000) · 2026</p>
-          <p>
-            Benchmarked 8 models: MLP and DeepWalk baselines plus 6 heterophily GNNs (H2GCN, GPR-GNN, LINKX,
-            FAGCN, ACM-GCN, Ordered GNN), across 5 real and 2 synthetic multi-label graphs in PyTorch Geometric.
-            Controlled homophily and label-cardinality sweeps showed that node-classification performance tracks
-            graph homophily more than model sophistication. Built <em>gnnbench</em>, a config-driven pipeline with
-            a synthetic multi-label graph generator, hardened with split-leakage tests and parallelised as SLURM
-            array jobs on TU Delft's DelftBlue cluster.
-          </p>
+          <div class="paper__body">
+            <h2 class="paper__title">Heterophilic Methods on Multi-Label Graphs</h2>
+            <p class="paper__authors"><span class="me">Cristian Turcan</span> (sole author)</p>
+            <p class="paper__venue">TU Delft Bachelor Research Project (CSE3000) · 2026</p>
+            <p>
+              Benchmarked 8 models: MLP and DeepWalk baselines plus 6 heterophily GNNs (H2GCN, GPR-GNN, LINKX,
+              FAGCN, ACM-GCN, Ordered GNN), across 5 real and 2 synthetic multi-label graphs in PyTorch Geometric.
+              Controlled homophily and label-cardinality sweeps showed that node-classification performance tracks
+              graph homophily more than model sophistication. Built <em>gnnbench</em>, a config-driven pipeline with
+              a synthetic multi-label graph generator, hardened with split-leakage tests and parallelised as SLURM
+              array jobs on TU Delft's DelftBlue cluster.
+            </p>
+          </div>
+          <p class="note-hand"><span class="arw">&larr;</span> turned out the graph matters more than the model</p>
         </article>
 
       </section>
