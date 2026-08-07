@@ -328,12 +328,9 @@ svg.note-arrow { display: none; }
   .page-head--noted > .note-hand { transform: rotate(1.8deg); }
   .intro .note-hand { transform: rotate(-1.8deg); }
 
-  /* Connector arrows: a note carries an optional SVG that reaches from the
-     margin toward the content it annotates. --dl points down-left (from a
-     right-margin note), --dr points down-right (from a left-margin note). */
-  svg.note-arrow { display: block; position: absolute; width: 78px; height: 56px; color: var(--ink); overflow: visible; pointer-events: none; }
-  svg.note-arrow--dl { left: -58px; bottom: -40px; }
-  svg.note-arrow--dr { right: -58px; bottom: -40px; }
+  /* Connector arrows: each note carries a bespoke SVG, positioned inline so it
+     reaches from the margin toward the exact content it annotates. */
+  svg.note-arrow { display: block; position: absolute; color: var(--ink); overflow: visible; pointer-events: none; opacity: 0.85; }
 }
 
 /* ---- Touch: guarantee 44px tap targets on coarse pointers ---- */
