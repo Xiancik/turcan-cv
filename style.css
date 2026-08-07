@@ -282,6 +282,50 @@ a.role__company:hover { text-decoration: underline; }
   .btn { padding: 0.8rem 1.1rem; }
 }
 
+/* Give every handwritten note a slight default tilt (never ruler-straight). */
+.role__note, .note-hand { transform: rotate(-2deg); }
+
+/* ---- Scatter: on wide screens, throw the scribbles into both margins at
+   varied tilts and heights so they read as hand-annotations across the page,
+   not a tidy right-hand column. Narrower screens keep the clean stacked flow. */
+@media (min-width: 1000px) {
+  /* Anchor each note to its own entry, not the viewport. */
+  .role, .paper, .event { position: relative; }
+  /* Centre each entry's content so both margins open up for scribbles. */
+  .role { grid-template-columns: 52px minmax(0, 500px); justify-content: center; }
+  .paper { grid-template-columns: minmax(0, 560px); justify-content: center; }
+  .event { grid-template-columns: 7.5rem minmax(0, 440px); justify-content: center; }
+
+  .role__note, .paper .note-hand, .event .note-hand {
+    position: absolute; width: 180px; padding-top: 0;
+  }
+  /* Odd entries scribble in the right margin, even in the left (text hugs the content). */
+  .roles .role:nth-child(odd) .role__note,
+  .paper:nth-child(odd) .note-hand,
+  .event:nth-child(odd) .note-hand { right: -14px; text-align: left; }
+  .roles .role:nth-child(even) .role__note,
+  .paper:nth-child(even) .note-hand,
+  .event:nth-child(even) .note-hand { left: -14px; text-align: right; }
+
+  /* Vary tilt + vertical drop on a 4-cycle so no two neighbours match. */
+  .roles .role:nth-child(4n+1) .role__note,
+  .paper:nth-child(4n+1) .note-hand,
+  .event:nth-child(4n+1) .note-hand { transform: rotate(-5deg); top: 2rem; }
+  .roles .role:nth-child(4n+2) .role__note,
+  .paper:nth-child(4n+2) .note-hand,
+  .event:nth-child(4n+2) .note-hand { transform: rotate(4deg); top: 3.6rem; }
+  .roles .role:nth-child(4n+3) .role__note,
+  .paper:nth-child(4n+3) .note-hand,
+  .event:nth-child(4n+3) .note-hand { transform: rotate(-2.5deg); top: 2.7rem; }
+  .roles .role:nth-child(4n+4) .role__note,
+  .paper:nth-child(4n+4) .note-hand,
+  .event:nth-child(4n+4) .note-hand { transform: rotate(6deg); top: 3.1rem; }
+
+  /* Page-head + home asides: just a livelier tilt, kept in their spot. */
+  .page-head--noted > .note-hand { transform: rotate(3.5deg); }
+  .intro .note-hand { transform: rotate(-3.5deg); }
+}
+
 /* ---- Touch: guarantee 44px tap targets on coarse pointers ---- */
 @media (pointer: coarse) {
   .site-nav nav a,
