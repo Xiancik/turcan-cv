@@ -287,6 +287,9 @@ a.role__company:hover { text-decoration: underline; }
 /* Hand-drawn connector arrows (some notes point at what they comment on).
    Only shown on wide screens where the note sits out in the margin. */
 svg.note-arrow { display: none; }
+/* The exact phrase a connector arrow points at gets a subtle pen underline
+   (only on wide screens, where the arrow that references it is shown). */
+.ann-t { border-bottom: 0; }
 
 /* ---- Scatter: on wide screens, throw the scribbles into both margins at
    varied tilts and heights so they read as hand-annotations across the page,
@@ -331,6 +334,7 @@ svg.note-arrow { display: none; }
   /* Connector arrows: each note carries a bespoke SVG, positioned inline so it
      reaches from the margin toward the exact content it annotates. */
   svg.note-arrow { display: block; position: absolute; color: var(--ink); overflow: visible; pointer-events: none; opacity: 0.85; }
+  .ann-t { border-bottom: 1.5px solid var(--ink); }
 }
 
 /* ---- Touch: guarantee 44px tap targets on coarse pointers ---- */
