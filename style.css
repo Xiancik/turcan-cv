@@ -284,11 +284,11 @@ a.role__company:hover { text-decoration: underline; }
 
 /* Give every handwritten note a slight default tilt (never ruler-straight). */
 .role__note, .note-hand { transform: rotate(-1.2deg); }
-/* Hand-drawn connector arrows (some notes point at what they comment on).
-   Only shown on wide screens where the note sits out in the margin. */
-svg.note-arrow { display: none; }
-/* The exact phrase a connector arrow points at gets a subtle pen underline
-   (only on wide screens, where the arrow that references it is shown). */
+/* Every handwritten note is joined to the content it annotates by a thin
+   connector line, drawn at runtime (see theme.js) into a full-page SVG
+   overlay tinted with the pen colour. */
+#note-lines { color: var(--ink); }
+/* The phrase a note's line points at gets a subtle pen underline (wide only). */
 .ann-t { border-bottom: 0; }
 
 /* ---- Scatter: on wide screens, throw the scribbles into both margins at
@@ -298,20 +298,20 @@ svg.note-arrow { display: none; }
   /* Anchor each note to its own entry, not the viewport. */
   .role, .paper, .event { position: relative; }
   /* Centre each entry's content so both margins open up for scribbles. */
-  .role { grid-template-columns: 52px minmax(0, 500px); justify-content: center; }
-  .paper { grid-template-columns: minmax(0, 560px); justify-content: center; }
-  .event { grid-template-columns: 7.5rem minmax(0, 440px); justify-content: center; }
+  .role { grid-template-columns: 52px minmax(0, 430px); justify-content: center; }
+  .paper { grid-template-columns: minmax(0, 490px); justify-content: center; }
+  .event { grid-template-columns: 7.5rem minmax(0, 390px); justify-content: center; }
 
   .role__note, .paper .note-hand, .event .note-hand {
-    position: absolute; width: 180px; padding-top: 0;
+    position: absolute; width: 158px; padding-top: 0;
   }
   /* Odd entries scribble in the right margin, even in the left (text hugs the content). */
   .roles .role:nth-child(odd) .role__note,
   .paper:nth-child(odd) .note-hand,
-  .event:nth-child(odd) .note-hand { right: -14px; text-align: left; }
+  .event:nth-child(odd) .note-hand { right: -34px; text-align: left; }
   .roles .role:nth-child(even) .role__note,
   .paper:nth-child(even) .note-hand,
-  .event:nth-child(even) .note-hand { left: -14px; text-align: right; }
+  .event:nth-child(even) .note-hand { left: -34px; text-align: right; }
 
   /* Vary tilt + vertical drop on a 4-cycle so no two neighbours match. */
   .roles .role:nth-child(4n+1) .role__note,
@@ -333,7 +333,8 @@ svg.note-arrow { display: none; }
 
   /* Connector arrows: each note carries a bespoke SVG, positioned inline so it
      reaches from the margin toward the exact content it annotates. */
-  svg.note-arrow { display: block; position: absolute; color: var(--ink); overflow: visible; pointer-events: none; opacity: 0.85; }
+  /* The runtime connector line replaces each note's little leading arrow. */
+  .role__note .arw, .note-hand .arw { display: none; }
   .ann-t { border-bottom: 1.5px solid var(--ink); }
 }
 
