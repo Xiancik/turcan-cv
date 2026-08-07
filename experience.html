@@ -28,7 +28,7 @@
     <div class="container">
       <div class="page-head">
         <h1>Experience</h1>
-        <p>Roles and education. Download the full CV as a <a href="cv.pdf" download>PDF</a>.</p>
+        <p>What I&rsquo;ve built &mdash; with a note in the margin on what each one taught me. Full CV as a <a href="cv.pdf" download>PDF</a>.</p>
       </div>
 
       <section class="section" aria-labelledby="work-h">
@@ -36,88 +36,43 @@
 
         <div class="roles">
           <article class="role">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/offroad.png" alt="Offroad Apps logo" loading="lazy" width="84" height="84">
-            </div>
+            <img class="role__logo" src="img/experience/offroad.png" alt="Offroad Apps logo" loading="lazy" width="52" height="52">
             <div class="role__body">
-              <h3 class="role__title">Software Engineer<span class="role__pt">Part-time</span></h3>
-              <p class="role__org"><a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft, Netherlands · Jan 2026 – Present</p>
-              <p class="role__summary">Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.</p>
-              <ul class="role__metrics">
-                <li class="metric">7 live vital types</li>
-                <li class="metric">.NET 10 + MAUI</li>
-                <li class="metric">JABCode C→C#</li>
-              </ul>
-              <ul class="role__points">
-                <li>Built a .NET 10 Android binding of Garmin's native Health SDK (Standard 4.7.0) and a MAUI app pairing wearables and streaming 7 vital-sign types (heart rate, HRV, SpO₂, respiration, stress, steps, accelerometer) to the VitalsIQ backend.</li>
-                <li>Authored the Java-to-C# binding transforms resolving R8, Guava, SQLCipher, and Gson interop conflicts, plus an Android foreground service for resilient background sync.</li>
-                <li>Built a CivTAK (civilian ATAK) plugin in Java surfacing wearable vitals as an in-app pane and map marker, on a device-independent, JUnit-tested core with a Messenger IPC bridge to the MAUI app.</li>
-                <li>Ported the full JABCode colour 2D-barcode library (encoder and decoder with error correction) from C to C#.</li>
-              </ul>
+              <h3 class="role__title">Software Engineer</h3>
+              <p class="role__org"><a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft · Jan 2026 &ndash; now · part-time</p>
+              <p class="role__summary">Built the bridge that puts a first responder&rsquo;s vitals on the map: a <a href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">.NET MAUI app</a> streaming live Garmin readings into VitalsIQ, and an ATAK plugin that shows them on the tactical map. Along the way I also ported a full colour barcode codec from C to C#.</p>
             </div>
+            <p class="role__note"><span class="arw">&larr;</span> shipping software people rely on in the field changes how you test</p>
           </article>
 
           <article class="role">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/insyght.svg" alt="Insyght.io logo" loading="lazy" width="84" height="84">
-            </div>
+            <img class="role__logo" src="img/experience/insyght.svg" alt="Insyght.io logo" loading="lazy" width="52" height="52">
             <div class="role__body">
-              <h3 class="role__title">Embedded Software Engineer<span class="role__pt">Part-time</span></h3>
-              <p class="role__org"><a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft, Netherlands · Aug 2025 – Present</p>
-              <p class="role__summary">Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor.</p>
-              <ul class="role__metrics">
-                <li class="metric">92% classifier @ 40 KB</li>
-                <li class="metric">960 → 189 µA idle</li>
-                <li class="metric">Zephyr RTOS</li>
-              </ul>
-              <ul class="role__points">
-                <li>Built the end-to-end noise-classifier pipeline (data preparation, training, evaluation, and firmware integration) for on-device inference: 92% accuracy at a size of only 40 KB.</li>
-                <li>Developed the firmware in C/C++ on Zephyr RTOS / nRF Connect SDK, architecting 11 self-contained driver components (~3K LOC).</li>
-                <li>Built a real-time acoustic metering pipeline: A-weighted (3-stage biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM MEMS microphones, with calibrated dB-SPL and clipping detection.</li>
-                <li>Cut measured idle current from ~960 µA to ~189 µA via PPK2 differential power profiling, root-causing the LTE-modem floor, an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.</li>
-                <li>Implemented an LTE-M / NB-IoT uplink (nRF9151 serial modem, AT sockets, hand-written JSON codec) to a Node.js / Express telemetry backend.</li>
-              </ul>
+              <h3 class="role__title">Embedded Software Engineer</h3>
+              <p class="role__org"><a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft · Aug 2025 &ndash; now · part-time</p>
+              <p class="role__summary">Firmware for <em>AuraSense</em>, a solar-powered noise &amp; air-quality sensor with an on-device ML classifier. I own the Zephyr driver stack, the real-time acoustic metering, and the power budget &mdash; which I got down to about a fifth of where it started.</p>
             </div>
+            <p class="role__note"><span class="arw">&larr;</span> my favourite kind of problem &mdash; every µA and byte has to earn its place</p>
           </article>
 
           <article class="role">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/altix.png" alt="Altix Capital logo" loading="lazy" width="84" height="84">
-            </div>
+            <img class="role__logo" src="img/experience/altix.png" alt="Altix Capital logo" loading="lazy" width="52" height="52">
             <div class="role__body">
-              <h3 class="role__title">Machine Learning Engineer Intern</h3>
-              <p class="role__org"><a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam, Netherlands · Apr 2025 – Jun 2025</p>
-              <p class="role__summary">An AI document-ingestion pipeline that sped up analyst screening.</p>
-              <ul class="role__metrics">
-                <li class="metric">10 → 2 min per doc</li>
-                <li class="metric">~60% faster review</li>
-              </ul>
-              <ul class="role__points">
-                <li>Built an AI document-ingestion pipeline to parse PDFs, spreadsheets, and images (with OCR), then auto-summarise and classify content, cutting manual screening from 10 minutes per document to 2.</li>
-                <li>Shipped a REST service and lightweight web UI that streamlined analyst review, cutting document navigation and handling time by roughly 60%.</li>
-              </ul>
+              <h3 class="role__title">Machine Learning Engineer</h3>
+              <p class="role__org"><a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam · Apr &ndash; Jun 2025 · internship</p>
+              <p class="role__summary">An AI document pipeline &mdash; OCR, summarise, classify &mdash; plus a small web tool the investment team used every day to screen paperwork in a fraction of the time.</p>
             </div>
+            <p class="role__note"><span class="arw">&larr;</span> learned to build for real users, not a demo</p>
           </article>
 
           <article class="role">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/huawei.svg" alt="Huawei logo" loading="lazy" width="84" height="84">
-            </div>
+            <img class="role__logo" src="img/experience/huawei.svg" alt="Huawei logo" loading="lazy" width="52" height="52">
             <div class="role__body">
-              <h3 class="role__title">Machine Learning Engineer Intern</h3>
-              <p class="role__org"><a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam, Netherlands · Dec 2024 – May 2025</p>
-              <p class="role__summary">Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.</p>
-              <ul class="role__metrics">
-                <li class="metric">precision 92 → 94%</li>
-                <li class="metric">100 → 300+ h data</li>
-                <li class="metric">eval 4 h → 1 h</li>
-              </ul>
-              <ul class="role__points">
-                <li>Designed an English keyword-spotting pipeline; precision went from 92% to 94% and WER dropped by 1.1%.</li>
-                <li>Built, cleaned, and validated large-scale audio datasets with forced alignment and transfer learning; expanded coverage from 100 to 300+ hours and reduced corrupted data from 10% to 2%.</li>
-                <li>Built a reproducible benchmarking pipeline for ASR/TTS candidates, cutting evaluation time from 4 hours to 1.</li>
-              </ul>
+              <h3 class="role__title">Machine Learning Engineer</h3>
+              <p class="role__org"><a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam · Dec 2024 &ndash; May 2025 · internship</p>
+              <p class="role__summary">Speech at scale: I built and cleaned the audio datasets, trained a keyword-spotter, and wrote a benchmarking pipeline that made model evaluation reproducible and far faster.</p>
             </div>
+            <p class="role__note"><span class="arw">&larr;</span> my first ML role. where I fell for the data side</p>
           </article>
         </div>
       </section>
@@ -127,24 +82,22 @@
 
         <div class="roles">
           <article class="role">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="84" height="84">
-            </div>
+            <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="52" height="52">
             <div class="role__body">
               <h3 class="role__title">MSc Data Science &amp; Artificial Intelligence Technology</h3>
-              <p class="role__org"><a class="role__company" href="https://www.tudelft.nl/en/" target="_blank" rel="noopener noreferrer">Delft University of Technology</a> · Sep 2026 – Jun 2028</p>
+              <p class="role__org"><a class="role__company" href="https://www.tudelft.nl/en/" target="_blank" rel="noopener noreferrer">Delft University of Technology</a> · Sep 2026 &ndash; Jun 2028</p>
             </div>
+            <p class="role__note"><span class="arw">&larr;</span> the next chapter</p>
           </article>
 
           <article class="role">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="84" height="84">
-            </div>
+            <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="52" height="52">
             <div class="role__body">
               <h3 class="role__title">BSc (Honours) Computer Science &amp; Engineering</h3>
-              <p class="role__org"><a class="role__company" href="https://www.tudelft.nl/en/" target="_blank" rel="noopener noreferrer">Delft University of Technology</a> · Sep 2023 – Jun 2026</p>
-              <p class="role__summary">Honours Programme · Minor in Finance (Sep 2025 – Jan 2026).</p>
+              <p class="role__org"><a class="role__company" href="https://www.tudelft.nl/en/" target="_blank" rel="noopener noreferrer">Delft University of Technology</a> · Sep 2023 &ndash; Jun 2026</p>
+              <p class="role__summary">Honours Programme, with a minor in Finance. A competitive-programming and math-olympiad background underneath it all.</p>
             </div>
+            <p class="role__note"><span class="arw">&larr;</span> where the whole toolkit comes from</p>
           </article>
         </div>
       </section>
