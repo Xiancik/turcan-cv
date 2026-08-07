@@ -149,6 +149,12 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
   border: 1px solid var(--border); background: var(--bg);
 }
 .role__thumb { object-fit: cover; }
+/* Company/university logos: contained on a light tile so colored marks read
+   crisply in both themes (most logos assume a light background). */
+.role__logo {
+  width: 84px; height: 84px; border-radius: 10px; border: 1px solid var(--border);
+  background: #fff; object-fit: contain; padding: 13px;
+}
 .role__monogram {
   display: flex; align-items: center; justify-content: center;
   color: var(--accent); font-weight: 600; font-size: 1.35rem; letter-spacing: 0.01em;
@@ -163,6 +169,13 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 }
 .role__org { margin: 0.2rem 0 0; font-size: 0.9rem; color: var(--text-muted); }
 .role__company { color: var(--accent); font-weight: 600; }
+/* Linked company/university names get a subtle external-link cue. */
+a.role__company { color: var(--accent); }
+a.role__company:hover { text-decoration: underline; }
+a.role__company::after {
+  content: "\2197"; font-size: 0.72em; margin-left: 0.12em;
+  color: var(--text-muted); vertical-align: 0.08em;
+}
 .role__summary { margin: 0.6rem 0 0; color: var(--text); }
 .role__metrics { list-style: none; margin: 0.7rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .metric {
@@ -233,7 +246,8 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
   .skills, .cards, .project-grid, .gallery { grid-template-columns: 1fr; }
   .entry__meta { white-space: normal; }
   .role { grid-template-columns: 1fr; gap: 0.85rem; padding: 1.1rem; }
-  .role__thumb, .role__monogram { width: 56px; height: 56px; font-size: 1.05rem; }
+  .role__thumb, .role__monogram, .role__logo { width: 56px; height: 56px; font-size: 1.05rem; }
+  .role__logo { padding: 9px; }
   .event { grid-template-columns: 1fr; gap: 0.15rem; }
   .site-nav__inner { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
   /* Roomier tap targets on touch: stacked nav links and the CV button. */
