@@ -20,34 +20,17 @@
   font-display: swap;
   src: url("fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");
 }
-/* Handwriting face for margin notes / asides (self-hosted, latin subset). */
-@font-face {
-  font-family: "Caveat";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("fonts/caveat-latin-600-normal.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Caveat";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("fonts/caveat-latin-700-normal.woff2") format("woff2");
-}
 
 /* ---- Design tokens ---- */
 :root {
   --accent: #14213d;
   --accent-link: #1c3a6e;
-  --text: #21201d;
-  --text-muted: #6b675e;
-  --bg: #fbfaf6;        /* warm paper */
-  --surface: #f3efe6;   /* warmer raised surface */
-  --border: #e5e0d4;
-  --ink: #2f6f8f;       /* pen colour for handwritten margin notes */
-  --maxw: 980px;        /* wider canvas leaves room for margin notes */
-  --measure: 62ch;      /* comfortable reading width for prose */
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --bg: #ffffff;
+  --surface: #faf9f7;
+  --border: #e6e3dc;
+  --maxw: 760px;
 }
 
 /* Dark theme is opt-in via the corner toggle (default is light). */
@@ -59,7 +42,6 @@
   --bg: #14161a;
   --surface: #1b1e24;
   --border: #2a2e36;
-  --ink: #7fb2cf;       /* lighter pen so notes read on dark paper */
 }
 
 /* ---- Reset / base ---- */
@@ -103,17 +85,6 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 .hero__contacts a { font-size: 0.95rem; }
 .hero__photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); margin-bottom: 1.1rem; }
 
-/* Home intro: field-notes hero with a handwritten margin aside. */
-.intro { display: grid; grid-template-columns: minmax(0, 1fr) 232px; gap: 1.35rem; align-items: start; }
-.intro__body { max-width: var(--measure); }
-.intro__lead { margin: 0.9rem 0 0; font-size: 1.12rem; color: var(--text); }
-.intro__lead a { color: var(--accent-link); border-bottom: 1px solid var(--border); }
-.intro__lead a:hover { border-bottom-color: var(--accent-link); text-decoration: none; }
-.note-hand { font-family: "Caveat", cursive; color: var(--ink); font-size: 1.32rem; line-height: 1.22; }
-.note-hand .arw { font-size: 0.95rem; padding-right: 0.15em; }
-.intro .note-hand { padding-top: 3rem; }
-@media (max-width: 860px) { .intro { grid-template-columns: 1fr; } .intro .note-hand { padding-top: 0.4rem; } }
-
 .btn { display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--accent); border-radius: 8px; color: var(--accent); font-size: 0.9rem; line-height: 1; }
 .btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
 
@@ -134,10 +105,6 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 .page-head { padding: 2.5rem 0 0.5rem; }
 .page-head h1 { margin: 0; font-size: 1.7rem; font-weight: 600; color: var(--accent); letter-spacing: -0.02em; }
 .page-head p { margin: 0.5rem 0 0; color: var(--text-muted); max-width: 52ch; }
-/* Page head with a handwritten margin aside (the site-wide Field Notes motif). */
-.page-head--noted { display: grid; grid-template-columns: minmax(0, 1fr) 232px; gap: 1.35rem; align-items: start; }
-.page-head--noted > h1, .page-head--noted > p { grid-column: 1; }
-.page-head--noted > .note-hand { grid-column: 2; align-self: start; padding-top: 0.4rem; }
 
 /* ---- Sections ---- */
 .section { padding: 1.75rem 0; border-top: 1px solid var(--border); }
@@ -169,34 +136,57 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 .entry__points { margin: 0.5rem 0 0; padding-left: 1.1rem; }
 .entry__points li { margin-bottom: 0.3rem; }
 
-/* ---- Experience: field notes (entries + handwritten margin annotations) ---- */
-.roles { display: flex; flex-direction: column; }
+/* ---- Experience: role cards with evidence ---- */
+.roles { display: flex; flex-direction: column; gap: 1rem; }
 .role {
-  display: grid; grid-template-columns: 52px minmax(0, 1fr) 232px; gap: 1.35rem;
-  padding: 1.9rem 0; border-top: 1px solid var(--border); align-items: start;
+  display: grid; grid-template-columns: 84px 1fr; gap: 1.25rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
 }
-.roles .role:first-child { border-top: none; padding-top: 0.75rem; }
-/* Company/university logo, contained on a light tile so colored marks read
+/* Media tile: a real thumbnail/logo when available, else a company monogram. */
+.role__thumb, .role__monogram {
+  width: 84px; height: 84px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--bg);
+}
+.role__thumb { object-fit: cover; }
+/* Company/university logos: contained on a light tile so colored marks read
    crisply in both themes (most logos assume a light background). */
 .role__logo {
-  width: 52px; height: 52px; border-radius: 9px; border: 1px solid var(--border);
-  background: #fff; object-fit: contain; padding: 8px;
+  width: 84px; height: 84px; border-radius: 10px; border: 1px solid var(--border);
+  background: #fff; object-fit: contain; padding: 13px;
+}
+.role__monogram {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-weight: 600; font-size: 1.35rem; letter-spacing: 0.01em;
 }
 .role__body { min-width: 0; }
-.role__title { margin: 0; font-size: 1.12rem; font-weight: 600; color: var(--text); }
-.role__org { margin: 0.12rem 0 0; font-size: 0.92rem; color: var(--text-muted); }
-.role__company { color: var(--accent); font-weight: 600; }
-a.role__company:hover { text-decoration: underline; }
-.role__summary { margin: 0.55rem 0 0; color: var(--text); max-width: 60ch; }
-/* Inline links inside the prose carry the quiet underline texture. */
-.role__summary a { color: var(--accent-link); border-bottom: 1px solid var(--border); }
-.role__summary a:hover { border-bottom-color: var(--accent-link); text-decoration: none; }
-/* Handwritten margin note, keyed to its entry with a leading arrow. */
-.role__note {
-  font-family: "Caveat", cursive; color: var(--ink);
-  font-size: 1.28rem; line-height: 1.2; padding-top: 1.6rem;
+.role__title { margin: 0; font-size: 1.08rem; font-weight: 600; color: var(--text); }
+.role__pt {
+  font-size: 0.72rem; font-weight: 600; color: var(--text-muted);
+  border: 1px solid var(--border); border-radius: 20px;
+  padding: 0.08rem 0.5rem; margin-left: 0.5rem; vertical-align: 0.08em;
+  white-space: nowrap;
 }
-.role__note .arw { font-size: 0.95rem; padding-right: 0.15em; }
+.role__org { margin: 0.2rem 0 0; font-size: 0.9rem; color: var(--text-muted); }
+.role__company { color: var(--accent); font-weight: 600; }
+/* Linked company/university names get a subtle external-link cue. */
+a.role__company { color: var(--accent); }
+a.role__company:hover { text-decoration: underline; }
+a.role__company::after {
+  content: "\2197"; font-size: 0.72em; margin-left: 0.12em;
+  color: var(--text-muted); vertical-align: 0.08em;
+}
+.role__summary { margin: 0.6rem 0 0; color: var(--text); }
+.role__metrics { list-style: none; margin: 0.7rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.metric {
+  font-size: 0.8rem; font-weight: 600; color: var(--accent);
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 6px; padding: 0.2rem 0.55rem;
+}
+.role__points { margin: 0.75rem 0 0; padding-left: 1.1rem; }
+.role__points li { margin-bottom: 0.3rem; }
+/* Education: compact card, no media column (keeps Work as the visual focus). */
+.role--compact { grid-template-columns: 1fr; }
 
 /* ---- Projects listing grid ---- */
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
@@ -222,27 +212,22 @@ a.role__company:hover { text-decoration: underline; }
 .case__meta dd { margin: 0.2rem 0 0; }
 .case__cover { width: 100%; border: 1px solid var(--border); border-radius: 12px; margin: 1.5rem 0; }
 .case h2 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 0.6rem; }
-/* Keep case-study prose at a comfortable measure on the wider canvas. */
-.case p:not(.case__summary) { max-width: 68ch; }
 .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
 .gallery img { border: 1px solid var(--border); border-radius: 10px; }
 .gallery figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.35rem; }
 
 /* ---- Events list ---- */
-.event { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr) 232px; gap: 0.5rem 1.35rem; padding: 1.2rem 0; border-top: 1px solid var(--border); align-items: start; }
+.event { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.5rem 1.25rem; padding: 1.1rem 0; border-top: 1px solid var(--border); }
 .event:first-child { border-top: none; }
-.event .note-hand { padding-top: 0.1rem; }
 .event__date { color: var(--text-muted); font-size: 0.9rem; }
 .event__name { margin: 0; font-size: 1.05rem; font-weight: 600; color: var(--accent); }
 .event__meta { color: var(--text-muted); font-size: 0.88rem; margin: 0.15rem 0 0.4rem; }
-.event__desc { margin: 0; color: var(--text); font-size: 0.95rem; max-width: 68ch; }
+.event__desc { margin: 0; color: var(--text); font-size: 0.95rem; }
 .badge { display: inline-block; font-size: 0.75rem; font-weight: 600; color: var(--accent); background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 0.1rem 0.55rem; }
 
 /* ---- Papers list ---- */
-.paper { display: grid; grid-template-columns: minmax(0, 1fr) 232px; gap: 1.35rem; align-items: start; padding: 1.4rem 0; border-top: 1px solid var(--border); }
+.paper { padding: 1.1rem 0; border-top: 1px solid var(--border); }
 .paper:first-child { border-top: none; }
-.paper__body { min-width: 0; }
-.paper .note-hand { padding-top: 1.4rem; }
 .paper__title { margin: 0; font-size: 1.02rem; font-weight: 600; color: var(--accent); }
 .paper__authors { margin: 0.25rem 0 0; font-size: 0.93rem; color: var(--text); }
 .paper__authors .me { font-weight: 600; }
@@ -254,88 +239,21 @@ a.role__company:hover { text-decoration: underline; }
 .footer p { margin: 0; color: var(--text-muted); font-size: 0.9rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
 
 /* ---- Responsive ---- */
-/* When the margin runs out, tuck the handwritten note under the entry. */
-@media (max-width: 860px) {
-  .role { grid-template-columns: 52px minmax(0, 1fr); }
-  .role__note { grid-column: 2 / -1; padding-top: 0.5rem; font-size: 1.2rem; }
-  .page-head--noted { grid-template-columns: 1fr; }
-  .page-head--noted > .note-hand { grid-column: 1; padding-top: 0.3rem; }
-  .paper { grid-template-columns: 1fr; }
-  .paper .note-hand { padding-top: 0.3rem; font-size: 1.2rem; }
-  .event { grid-template-columns: 7.5rem minmax(0, 1fr); }
-  .event .note-hand { grid-column: 2; padding-top: 0.3rem; font-size: 1.2rem; }
-}
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .hero { padding: 2.25rem 0 1.5rem; }
   .hero__name { font-size: 1.8rem; }
   .skills, .cards, .project-grid, .gallery { grid-template-columns: 1fr; }
   .entry__meta { white-space: normal; }
-  .role { grid-template-columns: 44px minmax(0, 1fr); gap: 0.8rem 1rem; padding: 1.5rem 0; }
-  .role__note { grid-column: 1 / -1; padding-top: 0.35rem; }
-  .role__logo { width: 44px; height: 44px; padding: 7px; }
+  .role { grid-template-columns: 1fr; gap: 0.85rem; padding: 1.1rem; }
+  .role__thumb, .role__monogram, .role__logo { width: 56px; height: 56px; font-size: 1.05rem; }
+  .role__logo { padding: 9px; }
   .event { grid-template-columns: 1fr; gap: 0.15rem; }
   .site-nav__inner { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
   /* Roomier tap targets on touch: stacked nav links and the CV button. */
   .site-nav nav { gap: 0 1.15rem; }
   .site-nav nav a { padding: 0.45rem 0; }
   .btn { padding: 0.8rem 1.1rem; }
-}
-
-/* Give every handwritten note a slight default tilt (never ruler-straight). */
-.role__note, .note-hand { transform: rotate(-1.2deg); }
-/* Every handwritten note is joined to the content it annotates by a thin
-   connector line, drawn at runtime (see theme.js) into a full-page SVG
-   overlay tinted with the pen colour. */
-#note-lines { color: var(--ink); }
-/* The phrase a note's line points at gets a subtle pen underline (wide only). */
-.ann-t { border-bottom: 0; }
-
-/* ---- Scatter: on wide screens, throw the scribbles into both margins at
-   varied tilts and heights so they read as hand-annotations across the page,
-   not a tidy right-hand column. Narrower screens keep the clean stacked flow. */
-@media (min-width: 1100px) {
-  /* Anchor each note to its own entry, not the viewport. */
-  .role, .paper, .event { position: relative; }
-  /* Centre each entry's content so both margins open up for scribbles. */
-  .role { grid-template-columns: 52px minmax(0, 430px); justify-content: center; }
-  .paper { grid-template-columns: minmax(0, 490px); justify-content: center; }
-  .event { grid-template-columns: 7.5rem minmax(0, 390px); justify-content: center; }
-
-  .role__note, .paper .note-hand, .event .note-hand {
-    position: absolute; width: 158px; padding-top: 0;
-  }
-  /* Odd entries scribble in the right margin, even in the left (text hugs the content). */
-  .roles .role:nth-child(odd) .role__note,
-  .paper:nth-child(odd) .note-hand,
-  .event:nth-child(odd) .note-hand { right: -34px; text-align: left; }
-  .roles .role:nth-child(even) .role__note,
-  .paper:nth-child(even) .note-hand,
-  .event:nth-child(even) .note-hand { left: -34px; text-align: right; }
-
-  /* Vary tilt + vertical drop on a 4-cycle so no two neighbours match. */
-  .roles .role:nth-child(4n+1) .role__note,
-  .paper:nth-child(4n+1) .note-hand,
-  .event:nth-child(4n+1) .note-hand { transform: rotate(-2.5deg); top: 2rem; }
-  .roles .role:nth-child(4n+2) .role__note,
-  .paper:nth-child(4n+2) .note-hand,
-  .event:nth-child(4n+2) .note-hand { transform: rotate(2deg); top: 3.6rem; }
-  .roles .role:nth-child(4n+3) .role__note,
-  .paper:nth-child(4n+3) .note-hand,
-  .event:nth-child(4n+3) .note-hand { transform: rotate(-1.2deg); top: 2.7rem; }
-  .roles .role:nth-child(4n+4) .role__note,
-  .paper:nth-child(4n+4) .note-hand,
-  .event:nth-child(4n+4) .note-hand { transform: rotate(2.6deg); top: 3.1rem; }
-
-  /* Page-head + home asides: just a gentle tilt, kept in their spot. */
-  .page-head--noted > .note-hand { transform: rotate(1.8deg); }
-  .intro .note-hand { transform: rotate(-1.8deg); }
-
-  /* Connector arrows: each note carries a bespoke SVG, positioned inline so it
-     reaches from the margin toward the exact content it annotates. */
-  /* The runtime connector line replaces each note's little leading arrow. */
-  .role__note .arw, .note-hand .arw { display: none; }
-  .ann-t { border-bottom: 1.5px solid var(--ink); }
 }
 
 /* ---- Touch: guarantee 44px tap targets on coarse pointers ---- */
