@@ -72,7 +72,7 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 .site-nav__brand { font-weight: 600; color: var(--accent); font-size: 1.02rem; }
 .site-nav__brand:hover { text-decoration: none; }
 .site-nav nav { display: flex; gap: 1.15rem; flex-wrap: wrap; }
-.site-nav nav a { color: var(--text-muted); font-size: 0.93rem; }
+.site-nav nav a { color: var(--text-muted); font-size: 0.93rem; transition: color 140ms ease; }
 .site-nav nav a:hover { color: var(--text); text-decoration: none; }
 .site-nav nav a.is-active { color: var(--accent); font-weight: 600; }
 
@@ -85,7 +85,7 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 .hero__contacts a { font-size: 0.95rem; }
 .hero__photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); margin-bottom: 1.1rem; }
 
-.btn { display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--accent); border-radius: 8px; color: var(--accent); font-size: 0.9rem; line-height: 1; }
+.btn { display: inline-block; padding: 0.5rem 1rem; border: 1px solid var(--accent); border-radius: 8px; color: var(--accent); font-size: 0.9rem; line-height: 1; transition: background-color 140ms ease, color 140ms ease; }
 .btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
 
 /* ---- Theme toggle (fixed corner button) ---- */
@@ -97,8 +97,9 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
   border: 1px solid var(--border); cursor: pointer;
   font-size: 18px; line-height: 1;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  transition: border-color 140ms ease, transform 140ms ease;
 }
-.theme-toggle:hover { border-color: var(--accent-link); }
+.theme-toggle:hover { border-color: var(--accent-link); transform: translateY(-1px); }
 .theme-toggle__icon { pointer-events: none; }
 
 /* ---- Page header (secondary pages) ---- */
@@ -122,8 +123,8 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 
 /* ---- Section cards (home → nav into areas) ---- */
 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.card { display: block; padding: 1.1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: inherit; }
-.card:hover { text-decoration: none; border-color: var(--accent-link); }
+.card { display: block; padding: 1.1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: inherit; transition: border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease; }
+.card:hover { text-decoration: none; border-color: var(--accent-link); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(20, 33, 61, 0.07); }
 .card__title { font-size: 1.05rem; font-weight: 600; color: var(--accent); }
 .card__desc { margin: 0.25rem 0 0; color: var(--text-muted); font-size: 0.93rem; }
 
@@ -190,8 +191,8 @@ a.role__company::after {
 
 /* ---- Projects listing grid ---- */
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-.project-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; color: inherit; }
-.project-card:hover { text-decoration: none; border-color: var(--accent-link); }
+.project-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; color: inherit; transition: border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease; }
+.project-card:hover { text-decoration: none; border-color: var(--accent-link); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(20, 33, 61, 0.07); }
 .project-card__thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--border); }
 
 /* Default project image: swap to the dark variant under the dark theme.
