@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cristian Turcan · Software &amp; Embedded Engineer</title>
-  <meta name="description" content="Cristian Turcan, a computer-science engineer working across embedded firmware, full-stack software, and machine learning.">
+  <meta name="description" content="Cristian Turcan — an engineer who works from firmware and on-device ML up to the full-stack app, and cares about the people it's for.">
   <meta property="og:title" content="Cristian Turcan · Software &amp; Embedded Engineer">
-  <meta property="og:description" content="Embedded firmware, full-stack software, and machine learning.">
+  <meta property="og:description" content="Bare metal to the browser — embedded firmware, on-device ML, and full-stack software.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://turcan.nl">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
@@ -29,91 +29,221 @@
   </header>
 
   <main id="main">
+
+    <!-- HERO — the human heartbeat -->
     <section class="hero">
       <div class="container">
-        <img class="hero__photo" src="img/cristian.jpg" width="140" height="140" alt="Cristian Turcan">
-        <h1 class="hero__name">Cristian Turcan</h1>
-        <p class="hero__title">Software &amp; Embedded Engineer</p>
-        <p class="hero__tagline">
-          Computer-science engineer working across low-power embedded firmware, full-stack
-          software, and machine learning, with a competitive-programming and research background.
-        </p>
-        <nav class="hero__contacts" aria-label="Contact and links">
-          <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-          <a href="https://linkedin.com/in/cristianturcan" rel="me">LinkedIn</a>
-          <a class="btn" href="cv.pdf" download>Download CV (PDF)</a>
-        </nav>
+        <div class="hero__grid">
+          <img class="hero__photo reveal" src="img/cristian.jpg" width="132" height="132" alt="Cristian Turcan">
+          <div>
+            <p class="hero__hello reveal d1"><span aria-hidden="true">👋</span> Hi, I'm Cristian.</p>
+            <h1 class="hero__headline reveal d2">
+              I build things that run from <em>bare metal to the browser</em>.
+            </h1>
+            <p class="hero__sub reveal d3">
+              An engineer just as happy chasing microamps in firmware as training a model
+              or shipping the app on top — and I care a lot about the people it's for.
+            </p>
+            <nav class="hero__actions reveal d4" aria-label="Contact and links">
+              <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
+              <a href="https://linkedin.com/in/cristianturcan" rel="me">LinkedIn</a>
+              <a class="btn" href="cv.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+            </nav>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="container">
-      <section class="section" aria-labelledby="about-h">
-        <h2 class="section__title" id="about-h">About</h2>
-        <p>
-          I'm a computer-science engineer with a TU Delft Honours BSc in Computer Science &amp;
-          Engineering, now starting an MSc in Data Science &amp; Artificial Intelligence. I work
-          across the stack: low-power embedded firmware on Zephyr / nRF, full-stack and mobile
-          software, and machine-learning research. I enjoy problems that reward both careful
-          engineering and mathematics, and I have a background in competitive programming and
-          math olympiads.
-        </p>
-      </section>
+    <!-- SIGNATURE — range across the stack -->
+    <section class="section" aria-labelledby="stack-h">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">The whole stack</p>
+          <h2 class="section__title" id="stack-h">I like working at every layer</h2>
+          <p class="section__lead">
+            Most of my work reaches top-to-bottom — from the app someone taps down to the
+            microamps the board draws when it's idle. A few favourite places to be:
+          </p>
+        </div>
 
-      <section class="section" aria-labelledby="skills-h">
-        <h2 class="section__title" id="skills-h">Skills</h2>
-        <div class="skills">
-          <div class="skills__group">
-            <h3 class="skills__label">Languages</h3>
-            <p class="skills__list">Python, C/C++, C#, Java, Haskell, SQL, Bash, JavaScript, TypeScript</p>
+        <div class="stack">
+          <div class="layer">
+            <span class="layer__node" aria-hidden="true"></span>
+            <p class="layer__name">Application <span>what people touch</span></p>
+            <p class="layer__note">Companion apps and web that make the hardware make sense — pairing a wearable, watching vitals come in, reviewing a document faster.</p>
+            <p class="layer__tags">.NET&nbsp;MAUI · Next.js · FastAPI · a CivTAK/ATAK plugin</p>
           </div>
-          <div class="skills__group">
-            <h3 class="skills__label">ML &amp; Data</h3>
-            <p class="skills__list">PyTorch, PyTorch Geometric, TensorFlow, scikit-learn, pandas, NumPy, SciPy, XGBoost, Transformers / HuggingFace, Optuna, Gurobi, CVXPY</p>
+          <div class="layer">
+            <span class="layer__node" aria-hidden="true"></span>
+            <p class="layer__name">Model <span>on-device intelligence</span></p>
+            <p class="layer__note">Machine learning small enough to live on the chip — a noise classifier that fits in 40&nbsp;KB, keyword spotting, speech data pipelines.</p>
+            <p class="layer__tags">PyTorch · scikit-learn · on-device inference</p>
           </div>
-          <div class="skills__group">
-            <h3 class="skills__label">Frameworks &amp; Systems</h3>
-            <p class="skills__list">Zephyr RTOS, nRF Connect SDK, .NET / MAUI, FastAPI, Spring Boot, Next.js, React, Node.js, Celery, Redis, PostgreSQL</p>
+          <div class="layer">
+            <span class="layer__node" aria-hidden="true"></span>
+            <p class="layer__name">Signal <span>sensors into meaning</span></p>
+            <p class="layer__note">Real-time DSP on the edge — A-weighted dBA and Leq metering from stereo MEMS microphones, calibrated and clipping-aware.</p>
+            <p class="layer__tags">biquad IIR · PDM MEMS mics · dB-SPL calibration</p>
           </div>
-          <div class="skills__group">
-            <h3 class="skills__label">Developer Tools</h3>
-            <p class="skills__list">Git, Docker, Linux, CUDA, Playwright, pytest, Weights &amp; Biases, GitLab</p>
+          <div class="layer">
+            <span class="layer__node" aria-hidden="true"></span>
+            <p class="layer__name">Firmware <span>software meets the board</span></p>
+            <p class="layer__note">Where the code has to be careful — a clean set of driver components on an RTOS, and an LTE-M uplink that stays up in the field.</p>
+            <p class="layer__tags">Zephyr RTOS · nRF Connect SDK · LTE-M / NB-IoT</p>
+          </div>
+          <div class="layer">
+            <span class="layer__node" aria-hidden="true"></span>
+            <p class="layer__name">Silicon <span>down to the last microamp</span></p>
+            <p class="layer__note">The fun, stubborn end — differential power profiling to hunt idle current, plus low-level curiosities like a JIT compiler written in assembly.</p>
+            <p class="layer__tags">power profiling · assembly · a little too much patience</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" aria-labelledby="explore-h">
-        <h2 class="section__title" id="explore-h">Explore</h2>
-        <div class="cards">
-          <a class="card" href="experience.html">
-            <div class="card__title">Experience →</div>
-            <p class="card__desc">Roles at Offroad, Insyght, Altix, and Huawei, plus education.</p>
+    <!-- SELECTED WORK — paid, shipped roles, warmly -->
+    <section class="section" aria-labelledby="work-h">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="section__title" id="work-h">Where I've been shipping</h2>
+          <p class="section__lead">Real, paid, in-production work. The <a href="experience.html">full story lives here</a>.</p>
+        </div>
+
+        <div class="roles">
+          <article class="role">
+            <div class="role__media"><img class="role__logo" src="img/experience/offroad.png" alt="Offroad Apps logo" loading="lazy" width="60" height="60"></div>
+            <div class="role__body">
+              <h3 class="role__title">Software Engineer<span class="role__pt">Part-time</span></h3>
+              <p class="role__org"><a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft · Jan 2026 – Present</p>
+              <p class="role__summary">Turning Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.</p>
+              <ul class="role__metrics"><li class="metric">7 live vital types</li><li class="metric">.NET 10 + MAUI</li><li class="metric">JABCode ported C → C#</li></ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role__media"><img class="role__logo" src="img/experience/insyght.svg" alt="Insyght.io logo" loading="lazy" width="60" height="60"></div>
+            <div class="role__body">
+              <h3 class="role__title">Embedded Software Engineer<span class="role__pt">Part-time</span></h3>
+              <p class="role__org"><a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft · Aug 2025 – Present</p>
+              <p class="role__summary">Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality monitor.</p>
+              <ul class="role__metrics"><li class="metric">on-device noise classifier</li><li class="metric">Zephyr RTOS</li><li class="metric">far lower idle current</li></ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role__media"><img class="role__logo" src="img/experience/altix.png" alt="Altix Capital logo" loading="lazy" width="60" height="60"></div>
+            <div class="role__body">
+              <h3 class="role__title">Machine Learning Engineer Intern</h3>
+              <p class="role__org"><a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam · Apr 2025 – Jun 2025</p>
+              <p class="role__summary">An AI document-ingestion pipeline that took a lot of the grind out of analyst screening.</p>
+              <ul class="role__metrics"><li class="metric">PDF · spreadsheet · OCR ingest</li><li class="metric">REST service + web UI</li></ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <div class="role__media"><img class="role__logo" src="img/experience/huawei.svg" alt="Huawei logo" loading="lazy" width="60" height="60"></div>
+            <div class="role__body">
+              <h3 class="role__title">Machine Learning Engineer Intern</h3>
+              <p class="role__org"><a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam · Dec 2024 – May 2025</p>
+              <p class="role__summary">Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.</p>
+              <ul class="role__metrics"><li class="metric">forced-alignment datasets</li><li class="metric">reproducible benchmarking</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- THINGS BUILT — projects -->
+    <section class="section" aria-labelledby="things-h">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Things I've built</p>
+          <h2 class="section__title" id="things-h">Side quests, for the love of it</h2>
+          <p class="section__lead">Self-directed and competition work. <a href="projects.html">See them all</a>.</p>
+        </div>
+
+        <div class="project-grid">
+          <a class="project-card" href="projects/mesh-simplification.html">
+            <img class="project-card__thumb" src="img/projects/mesh.gif" alt="A 3D mesh being simplified, triangle count dropping">
+            <div class="project-card__body">
+              <div class="project-card__name">Perception-Aware 3D Mesh Simplification</div>
+              <p class="project-card__desc">A from-scratch QEM mesh solver for Huawei's IMC Challenge — all seven cases accepted.</p>
+              <div class="tags"><span class="tag">C++</span><span class="tag">Computational geometry</span><span class="tag">QEM</span></div>
+            </div>
           </a>
-          <a class="card" href="projects.html">
-            <div class="card__title">Projects →</div>
-            <p class="card__desc">3D mesh simplification, algorithmic trading, automation bots, and more.</p>
+          <a class="project-card" href="projects/prosperity4.html">
+            <img class="project-card__thumb" src="img/projects/prosperity.png" alt="Trading analytics dashboard with a rising PnL curve">
+            <div class="project-card__body">
+              <div class="project-card__name">IMC Prosperity 4 — Algorithmic Trading</div>
+              <p class="project-card__desc">Options market-making with Black–Scholes pricing, an IV-smile fit, and a time-series test library.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">pandas</span><span class="tag">SciPy</span></div>
+            </div>
           </a>
-          <a class="card" href="events.html">
-            <div class="card__title">Events →</div>
-            <p class="card__desc">Hackathons, ICPC, olympiads, and quant open days.</p>
+          <a class="project-card" href="projects/automation-bots/">
+            <img class="project-card__thumb" src="img/projects/automation-bots.svg" alt="Automation bots architecture diagram">
+            <div class="project-card__body">
+              <div class="project-card__name">Telegram &amp; Automation Bots</div>
+              <p class="project-card__desc">Change-tracking alerts, an SSO booking bot, and a broker-based event-aggregation microservice.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">aiogram</span><span class="tag">Celery</span><span class="tag">Playwright</span></div>
+            </div>
           </a>
-          <a class="card" href="papers.html">
-            <div class="card__title">Papers →</div>
-            <p class="card__desc">Research on decision-focused learning and graph neural networks.</p>
+          <a class="project-card project-card--text" href="projects/brainfuck-jit.html">
+            <img class="project-card__thumb" src="img/placeholder.svg" alt="">
+            <div class="project-card__body">
+              <div class="project-card__name">A JIT Compiler for Brainfuck</div>
+              <p class="project-card__desc">A just-in-time compiler written entirely in assembly — a low-level codegen deep dive.</p>
+              <div class="tags"><span class="tag">Assembly</span><span class="tag">JIT</span><span class="tag">Compilers</span></div>
+            </div>
           </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <!-- BEYOND THE CODE — personal (placeholders for your real words) -->
+    <section class="section" aria-labelledby="beyond-h">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Beyond the code</p>
+          <h2 class="section__title" id="beyond-h">The human behind the engineer</h2>
+        </div>
+        <div class="personal">
+          <div class="pcard">
+            <h3>How I got here</h3>
+            <p class="placeholder">Your path in your own words — from Moldova to Delft, olympiads and competitive programming along the way. Tell me the real version and I'll write it warm.</p>
+          </div>
+          <div class="pcard">
+            <h3>When I'm not shipping</h3>
+            <p class="placeholder">One or two things you love away from the keyboard. This is what gives the page a heartbeat — I'll fill it once you tell me.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT — good-listener close -->
+    <section class="contact" aria-labelledby="contact-h">
+      <div class="container">
+        <p class="eyebrow">Say hello</p>
+        <h2 class="contact__title" id="contact-h">I'm always up for a good conversation.</h2>
+        <p class="contact__lead">About a role, a hard problem, or just what you're building. Drop me a line — I read everything.</p>
+        <div class="contact__row">
+          <a class="btn" href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
+          <a href="https://linkedin.com/in/cristianturcan" rel="me">LinkedIn</a>
+          <a href="cv.pdf" download>Download CV ↓</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="container">
       <p>
         <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
+        <span aria-hidden="true"> · </span> Cristian Turcan · Delft
       </p>
     </div>
   </footer>
+
   <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span class="theme-toggle__icon" aria-hidden="true">&#9790;</span></button>
   <script src="theme.js"></script>
 </body>
