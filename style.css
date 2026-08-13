@@ -116,6 +116,19 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 /* Keep prose at a comfortable reading measure (~66 chars) rather than full width. */
 .section p, .entry__points, .paper p { max-width: 68ch; }
 
+/* Typographic polish: balance short headings so they don't leave orphan
+   words on a lonely last line; pretty-wrap prose to avoid rivers/orphans. */
+.hero__name, .page-head h1, .case__title, .role__title, .card__title,
+.project-card__name, .event__name, .paper__title, .section__title,
+.skills__label {
+  text-wrap: balance;
+}
+.hero__tagline, .page-head p, .section p, .role__summary,
+.card__desc, .project-card__desc, .event__desc, .case__summary,
+.paper__authors {
+  text-wrap: pretty;
+}
+
 /* Skills */
 .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2rem; }
 .skills__label { margin: 0 0 0.25rem; font-size: 0.9rem; font-weight: 600; color: var(--accent); }
