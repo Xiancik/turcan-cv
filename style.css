@@ -204,17 +204,19 @@ a.role__company::after {
 
 /* ---- Projects listing grid ---- */
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-.project-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; color: inherit; transition: border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease; }
+.project-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; color: inherit; transition: border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease; }
 .project-card:hover { text-decoration: none; border-color: var(--accent-link); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(20, 33, 61, 0.07); }
-.project-card__thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--border); }
+.project-card__thumb { flex: none; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--border); }
 
 /* Default project image: swap to the dark variant under the dark theme.
    Scoped to the placeholder src, so real screenshots are never overridden. */
 :root[data-theme="dark"] img[src$="placeholder.svg"] { content: url("img/placeholder-dark.svg"); }
-.project-card__body { padding: 0.9rem 1.1rem 1.1rem; }
+.project-card__body { flex: 1 1 auto; display: flex; flex-direction: column; padding: 0.9rem 1.1rem 1.1rem; }
 .project-card__name { font-size: 1.05rem; font-weight: 600; color: var(--accent); }
 .project-card__desc { margin: 0.3rem 0 0.6rem; color: var(--text-muted); font-size: 0.93rem; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+/* Pin the tag row to the card bottom so tags align across a grid row. */
+.project-card__body .tags { margin-top: auto; }
 .tag { font-size: 0.78rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 20px; padding: 0.15rem 0.6rem; }
 
 /* ---- Project detail (case study) ---- */
