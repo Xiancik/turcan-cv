@@ -133,6 +133,11 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .site-nav nav a { color: var(--muted); font-size: .92rem; transition: color .15s var(--ease); }
 .site-nav nav a:hover { color: var(--ink); text-decoration: none; }
 .site-nav nav a.is-active { color: var(--accent-str); font-weight: 600; }
+@media (max-width: 520px) {
+  .site-nav__inner { flex-wrap: wrap; gap: .35rem 1.1rem; padding: .7rem 0; }
+  .site-nav__brand { white-space: nowrap; }
+  .site-nav nav { width: 100%; gap: 1.1rem 1.25rem; }
+}
 
 /* ---- Page head (subpages) ---- */
 .page-head { padding: 3.25rem 0 .5rem; max-width: var(--prose); }
