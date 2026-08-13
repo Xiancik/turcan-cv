@@ -118,7 +118,7 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 .section p { margin: 0 0 0.5rem; }
 
 /* Keep prose at a comfortable reading measure (~66 chars) rather than full width. */
-.section p, .entry__points, .paper p { max-width: 68ch; }
+.section p, .entry__points, .paper p, .case p { max-width: 68ch; }
 
 /* Typographic polish: balance short headings so they don't leave orphan
    words on a lonely last line; pretty-wrap prose to avoid rivers/orphans. */
@@ -129,7 +129,7 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 }
 .hero__tagline, .page-head p, .section p, .role__summary,
 .card__desc, .project-card__desc, .event__desc, .case__summary,
-.paper__authors {
+.paper__authors, .paper p, .case p {
   text-wrap: pretty;
 }
 
