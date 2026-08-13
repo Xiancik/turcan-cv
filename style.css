@@ -68,6 +68,10 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
 
 .skip-link { position: absolute; left: -999px; top: 0; background: var(--accent); color: #fff; padding: 0.5rem 1rem; z-index: 10; }
 .skip-link:focus { left: 0; }
+
+/* Sticky-nav offset: fragment targets (skip link → #main, section anchors)
+   clear the sticky header instead of landing hidden beneath it. */
+:target, #main { scroll-margin-top: 4rem; }
 :focus-visible { outline: 2px solid var(--accent-link); outline-offset: 2px; }
 
 /* ---- Site nav ---- */
@@ -277,6 +281,8 @@ a.role__company::after {
   .role__logo { padding: 9px; }
   .event { grid-template-columns: 1fr; gap: 0.15rem; }
   .site-nav__inner { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+  /* Stacked nav is taller here, so fragment targets need a bigger offset. */
+  :target, #main { scroll-margin-top: 7rem; }
   /* Roomier tap targets on touch: stacked nav links and the CV button. */
   .site-nav nav { gap: 0 1.15rem; }
   .site-nav nav a { padding: 0.45rem 0; }
