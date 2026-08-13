@@ -219,6 +219,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 }
 .project-card:hover { border-color: var(--border-str); transform: translateY(-2px); box-shadow: 0 16px 34px -26px rgba(45,86,64,.55); text-decoration: none; }
 .project-card__thumb { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; background: var(--accent-soft); border-bottom: 1px solid var(--border); }
+:root[data-theme="dark"] .project-card--text .project-card__thumb { filter: invert(1) hue-rotate(180deg); }
 .project-card--text { }
 .project-card__body { padding: 1.15rem 1.25rem 1.35rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
 .project-card__name { font-family: var(--display); font-weight: 600; font-size: 1.08rem; color: var(--ink); line-height: 1.3; }
