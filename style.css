@@ -23,6 +23,8 @@
 
 /* ---- Design tokens ---- */
 :root {
+  /* Match native UI (scrollbars, form controls) to the light theme. */
+  color-scheme: light;
   --accent: #14213d;
   --accent-link: #1c3a6e;
   --text: #1a1a1a;
@@ -35,6 +37,8 @@
 
 /* Dark theme is opt-in via the corner toggle (default is light). */
 :root[data-theme="dark"] {
+  /* Dark native UI: scrollbars and form controls follow suit. */
+  color-scheme: dark;
   --accent: #cdd9f0;
   --accent-link: #8fb3f0;
   --text: #e6e6e6;
