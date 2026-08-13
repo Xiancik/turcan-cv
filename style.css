@@ -133,6 +133,13 @@ strong, b { font-weight: 600; } /* use the loaded semibold face rather than faux
   text-wrap: pretty;
 }
 
+/* Tabular figures for the number-heavy bits of the CV (dates, metrics,
+   result badges): even-width digits read as engineered and align in columns. */
+.event__date, .entry__meta, .role__org, .metric, .badge,
+.case__meta, .paper__venue {
+  font-variant-numeric: tabular-nums;
+}
+
 /* Skills */
 .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2rem; }
 .skills__label { margin: 0 0 0.25rem; font-size: 0.9rem; font-weight: 600; color: var(--accent); }
