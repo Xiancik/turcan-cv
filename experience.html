@@ -38,15 +38,20 @@
   <main id="main">
     <div class="container">
       <div class="page-head">
-        <h1>Experience</h1>
-        <p>Roles and education. Download the full CV as a <a href="cv.pdf" download>PDF</a>.</p>
+        <p class="eyebrow">Experience</p>
+        <h1>Where I’ve been building</h1>
+        <p>Four engineering roles — two of them live right now — plus two degrees at TU Delft. Want the whole thing on paper? <a href="cv.pdf" download>Grab the CV</a>.</p>
       </div>
 
       <section class="section" aria-labelledby="work-h">
-        <h2 class="section__title" id="work-h">Work</h2>
+        <div class="section__head">
+          <p class="eyebrow">Work</p>
+          <h2 class="section__title" id="work-h">Roles I’ve shipped in</h2>
+          <p class="section__lead">Real, paid engineering, newest first. Each role marks how far up and down the stack it reached — the same layers as the <a href="index.html#stack-h">home-page ladder</a>, from the app someone taps to the microamps the board draws.</p>
+        </div>
 
         <div class="roles">
-          <article class="role">
+          <article class="role reveal d1">
             <div class="role__media">
               <img class="role__logo" src="img/experience/offroad.png" alt="Offroad Apps logo" loading="lazy" width="84" height="84">
             </div>
@@ -54,6 +59,14 @@
               <h3 class="role__title">Software Engineer<span class="role__pt">Part-time</span></h3>
               <p class="role__org"><a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft, Netherlands · Jan 2026 – Present</p>
               <p class="role__summary">Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.</p>
+              <ul class="reach" aria-label="Stack layers this role reached: Application, Signal">
+                <li class="reach__cap" aria-hidden="true">Reach</li>
+                <li class="reach__layer is-on">App</li>
+                <li class="reach__layer">Model</li>
+                <li class="reach__layer is-on">Signal</li>
+                <li class="reach__layer">Firmware</li>
+                <li class="reach__layer">Silicon</li>
+              </ul>
               <ul class="role__metrics">
                 <li class="metric">7 live vital types</li>
                 <li class="metric">.NET 10 + MAUI</li>
@@ -68,7 +81,7 @@
             </div>
           </article>
 
-          <article class="role">
+          <article class="role reveal d2">
             <div class="role__media">
               <img class="role__logo" src="img/experience/insyght.svg" alt="Insyght.io logo" loading="lazy" width="84" height="84">
             </div>
@@ -76,6 +89,14 @@
               <h3 class="role__title">Embedded Software Engineer<span class="role__pt">Part-time</span></h3>
               <p class="role__org"><a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft, Netherlands · Aug 2025 – Present</p>
               <p class="role__summary">Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor.</p>
+              <ul class="reach" aria-label="Stack layers this role reached: Model, Signal, Firmware, Silicon">
+                <li class="reach__cap" aria-hidden="true">Reach</li>
+                <li class="reach__layer">App</li>
+                <li class="reach__layer is-on">Model</li>
+                <li class="reach__layer is-on">Signal</li>
+                <li class="reach__layer is-on">Firmware</li>
+                <li class="reach__layer is-on">Silicon</li>
+              </ul>
               <ul class="role__metrics">
                 <li class="metric">92% classifier @ 40 KB</li>
                 <li class="metric">960 → 189 µA idle</li>
@@ -91,7 +112,7 @@
             </div>
           </article>
 
-          <article class="role">
+          <article class="role reveal d3">
             <div class="role__media">
               <img class="role__logo" src="img/experience/altix.png" alt="Altix Capital logo" loading="lazy" width="84" height="84">
             </div>
@@ -99,6 +120,14 @@
               <h3 class="role__title">Machine Learning Engineer Intern</h3>
               <p class="role__org"><a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam, Netherlands · Apr 2025 – Jun 2025</p>
               <p class="role__summary">An AI document-ingestion pipeline that sped up analyst screening.</p>
+              <ul class="reach" aria-label="Stack layers this role reached: Application, Model">
+                <li class="reach__cap" aria-hidden="true">Reach</li>
+                <li class="reach__layer is-on">App</li>
+                <li class="reach__layer is-on">Model</li>
+                <li class="reach__layer">Signal</li>
+                <li class="reach__layer">Firmware</li>
+                <li class="reach__layer">Silicon</li>
+              </ul>
               <ul class="role__metrics">
                 <li class="metric">10 → 2 min per doc</li>
                 <li class="metric">~60% faster review</li>
@@ -110,7 +139,7 @@
             </div>
           </article>
 
-          <article class="role">
+          <article class="role reveal d4">
             <div class="role__media">
               <img class="role__logo" src="img/experience/huawei.svg" alt="Huawei logo" loading="lazy" width="84" height="84">
             </div>
@@ -118,6 +147,14 @@
               <h3 class="role__title">Machine Learning Engineer Intern</h3>
               <p class="role__org"><a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam, Netherlands · Dec 2024 – May 2025</p>
               <p class="role__summary">Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.</p>
+              <ul class="reach" aria-label="Stack layers this role reached: Model, Signal">
+                <li class="reach__cap" aria-hidden="true">Reach</li>
+                <li class="reach__layer">App</li>
+                <li class="reach__layer is-on">Model</li>
+                <li class="reach__layer is-on">Signal</li>
+                <li class="reach__layer">Firmware</li>
+                <li class="reach__layer">Silicon</li>
+              </ul>
               <ul class="role__metrics">
                 <li class="metric">precision 92 → 94%</li>
                 <li class="metric">100 → 300+ h data</li>
@@ -134,10 +171,14 @@
       </section>
 
       <section class="section" aria-labelledby="edu-h">
-        <h2 class="section__title" id="edu-h">Education</h2>
+        <div class="section__head">
+          <p class="eyebrow">Education</p>
+          <h2 class="section__title" id="edu-h">Delft, twice over</h2>
+          <p class="section__lead">The BSc just wrapped; the MSc starts this September — both at TU Delft.</p>
+        </div>
 
         <div class="roles">
-          <article class="role">
+          <article class="role reveal d1">
             <div class="role__media">
               <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="84" height="84">
             </div>
@@ -147,7 +188,7 @@
             </div>
           </article>
 
-          <article class="role">
+          <article class="role reveal d2">
             <div class="role__media">
               <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="84" height="84">
             </div>

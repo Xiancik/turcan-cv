@@ -211,6 +211,17 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .role__points li { margin: .3rem 0; }
 .role__points li::marker { color: var(--accent); }
 
+/* Stack reach — each role shows the slice of the home-page range ladder it
+   touched. Fixed App→Silicon order; lit layers wear the sage chip, untouched
+   ones stay ghosted, so scanning the column reveals how high or low each role
+   sat on the stack. */
+.reach { list-style: none; margin: 1rem 0 .1rem; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .45rem; }
+.reach__cap { font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-right: .15rem; }
+.reach__layer { display: inline-flex; align-items: center; gap: .42rem; padding: .12rem 0; font-size: .8rem; color: var(--faint); }
+.reach__layer::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; border: 1.5px solid var(--border-str); flex: none; }
+.reach__layer.is-on { color: var(--accent-str); font-weight: 600; background: var(--accent-soft); border-radius: 999px; padding: .12rem .62rem .12rem .5rem; }
+.reach__layer.is-on::before { background: var(--accent); border-color: var(--accent); }
+
 /* ---- Projects grid (Things built + Projects page) ---- */
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
 .project-card {
