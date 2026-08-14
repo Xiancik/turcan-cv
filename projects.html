@@ -38,57 +38,103 @@
   <main id="main">
     <div class="container">
       <div class="page-head reveal-seq">
+        <p class="eyebrow">Built for the love of it</p>
         <h1>Projects</h1>
-        <p>Selected personal and competition work. Click any project for the full write-up.</p>
+        <p>Self-directed and competition work, laid out by how close to the metal it runs — from a browser product down to hand-written machine code.</p>
       </div>
 
-      <section class="section" aria-label="Project list">
-        <div class="project-grid reveal-seq">
+      <section class="section" aria-label="Projects by depth">
+        <div class="bands reveal-seq">
 
-          <a class="project-card" href="projects/creator-match.html">
-            <img class="project-card__thumb" src="img/placeholder.svg" alt="">
-            <div class="project-card__body">
-              <div class="project-card__name">CreatorMatch</div>
-              <p class="project-card__desc">A Moldova-only platform matching businesses with local creators via an AI-ranked shortlist.</p>
-              <div class="tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">pgvector</span><span class="tag">Claude</span></div>
+          <div class="band band--product">
+            <div class="band__head">
+              <span class="band__gauge" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h2 class="band__label">Product</h2>
+              <p class="band__hint">whole apps and services, from the browser in</p>
             </div>
-          </a>
+            <div class="band__items">
 
-          <a class="project-card" href="projects/mesh-simplification.html">
-            <img class="project-card__thumb" src="img/projects/mesh.gif" alt="A 3D mesh being simplified, triangle count dropping">
-            <div class="project-card__body">
-              <div class="project-card__name">Perception-Aware 3D Mesh Simplification</div>
-              <p class="project-card__desc">From-scratch QEM mesh solver for Huawei’s 2nd IMC Challenge: score 87.49, all 7 cases accepted.</p>
-              <div class="tags"><span class="tag">C++</span><span class="tag">Computational geometry</span><span class="tag">QEM</span></div>
-            </div>
-          </a>
+              <a class="project-card project-card--spec" href="projects/creator-match.html">
+                <div class="project-card__body">
+                  <div class="project-card__domain">Full-stack · AI</div>
+                  <div class="project-card__name">CreatorMatch</div>
+                  <p class="project-card__desc">A Moldova-only platform matching businesses with local creators through an AI-ranked shortlist.</p>
+                  <p class="project-card__spec"><span>Next.js + FastAPI</span><span>solo build</span><span>pgvector + Claude</span></p>
+                  <div class="tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">pgvector</span><span class="tag">Claude</span></div>
+                </div>
+              </a>
 
-          <a class="project-card" href="projects/prosperity4.html">
-            <img class="project-card__thumb" src="img/projects/prosperity.png" alt="Trading analytics dashboard with a rising PnL curve">
-            <div class="project-card__body">
-              <div class="project-card__name">IMC Prosperity 4: Algorithmic Trading</div>
-              <p class="project-card__desc">Options market-making with Black-Scholes pricing, an IV smile fit, and a time-series test library.</p>
-              <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">pandas</span><span class="tag">SciPy</span></div>
-            </div>
-          </a>
+              <a class="project-card project-card--spec" href="projects/automation-bots/">
+                <div class="project-card__body">
+                  <div class="project-card__domain">Automation · services</div>
+                  <div class="project-card__name">Telegram &amp; Automation Bots</div>
+                  <p class="project-card__desc">Small real-world annoyances, automated away — from change alerts to grabbing a gym slot the instant it opens.</p>
+                  <p class="project-card__more"><b>3 bots</b> — change-tracking · SSO booking · event aggregation</p>
+                  <p class="project-card__spec"><span>Python</span><span>aiogram + Celery</span><span>Playwright</span></p>
+                  <div class="tags"><span class="tag">Python</span><span class="tag">aiogram</span><span class="tag">Celery</span><span class="tag">Playwright</span></div>
+                </div>
+              </a>
 
-          <a class="project-card" href="projects/automation-bots/">
-            <img class="project-card__thumb" src="img/projects/automation-bots.svg" alt="Automation bots architecture diagram">
-            <div class="project-card__body">
-              <div class="project-card__name">Telegram &amp; Automation Bots</div>
-              <p class="project-card__desc">Change-tracking alerts, an SSO booking bot, and a broker-based event-aggregation microservice.</p>
-              <div class="tags"><span class="tag">Python</span><span class="tag">aiogram</span><span class="tag">Celery</span><span class="tag">Playwright</span></div>
             </div>
-          </a>
+          </div>
 
-          <a class="project-card" href="projects/brainfuck-jit.html">
-            <img class="project-card__thumb" src="img/placeholder.svg" alt="">
-            <div class="project-card__body">
-              <div class="project-card__name">JIT Compiler for Brainfuck</div>
-              <p class="project-card__desc">A just-in-time compiler for Brainfuck written entirely in assembly: a low-level codegen deep dive.</p>
-              <div class="tags"><span class="tag">Assembly</span><span class="tag">JIT</span><span class="tag">Compilers</span></div>
+          <div class="band band--systems">
+            <div class="band__head">
+              <span class="band__gauge" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h2 class="band__label">Systems &amp; compute</h2>
+              <p class="band__hint">numerical and market engines, scored against a judge</p>
             </div>
-          </a>
+            <div class="band__items">
+
+              <a class="project-card project-card--spec" href="projects/mesh-simplification.html">
+                <div class="project-card__body">
+                  <div class="project-card__domain">Computational geometry</div>
+                  <div class="project-card__name">Perception-Aware 3D Mesh Simplification</div>
+                  <p class="project-card__desc">A from-scratch QEM edge-collapse solver for Huawei’s 2nd IMC Challenge, with a hand-built renderer to predict its own score.</p>
+                  <p class="project-card__spec"><span>C++</span><span>Huawei IMC</span><span><b>87.49</b> score · 7/7 cases</span></p>
+                  <div class="tags"><span class="tag">C++</span><span class="tag">QEM</span><span class="tag">SSIM</span></div>
+                </div>
+              </a>
+
+              <a class="project-card project-card--spec" href="projects/prosperity4.html">
+                <div class="project-card__body">
+                  <div class="project-card__domain">Quantitative trading</div>
+                  <div class="project-card__name">IMC Prosperity 4 — Algorithmic Trading</div>
+                  <p class="project-card__desc">Options market-making on Black–Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.</p>
+                  <p class="project-card__spec"><span>Python</span><span>IMC Prosperity 4</span><span>NumPy · SciPy</span></p>
+                  <div class="tags"><span class="tag">Black–Scholes</span><span class="tag">IV smile</span><span class="tag">backtesting</span></div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="band band--metal">
+            <div class="band__head">
+              <span class="band__gauge" aria-hidden="true"><i></i><i></i><i></i></span>
+              <h2 class="band__label">Close to the metal</h2>
+              <p class="band__hint">no framework, no runtime — emitting machine code by hand</p>
+            </div>
+            <div class="band__items band__items--single">
+
+              <a class="project-card project-card--spec project-card--capstone" href="projects/brainfuck-jit.html">
+                <div class="project-card__body">
+                  <div class="project-card__capbody">
+                    <div class="project-card__domain">Assembly · compilers</div>
+                    <div class="project-card__name">A JIT Compiler for Brainfuck</div>
+                    <p class="project-card__desc">Rather than interpret, it emits native x86-64 into memory at run time and jumps into it — a hands-on tour of code generation all the way down to the instruction bytes.</p>
+                    <p class="project-card__spec"><span>x86-64 assembly</span><span>self-directed</span><span>source → native</span></p>
+                    <div class="tags"><span class="tag">Assembly</span><span class="tag">JIT</span><span class="tag">Codegen</span></div>
+                  </div>
+<pre class="project-card__code" aria-hidden="true"><span class="cm">; brainfuck → x86-64, emitted at run time</span>
++   →  <b>add</b> byte [rbx], 1
+&gt;   →  <b>inc</b> rbx
+[ ] →  <b>cmp</b> / <b>jz</b> — back-patched jumps</pre>
+                </div>
+              </a>
+
+            </div>
+          </div>
 
         </div>
       </section>

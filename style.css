@@ -242,6 +242,66 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .35rem; }
 .tag { font-size: .78rem; color: var(--accent-str); background: var(--accent-soft); border-radius: 999px; padding: .12rem .6rem; }
 
+/* ---- Projects index: the workbench, sorted by depth ---- */
+/* The one axis that unites an eclectic set — a browser platform, a geometry
+   solver, a quant book, a JIT in raw assembly — is how close to the metal each
+   one runs. Bands descend from user-facing product down to machine code, so the
+   reading order itself is the signature: it echoes the homepage range ladder
+   without adding a fourth node-timeline. Cards are spec-forward, not screenshot-
+   forward, so the page never depends on imagery it doesn't have. */
+.bands { display: grid; gap: 2.9rem; }
+
+.band__head {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .35rem .85rem;
+  margin: 0 0 1.2rem; padding-bottom: .75rem; border-bottom: 1px solid var(--border);
+}
+/* Altitude gauge: three stacked bars filled from the top down to this band's
+   depth — more fill = deeper toward the metal, mirroring the reach strips. */
+.band__gauge { display: inline-flex; flex-direction: column; gap: 2.5px; margin-right: .2rem; }
+.band__gauge i { display: block; width: 15px; height: 3px; border-radius: 2px; background: var(--border-str); }
+.band--product .band__gauge i:nth-child(-n+1),
+.band--systems .band__gauge i:nth-child(-n+2),
+.band--metal   .band__gauge i:nth-child(-n+3) { background: var(--accent); }
+.band__label { font-family: var(--display); font-weight: 600; font-size: 1.12rem; letter-spacing: -.01em; color: var(--ink); margin: 0; }
+.band__hint { color: var(--muted); font-size: .9rem; margin: 0; }
+.band__hint::before { content: "— "; color: var(--border-str); }
+
+.band__items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+.band__items--single { grid-template-columns: 1fr; }
+
+/* Spec-forward card — leads with domain + what it is + a compact spec line,
+   no thumbnail to break on missing art. */
+.project-card--spec .project-card__body { gap: .5rem; padding: 1.4rem 1.45rem 1.5rem; }
+.project-card__domain {
+  font-family: var(--body); font-size: .7rem; font-weight: 600; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--accent-str);
+}
+.project-card--spec .project-card__name { font-size: 1.16rem; margin: -.05rem 0 0; }
+.project-card--spec .project-card__desc { flex: 0 1 auto; }
+.project-card__spec {
+  display: flex; flex-wrap: wrap; margin: .15rem 0 0;
+  font-size: .82rem; color: var(--faint); font-variant-numeric: tabular-nums;
+}
+.project-card__spec > span:not(:last-child)::after { content: "·"; margin: 0 .5rem; color: var(--border-str); }
+.project-card__spec b { color: var(--muted); font-weight: 600; }
+/* "3 bots" suite line — makes the bundled work legible as a suite, not one item */
+.project-card__more { font-size: .82rem; color: var(--muted); margin: .1rem 0 0; }
+.project-card__more b { color: var(--accent-str); font-weight: 600; }
+
+/* Capstone — the deepest project anchors the page full-width, with a hint of
+   the raw code it generates as its signature texture. */
+.project-card--capstone .project-card__body { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.5rem; align-items: center; padding: 1.6rem 1.7rem; }
+.project-card__capbody { display: flex; flex-direction: column; gap: .5rem; }
+.project-card__code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: .78rem; line-height: 1.75; color: var(--faint); white-space: pre;
+  background: color-mix(in srgb, var(--accent-soft) 42%, transparent);
+  border: 1px solid var(--border); border-radius: var(--r-sm);
+  padding: .75rem .9rem; margin: 0; overflow-x: auto;
+}
+.project-card__code b { color: var(--accent-str); font-weight: 600; }
+.project-card__code .cm { color: var(--faint); opacity: .8; }
+
 /* ---- Events: "the road here" timeline ---- */
 /* Open layout (no boxes) along a dotted travel route — echoes the homepage
    range ladder for cohesion. Years are route-marker pills; results wear a
@@ -387,7 +447,11 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .back-link { display: inline-block; margin: 2rem 0 1rem; color: var(--muted); font-size: .92rem; }
 .back-link:hover { color: var(--accent-str); text-decoration: none; }
 .case { max-width: var(--prose); margin: 0 auto; }
-.case__title { font-size: clamp(1.9rem, 4vw, 2.5rem); margin: .5rem 0 .6rem; letter-spacing: -.025em; }
+/* Kicker ties each case back to the projects index: domain eyebrow + the depth
+   band it lives in, so a reader always knows where on the stack they are. */
+.case__kicker { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem .9rem; margin: .5rem 0 .85rem; }
+.case__kicker .eyebrow { margin: 0; }
+.case__title { font-size: clamp(1.9rem, 4vw, 2.5rem); margin: .1rem 0 .6rem; letter-spacing: -.025em; }
 .case__summary { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.75rem; }
 .case__meta { display: flex; flex-wrap: wrap; gap: 1.5rem 2.25rem; margin: 0 0 2rem; padding: 1.1rem 0; border-block: 1px solid var(--border); }
 .case__meta div { display: flex; flex-direction: column; gap: .15rem; }
@@ -455,7 +519,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .hero { padding: 3rem 0 2.5rem; }
   .hero__grid { grid-template-columns: 1fr; gap: 1.35rem; }
   .hero__photo { width: 96px; height: 96px; border-radius: 16px; }
-  .project-grid, .personal { grid-template-columns: 1fr; }
+  .project-grid, .personal, .band__items { grid-template-columns: 1fr; }
+  .project-card--capstone .project-card__body { grid-template-columns: 1fr; gap: 1.1rem; }
   .role { grid-template-columns: 46px 1fr; gap: 1rem; padding: 1.25rem; }
   .role__media { width: 46px; }
   .role__logo { width: 46px; height: 46px; }
