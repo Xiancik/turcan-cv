@@ -126,7 +126,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   backdrop-filter: saturate(1.4) blur(8px);
   border-bottom: 1px solid var(--border);
 }
-.site-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 0; }
+.site-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .85rem; }
 .site-nav__brand { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ink); letter-spacing: -.01em; }
 .site-nav__brand:hover { text-decoration: none; color: var(--accent-str); }
 .site-nav nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
@@ -134,7 +134,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .site-nav nav a:hover { color: var(--ink); text-decoration: none; }
 .site-nav nav a.is-active { color: var(--accent-str); font-weight: 600; }
 @media (max-width: 520px) {
-  .site-nav__inner { flex-wrap: wrap; gap: .35rem 1.1rem; padding: .7rem 0; }
+  .site-nav__inner { flex-wrap: wrap; gap: .35rem 1.1rem; padding-block: .7rem; }
   .site-nav__brand { white-space: nowrap; }
   .site-nav nav { width: 100%; gap: 1.1rem 1.25rem; }
 }
