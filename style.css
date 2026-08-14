@@ -232,76 +232,82 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .tag { font-size: .78rem; color: var(--accent-str); background: var(--accent-soft); border-radius: 999px; padding: .12rem .6rem; }
 
 /* ---- Events: "the road here" timeline ---- */
-.timeline { position: relative; max-width: 760px; margin: .5rem 0 0; padding-left: 2.35rem; }
+/* Open layout (no boxes) along a dotted travel route — echoes the homepage
+   range ladder for cohesion. Years are route-marker pills; results wear a
+   medal dot; photos are small postcard snapshots. */
+.timeline { position: relative; max-width: 660px; margin: .5rem 0 0; padding-left: 2.3rem; }
 .timeline::before {
-  content: ""; position: absolute; left: 6px; top: .55rem; bottom: .55rem; width: 2px;
-  background: linear-gradient(var(--accent), var(--border-str)); border-radius: 2px;
+  content: ""; position: absolute; left: 6px; top: .3rem; bottom: .5rem; width: 2px;
+  background: repeating-linear-gradient(
+    color-mix(in srgb, var(--accent) 60%, transparent) 0 4px,
+    transparent 4px 10px
+  );
 }
 
-/* Year milestone — a filled stop on the route */
+/* Year milestone — a marker pill sitting on the route */
 .tl-year {
-  position: relative; font-family: var(--display); font-weight: 700; font-size: 1.05rem;
-  color: var(--ink); letter-spacing: -.01em; font-variant-numeric: tabular-nums;
-  margin: 2.1rem 0 1rem; line-height: 1;
+  position: relative; display: inline-block;
+  font-family: var(--display); font-weight: 700; font-size: .8rem;
+  color: var(--accent-str); background: var(--accent-soft);
+  padding: .2rem .72rem; border-radius: 999px; letter-spacing: .01em;
+  font-variant-numeric: tabular-nums; margin: 2.2rem 0 1.15rem;
 }
-.tl-year:first-child { margin-top: 0; }
+.tl-year:first-child { margin-top: .2rem; }
 .tl-year::before {
-  content: ""; position: absolute; left: calc(-2.35rem + 7px); top: 50%; transform: translate(-50%, -50%);
-  width: 12px; height: 12px; border-radius: 50%;
+  content: ""; position: absolute; left: calc(-2.3rem + 7px); top: 50%; transform: translate(-50%, -50%);
+  width: 13px; height: 13px; border-radius: 50%;
   background: var(--accent); box-shadow: 0 0 0 4px var(--paper);
 }
 
-/* Event stop */
-.tl-event { position: relative; padding: 0 0 1.15rem; }
+/* Event stop — open, no card */
+.tl-event { position: relative; padding: 0 0 1.9rem; }
+.tl-event:last-child { padding-bottom: 0; }
 .tl-event::before {
-  content: ""; position: absolute; left: calc(-2.35rem + 7px); top: 1.7rem; transform: translate(-50%, -50%);
-  width: 11px; height: 11px; border-radius: 50%;
+  content: ""; position: absolute; left: calc(-2.3rem + 7px); top: .5rem; transform: translate(-50%, -50%);
+  width: 12px; height: 12px; border-radius: 50%;
   background: var(--surface); border: 2px solid var(--accent); box-shadow: 0 0 0 4px var(--paper);
   transition: border-color .18s var(--ease), transform .18s var(--ease);
 }
-.tl-event:hover::before { transform: translate(-50%, -50%) scale(1.18); border-color: var(--accent-str); }
+.tl-event:hover::before { transform: translate(-50%, -50%) scale(1.28); border-color: var(--accent-str); }
+.tl-card { padding: 0; }
 
-.tl-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
-  padding: 1.25rem 1.4rem 1.35rem;
-  transition: border-color .18s var(--ease), transform .18s var(--ease), box-shadow .18s var(--ease);
-}
-.tl-event:hover .tl-card { border-color: var(--border-str); transform: translateY(-2px); box-shadow: 0 16px 34px -26px rgba(45,86,64,.55); }
-
-.tl-topline { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem .75rem; margin: 0 0 .3rem; }
-.tl-place {
-  display: inline-flex; align-items: center; gap: .32rem;
-  font-size: .86rem; font-weight: 600; color: var(--muted);
-}
-.tl-place svg { width: .82em; height: .82em; flex: none; color: var(--accent); }
-.tl-date { font-size: .82rem; color: var(--faint); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
-.tl-name { font-size: 1.16rem; margin: 0 0 .55rem; line-height: 1.28; }
+.tl-topline { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; margin: 0 0 .12rem; }
+.tl-place { display: inline-flex; align-items: center; gap: .3rem; font-size: .85rem; font-weight: 600; color: var(--muted); }
+.tl-place svg { width: .8em; height: .8em; flex: none; color: var(--accent); }
+.tl-date { font-size: .8rem; color: var(--faint); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.tl-date::before { content: "·"; margin-right: .55rem; color: var(--border-str); }
+.tl-name { font-size: 1.2rem; margin: 0 0 .35rem; line-height: 1.3; }
 .tl-name .badge { vertical-align: middle; margin-left: .5rem; }
-.tl-desc { margin: 0; color: var(--muted); }
+.tl-desc { margin: 0; color: var(--muted); max-width: 54ch; }
 
 .badge {
-  display: inline-block; font-size: .74rem; font-weight: 600; white-space: nowrap;
-  color: var(--accent-str); background: var(--accent-soft);
-  border-radius: 999px; padding: .12rem .6rem;
+  display: inline-flex; align-items: center; gap: .38rem; font-size: .73rem; font-weight: 600;
+  white-space: nowrap; color: var(--accent-str); background: var(--accent-soft);
+  border-radius: 999px; padding: .14rem .62rem .14rem .5rem;
 }
+.badge::before { content: ""; width: .44rem; height: .44rem; border-radius: 50%; background: var(--accent); flex: none; }
 
-/* Snapshot — a photo tucked in like a print; degrades to a "coming" invite */
-.tl-photos { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1rem 0 0; }
-.tl-photo { margin: 0; flex: 1 1 190px; min-width: 0; }
+/* Postcard snapshots — small, tidy row; empty state is a quiet tag, not a box */
+.tl-photos { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .65rem; margin: .95rem 0 0; }
+.tl-photo { margin: 0; flex: 0 0 auto; width: 156px; max-width: 100%; }
 .tl-photo img {
   width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
-  border-radius: var(--r-sm); border: 1px solid var(--border-str);
-  background: var(--accent-soft);
-  box-shadow: 0 10px 22px -18px rgba(45,86,64,.7);
+  border-radius: var(--r-sm); border: 1px solid var(--border-str); background: var(--accent-soft);
+  box-shadow: 0 8px 18px -14px rgba(45,86,64,.7);
   transition: transform .2s var(--ease), box-shadow .2s var(--ease);
 }
-.tl-photo img:hover { transform: translateY(-2px) rotate(-.5deg); box-shadow: 0 16px 30px -18px rgba(45,86,64,.75); }
-.tl-photo figcaption { font-size: .8rem; color: var(--faint); margin-top: .4rem; }
+.tl-photo img:hover { transform: translateY(-2px) rotate(-.7deg); box-shadow: 0 14px 24px -14px rgba(45,86,64,.75); }
+.tl-photo figcaption { font-size: .78rem; color: var(--faint); margin-top: .38rem; line-height: 1.4; }
 .tl-photo--empty {
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  aspect-ratio: 4 / 3; border: 1px dashed var(--border-str); border-radius: var(--r-sm);
-  padding: .75rem 1rem; color: var(--faint); font-style: italic; font-size: .86rem;
-  background: color-mix(in srgb, var(--accent-soft) 40%, transparent);
+  width: auto; aspect-ratio: auto; display: inline-flex; align-items: center; gap: .4rem;
+  white-space: nowrap; border: 1px dashed var(--border-str); border-radius: 999px;
+  padding: .3rem .8rem; color: var(--faint); font-size: .8rem;
+  background: color-mix(in srgb, var(--accent-soft) 32%, transparent);
+}
+.tl-photo--empty::before {
+  content: ""; width: .95em; height: .95em; flex: none; background: currentColor;
+  -webkit-mask: var(--cam) center/contain no-repeat; mask: var(--cam) center/contain no-repeat;
+  --cam: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3l-1.5 2H4a2 2 0 00-2 2v11a2 2 0 002 2h16a2 2 0 002-2V7a2 2 0 00-2-2h-3.5L15 3H9zm3 5a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>');
 }
 
 /* ---- Papers ---- */
@@ -398,8 +404,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .role__logo { width: 46px; height: 46px; }
   .timeline { padding-left: 1.9rem; }
   .tl-year::before, .tl-event::before { left: calc(-1.9rem + 7px); }
-  .tl-card { padding: 1.1rem 1.15rem 1.2rem; }
-  .tl-photo { flex-basis: 140px; }
+  .tl-photo { width: 132px; }
 }
 
 /* ---- Print ---- */
