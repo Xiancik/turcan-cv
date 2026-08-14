@@ -335,3 +335,23 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .role__logo { width: 46px; height: 46px; }
   .event { grid-template-columns: 68px 1fr; gap: 1rem; }
 }
+
+/* ---- Print ---- */
+@media print {
+  :root, :root[data-theme="dark"] {
+    --paper:#fff; --surface:#fff; --ink:#1a1a1a; --muted:#333; --faint:#555;
+    --accent:#2e5640; --accent-str:#26402f; --accent-soft:#eef1e8;
+    --border:#cfcabb; --border-str:#b8b09c;
+  }
+  html, body { background:#fff; }
+  .skip-link, .theme-toggle { display:none !important; }
+  .site-nav { position:static; backdrop-filter:none; background:#fff; }
+  /* animations may not run when printing — keep revealed content visible */
+  .reveal, .stack .layer__node { opacity:1 !important; transform:none !important; animation:none !important; }
+  /* dark screenshots waste ink and print as heavy black blocks */
+  .project-card__thumb, .case__cover, .case__figure img { display:none; }
+  a { text-decoration:none; color:var(--ink); }
+  .role, .event, .project-card, .paper, .pcard, .case__section {
+    break-inside:avoid; box-shadow:none !important;
+  }
+}
