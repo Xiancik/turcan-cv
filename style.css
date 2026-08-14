@@ -311,14 +311,48 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 }
 
 /* ---- Papers ---- */
-.paper { padding: 1.75rem 0; border-top: 1px solid var(--border); max-width: var(--prose); }
-.paper:first-child { border-top: 0; }
-.paper__title { font-size: 1.24rem; margin: 0 0 .4rem; line-height: 1.3; }
-.paper__authors { margin: 0 0 .2rem; color: var(--muted); font-size: .95rem; }
-.paper__authors .me { color: var(--ink); font-weight: 600; }
-.paper__venue { margin: 0 0 .75rem; color: var(--faint); font-size: .9rem; }
-.paper p { color: var(--muted); }
-.paper__links { margin-top: .5rem; font-size: .9rem; }
+/* Each entry is laid out like the masthead of the paper itself: title, an
+   author line with his name marked in green, a hairline rule, a compact meta
+   strip (venue · status · year), keyword chips, a one-line lede, the abstract,
+   then real action links. Deliberately NOT a third node-timeline — the
+   homepage ladder and events route already own that motif. */
+.papers { max-width: var(--prose); }
+.paper { padding: 2.4rem 0; border-top: 1px solid var(--border); }
+.paper:first-child { border-top: 0; padding-top: .25rem; }
+
+.paper__title { font-size: 1.34rem; margin: 0 0 .3rem; line-height: 1.28; }
+.paper__byline { margin: 0; color: var(--muted); font-size: .95rem; }
+.paper__byline .me { color: var(--accent-str); font-weight: 600; }
+
+/* Masthead rule + meta strip */
+.paper__meta {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem .9rem;
+  margin: 1rem 0 1.15rem; padding-top: 1rem; border-top: 1px solid var(--border);
+}
+.paper__venue { font-size: .9rem; font-weight: 600; color: var(--muted); }
+.paper__year { font-size: .82rem; color: var(--faint); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.paper__year::before { content: "·"; margin-right: .9rem; color: var(--border-str); }
+
+.paper__keywords { margin: 0 0 1.15rem; }
+
+.paper__lede {
+  font-family: var(--display); font-weight: 600; letter-spacing: -.01em;
+  font-size: 1.08rem; line-height: 1.45; color: var(--ink); margin: 0 0 .7rem;
+}
+.paper__abstract { color: var(--muted); margin: 0; }
+.paper__abstract em { color: var(--accent-str); font-style: italic; }
+
+.paper__links { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.2rem 0 0; }
+.paper__link {
+  display: inline-flex; align-items: center; gap: .42rem;
+  font-size: .85rem; font-weight: 600; color: var(--accent-str);
+  border: 1px solid var(--border-str); border-radius: 999px; padding: .34rem .9rem;
+  transition: border-color .15s var(--ease), background .15s var(--ease), transform .15s var(--ease);
+}
+.paper__link:hover { border-color: var(--accent); background: var(--accent-soft); text-decoration: none; transform: translateY(-1px); }
+.paper__link svg { width: .95em; height: .95em; flex: none; }
+.paper__link--soon { color: var(--faint); border-style: dashed; }
+.paper__link--soon:hover { border-color: var(--border-str); background: transparent; transform: none; cursor: default; }
 
 /* ---- Beyond the code (homepage personal) ---- */
 .personal { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
