@@ -288,6 +288,19 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .project-card__more { font-size: .82rem; color: var(--muted); margin: .1rem 0 0; }
 .project-card__more b { color: var(--accent-str); font-weight: 600; }
 
+/* Real screenshots earn their place when they show the actual work (the mesh
+   GIF, the trading dashboard). Where there's no real capture yet, a designed
+   tile in the same frame carries a domain-specific motif — never a placeholder,
+   so the grid stays even and nothing reads as missing. */
+.project-card__tile {
+  aspect-ratio: 16 / 9; width: 100%; display: grid; place-items: center;
+  background: var(--accent-soft); border-bottom: 1px solid var(--border); overflow: hidden;
+}
+.project-card__tile svg { width: 70%; height: auto; display: block; }
+.project-card__tile .tile-off { fill: var(--border-str); }
+.project-card__tile .tile-on  { fill: var(--accent); }
+.project-card__tile .tile-on2 { fill: var(--accent-str); }
+
 /* Capstone — the deepest project anchors the page full-width, with a hint of
    the raw code it generates as its signature texture. */
 .project-card--capstone .project-card__body { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.5rem; align-items: center; padding: 1.6rem 1.7rem; }
