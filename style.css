@@ -118,6 +118,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   transition: background .15s var(--ease), transform .15s var(--ease);
 }
 .btn:hover { background: var(--accent-str); text-decoration: none; transform: translateY(-1px); color: #fff; }
+.btn:active { transform: translateY(0) scale(.98); background: var(--accent-str); }
 
 /* ---- Site nav ---- */
 .site-nav {
