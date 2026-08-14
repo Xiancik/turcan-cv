@@ -71,8 +71,9 @@
           <p class="eyebrow">The whole stack</p>
           <h2 class="section__title" id="stack-h">I like working at every layer</h2>
           <p class="section__lead">
-            Most of my work reaches top-to-bottom — from the app someone taps down to the
-            microamps the board draws when it’s idle. A few favourite places to be:
+            Most of my work reaches top-to-bottom — from the app someone taps, through the
+            services behind it, down to the microamps the board draws when it’s idle. A few
+            favourite places to be:
           </p>
         </div>
 
@@ -81,7 +82,13 @@
             <span class="layer__node" aria-hidden="true"></span>
             <p class="layer__name">Application <span>what people touch</span></p>
             <p class="layer__note">Companion apps and web that make the hardware make sense — pairing a wearable, watching vitals come in, reviewing a document faster.</p>
-            <p class="layer__tags">.NET&nbsp;MAUI · Next.js · FastAPI · a CivTAK/ATAK plugin</p>
+            <p class="layer__tags">.NET&nbsp;MAUI · Next.js · React · a CivTAK/ATAK plugin</p>
+          </div>
+          <div class="layer">
+            <span class="layer__node" aria-hidden="true"></span>
+            <p class="layer__name">Backend <span>services &amp; data behind it</span></p>
+            <p class="layer__note">The server side that makes the product work — APIs, background workers, vector search, and the pipelines that keep the data flowing.</p>
+            <p class="layer__tags">FastAPI · Celery + Redis · Postgres + pgvector</p>
           </div>
           <div class="layer">
             <span class="layer__node" aria-hidden="true"></span>
@@ -103,7 +110,7 @@
           </div>
           <div class="layer">
             <span class="layer__node" aria-hidden="true"></span>
-            <p class="layer__name">Silicon <span>down to the last microamp</span></p>
+            <p class="layer__name">Bare metal <span>down to the last microamp</span></p>
             <p class="layer__note">The fun, stubborn end — differential power profiling to hunt idle current, plus low-level curiosities like a JIT compiler written in assembly.</p>
             <p class="layer__tags">power profiling · assembly · a little too much patience</p>
           </div>
