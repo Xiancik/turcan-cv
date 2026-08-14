@@ -168,6 +168,9 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.4rem; }
 .hero__actions a:not(.btn) { color: var(--ink); border-bottom: 1px solid var(--border-str); padding-bottom: 1px; }
 .hero__actions a:not(.btn):hover { color: var(--accent-str); border-color: var(--accent); text-decoration: none; }
+/* The range ladder now lives inside the hero as its proof; this eyebrow is the
+   quiet handoff from "who I am" to "here's the range that means". */
+.hero__stack-eyebrow { margin: 2.7rem 0 1.4rem; }
 
 /* ---- Signature: the range ladder ---- */
 .stack { position: relative; margin-left: .35rem; }
@@ -502,7 +505,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 @keyframes pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
 .reveal { opacity: 0; animation: rise .7s var(--ease) forwards; }
-.d1 { animation-delay: .06s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .22s; } .d4 { animation-delay: .3s; }
+.d1 { animation-delay: .06s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .22s; } .d4 { animation-delay: .3s; } .d5 { animation-delay: .4s; }
 
 /* Staggered entrance — direct children rise in document order (delay capped so
    long lists like the events timeline don't crawl in). */
@@ -515,13 +518,20 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .reveal-seq > *:nth-child(6) { animation-delay: .35s; }
 .reveal-seq > *:nth-child(7) { animation-delay: .41s; }
 .reveal-seq > *:nth-child(n+8) { animation-delay: .47s; }
+/* The spine draws itself top-to-bottom, and each node pops as the line reaches
+   it — one orchestrated descent from the browser down to the bare metal, timed
+   to follow the intro (d1–d5) so the hero resolves as a single moment. */
+@keyframes drawline { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: no-preference) {
+  .stack::before { transform-origin: top center; animation: drawline .78s var(--ease) .42s both; }
+}
 .stack .layer__node { animation: pop .5s var(--ease) both; }
-.stack .layer:nth-child(1) .layer__node { animation-delay: .1s; }
-.stack .layer:nth-child(2) .layer__node { animation-delay: .2s; }
-.stack .layer:nth-child(3) .layer__node { animation-delay: .3s; }
-.stack .layer:nth-child(4) .layer__node { animation-delay: .4s; }
-.stack .layer:nth-child(5) .layer__node { animation-delay: .5s; }
-.stack .layer:nth-child(6) .layer__node { animation-delay: .6s; }
+.stack .layer:nth-child(1) .layer__node { animation-delay: .48s; }
+.stack .layer:nth-child(2) .layer__node { animation-delay: .57s; }
+.stack .layer:nth-child(3) .layer__node { animation-delay: .66s; }
+.stack .layer:nth-child(4) .layer__node { animation-delay: .75s; }
+.stack .layer:nth-child(5) .layer__node { animation-delay: .84s; }
+.stack .layer:nth-child(6) .layer__node { animation-delay: .93s; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
