@@ -426,6 +426,18 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 @keyframes pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
 .reveal { opacity: 0; animation: rise .7s var(--ease) forwards; }
 .d1 { animation-delay: .06s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .22s; } .d4 { animation-delay: .3s; }
+
+/* Staggered entrance — direct children rise in document order (delay capped so
+   long lists like the events timeline don't crawl in). */
+.reveal-seq > * { opacity: 0; animation: rise .6s var(--ease) both; }
+.reveal-seq > *:nth-child(1) { animation-delay: .05s; }
+.reveal-seq > *:nth-child(2) { animation-delay: .11s; }
+.reveal-seq > *:nth-child(3) { animation-delay: .17s; }
+.reveal-seq > *:nth-child(4) { animation-delay: .23s; }
+.reveal-seq > *:nth-child(5) { animation-delay: .29s; }
+.reveal-seq > *:nth-child(6) { animation-delay: .35s; }
+.reveal-seq > *:nth-child(7) { animation-delay: .41s; }
+.reveal-seq > *:nth-child(n+8) { animation-delay: .47s; }
 .stack .layer__node { animation: pop .5s var(--ease) both; }
 .stack .layer:nth-child(1) .layer__node { animation-delay: .1s; }
 .stack .layer:nth-child(2) .layer__node { animation-delay: .2s; }
@@ -435,7 +447,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal, .stack .layer__node { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .reveal, .reveal-seq > *, .stack .layer__node { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
 /* ---- Responsive ---- */
@@ -463,7 +475,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .skip-link, .theme-toggle { display:none !important; }
   .site-nav { position:static; backdrop-filter:none; background:#fff; }
   /* animations may not run when printing — keep revealed content visible */
-  .reveal, .stack .layer__node { opacity:1 !important; transform:none !important; animation:none !important; }
+  .reveal, .reveal-seq > *, .stack .layer__node { opacity:1 !important; transform:none !important; animation:none !important; }
   /* dark screenshots waste ink and print as heavy black blocks */
   .project-card__thumb, .case__cover, .case__figure img { display:none; }
   a { text-decoration:none; color:var(--ink); }
