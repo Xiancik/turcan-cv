@@ -61,7 +61,7 @@
   --surface:    #221e18;
   --ink:        #ece5d8;
   --muted:      #a89e8c;
-  --faint:      #857c6c;
+  --faint:      #8f8676;  /* WCAG AA: 5.0:1 on --paper, still dimmer than --muted */
   --accent:     #7cba90;
   --accent-str: #9fd3af;
   --accent-soft:#26362b;
