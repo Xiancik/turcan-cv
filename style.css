@@ -214,16 +214,68 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .role__points li { margin: .3rem 0; }
 .role__points li::marker { color: var(--accent); }
 
-/* Stack reach — each role shows the slice of the home-page range ladder it
-   touched. Fixed App→Silicon order; lit layers wear the sage chip, untouched
-   ones stay ghosted, so scanning the column reveals how high or low each role
-   sat on the stack. */
-.reach { list-style: none; margin: 1rem 0 .1rem; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .45rem; }
-.reach__cap { font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-right: .15rem; }
-.reach__layer { display: inline-flex; align-items: center; gap: .42rem; padding: .12rem 0; font-size: .8rem; color: var(--faint); }
+/* Stack reach — a compact vertical depth gauge down the right of each role,
+   reading App (surface) → Metal, so it rhymes with the home-page range ladder
+   instead of a flat chip row. Lit layers carry the accent and a soft halo; the
+   rest stay ghosted, so the right edge of the column shows how deep each role
+   reached at a glance. */
+.reach {
+  list-style: none; margin: 0; padding: .1rem 0 .1rem 1rem;
+  align-self: start;
+  display: flex; flex-direction: column; gap: .34rem;
+  border-left: 1px solid var(--border);
+}
+.reach__cap { font-size: .64rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--faint); margin: 0 0 .12rem; }
+.reach__layer { display: flex; align-items: center; gap: .5rem; font-size: .78rem; color: var(--faint); line-height: 1.15; }
 .reach__layer::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; border: 1.5px solid var(--border-str); flex: none; }
-.reach__layer.is-on { color: var(--accent-str); font-weight: 600; background: var(--accent-soft); border-radius: 999px; padding: .12rem .62rem .12rem .5rem; }
-.reach__layer.is-on::before { background: var(--accent); border-color: var(--accent); }
+.reach__layer.is-on { color: var(--accent-str); font-weight: 600; }
+.reach__layer.is-on::before { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+/* ---- Experience: the career timeline ---- */
+/* Work roles hang off one vertical spine that runs from "Now" at the top down
+   into the recent past — newest first. The spine is solid (a nod to the home
+   range ladder; distinct from the events page's dotted travel route). Live
+   roles wear a filled node, past roles a quiet hollow one that fills on hover.
+   Time reads down the left; stack-depth reads down the right. */
+.career { position: relative; padding-left: 2.6rem; display: grid; gap: 1rem; }
+.career::before {
+  content: ""; position: absolute; left: .6rem; top: 1rem; bottom: 1.6rem; width: 2px;
+  border-radius: 2px; background: linear-gradient(var(--accent), var(--border-str));
+}
+
+/* "Now" marker sitting on the spine, top of the timeline */
+.career-now {
+  position: relative; margin: 0 0 .1rem; display: inline-flex; align-items: baseline;
+  gap: .55rem; font-size: .84rem; color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.career-now__tag {
+  font-family: var(--display); font-weight: 700; font-size: .7rem; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--accent-str); background: var(--accent-soft);
+  padding: .2rem .62rem; border-radius: 999px;
+}
+.career-now::before {
+  content: ""; position: absolute; left: calc(-2.6rem + .6rem); top: 50%; transform: translate(-50%, -50%);
+  width: .82rem; height: .82rem; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 4px var(--paper);
+}
+
+/* Each role sits on the spine via a node aligned to its logo */
+.career .role { position: relative; grid-template-columns: 60px 1fr minmax(112px, 136px); }
+.career .role::before {
+  content: ""; position: absolute; left: calc(-2.6rem + .6rem); top: 3.4rem; transform: translate(-50%, -50%);
+  width: .8rem; height: .8rem; border-radius: 50%;
+  background: var(--surface); border: 2px solid var(--border-str); box-shadow: 0 0 0 4px var(--paper);
+  transition: border-color .18s var(--ease);
+}
+.career .role:hover::before { border-color: var(--accent); }
+.career .role--live::before {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 7px var(--accent-soft);
+}
+
+/* Date promoted to a timeline station label above the title */
+.role__when { font-size: .78rem; font-weight: 600; letter-spacing: .03em; color: var(--faint); font-variant-numeric: tabular-nums; margin: 0 0 .32rem; }
+.role__now { color: var(--accent-str); }
 
 /* ---- Projects grid (Things built + Projects page) ---- */
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
@@ -565,6 +617,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .role { grid-template-columns: 46px 1fr; gap: 1rem; padding: 1.25rem; }
   .role__media { width: 46px; }
   .role__logo { width: 46px; height: 46px; }
+  .career { padding-left: 2rem; }
+  .career::before { left: .5rem; }
+  .career-now::before, .career .role::before { left: calc(-2rem + .5rem); }
+  .career .role { grid-template-columns: 46px 1fr; }
+  .career .role::before { top: 2.55rem; }
+  .career .role > .reach { grid-column: 1 / -1; margin-top: .5rem; }
   .timeline { padding-left: 1.9rem; }
   .tl-year::before, .tl-event::before { left: calc(-1.9rem + 7px); }
   .tl-photo { width: 132px; }
