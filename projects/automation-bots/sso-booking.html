@@ -42,7 +42,20 @@
           <div><dt>Focus</dt><dd>Browser automation, race conditions</dd></div>
         </dl>
 
-        <img class="case__cover" src="../../img/placeholder.svg" alt="Automated booking flow">
+        <div class="case-tile case-tile--cover">
+          <svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A secure sign-in unlocking a booked calendar slot">
+            <path class="line-on" d="M52 54 v-11 a20 20 0 0 1 40 0 v11" stroke-width="3.2"/>
+            <rect class="tile-on" x="42" y="54" width="60" height="44" rx="9"/>
+            <circle class="tile-on2" cx="72" cy="73" r="6"/>
+            <rect class="tile-on2" x="69" y="75" width="6" height="13" rx="3"/>
+            <path class="line-off" d="M116 76 h24" stroke-width="3"/>
+            <path class="line-off" d="M133 69 l9 7 -9 7" stroke-width="3"/>
+            <rect class="line-off" x="158" y="28" width="66" height="62" rx="9" stroke-width="3"/>
+            <path class="line-off" d="M158 45 h66" stroke-width="3"/>
+            <rect class="tile-on" x="170" y="57" width="22" height="20" rx="4"/>
+            <path class="line-on" style="stroke:var(--accent-soft)" d="M174 67 l5 5 8 -11" stroke-width="3"/>
+          </svg>
+        </div>
 
         <h2>Overview</h2>
         <p>Gym slots open at a fixed time and disappear within seconds. I wanted one booked automatically the moment it went live. The catch: the booking page sits behind TU Delft's full NetID single sign-on, so there is no simple request to fire.</p>
@@ -59,8 +72,28 @@
 
         <h2>Gallery</h2>
         <div class="gallery">
-          <figure><img src="../../img/placeholder.svg" alt="SSO login flow"><figcaption>[NetID SSO flow]</figcaption></figure>
-          <figure><img src="../../img/placeholder.svg" alt="Booking confirmation"><figcaption>[Booking confirmation]</figcaption></figure>
+          <figure>
+            <div class="case-tile">
+              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A single sign-on security shield">
+                <path class="line-on" d="M80 16 l40 14 v22 c0 26 -18 40 -40 50 c-22 -10 -40 -24 -40 -50 V30 Z" stroke-width="3"/>
+                <circle class="tile-on2" cx="80" cy="52" r="9"/>
+                <rect class="tile-on2" x="76" y="55" width="8" height="16" rx="4"/>
+              </svg>
+            </div>
+            <figcaption>Driving the full NetID single sign-on</figcaption>
+          </figure>
+          <figure>
+            <div class="case-tile">
+              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A confirmed booking on a calendar">
+                <rect class="line-off" x="34" y="22" width="92" height="64" rx="9" stroke-width="3"/>
+                <path class="line-off" d="M34 40 h92" stroke-width="3"/>
+                <path class="line-off" d="M54 22 v-8 M106 22 v-8" stroke-width="3"/>
+                <rect class="tile-on" x="68" y="52" width="24" height="22" rx="4"/>
+                <path class="line-on" style="stroke:var(--accent-soft)" d="M73 63 l5 5 8 -11" stroke-width="3"/>
+              </svg>
+            </div>
+            <figcaption>The slot booked and confirmed</figcaption>
+          </figure>
         </div>
       </article>
 

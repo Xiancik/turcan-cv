@@ -485,6 +485,23 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .gallery img { border-radius: var(--r-sm); border: 1px solid var(--border); width: 100%; }
 .gallery figcaption { font-size: .84rem; color: var(--faint); margin-top: .45rem; text-align: center; }
 
+/* Designed motif tiles for case pages with no real capture yet — the same
+   visual language as the project-card tiles (soft-accent field, moss motif),
+   sized for the case cover and the gallery. An image earns its place when it
+   shows the real work; until then a domain motif keeps the page whole and
+   stays theme-aware, instead of a grey placeholder. */
+.case-tile { display: grid; place-items: center; background: var(--accent-soft); border: 1px solid var(--border); overflow: hidden; }
+.case-tile svg { display: block; height: auto; }
+.case-tile .tile-off  { fill: var(--border-str); }
+.case-tile .tile-on   { fill: var(--accent); }
+.case-tile .tile-on2  { fill: var(--accent-str); }
+.case-tile .line-off  { stroke: var(--border-str); fill: none; }
+.case-tile .line-on   { stroke: var(--accent); fill: none; }
+.case-tile--cover { aspect-ratio: 21 / 9; border-radius: var(--r); margin: 0 0 2rem; }
+.case-tile--cover svg { width: min(52%, 380px); }
+.gallery .case-tile { aspect-ratio: 16 / 9; border-radius: var(--r-sm); }
+.gallery .case-tile svg { width: min(64%, 210px); }
+
 /* ---- Footer ---- */
 .footer { border-top: 1px solid var(--border); padding: 2rem 0; color: var(--faint); font-size: .9rem; margin-top: 1rem; }
 .footer a { color: var(--muted); }
@@ -566,7 +583,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   /* animations may not run when printing — keep revealed content visible */
   .reveal, .reveal-seq > *, .stack .layer__node { opacity:1 !important; transform:none !important; animation:none !important; }
   /* dark screenshots waste ink and print as heavy black blocks */
-  .project-card__thumb, .case__cover, .case__figure img { display:none; }
+  .project-card__thumb, .case__cover, .case__figure img, .case-tile { display:none; }
   a { text-decoration:none; color:var(--ink); }
   .role, .tl-event, .project-card, .paper, .pcard, .case__section {
     break-inside:avoid; box-shadow:none !important;
