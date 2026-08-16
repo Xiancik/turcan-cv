@@ -557,7 +557,7 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 .project-card__tile {
   width: 100%; aspect-ratio: 16 / 9; object-fit: cover;
   border-bottom: 1px solid var(--laid-edge);
-  background: var(--azur-deep);
+  background: var(--laid-2);
 }
 .project-card__tile { display: grid; place-items: center; padding: 1.5rem; }
 .project-card__tile svg { width: 100%; height: 100%; }
@@ -585,12 +585,20 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
   padding: .2em .6em; border: 1px solid var(--laid-edge); color: var(--ink-faint);
 }
 
-/* Tile motifs inside project cards */
-.tile-on  { fill: var(--brass); }
-.tile-on2 { fill: var(--gilt-lift); }
-.tile-off { fill: rgba(240, 247, 252, .22); }
-.line-on  { stroke: var(--brass); }
-.line-off { stroke: rgba(240, 247, 252, .22); }
+/* Tile motifs inside project cards.
+   These are real little diagrams, so they are drawn as engravings on laid
+   paper rather than as wireframes on a dark ground. rx/ry are CSS geometry
+   properties in SVG2, which squares every corner without touching markup. */
+.project-card__tile rect,
+.case-tile rect { rx: 1px; ry: 1px; }
+
+.tile-on  { fill: var(--gilt); }
+.tile-on2 { fill: var(--brass); }
+.tile-off { fill: color-mix(in srgb, var(--ink) 22%, transparent); }
+/* fill:none matters — these classes sit on rects and paths that are outlines,
+   and an unset fill paints them solid black. */
+.line-on  { stroke: var(--gilt);  fill: none; }
+.line-off { stroke: color-mix(in srgb, var(--ink) 30%, transparent); fill: none; }
 
 /* ---- Personal ---------------------------------------------------------- */
 
@@ -665,7 +673,7 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 .case__cover { margin: clamp(2rem, 4vw, 3.5rem) 0 0; }
 .case__cover img { width: 100%; border: 8px solid var(--laid); box-shadow: 0 18px 44px rgba(3, 32, 52, .42); }
 
-.case-tile { display: grid; place-items: center; background: var(--azur-deep); aspect-ratio: 16/9; }
+.case-tile { display: grid; place-items: center; background: var(--laid-2); aspect-ratio: 16/9; padding: 1.5rem; border: 1px solid var(--laid-edge); }
 
 .gallery {
   display: grid;
@@ -878,16 +886,52 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 .on-paper .reach__layer.is-on { border-left-color: var(--gilt); }
 
 /* ---- Events timeline --------------------------------------------------- */
+/* Each entry is a ruled station: place and date in the left rail, the event
+   itself on the right. Children are placed explicitly — left to auto-flow
+   they drop into the narrow rail and the prose collapses to one word a line. */
 
 .timeline { display: grid; }
+
+.tl-event { border-top: 1px solid var(--rule); }
+.tl-year + .tl-event { border-top: 0; }
+.tl-event:last-child { border-bottom: 1px solid var(--rule); }
+
+.tl-card {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 0 1.75rem;
+  padding: 1.6rem 0 1.8rem;
+  align-items: start;
+}
+.tl-topline {
+  grid-column: 1; grid-row: 1 / span 3;
+  display: flex; flex-direction: column; gap: .3rem;
+  margin: 0; padding-top: .2rem;
+}
+.tl-name, .tl-desc, .tl-photos { grid-column: 2; }
+.tl-name { grid-row: 1; }
+.tl-desc { grid-row: 2; max-width: 62ch; }
+.tl-photos { grid-row: 3; }
+
+@media (max-width: 640px) {
+  .tl-card { grid-template-columns: 1fr; gap: .5rem 0; }
+  .tl-topline { grid-column: 1; grid-row: auto; flex-direction: row; gap: .8rem; align-items: baseline; }
+  .tl-name, .tl-desc, .tl-photos { grid-column: 1; grid-row: auto; }
+}
+
+.tl-place {
+  display: inline-flex; align-items: baseline; gap: .4em;
+  font-style: italic; color: var(--fg-dim); font-size: .95em;
+}
+/* Without an explicit size the inline pin inherits max-width:100% and fills
+   the rail. */
+.tl-place svg { width: .8em; height: .8em; flex: none; align-self: center; }
+
 .tl-photos { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .9rem; }
 .tl-photos img { width: 8rem; }
-.tl-photo--empty {
-  width: 8rem; aspect-ratio: 4/3;
-  border: 1px dashed var(--rule);
-  display: grid; place-items: center;
-  font-size: .7rem; color: var(--fg-faint);
-}
+/* Nothing is emptier than a box announcing an absent photo. Hidden until a
+   real one lands; the authoring comment in events.html marks the slot. */
+.tl-photo--empty { display: none; }
 
 /* ---- Papers ------------------------------------------------------------ */
 
@@ -954,3 +998,21 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
   .page-head__plate { max-width: 26rem; }
   .page-head__plate figcaption { text-align: left; }
 }
+
+/* A portrait plate on a title page needs a ceiling. */
+.page-head__plate--tall { justify-self: end; max-width: 20rem; }
+@media (max-width: 860px) { .page-head__plate--tall { justify-self: start; } }
+
+/* ---- Inline icons ------------------------------------------------------ */
+/* An <svg> with no intrinsic size inherits max-width:100% from the reset and
+   grows to fill its column — which is how a location pin became a monument.
+   Every inline icon is sized in em against its own text. */
+
+.tl-place > svg,
+.paper__link > svg {
+  width: .85em; height: .85em;
+  flex: none;
+  display: inline-block;
+  vertical-align: -.06em;
+}
+.paper__link { display: inline-flex; align-items: center; gap: .5em; }
