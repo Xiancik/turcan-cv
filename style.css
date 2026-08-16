@@ -66,6 +66,11 @@
   --laid-2:     #e7dcc2;
   --laid-edge:  #d3c5a4;
 
+  /* The paper baked into the plate scans themselves. Fixed: the engravings
+     are flat images, so their margin cannot follow the theme the way --laid
+     does, or a dark theme frames a cream sheet in a near-black mount. */
+  --plate-paper: #f2ebd9;
+
   /* Copper-plate ink, warm black. */
   --ink:        #1d1913;
   --ink-soft:   #5b5145;
@@ -273,15 +278,9 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule-chalk);
 }
-/* Text volume: sub-pages are set on laid paper, so the running head follows. */
-body.on-paper .site-nav {
-  background: color-mix(in srgb, var(--laid) 92%, transparent);
-  border-bottom-color: var(--rule-ink);
-}
-body.on-paper .site-nav__brand { color: var(--ink); }
-body.on-paper .site-nav nav a { color: var(--ink-soft); }
-body.on-paper .site-nav nav a:hover,
-body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color: var(--gilt); }
+/* One colour on every page. The running head belongs to the volume, not to
+   whichever surface happens to open beneath it, and a cream strip above a
+   sub-page's azur cover reads as a seam rather than a heading. */
 .site-nav__inner {
   display: flex; align-items: baseline; justify-content: space-between;
   gap: 1.5rem; padding-block: .95rem;
@@ -344,14 +343,15 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 .hero__actions a { color: var(--chalk); text-decoration-color: var(--chalk-faint); }
 .hero__actions a:hover { text-decoration-color: var(--gilt-lift); }
 
-/* The hero sheet: an actual scanned plate, pinned onto the blue. */
-.hero__sheet { position: relative; max-width: 23rem; margin-inline: auto 0; }
+/* The hero sheet: an actual scanned plate, pinned onto the blue. Sized off the
+   headline block beside it — a landscape plate needs more width than a portrait
+   one to carry the same visual weight. */
+/* The hero plate is a portrait sheet (900x1414), so it is held narrower than a
+   landscape one would be — at 29rem it would stand over 700px tall and outrun
+   the headline column beside it. */
+.hero__sheet { position: relative; max-width: 21rem; margin-inline: auto 0; }
 @media (max-width: 900px) { .hero__sheet { margin-inline: 0; } }
-.hero__sheet img {
-  width: 100%;
-  border: 8px solid var(--laid);
-  box-shadow: 0 18px 44px rgba(3, 32, 52, .42);
-}
+.hero__sheet img { width: 100%; }
 .hero__sheet figcaption {
   margin-top: .9rem;
   font-size: .8rem; font-style: italic; letter-spacing: .04em;
@@ -373,100 +373,130 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 .on-paper .btn { color: var(--ink); border-color: var(--gilt); }
 .on-paper .btn:hover { background: var(--gilt); color: var(--laid); }
 
-/* ---- Pl. I — the range ladder (signature) ------------------------------ */
-/* The forge in section: roof timbers, working floor, foundations in the
-   earth. Six lettered keys descend the drawing the way the stack descends. */
+/* ---- Pl. I — the stack in section (signature) --------------------------- */
+/* One instrument cut open: six figures threaded on a single shaft, each one
+   sitting in the same grid row as the entry that explains it. Drawn for this
+   page — a screen, a rack, a net, a microphone, a board, a die — so the
+   drawing is about the stack rather than borrowed and annotated. */
 
 .ladder { margin: 0; }
 
-/* The figure runs the full width of the plate; the explication sits beneath
-   it in columns — the way these plates were actually laid out. */
-.ladder__grid { display: block; }
+/* Solid bodies knock the shaft out where they cross it, so their fill has to
+   match the ground this plate is printed on. */
+.on-azur  .ladder { --sheet: var(--azur); }
+.on-paper .ladder { --sheet: var(--laid); }
 
-.ladder__figure { position: relative; margin: 0 0 clamp(2rem, 4vw, 3.25rem); }
-
-/* Narrow screens: the section is a wide drawing, so let it pan inside its own
-   scroller rather than shrink until the letters collide. */
-@media (max-width: 760px) {
-  .ladder__scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-  }
-  .ladder__figure { width: 620px; }
-  .ladder__hint {
-    margin: .6rem 0 0;
-    font-size: .72rem; font-style: italic; color: var(--fg-faint);
-  }
+/* Grade lines. The upper one is a plain rule; the lower one carries the
+   hatch these plates use for a cut through earth. */
+.ladder__grade {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 0 0 .2rem;
+  font-family: var(--body); font-feature-settings: 'smcp' 1;
+  font-size: .72rem; font-weight: 600; letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
 }
-@media (min-width: 761px) { .ladder__hint { display: none; } }
-
-/* Ink plates ship as opaque greyscale — no alpha channel, which is roughly
-   a third of the bytes on dense hatching. The paper is knocked out with a
-   blend instead: on azur, invert then screen leaves white line on blue (a
-   blueprint); on laid paper, multiply leaves black line on cream. */
-.ladder__figure img { width: 100%; }
-
-.ladder__mark {
-  position: absolute;
-  left: var(--x); top: var(--y);
-  transform: translate(-50%, -50%);
-  width: 2rem; height: 2rem;
-  display: grid; place-items: center;
-  border-radius: 50%;
-  border: 1px solid var(--azur-abyss);
-  background: var(--gilt-lift);
-  color: var(--azur-abyss);
-  font-family: var(--body); font-size: .8rem; font-weight: 600;
-  font-style: italic; letter-spacing: 0;
-  cursor: pointer; padding: 0;
-  box-shadow: 0 2px 8px rgba(4, 47, 76, .45);
-  transition: transform .18s, box-shadow .18s;
+.ladder__grade::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--rule);
 }
-.ladder__mark:hover,
-.ladder__mark.is-on {
-  transform: translate(-50%, -50%) scale(1.35);
-  box-shadow: 0 0 0 5px rgba(216, 164, 69, .3), 0 2px 10px rgba(4, 47, 76, .5);
+.ladder__grade--earth { margin-top: clamp(1.75rem, 3vw, 2.75rem); }
+.ladder__grade--earth::after {
+  height: 7px;
+  background:
+    linear-gradient(var(--rule), var(--rule)) top    / 100% 1px no-repeat,
+    repeating-linear-gradient(45deg, var(--rule) 0 1px, transparent 1px 6px)
+      bottom / 100% 5px no-repeat;
 }
 
-.ladder__key {
-  list-style: none; margin: 0; padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
-  gap: 0 clamp(1.5rem, 3vw, 2.75rem);
-  border-top: 1px solid var(--rule);
-}
+.ladder__key { list-style: none; margin: 0; padding: 0; }
 
 .ladder__item {
   display: grid;
-  grid-template-columns: 1.7rem minmax(0, 1fr);
-  gap: 0 .85rem;
-  align-content: start;
-  padding: 1.15rem 0 1.35rem;
+  grid-template-columns: clamp(104px, 16vw, 196px) 1.9rem minmax(0, 1fr);
+  gap: 0 clamp(1rem, 2.2vw, 2rem);
+  align-items: start;
   border-bottom: 1px solid var(--rule);
-  transition: background .18s;
 }
-.ladder__item.is-on { background: color-mix(in srgb, var(--chalk) 8%, transparent); }
-.on-paper .ladder__item.is-on { background: color-mix(in srgb, var(--gilt) 12%, transparent); }
+.ladder__item--last { border-bottom: 0; }
+
+/* The shaft: two hairlines down the centre of the figure column, drawn on the
+   cell so it stays continuous from one figure to the next. */
+.ladder__fig {
+  align-self: stretch;
+  display: grid; place-items: center;
+  padding-block: clamp(1.1rem, 2vw, 1.6rem);
+  background:
+    linear-gradient(var(--rule), var(--rule)) no-repeat,
+    linear-gradient(var(--rule), var(--rule)) no-repeat;
+  background-size: 1px 100%, 1px 100%;
+  background-position: calc(50% - 4px) 0, calc(50% + 4px) 0;
+}
+/* It starts at the screen and stops in the silicon — not at the frame edge. */
+.ladder__item--first .ladder__fig {
+  background-size: 1px 56%, 1px 56%;
+  background-position: calc(50% - 4px) bottom, calc(50% + 4px) bottom;
+}
+.ladder__item--last .ladder__fig {
+  background-size: 1px 58%, 1px 58%;
+  background-position: calc(50% - 4px) top, calc(50% + 4px) top;
+}
+
+.ladder__art {
+  display: block; width: 100%; height: auto;
+  fill: none; stroke: currentColor; stroke-width: 1;
+  stroke-linecap: round; stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.ladder__art * { vector-effect: non-scaling-stroke; }
+.ladder__art .solid { fill: var(--sheet); }
+.ladder__art .faint { stroke-opacity: .55; }
+
+.ladder__text { padding-block: clamp(1.1rem, 2vw, 1.6rem); }
 
 .ladder__letter {
-  grid-row: 1 / span 3;
-  font-size: 1.05rem; font-weight: 600; font-style: italic;
+  padding-top: clamp(1.1rem, 2vw, 1.6rem);
+  font-size: 1.1rem; font-weight: 600; font-style: italic;
   color: var(--accent);
-  padding-top: .1em;
+}
+
+/* Narrow screens: a figure column and a text column cannot both survive at
+   375px — the entry drops to about twenty characters a line. So the figure
+   takes its own row above the entry at a size worth looking at, and the shaft
+   retires. The descent still reads: A to F, split by the two grade lines. */
+@media (max-width: 640px) {
+  .ladder__item {
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    gap: 0 .9rem;
+    padding-block: 1.5rem;
+  }
+  .ladder__fig {
+    grid-column: 1 / -1;
+    align-self: auto;
+    justify-items: center;
+    padding: 0 0 1.2rem;
+    background: none;
+  }
+  .ladder__art { width: min(100%, 270px); }
+  .ladder__letter { padding-top: .15rem; }
+  .ladder__text { padding-block: 0; }
+
+  /* The label wraps at this width, so the rule moves under it. */
+  .ladder__grade { display: block; }
+  .ladder__grade::after { display: block; width: 100%; margin-top: .55rem; }
 }
 .ladder__name {
   font-family: var(--display);
   font-size: 1.32rem; line-height: 1.2;
   margin: 0 0 .35rem;
 }
+/* An entry's gloss. Italic rather than small caps — the grade lines own that
+   treatment here, and three tiers of letterspaced caps in one plate is noise. */
 .ladder__name span {
   display: block;
-  font-family: var(--body); font-size: .76rem; font-weight: 600;
-  letter-spacing: .2em; text-transform: uppercase;
-  font-feature-settings: 'smcp' 1;
+  font-family: var(--body); font-size: .92rem; font-style: italic;
   color: var(--fg-faint);
-  margin-top: .35rem;
+  margin-top: .3rem;
 }
 .ladder__note { font-size: .98em; color: var(--fg-dim); margin: 0 0 .55rem; }
 .ladder__tags {
@@ -750,8 +780,13 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 @media print {
   body { background: #fff; color: #000; }
   .site-nav, .theme-toggle, .hero__actions, .contact__row { display: none; }
-  .on-azur, .on-deep, .hero { background: #fff; color: #000; }
-  .ladder__figure img { filter: none; }
+  .on-azur, .on-deep, .hero {
+    background: #fff; color: #000;
+    --rule: rgba(0, 0, 0, .32); --fg: #000; --fg-dim: #222; --fg-faint: #444;
+  }
+  /* The figures knock the shaft out with the ground colour, which on paper
+     is white — otherwise every solid body prints as a blue block. */
+  .on-azur .ladder { --sheet: #fff; }
 }
 
 /* ==========================================================================
@@ -761,14 +796,22 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 
 /* ---- Page title page --------------------------------------------------- */
 
+/* Every sub-page opens the way the volume itself does: the title on the azur
+   field, its engraving pinned to the blue as a sheet. The paper — and with it
+   all the reading matter — begins where the cover ends, so the boundary is a
+   change of ground rather than a hairline. */
+.cover { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.cover .page-head { border-bottom: 0; padding-bottom: 0; }
+
+/* The paper opens with a margin, not a full step: the ground has already
+   changed, so it needs less air than one plate needs from the next. */
+.cover + .container > .section:first-child { padding-top: clamp(3rem, 6vw, 5rem); }
+
 .page-head {
   padding-block: clamp(3rem, 7vw, 5.5rem) clamp(1.5rem, 3vw, 2.5rem);
   border-bottom: 1px solid var(--rule);
   max-width: 62ch;
 }
-/* The title page already carries its own air; don't stack a full step on it. */
-.page-head + .section,
-.page-head + .plate { padding-top: clamp(2.5rem, 5vw, 4rem); }
 .page-head h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); margin: 0 0 1rem; }
 .page-head h1 em { font-style: italic; color: var(--accent); }
 .page-head > p:not(.eyebrow) { color: var(--fg-dim); margin: 0; }
@@ -997,12 +1040,18 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
   .page-head__plate figcaption { text-align: left; }
 }
 
-/* A portrait plate on a title page needs a ceiling. */
-.page-head__plate--tall { justify-self: end; max-width: 20rem; }
-/* A tall plate next to a short title block reads better centred than
-   bottom-aligned, which strands the text under a column of empty paper. */
-.page-head--plate:has(.page-head__plate--tall) { align-items: center; }
-@media (max-width: 860px) { .page-head__plate--tall { justify-self: start; } }
+/* A portrait plate on a title page needs a ceiling. Held right by an auto
+   margin, not justify-self: a justified grid item is sized fit-content, and
+   the image's width:100% then resolves against nothing, collapsing the figure
+   to two-thirds of the ceiling it was given. */
+.page-head__plate--tall { width: 100%; max-width: 20rem; margin-inline-start: auto; }
+/* Titles bottom-align with their plate, which keeps a landscape sheet and the
+   headline on one line. A portrait sheet is far taller than any title block,
+   so bottom-aligning it would open a pool of empty blue above the title —
+   where the eye enters. Those start at the top instead, and spend the slack
+   below the text, where the field is meant to be empty. */
+.page-head--plate:has(.page-head__plate--tall) { align-items: start; }
+@media (max-width: 860px) { .page-head__plate--tall { margin-inline-start: 0; } }
 
 /* ---- Inline icons ------------------------------------------------------ */
 /* An <svg> with no intrinsic size inherits max-width:100% from the reset and
@@ -1029,7 +1078,17 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
   mix-blend-mode: screen;
 }
 
-/* Everything else is a sheet: opaque, its paper toned to the page's own laid
-   colour, pinned to the page as a physical object. No blending, so it is
-   immune to whatever stacking context it happens to sit in. */
+/* Everything else is a sheet: opaque, carrying its own baked paper, pinned to
+   the page as a physical object. No blending, so it is immune to whatever
+   stacking context it happens to sit in. */
 .plate-sheet { mix-blend-mode: normal; }
+
+/* A sheet on the azur is pinned: a margin of its own paper all round, and one
+   shadow to lift it off the field. Both places a plate meets the blue — the
+   hero and a sub-page cover — say it the same way. The border must be
+   --plate-paper, not --laid, or it stops matching the scan in dark mode. */
+.hero__sheet img,
+.cover .page-head__plate img {
+  border: 8px solid var(--plate-paper);
+  box-shadow: 0 18px 44px rgba(3, 32, 52, .42);
+}

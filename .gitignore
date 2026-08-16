@@ -2,3 +2,6 @@
 Thumbs.db
 .gstack/
 .claude/
+
+# Local plate research — 18MB of review copies, not site assets
+plate-candidates/
