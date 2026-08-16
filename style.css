@@ -345,7 +345,8 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 .hero__actions a:hover { text-decoration-color: var(--gilt-lift); }
 
 /* The hero sheet: an actual scanned plate, pinned onto the blue. */
-.hero__sheet { position: relative; }
+.hero__sheet { position: relative; max-width: 23rem; margin-inline: auto 0; }
+@media (max-width: 900px) { .hero__sheet { margin-inline: 0; } }
 .hero__sheet img {
   width: 100%;
   border: 8px solid var(--laid);
@@ -1001,6 +1002,9 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 
 /* A portrait plate on a title page needs a ceiling. */
 .page-head__plate--tall { justify-self: end; max-width: 20rem; }
+/* A tall plate next to a short title block reads better centred than
+   bottom-aligned, which strands the text under a column of empty paper. */
+.page-head--plate:has(.page-head__plate--tall) { align-items: center; }
 @media (max-width: 860px) { .page-head__plate--tall { justify-self: start; } }
 
 /* ---- Inline icons ------------------------------------------------------ */
