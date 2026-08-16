@@ -401,12 +401,11 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 }
 @media (min-width: 761px) { .ladder__hint { display: none; } }
 
-/* invert: black ink → white line. The plate becomes a blueprint. */
-.ladder__figure img {
-  width: 100%;
-  filter: invert(1) contrast(1.12) brightness(1.06);
-}
-.on-paper .ladder__figure img { filter: none; }
+/* Ink plates ship as opaque greyscale — no alpha channel, which is roughly
+   a third of the bytes on dense hatching. The paper is knocked out with a
+   blend instead: on azur, invert then screen leaves white line on blue (a
+   blueprint); on laid paper, multiply leaves black line on cream. */
+.ladder__figure img { width: 100%; }
 
 .ladder__mark {
   position: absolute;
@@ -959,8 +958,7 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 /* ---- Misc -------------------------------------------------------------- */
 
 .pcard__plate { margin: 1.5rem 0 0; }
-.pcard__plate img { width: 100%; opacity: .85; }
-.on-azur .pcard__plate img { filter: invert(1); }
+
 
 .case-tile--cover { aspect-ratio: 21/9; }
 
@@ -988,7 +986,6 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
 .page-head__text { max-width: 52ch; }
 .page-head__plate { margin: 0; }
 .page-head__plate img { width: 100%; }
-.on-azur .page-head__plate img { filter: invert(1); }
 .page-head__plate figcaption {
   margin-top: .7rem;
   font-size: .78rem; font-style: italic; letter-spacing: .03em;
@@ -1020,3 +1017,19 @@ body.on-paper .site-nav nav a.is-active { color: var(--ink); border-bottom-color
   vertical-align: -.06em;
 }
 .paper__link { display: inline-flex; align-items: center; gap: .5em; }
+
+/* ---- Plate compositing ------------------------------------------------- */
+
+/* Line art on the azur: invert turns black-on-white into white-on-black,
+   and screen drops the black away, leaving a blueprint. Only used where no
+   ancestor is animated — a transform or a filling opacity animation creates
+   a stacking context and would isolate the blend from the page behind it. */
+.plate-ink {
+  filter: invert(1) contrast(1.1) brightness(1.05);
+  mix-blend-mode: screen;
+}
+
+/* Everything else is a sheet: opaque, its paper toned to the page's own laid
+   colour, pinned to the page as a physical object. No blending, so it is
+   immune to whatever stacking context it happens to sit in. */
+.plate-sheet { mix-blend-mode: normal; }
