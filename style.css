@@ -212,7 +212,6 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
 .eyebrow,
 .plate__num,
 .plate__cap,
-.ladder__letter,
 .role__pt,
 .back-link,
 .site-nav a,
@@ -373,23 +372,17 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
 .on-paper .btn { color: var(--ink); border-color: var(--gilt); }
 .on-paper .btn:hover { background: var(--gilt); color: var(--laid); }
 
-/* ---- Pl. I — the stack in section (signature) --------------------------- */
-/* One instrument cut open: six figures threaded on a single shaft, each one
-   sitting in the same grid row as the entry that explains it. Drawn for this
-   page — a screen, a rack, a net, a microphone, a board, a die — so the
-   drawing is about the stack rather than borrowed and annotated. */
+/* ---- Pl. I — the descent, as a key ------------------------------------- */
+/* No figures. The plate is the Encyclopédie's other half — the explication,
+   set as a two-column key: the depth and its gloss on the left, what was
+   actually built there on the right. One rule between entries, and one grade
+   label where the reading leaves the device. Nothing else. */
 
-.ladder { margin: 0; }
+.ladder { --keyw: clamp(11rem, 20vw, 15rem); }
 
-/* Solid bodies knock the shaft out where they cross it, so their fill has to
-   match the ground this plate is printed on. */
-.on-azur  .ladder { --sheet: var(--azur); }
-.on-paper .ladder { --sheet: var(--laid); }
-
-/* Grade lines. The upper one is a plain rule; the lower one carries the
-   hatch these plates use for a cut through earth. */
+/* The two grades are a real boundary, not decoration: the packet crosses it. */
 .ladder__grade {
-  display: flex; align-items: center; gap: 1rem;
+  display: flex; align-items: baseline; gap: 1rem;
   margin: 0 0 .2rem;
   font-family: var(--body); font-feature-settings: 'smcp' 1;
   font-size: .72rem; font-weight: 600; letter-spacing: .22em;
@@ -400,103 +393,32 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
   content: ''; flex: 1; height: 1px;
   background: var(--rule);
 }
-.ladder__grade--earth { margin-top: clamp(1.75rem, 3vw, 2.75rem); }
-.ladder__grade--earth::after {
-  height: 7px;
-  background:
-    linear-gradient(var(--rule), var(--rule)) top    / 100% 1px no-repeat,
-    repeating-linear-gradient(45deg, var(--rule) 0 1px, transparent 1px 6px)
-      bottom / 100% 5px no-repeat;
-}
+.ladder__grade + .ladder__key { margin-bottom: clamp(2rem, 4vw, 3.25rem); }
+.ladder__key:last-child { margin-bottom: 0; }
 
 .ladder__key { list-style: none; margin: 0; padding: 0; }
 
 .ladder__item {
   display: grid;
-  grid-template-columns: clamp(104px, 16vw, 196px) 1.9rem minmax(0, 1fr);
-  gap: 0 clamp(1rem, 2.2vw, 2rem);
-  align-items: start;
+  grid-template-columns: var(--keyw) minmax(0, 1fr);
+  gap: 0 clamp(1.5rem, 4vw, 3.5rem);
+  align-items: baseline;
+  padding-block: clamp(1.15rem, 2.2vw, 1.75rem);
   border-bottom: 1px solid var(--rule);
 }
 .ladder__item--last { border-bottom: 0; }
 
-/* The shaft: two hairlines down the centre of the figure column, drawn on the
-   cell so it stays continuous from one figure to the next. */
-.ladder__fig {
-  align-self: stretch;
-  display: grid; place-items: center;
-  padding-block: clamp(1.1rem, 2vw, 1.6rem);
-  background:
-    linear-gradient(var(--rule), var(--rule)) no-repeat,
-    linear-gradient(var(--rule), var(--rule)) no-repeat;
-  background-size: 1px 100%, 1px 100%;
-  background-position: calc(50% - 4px) 0, calc(50% + 4px) 0;
-}
-/* It starts at the screen and stops in the silicon — not at the frame edge. */
-.ladder__item--first .ladder__fig {
-  background-size: 1px 56%, 1px 56%;
-  background-position: calc(50% - 4px) bottom, calc(50% + 4px) bottom;
-}
-.ladder__item--last .ladder__fig {
-  background-size: 1px 58%, 1px 58%;
-  background-position: calc(50% - 4px) top, calc(50% + 4px) top;
-}
-
-.ladder__art {
-  display: block; width: 100%; height: auto;
-  fill: none; stroke: currentColor; stroke-width: 1;
-  stroke-linecap: round; stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-}
-.ladder__art * { vector-effect: non-scaling-stroke; }
-.ladder__art .solid { fill: var(--sheet); }
-.ladder__art .faint { stroke-opacity: .55; }
-
-.ladder__text { padding-block: clamp(1.1rem, 2vw, 1.6rem); }
-
-.ladder__letter {
-  padding-top: clamp(1.1rem, 2vw, 1.6rem);
-  font-size: 1.1rem; font-weight: 600; font-style: italic;
-  color: var(--accent);
-}
-
-/* Narrow screens: a figure column and a text column cannot both survive at
-   375px — the entry drops to about twenty characters a line. So the figure
-   takes its own row above the entry at a size worth looking at, and the shaft
-   retires. The descent still reads: A to F, split by the two grade lines. */
-@media (max-width: 640px) {
-  .ladder__item {
-    grid-template-columns: 1.6rem minmax(0, 1fr);
-    gap: 0 .9rem;
-    padding-block: 1.5rem;
-  }
-  .ladder__fig {
-    grid-column: 1 / -1;
-    align-self: auto;
-    justify-items: center;
-    padding: 0 0 1.2rem;
-    background: none;
-  }
-  .ladder__art { width: min(100%, 270px); }
-  .ladder__letter { padding-top: .15rem; }
-  .ladder__text { padding-block: 0; }
-
-  /* The label wraps at this width, so the rule moves under it. */
-  .ladder__grade { display: block; }
-  .ladder__grade::after { display: block; width: 100%; margin-top: .55rem; }
-}
 .ladder__name {
   font-family: var(--display);
   font-size: 1.32rem; line-height: 1.2;
-  margin: 0 0 .35rem;
+  margin: 0;
 }
-/* An entry's gloss. Italic rather than small caps — the grade lines own that
-   treatment here, and three tiers of letterspaced caps in one plate is noise. */
-.ladder__name span {
-  display: block;
-  font-family: var(--body); font-size: .92rem; font-style: italic;
+/* Read the six glosses straight down and you have the whole descent. */
+.ladder__gloss {
+  font-family: var(--body); font-size: .95rem; font-style: italic;
+  line-height: 1.45;
   color: var(--fg-faint);
-  margin-top: .3rem;
+  margin: .3rem 0 0;
 }
 .ladder__note { font-size: .98em; color: var(--fg-dim); margin: 0 0 .55rem; }
 .ladder__tags {
@@ -504,6 +426,17 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
   font-family: var(--mono); font-size: .72rem; line-height: 1.7;
   letter-spacing: -.01em;
   color: var(--fg-faint);
+}
+
+/* Narrow screens: the key column cannot hold its own, so the head sits above
+   the entry and the rule between entries does the separating. */
+@media (max-width: 640px) {
+  .ladder__item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .55rem;
+  }
+  .ladder__grade { display: block; }
+  .ladder__grade::after { display: block; width: 100%; margin-top: .55rem; }
 }
 
 /* ---- Section heads ----------------------------------------------------- */
@@ -632,11 +565,42 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
 
 /* ---- Personal ---------------------------------------------------------- */
 
+/* The one photograph in a volume of engravings. It leads the row as a figure
+   in its own right — narrow column, then the two notes — so the portrait is
+   read as plate 4a and not as decoration hung beside the prose. Explicit
+   columns rather than auto-fit: the photo must never be dealt a text-width
+   column, and the notes must never be squeezed to a portrait's. */
 .personal {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  grid-template-columns: minmax(0, 14rem) minmax(0, 1.35fr) minmax(0, 1fr);
   gap: clamp(1.75rem, 4vw, 3.25rem);
+  align-items: start;
 }
+@media (max-width: 62rem) {
+  /* Portrait keeps its column and runs the height of both notes, now stacked. */
+  .personal { grid-template-columns: minmax(0, 12rem) minmax(0, 1fr); }
+  .portrait { grid-row: span 2; }
+}
+@media (max-width: 40rem) {
+  .personal { grid-template-columns: 1fr; }
+  .portrait { grid-row: auto; max-width: 15rem; }
+}
+
+.portrait { margin: 0; }
+.portrait img {
+  display: block; width: 100%; height: auto;
+  border: 6px solid var(--laid);
+  box-shadow: 0 10px 26px rgba(3, 32, 52, .22);
+  /* Pulled a shade off full colour so a phone snapshot sits with the plates
+     rather than shouting over them. Not sepia — that would be costume. */
+  filter: saturate(.82) contrast(1.02);
+}
+.portrait figcaption {
+  margin-top: .7rem;
+  font-size: .78rem; font-style: italic; letter-spacing: .03em;
+  color: var(--fg-faint);
+}
+.portrait figcaption b { font-style: normal; font-weight: 600; }
 .pcard h3 {
   font-size: 1.45rem; margin: 0 0 .8rem;
   padding-bottom: .55rem; border-bottom: 1px solid var(--rule);
@@ -784,9 +748,6 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em
     background: #fff; color: #000;
     --rule: rgba(0, 0, 0, .32); --fg: #000; --fg-dim: #222; --fg-faint: #444;
   }
-  /* The figures knock the shaft out with the ground colour, which on paper
-     is white — otherwise every solid body prints as a blue block. */
-  .on-azur .ladder { --sheet: #fff; }
 }
 
 /* ==========================================================================
