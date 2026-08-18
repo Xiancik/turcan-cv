@@ -139,7 +139,11 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .site-nav__brand { white-space: nowrap; }
   /* row 1: brand + toggle, row 2: the full nav */
   .site-nav .theme-toggle { order: 2; margin-left: auto; }
-  .site-nav nav { order: 3; width: 100%; margin-left: 0; gap: 1.1rem 1.25rem; }
+  .site-nav nav { order: 3; width: 100%; margin-left: 0; gap: .25rem 1.1rem; }
+  /* Larger tap targets: 25px links -> 44px min via vertical padding + negative
+     row margin so the visible gutter stays the same. */
+  .site-nav nav a { padding: .6rem 0; }
+  .site-nav nav { margin-block: -.6rem; }
 }
 
 /* ---- Page head (subpages) ---- */
