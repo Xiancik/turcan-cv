@@ -154,8 +154,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 
 /* ---- Hero (homepage) ---- */
 .hero { padding: 4.5rem 0 3.25rem; }
-.hero__grid { display: grid; grid-template-columns: 132px 1fr; gap: 2rem; align-items: start; }
+/* Text column first so the headline sits on the same left gutter as every
+   other h2, eyebrow and card on the page. The portrait balances at top
+   right instead of pushing the hero 166px off the grid. */
+.hero__grid { display: grid; grid-template-columns: 1fr 132px; gap: 2rem; align-items: start; }
 .hero__photo {
+  order: 2;
   width: 132px; height: 132px; border-radius: 20px; object-fit: cover;
   border: 1px solid var(--border-str);
   box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 14px 30px -18px rgba(45,86,64,.5);
@@ -623,7 +627,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 @media (max-width: 720px) {
   .hero { padding: 3rem 0 2.5rem; }
   .hero__grid { grid-template-columns: 1fr; gap: 1.35rem; }
-  .hero__photo { width: 96px; height: 96px; border-radius: 16px; }
+  .hero__photo { order: 0; width: 96px; height: 96px; border-radius: 16px; }
   .project-grid, .personal, .band__items { grid-template-columns: 1fr; }
   .project-card--capstone .project-card__body { grid-template-columns: 1fr; gap: 1.1rem; }
   .role { grid-template-columns: 46px 1fr; gap: 1rem; padding: 1.25rem; }
