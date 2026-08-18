@@ -127,17 +127,19 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   backdrop-filter: saturate(1.4) blur(8px);
   border-bottom: 1px solid var(--border);
 }
-.site-nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .85rem; }
+.site-nav__inner { display: flex; align-items: center; gap: 1.25rem; padding-block: .85rem; }
 .site-nav__brand { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ink); letter-spacing: -.01em; }
 .site-nav__brand:hover { text-decoration: none; color: var(--accent-str); }
-.site-nav nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.site-nav nav { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-left: auto; }
 .site-nav nav a { color: var(--muted); font-size: .92rem; transition: color .15s var(--ease); }
 .site-nav nav a:hover { color: var(--ink); text-decoration: none; }
 .site-nav nav a.is-active { color: var(--accent-str); font-weight: 600; }
 @media (max-width: 520px) {
   .site-nav__inner { flex-wrap: wrap; gap: .35rem 1.1rem; padding-block: .7rem; }
   .site-nav__brand { white-space: nowrap; }
-  .site-nav nav { width: 100%; gap: 1.1rem 1.25rem; }
+  /* row 1: brand + toggle, row 2: the full nav */
+  .theme-toggle { order: 2; margin-left: auto; }
+  .site-nav nav { order: 3; width: 100%; margin-left: 0; gap: 1.1rem 1.25rem; }
 }
 
 /* ---- Page head (subpages) ---- */
@@ -575,15 +577,16 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .footer p { margin: 0; }
 
 /* ---- Theme toggle ---- */
+/* Lives in the nav, not floating over the page: as a fixed bottom-right
+   bubble it read as a chat widget and sat on top of body copy at 375px.
+   44px keeps the touch target while the transparent fill keeps it quiet. */
 .theme-toggle {
-  position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 15;
-  width: 44px; height: 44px; border-radius: 50%;
-  border: 1px solid var(--border-str); background: var(--surface); color: var(--ink);
-  cursor: pointer; font-size: 1.1rem; line-height: 1; display: grid; place-items: center;
-  box-shadow: 0 10px 24px -14px rgba(0,0,0,.4);
-  transition: transform .15s var(--ease), border-color .15s var(--ease);
+  width: 44px; height: 44px; margin: -10px -8px -10px 0; border-radius: 50%;
+  border: 0; background: none; color: var(--muted);
+  cursor: pointer; font-size: 1.05rem; line-height: 1; display: grid; place-items: center;
+  transition: color .15s var(--ease), transform .15s var(--ease);
 }
-.theme-toggle:hover { transform: translateY(-2px) rotate(-8deg); border-color: var(--accent); }
+.theme-toggle:hover { color: var(--ink); transform: rotate(-12deg); }
 
 /* ---- Motion: one gentle load sequence ---- */
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
