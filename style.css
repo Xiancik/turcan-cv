@@ -138,7 +138,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .site-nav__inner { flex-wrap: wrap; gap: .35rem 1.1rem; padding-block: .7rem; }
   .site-nav__brand { white-space: nowrap; }
   /* row 1: brand + toggle, row 2: the full nav */
-  .theme-toggle { order: 2; margin-left: auto; }
+  .site-nav .theme-toggle { order: 2; margin-left: auto; }
   .site-nav nav { order: 3; width: 100%; margin-left: 0; gap: 1.1rem 1.25rem; }
 }
 
