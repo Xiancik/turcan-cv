@@ -164,7 +164,6 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   border: 1px solid var(--border-str);
   box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 14px 30px -18px rgba(45,86,64,.5);
 }
-.hero__hello { color: var(--muted); font-size: 1.02rem; margin: 0 0 .5rem; }
 .hero__headline { font-family: var(--display); font-weight: 700; letter-spacing: -.02em; line-height: 1.12;
   font-size: clamp(2rem, 4.6vw, 3rem); margin: 0 0 1.15rem; max-width: 18ch; }
 .hero__headline em { font-style: normal; color: var(--accent-str); }
