@@ -37,8 +37,8 @@
   --paper:      #f3efe6;  /* warm oat, the page */
   --surface:    #fbf9f4;  /* raised cards, a shade lighter */
   --ink:        #232019;  /* warm charcoal, brown-black */
-  --muted:      #6c6455;  /* warm taupe for secondary text */
-  --faint:      #8f887a;  /* tertiary / captions */
+  --muted:      #534d41;  /* warm taupe, secondary. WCAG AA: 7.3:1 on --paper */
+  --faint:      #6b665c;  /* tertiary / captions. WCAG AA: 5.0:1 on --paper, 4.6:1 on --accent-soft */
   --accent:     #3d6b4f;  /* kind moss green */
   --accent-str: #2e5640;  /* darker green, hover / emphasis */
   --accent-soft:#e3ead9;  /* pale sage, chips + fills */
