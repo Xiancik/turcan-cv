@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A generals.io FFA Bot · Cristian Turcan</title>
-  <meta name="description" content="A from-scratch Python environment for the RTS game generals.io: a fog-of-war simulator, a heuristic bot, an Elo evaluation ladder, and a behavior-cloned neural policy.">
+  <meta name="description" content="A from-scratch Python environment for the RTS game generals.io — a fog-of-war simulator, a heuristic bot, an Elo evaluation ladder, and a behavior-cloned neural policy.">
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
-  <link rel="preload" as="font" type="font/woff2" href="fonts/bodoni-moda-latin-400-normal.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="fonts/eb-garamond-latin-400-normal.woff2" crossorigin>
   <link rel="stylesheet" href="../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body class="on-paper">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-nav">
@@ -36,7 +34,7 @@
           <span class="badge">Systems &amp; compute</span>
         </div>
         <h1 class="case__title">A generals.io FFA Bot</h1>
-        <p class="case__summary">A from-scratch environment for building and scoring bots in generals.io free-for-all, where 2–8 armies grow on a fog-of-war grid and the last general standing wins.</p>
+        <p class="case__summary">A from-scratch environment for building and scoring bots in generals.io free-for-all — where 2–8 armies grow on a fog-of-war grid and the last general standing wins.</p>
 
         <dl class="case__meta">
           <div><dt>Context</dt><dd>Self-directed</dd></div>
@@ -47,13 +45,13 @@
         <img class="case__cover" src="../img/projects/generals.png" alt="A generals.io free-for-all board late in a game: four armies in teal, red, blue and green have carved up a grid of tiles, with cities, mountains and generals marked">
 
         <h2>Overview</h2>
-        <p>generals.io FFA is a real-time strategy game: each player starts with one general on a grid, grows an army, and spreads across land and cities, around impassable mountains, under fog of war. Capture a rival’s general and you absorb <em>everything</em> they own, the classic snowball. I wanted to build a bot for it, but the honest first move wasn’t the bot; it was the world it plays in. The design spine is that a bot is a pure <code>Observation → Move</code> function, so the same bot code can run against my own simulator today and, through the same interface, a live server later. Get the environment right and the brain becomes swappable.</p>
+        <p>generals.io FFA is a real-time strategy game: each player starts with one general on a grid, grows an army, and spreads across land and cities, around impassable mountains, under fog of war. Capture a rival’s general and you absorb <em>everything</em> they own — the classic snowball. I wanted to build a bot for it, but the honest first move wasn’t the bot; it was the world it plays in. The design spine is that a bot is a pure <code>Observation → Move</code> function, so the same bot code can run against my own simulator today and, through the same interface, a live server later. Get the environment right and the brain becomes swappable.</p>
 
         <h2>What I built</h2>
-        <p>It starts with the <strong>simulator</strong>: a numpy engine matched to generals.io’s rules for 2–8 players: army growth (generals and cities tick up every turn; on every 25th turn every owned tile grows), movement and capture, neutral cities, and per-player fog of war that reveals only a 3×3 halo around your own tiles. Map generation places generals with guaranteed mutual reachability, and the whole game is deterministic from a seed.</p>
-        <p>On top sits a <strong>heuristic commander</strong>, a priority ladder: defend the general first, then grab adjacent land, take an affordable neutral city, otherwise gather the largest army and march it toward the nearest enemy, remembering where enemy generals were last seen even after they slip back into fog. Pathfinding is plain breadth-first search over passable tiles.</p>
-        <p>To know whether a bot is any good, I built an <strong>evaluation harness</strong>: it plays seeded games, ranks finishers by survival, then land, then army, and converts those placements into pairwise Elo updates on a bot ladder, plus a gauntlet that only certifies a new version as “better” when it clears both a win-rate and an Elo-gain bar.</p>
-        <p>Then the <strong>learning layer</strong>: a behavior-cloning pipeline that trains a network to imitate the heuristic. Each position is encoded ego-centrically into 15 feature planes, moves into an eight-directions-per-tile action space with a legality mask, and a fully-convolutional policy-value network (size-agnostic, so it plays any board) learns the heuristic’s moves against a placement-based value target. The trained net drops into the same <code>Observation → Move</code> slot as every other bot.</p>
+        <p>It starts with the <strong>simulator</strong>: a numpy engine matched to generals.io’s rules for 2–8 players — army growth (generals and cities tick up every turn; on every 25th turn every owned tile grows), movement and capture, neutral cities, and per-player fog of war that reveals only a 3×3 halo around your own tiles. Map generation places generals with guaranteed mutual reachability, and the whole game is deterministic from a seed.</p>
+        <p>On top sits a <strong>heuristic commander</strong> — a priority ladder: defend the general first, then grab adjacent land, take an affordable neutral city, otherwise gather the largest army and march it toward the nearest enemy, remembering where enemy generals were last seen even after they slip back into fog. Pathfinding is plain breadth-first search over passable tiles.</p>
+        <p>To know whether a bot is any good, I built an <strong>evaluation harness</strong>: it plays seeded games, ranks finishers by survival, then land, then army, and converts those placements into pairwise Elo updates on a bot ladder — plus a gauntlet that only certifies a new version as “better” when it clears both a win-rate and an Elo-gain bar.</p>
+        <p>Then the <strong>learning layer</strong>: a behavior-cloning pipeline that trains a network to imitate the heuristic. Each position is encoded ego-centrically into 15 feature planes, moves into an eight-directions-per-tile action space with a legality mask, and a fully-convolutional policy-value network — size-agnostic, so it plays any board — learns the heuristic’s moves against a placement-based value target. The trained net drops into the same <code>Observation → Move</code> slot as every other bot.</p>
 
         <h2>Highlights</h2>
         <ul class="entry__points">
@@ -61,14 +59,14 @@
           <li>A heuristic commander with a defend / expand / gather priority ladder and enemy-general memory that survives fog.</li>
           <li>An Elo ladder and regression gauntlet that fold whole-game placements into one comparable rating.</li>
           <li>A behavior-cloning pipeline: 15-plane ego-centric encoder, masked eight-direction action space, and a fully-convolutional policy-value net that imitates the heuristic.</li>
-          <li>Built test-first: 100 tests across 27 files cover the engine, the bots, evaluation, and the RL codecs.</li>
+          <li>Built test-first — 100 tests across 27 files cover the engine, the bots, evaluation, and the RL codecs.</li>
           <li>Next, by design: a live-server client on the same <code>Observation</code> interface, and self-play PPO to push past the heuristic it currently imitates.</li>
         </ul>
 
         <h2>Gallery</h2>
         <div class="gallery">
-          <figure><img src="../img/projects/generals-fog.png" alt="The same board rendered from one player's perspective: most of the grid is dark fog, with only the player's own red territory and a thin halo of visible tiles around it, including a just-spotted enemy general"><figcaption>Fog of war: the same game from one seat. The bot sees only a halo around its own tiles; here it has just spotted an enemy general (★).</figcaption></figure>
-          <figure><img src="../img/projects/generals-expansion.png" alt="An earlier turn of the same game: four small, separate colored territories expanding outward from their generals before their borders meet"><figcaption>Turn 120: four heuristic commanders expanding out from their generals, before the borders collide.</figcaption></figure>
+          <figure><img src="../img/projects/generals-fog.png" alt="The same board rendered from one player's perspective: most of the grid is dark fog, with only the player's own red territory and a thin halo of visible tiles around it, including a just-spotted enemy general"><figcaption>Fog of war — the same game from one seat. The bot sees only a halo around its own tiles; here it has just spotted an enemy general (★).</figcaption></figure>
+          <figure><img src="../img/projects/generals-expansion.png" alt="An earlier turn of the same game: four small, separate colored territories expanding outward from their generals before their borders meet"><figcaption>Turn 120 — four heuristic commanders expanding out from their generals, before the borders collide.</figcaption></figure>
         </div>
       </article>
 

@@ -14,15 +14,13 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://turcan.nl/img/og.png">
-  <meta name="theme-color" content="#08659c" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#073c5e" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#232019" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-  <link rel="preload" as="font" type="font/woff2" href="fonts/bodoni-moda-latin-400-normal.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="fonts/eb-garamond-latin-400-normal.woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body class="on-paper">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-nav">
@@ -38,23 +36,13 @@
   </header>
 
   <main id="main">
-    <div class="cover on-azur">
-      <div class="container">
-        <div class="page-head page-head--plate reveal-seq">
-          <div class="page-head__text">
-            <p class="eyebrow">Built for the love of it</p>
-            <h1>Projects</h1>
-            <p>Self-directed and competition work, laid out by how close to the metal it runs, from a browser product down to hand-written machine code.</p>
-          </div>
-          <figure class="page-head__plate page-head__plate--tall">
-            <img class="plate-sheet" src="img/plates/espatards.webp" width="760" height="1216" loading="lazy" alt="An engraved plate from a slitting mill: the cutting rollers drawn as loose parts above, and the frame that holds them assembled below.">
-            <figcaption>Pl. VII, <i>Forges, fenderie</i>. Encyclopédie, 1765.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
+      <div class="page-head reveal-seq">
+        <p class="eyebrow">Built for the love of it</p>
+        <h1>Projects</h1>
+        <p>Self-directed and competition work, laid out by how close to the metal it runs — from a browser product down to hand-written machine code.</p>
+      </div>
+
       <section class="section" aria-label="Projects by depth">
         <div class="bands reveal-seq">
 
@@ -94,8 +82,8 @@
                 <div class="project-card__body">
                   <div class="project-card__domain">Automation · services</div>
                   <div class="project-card__name">Telegram &amp; Automation Bots</div>
-                  <p class="project-card__desc">Small real-world annoyances, automated away: from change alerts to grabbing a gym slot the instant it opens.</p>
-                  <p class="project-card__more"><b>3 bots</b>: change-tracking · SSO booking · event aggregation</p>
+                  <p class="project-card__desc">Small real-world annoyances, automated away — from change alerts to grabbing a gym slot the instant it opens.</p>
+                  <p class="project-card__more"><b>3 bots</b> — change-tracking · SSO booking · event aggregation</p>
                   <p class="project-card__spec"><span>Python</span><span>aiogram + Celery</span><span>Playwright</span></p>
                   <div class="tags"><span class="tag">Python</span><span class="tag">aiogram</span><span class="tag">Celery</span><span class="tag">Playwright</span></div>
                 </div>
@@ -118,7 +106,7 @@
                   <div class="project-card__domain">Game AI · simulation</div>
                   <div class="project-card__name">A generals.io FFA Bot</div>
                   <p class="project-card__desc">A from-scratch lab for the real-time strategy game generals.io: a numpy battle simulator, a heuristic commander that plays through fog of war, and a neural policy trained to imitate it.</p>
-                  <p class="project-card__more"><b>Four parts</b>: simulator · heuristic bot · Elo ladder · neural policy</p>
+                  <p class="project-card__more"><b>Four parts</b> — simulator · heuristic bot · Elo ladder · neural policy</p>
                   <p class="project-card__spec"><span>Python + PyTorch</span><span>self-directed</span><span><b>27</b> test files · <b>100</b> tests</span></p>
                   <div class="tags"><span class="tag">Python</span><span class="tag">numpy</span><span class="tag">PyTorch</span><span class="tag">RL</span></div>
                 </div>
@@ -139,7 +127,7 @@
                 <img class="project-card__thumb" src="img/projects/prosperity.png" alt="Trading analytics dashboard with a rising PnL curve">
                 <div class="project-card__body">
                   <div class="project-card__domain">Quantitative trading</div>
-                  <div class="project-card__name">IMC Prosperity 4: Algorithmic Trading</div>
+                  <div class="project-card__name">IMC Prosperity 4 — Algorithmic Trading</div>
                   <p class="project-card__desc">Options market-making on Black–Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.</p>
                   <p class="project-card__spec"><span>Python</span><span>IMC Prosperity 4</span><span>NumPy · SciPy</span></p>
                   <div class="tags"><span class="tag">Black–Scholes</span><span class="tag">IV smile</span><span class="tag">backtesting</span></div>
@@ -153,7 +141,7 @@
             <div class="band__head">
               <span class="band__gauge" aria-hidden="true"><i></i><i></i><i></i></span>
               <h2 class="band__label">Bare metal</h2>
-              <p class="band__hint">no framework, no runtime, emitting machine code by hand</p>
+              <p class="band__hint">no framework, no runtime — emitting machine code by hand</p>
             </div>
             <div class="band__items band__items--single">
 
@@ -162,14 +150,14 @@
                   <div class="project-card__capbody">
                     <div class="project-card__domain">Assembly · compilers</div>
                     <div class="project-card__name">A JIT Compiler for Brainfuck</div>
-                    <p class="project-card__desc">Rather than interpret, it emits native x86-64 into memory at run time and jumps into it: a hands-on tour of code generation all the way down to the instruction bytes.</p>
+                    <p class="project-card__desc">Rather than interpret, it emits native x86-64 into memory at run time and jumps into it — a hands-on tour of code generation all the way down to the instruction bytes.</p>
                     <p class="project-card__spec"><span>x86-64 assembly</span><span>self-directed</span><span>source → native</span></p>
                     <div class="tags"><span class="tag">Assembly</span><span class="tag">JIT</span><span class="tag">Codegen</span></div>
                   </div>
 <pre class="project-card__code" aria-hidden="true"><span class="cm">; brainfuck → x86-64, emitted at run time</span>
 +   →  <b>add</b> byte [rbx], 1
 &gt;   →  <b>inc</b> rbx
-[ ] →  <b>cmp</b> / <b>jz</b>: back-patched jumps</pre>
+[ ] →  <b>cmp</b> / <b>jz</b> — back-patched jumps</pre>
                 </div>
               </a>
 
