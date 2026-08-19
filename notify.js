@@ -2,20 +2,23 @@
   // Set this after deploying the worker (see notify/README.md).
   var ENDPOINT = "https://turcan-cv-notify.xiancik.workers.dev/notify";
 
-  // Dedupe window (ms) so a refresh burst doesn't spam Telegram.
-  var DEDUPE_MS = 60 * 1000;
+  // Dedupe window (ms) — one ping per visitor per 24h, across pages, tabs, and sessions.
+  var DEDUPE_MS = 24 * 60 * 60 * 1000;
 
   try {
     if (!ENDPOINT || ENDPOINT.indexOf("YOUR-SUBDOMAIN") !== -1) return;
     if (location.hostname === "localhost" || location.hostname === "127.0.0.1") return;
     if (navigator.webdriver) return;
+    // Honor Do Not Track and Global Privacy Control.
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1" || navigator.msDoNotTrack === "1") return;
+    if (navigator.globalPrivacyControl === true) return;
 
-    var key = "notify:" + location.pathname;
+    var key = "notify:sent";
     var now = Date.now();
     var last = 0;
-    try { last = parseInt(sessionStorage.getItem(key) || "0", 10) || 0; } catch (e) {}
+    try { last = parseInt(localStorage.getItem(key) || "0", 10) || 0; } catch (e) {}
     if (now - last < DEDUPE_MS) return;
-    try { sessionStorage.setItem(key, String(now)); } catch (e) {}
+    try { localStorage.setItem(key, String(now)); } catch (e) {}
 
     var payload = {
       path: location.pathname + location.search,
