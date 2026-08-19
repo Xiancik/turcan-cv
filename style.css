@@ -560,6 +560,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .footer { border-top: 1px solid var(--border); padding: 2rem 0; color: var(--faint); font-size: .9rem; margin-top: 1rem; }
 .footer a { color: var(--muted); }
 .footer p { margin: 0; }
+.footer__note { margin-top: .5rem !important; font-size: .8rem; color: var(--faint); }
 
 /* ---- Theme toggle ---- */
 /* Lives in the nav, not floating over the page: as a fixed bottom-right
