@@ -177,27 +177,6 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.4rem; }
 .hero__actions a:not(.btn) { color: var(--ink); border-bottom: 1px solid var(--border-str); padding-bottom: 1px; }
 .hero__actions a:not(.btn):hover { color: var(--accent-str); border-color: var(--accent); text-decoration: none; }
-/* The range ladder now lives inside the hero as its proof; this eyebrow is the
-   quiet handoff from "who I am" to "here's the range that means". */
-.hero__stack-eyebrow { margin: 2.7rem 0 1.4rem; }
-
-/* ---- Signature: the range ladder ---- */
-.stack { position: relative; margin-left: .35rem; }
-.stack::before {
-  content: ""; position: absolute; left: 7px; top: .6rem; bottom: .6rem; width: 2px;
-  background: linear-gradient(var(--accent), var(--border-str)); border-radius: 2px;
-}
-.layer { position: relative; padding: 0 0 1.9rem 2.5rem; }
-.layer:last-child { padding-bottom: 0; }
-.layer__node {
-  position: absolute; left: 0; top: .35rem; width: 16px; height: 16px; border-radius: 50%;
-  background: var(--surface); border: 3px solid var(--accent); box-shadow: 0 0 0 4px var(--paper);
-}
-.layer__name { font-family: var(--display); font-weight: 600; font-size: 1.16rem; color: var(--ink); margin: 0; line-height: 1.3; }
-.layer__name span { color: var(--faint); font-family: var(--body); font-weight: 400; font-size: .82rem; margin-left: .55rem; letter-spacing: .02em; }
-.layer__note { color: var(--muted); margin: .2rem 0 .55rem; max-width: 52ch; }
-.layer__tags { color: var(--faint); font-size: .9rem; margin: 0; }
-
 /* ---- Roles (Selected Work + Experience) ---- */
 .roles { display: grid; gap: 1rem; }
 .role {
@@ -596,7 +575,6 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 
 /* ---- Motion: one gentle load sequence ---- */
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-@keyframes pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
 .reveal { opacity: 0; animation: rise .7s var(--ease) forwards; }
 .d1 { animation-delay: .06s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .22s; } .d4 { animation-delay: .3s; } .d5 { animation-delay: .4s; }
 
@@ -611,24 +589,9 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .reveal-seq > *:nth-child(6) { animation-delay: .35s; }
 .reveal-seq > *:nth-child(7) { animation-delay: .41s; }
 .reveal-seq > *:nth-child(n+8) { animation-delay: .47s; }
-/* The spine draws itself top-to-bottom, and each node pops as the line reaches
-   it — one orchestrated descent from the browser down to the bare metal, timed
-   to follow the intro (d1–d5) so the hero resolves as a single moment. */
-@keyframes drawline { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-@media (prefers-reduced-motion: no-preference) {
-  .stack::before { transform-origin: top center; animation: drawline .78s var(--ease) .42s both; }
-}
-.stack .layer__node { animation: pop .5s var(--ease) both; }
-.stack .layer:nth-child(1) .layer__node { animation-delay: .48s; }
-.stack .layer:nth-child(2) .layer__node { animation-delay: .57s; }
-.stack .layer:nth-child(3) .layer__node { animation-delay: .66s; }
-.stack .layer:nth-child(4) .layer__node { animation-delay: .75s; }
-.stack .layer:nth-child(5) .layer__node { animation-delay: .84s; }
-.stack .layer:nth-child(6) .layer__node { animation-delay: .93s; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal, .reveal-seq > *, .stack .layer__node { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .reveal, .reveal-seq > * { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 
 /* ---- Responsive ---- */
@@ -663,7 +626,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .skip-link, .theme-toggle { display:none !important; }
   .site-nav { position:static; backdrop-filter:none; background:#fff; }
   /* animations may not run when printing — keep revealed content visible */
-  .reveal, .reveal-seq > *, .stack .layer__node { opacity:1 !important; transform:none !important; animation:none !important; }
+  .reveal, .reveal-seq > * { opacity:1 !important; transform:none !important; animation:none !important; }
   /* dark screenshots waste ink and print as heavy black blocks */
   .project-card__thumb, .case__cover, .case__figure img, .case-tile { display:none; }
   a { text-decoration:none; color:var(--ink); }
