@@ -4,3 +4,5 @@ Thumbs.db
 .claude/
 pl1-candidates/
 plate-candidates/
+notify/.wrangler/
+notify/node_modules/
