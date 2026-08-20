@@ -4,7 +4,7 @@
 
 hero:
   title: 'A generals.io FFA Bot'
-  summary: 'A from-scratch environment for building and scoring bots in generals.io free-for-all, where 2–8 armies grow on a fog-of-war grid and the last general standing wins.'
+  summary: 'A from-scratch environment for building and scoring bots in generals.io free-for-all, where 2-8 armies grow on a fog-of-war grid and the last general standing wins.'
 
 overview:
   title: 'Overview'
@@ -13,14 +13,14 @@ overview:
     general on a grid, grows an army, and spreads across land and cities,
     around impassable mountains, under fog of war. Capture a rival’s general
     and you absorb <em>everything</em> they own. I
-    wanted to build a bot for it, but the honest first move wasn’t the bot;
-    it was the world it plays in.
+    wanted to build a bot for it, but the honest first move wasn’t the bot.
+    It was the world it plays in.
 
 built:
   title: 'What I built'
   simulator: >-
     It starts with the simulator: an engine matched to
-    generals.io’s rules for 2–8 players: army growth (generals and cities
+    generals.io’s rules for 2-8 players: army growth (generals and cities
     tick up every turn, on every 25th turn every owned tile grows), movement
     and capture, neutral cities, and per-player fog of war that reveals only
     a 1 tile around your own tiles. Map generation places generals with
@@ -44,7 +44,7 @@ built:
 highlights:
   title: 'Highlights'
   items:
-    simulator: 'A deterministic, fog-of-war FFA simulator for 2–8 players, matched to generals.io’s rules.'
+    simulator: 'A deterministic, fog-of-war FFA simulator for 2-8 players, matched to generals.io’s rules.'
     heuristic: 'A heuristic commander with a defend / expand / gather priority ladder and enemy-general memory that survives fog.'
     elo: 'An Elo ladder and regression gauntlet that fold whole-game placements into one comparable rating.'
     cloning: 'A behavior-cloning pipeline: 15-plane ego-centric encoder, masked eight-direction action space, and a fully-convolutional policy-value net that imitates the heuristic.'

@@ -51,7 +51,7 @@ systems:
   prosperity:
     domain: 'Quantitative trading'
     name: 'IMC Prosperity 4: Algorithmic Trading'
-    desc: 'Options market-making on Black–Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.'
+    desc: 'Options market-making on Black-Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.'
     spec: '<span>Python</span><span>IMC Prosperity 4</span><span>NumPy · SciPy</span>'
 
 metal:

@@ -15,19 +15,19 @@ work:
   roles:
     offroad:
       title: 'Software Engineer<span class="role__pt">Part-time</span>'
-      org: '<a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft · Jan 2026 – Present'
+      org: '<a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft · Jan 2026 - Present'
       summary: 'Turning Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.'
     insyght:
       title: 'Embedded Software Engineer<span class="role__pt">Part-time</span>'
-      org: '<a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft · Aug 2025 – Present'
+      org: '<a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft · Aug 2025 - Present'
       summary: 'Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality monitor.'
     altix:
       title: 'Machine Learning Engineer Intern'
-      org: '<a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam · Apr 2025 – Jun 2025'
+      org: '<a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam · Apr 2025 - Jun 2025'
       summary: 'An AI document-ingestion pipeline that took a lot of the grind out of analyst screening.'
     huawei:
       title: 'Machine Learning Engineer Intern'
-      org: '<a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam · Dec 2024 – May 2025'
+      org: '<a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam · Dec 2024 - May 2025'
       summary: 'Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.'
 
 things:
@@ -42,7 +42,7 @@ things:
     prosperity:
       domain: 'Quantitative trading'
       name: 'IMC Prosperity 4: Algorithmic Trading'
-      desc: 'Options market-making with Black–Scholes pricing, an IV-smile fit, and a time-series test library.'
+      desc: 'Options market-making with Black-Scholes pricing, an IV-smile fit, and a time-series test library.'
     automation:
       domain: 'Automation · services'
       name: 'Telegram &amp; Automation Bots'
