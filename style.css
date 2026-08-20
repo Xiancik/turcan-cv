@@ -202,6 +202,70 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .role__points li { margin: .3rem 0; }
 .role__points li::marker { color: var(--accent); }
 
+/* Single-project name line: used on roles that shipped one discrete
+   named thing (e.g. Altix). Positioned between the role summary and the
+   role-level metrics so the name reads as part of the role's identity. */
+.role__project {
+  margin: 0 0 .55rem; font-size: .84rem; color: var(--muted);
+}
+.role__project-label {
+  font-family: var(--body); font-weight: 600; font-size: .68rem;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--accent-str);
+  margin-right: .5rem;
+}
+.role__project b { color: var(--ink); font-weight: 600; }
+
+/* Project sub-cards: inside a role, each discrete shipped project is one
+   sub-card. They cluster under a soft vertical rule that echoes the
+   career spine — same idea, one octave quieter. Title + one-sentence
+   summary + stack chips; metric hangs on the right when there's a real
+   number to show (hidden via :empty when there isn't). */
+.role__projects {
+  margin: 1rem 0 0;
+  padding-left: 1.15rem;
+  border-left: 1px solid var(--border);
+  display: grid; gap: .9rem;
+}
+.role__projects-label {
+  font-family: var(--body); font-weight: 700; font-size: .68rem;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--faint);
+  margin: 0 0 -.1rem;
+}
+.subproject {
+  display: grid; grid-template-columns: 1fr auto; column-gap: 1rem; row-gap: .35rem;
+  align-items: baseline;
+}
+.subproject__title {
+  font-family: var(--display); font-weight: 600; font-size: .97rem;
+  color: var(--ink); margin: 0; line-height: 1.3;
+  grid-column: 1;
+}
+.subproject__summary {
+  grid-column: 1 / -1;
+  margin: 0; color: var(--muted); font-size: .93rem; line-height: 1.55;
+}
+.subproject__stack {
+  grid-column: 1 / -1;
+  list-style: none; margin: .05rem 0 0; padding: 0;
+  display: flex; flex-wrap: wrap; gap: .3rem;
+}
+.subproject__stack li {
+  font-family: var(--body); font-size: .72rem; font-weight: 500;
+  color: var(--faint); background: transparent;
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: .08rem .55rem; letter-spacing: .01em;
+  font-variant-numeric: tabular-nums;
+}
+.subproject__metric {
+  grid-column: 2; grid-row: 1;
+  margin: 0; align-self: baseline; white-space: nowrap;
+  font-family: var(--body); font-weight: 600; font-size: .76rem;
+  color: var(--accent-str); background: var(--accent-soft);
+  padding: .12rem .58rem; border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+}
+.subproject__metric:empty { display: none; }
+
 /* Stack reach: a compact vertical depth gauge down the right of each role,
    reading App (surface) → Metal, so it rhymes with the home-page range ladder
    instead of a flat chip row. Lit layers carry the accent and a soft halo; the
@@ -657,6 +721,11 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .career .role { grid-template-columns: 46px 1fr; }
   .career .role::before { top: 2.55rem; }
   .career .role > .reach { grid-column: 1 / -1; margin-top: .5rem; }
+  /* On narrow screens, drop the metric onto its own row under the title
+     so long project titles never crowd the metric pill. */
+  .career .role .role__projects { padding-left: .85rem; grid-column: 1 / -1; }
+  .subproject { grid-template-columns: 1fr; row-gap: .3rem; }
+  .subproject__metric { grid-column: 1; grid-row: auto; justify-self: start; }
   .timeline { padding-left: 1.9rem; }
   .tl-year::before, .tl-event::before { left: calc(-1.9rem + 7px); }
   .tl-photo { width: 132px; }
@@ -677,7 +746,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   /* dark screenshots waste ink and print as heavy black blocks */
   .project-card__thumb, .case__cover, .case__figure img, .case-tile { display:none; }
   a { text-decoration:none; color:var(--ink); }
-  .role, .tl-event, .project-card, .paper, .pcard, .case__section {
+  .role, .tl-event, .project-card, .paper, .pcard, .case__section, .subproject {
     break-inside:avoid; box-shadow:none !important;
   }
   .tl-photo--empty { display:none; }

@@ -55,7 +55,7 @@
         <div class="section__head">
           <p class="eyebrow"><!-- copy:experience.work.eyebrow -->Work<!-- /copy --></p>
           <h2 class="section__title" id="work-h"><!-- copy:experience.work.title -->Roles I’ve shipped in<!-- /copy --></h2>
-          <p class="section__lead"><!-- copy:experience.work.lead -->Real, paid engineering, newest at the top. Two of these run in parallel right now. The others trace back through 2024.<!-- /copy --></p>
+          <p class="section__lead"><!-- copy:experience.work.lead -->Real, paid engineering, newest at the top. Two of these run in parallel right now. The others trace back through 2024. Each role expands into the discrete projects that shipped inside it.<!-- /copy --></p>
         </div>
 
         <div class="career spotlight">
@@ -77,12 +77,51 @@
                 <li class="metric">.NET 10 + MAUI</li>
                 <li class="metric">JABCode C→C#</li>
               </ul>
-              <ul class="role__points">
-                <li><!-- copy:experience.work.roles.offroad.points.1 -->Built a .NET 10 Android binding of Garmin’s native Health SDK (Standard 4.7.0) and a MAUI app pairing wearables and streaming 7 vital-sign types (heart rate, HRV, SpO₂, respiration, stress, steps, accelerometer) to the VitalsIQ backend.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.offroad.points.2 -->Authored the Java-to-C# binding transforms resolving R8, Guava, SQLCipher, and Gson interop conflicts, plus an Android foreground service for resilient background sync.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.offroad.points.3 -->Built a CivTAK (civilian ATAK) plugin in Java surfacing wearable vitals as an in-app pane and map marker, on a device-independent, JUnit-tested core with a Messenger IPC bridge to the MAUI app.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.offroad.points.4 -->Ported the full JABCode colour 2D-barcode library (encoder and decoder with error correction) from C to C#.<!-- /copy --></li>
-              </ul>
+              <div class="role__projects" role="list" aria-label="Projects in this role">
+                <p class="role__projects-label"><!-- copy:experience.work.roles.offroad.projects_label -->Projects<!-- /copy --></p>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.garmin.title -->Garmin binding + MAUI app<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.garmin.summary -->A .NET 10 Android binding of Garmin’s native Health SDK (Standard 4.7.0) and a MAUI companion app that pairs wearables and streams 7 vital-sign types (heart rate, HRV, SpO₂, respiration, stress, steps, accelerometer) to the VitalsIQ backend.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>.NET 10</li>
+                    <li>MAUI</li>
+                    <li>Garmin Health SDK</li>
+                    <li>Android</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.garmin.metric -->7 live vital types<!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.bindings.title -->Java → C# binding transforms<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.bindings.summary -->Hand-authored transforms that pull the Java SDK cleanly into .NET, resolving R8, Guava, SQLCipher and Gson interop conflicts, plus an Android foreground service for resilient background sync.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>MSBuild bindings</li>
+                    <li>R8</li>
+                    <li>Android</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.bindings.metric --><!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.civtak.title -->CivTAK plugin<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.civtak.summary -->A Java plugin for CivTAK (civilian ATAK) that surfaces wearable vitals as an in-app pane and a live map marker, on a device-independent, JUnit-tested core with a Messenger IPC bridge to the MAUI app.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>Java</li>
+                    <li>ATAK SDK</li>
+                    <li>JUnit</li>
+                    <li>Android IPC</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.civtak.metric --><!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.jabcode.title -->JABCode C → C# port<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.jabcode.summary -->The full JABCode colour 2D-barcode library - encoder and decoder with Reed-Solomon error correction - ported from C to C#.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>C</li>
+                    <li>C#</li>
+                    <li>Reed-Solomon</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.jabcode.metric --><!-- /copy --></p>
+                </article>
+              </div>
             </div>
             <ul class="reach" aria-label="Stack layers this role reached: Application, Signal">
               <li class="reach__cap" aria-hidden="true">Reach</li>
@@ -109,13 +148,73 @@
                 <li class="metric">960 → 189 µA idle</li>
                 <li class="metric">Zephyr RTOS</li>
               </ul>
-              <ul class="role__points">
-                <li><!-- copy:experience.work.roles.insyght.points.1 -->Built the end-to-end noise-classifier pipeline (data preparation, training, evaluation, and firmware integration) for on-device inference: 92% accuracy at a size of only 40 KB.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.insyght.points.2 -->Developed the firmware in C/C++ on Zephyr RTOS / nRF Connect SDK, architecting 11 self-contained driver components (~3K LOC).<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.insyght.points.3 -->Built a real-time acoustic metering pipeline: A-weighted (3-stage biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM MEMS microphones, with calibrated dB-SPL and clipping detection.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.insyght.points.4 -->Cut measured idle current from ~960 µA to ~189 µA via PPK2 differential power profiling, root-causing the LTE-modem floor, an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.insyght.points.5 -->Implemented an LTE-M / NB-IoT uplink (nRF9151 serial modem, AT sockets, hand-written JSON codec) to a Node.js / Express telemetry backend.<!-- /copy --></li>
-              </ul>
+              <div class="role__projects" role="list" aria-label="Projects in this role">
+                <p class="role__projects-label"><!-- copy:experience.work.roles.insyght.projects_label -->Projects<!-- /copy --></p>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.classifier.title -->On-device noise classifier<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.classifier.summary -->End-to-end pipeline (data preparation, training, evaluation and firmware integration) for on-device inference on the nRF54L15.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>Python</li>
+                    <li>TFLite Micro</li>
+                    <li>C</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.classifier.metric -->92% @ 40 KB<!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.firmware.title -->Zephyr firmware architecture<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.firmware.summary -->AuraSense firmware in C/C++ on Zephyr RTOS and the nRF Connect SDK, architected as 11 self-contained driver components.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>Zephyr RTOS</li>
+                    <li>nRF Connect SDK</li>
+                    <li>C/C++</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.firmware.metric -->~3K LOC<!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.metering.title -->Acoustic metering pipeline<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.metering.summary -->Real-time A-weighted (3-stage biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM MEMS microphones, with calibrated dB-SPL and clipping detection.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>DSP</li>
+                    <li>PDM</li>
+                    <li>fixed-point</li>
+                    <li>C</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.metering.metric --><!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.power.title -->Power profiling &amp; fix<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.power.summary -->PPK2 differential profiling to root-cause the LTE-modem floor, an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>PPK2</li>
+                    <li>nPM1300</li>
+                    <li>oscilloscope</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.power.metric -->960 → 189 µA idle<!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.uplink.title -->LTE-M / NB-IoT uplink<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.uplink.summary -->An nRF9151 serial-modem client (AT sockets, hand-written JSON codec) talking to a Node.js / Express telemetry backend.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>nRF9151</li>
+                    <li>AT commands</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.uplink.metric --><!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.testrig.title -->Factory test rig (Insyght Testsuite)<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.testrig.summary -->An automated end-of-line framework: a PySide6 head-unit GUI orchestrating multiple Raspberry Pi module units over MQTT, driving firmware flashing, hardware monitoring (voltage, current, temperature), AT-command network checks and HackRF-based RF signal generation.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>Python</li>
+                    <li>PySide6</li>
+                    <li>MQTT</li>
+                    <li>Raspberry Pi</li>
+                    <li>HackRF</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.testrig.metric --><!-- /copy --></p>
+                </article>
+              </div>
             </div>
             <ul class="reach" aria-label="Stack layers this role reached: Model, Signal, Firmware, Bare metal">
               <li class="reach__cap" aria-hidden="true">Reach</li>
@@ -137,6 +236,7 @@
               <h3 class="role__title"><!-- copy:experience.work.roles.altix.title -->Machine Learning Engineer Intern<!-- /copy --></h3>
               <p class="role__org"><!-- copy:experience.work.roles.altix.org --><a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam, Netherlands<!-- /copy --></p>
               <p class="role__summary"><!-- copy:experience.work.roles.altix.summary -->An AI document-ingestion pipeline that sped up analyst screening.<!-- /copy --></p>
+              <p class="role__project"><span class="role__project-label"><!-- copy:experience.work.roles.altix.project_label -->Project<!-- /copy --></span> <b><!-- copy:experience.work.roles.altix.project -->AltixDocs<!-- /copy --></b></p>
               <ul class="role__metrics">
                 <li class="metric">10 → 2 min per doc</li>
                 <li class="metric">~60% faster review</li>
@@ -171,11 +271,38 @@
                 <li class="metric">100 → 300+ h data</li>
                 <li class="metric">eval 4 h → 1 h</li>
               </ul>
-              <ul class="role__points">
-                <li><!-- copy:experience.work.roles.huawei.points.1 -->Designed an English keyword-spotting pipeline. Precision went from 92% to 94% and WER dropped by 1.1%.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.huawei.points.2 -->Built, cleaned, and validated large-scale audio datasets with forced alignment and transfer learning. Expanded coverage from 100 to 300+ hours and reduced corrupted data from 10% to 2%.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.huawei.points.3 -->Built a reproducible benchmarking pipeline for ASR/TTS candidates, cutting evaluation time from 4 hours to 1.<!-- /copy --></li>
-              </ul>
+              <div class="role__projects" role="list" aria-label="Projects in this role">
+                <p class="role__projects-label"><!-- copy:experience.work.roles.huawei.projects_label -->Projects<!-- /copy --></p>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.kws.title -->English keyword-spotting pipeline<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.kws.summary -->Designed the training and evaluation pipeline for an English keyword-spotting model. WER dropped 1.1% alongside the precision lift.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>PyTorch</li>
+                    <li>KWS</li>
+                    <li>speech DSP</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.kws.metric -->precision 92 → 94%<!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.dataset.title -->Audio dataset curation<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.dataset.summary -->Built, cleaned and validated large-scale audio datasets with forced alignment and transfer learning. Corrupted data down from 10% to 2%.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>MFA</li>
+                    <li>Python</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.dataset.metric -->100 → 300+ h data<!-- /copy --></p>
+                </article>
+                <article class="subproject" role="listitem">
+                  <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.benchmark.title -->ASR/TTS benchmark harness<!-- /copy --></h4>
+                  <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.benchmark.summary -->A reproducible benchmarking pipeline for ASR and TTS candidates, covering data loading, inference, scoring and reporting.<!-- /copy --></p>
+                  <ul class="subproject__stack" aria-label="Stack">
+                    <li>Python</li>
+                    <li>ASR</li>
+                    <li>TTS</li>
+                  </ul>
+                  <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.benchmark.metric -->eval 4 h → 1 h<!-- /copy --></p>
+                </article>
+              </div>
             </div>
             <ul class="reach" aria-label="Stack layers this role reached: Model, Signal">
               <li class="reach__cap" aria-hidden="true">Reach</li>
