@@ -329,32 +329,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 }
 @keyframes careerLiveSeg { from { transform: scaleY(0); opacity: 0; } to { transform: scaleY(1); opacity: .85; } }
 
-/* Card-to-card spotlight: hover (or focus) any card in a marked group and
-   the others desaturate quietly; the hovered one lifts with an accent border.
-   The dim is filter-only (not opacity) so it stays subtle over text-heavy
-   cards and matches how experience.html reads: its .reveal animation's
-   forwards fill locks opacity at 1, so only the filter change ever showed.
-   Add `.spotlight` on the container; spotlight.js wires direct children. */
-.spotlight { --spot-desat: .55; }
-.spotlight > * {
-  transition: filter .22s var(--ease), transform .22s var(--ease),
-              border-color .22s var(--ease), box-shadow .22s var(--ease);
-}
-.spotlight.is-spot > * { filter: saturate(var(--spot-desat)); }
-.spotlight.is-spot > .is-hot {
-  filter: none;
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 18px 38px -24px rgba(45, 86, 64, .55);
-}
-/* Career spine extras: pop the spine node too when its role is hot */
-.career .role::before { transition: border-color .22s var(--ease), background .22s var(--ease), box-shadow .22s var(--ease); }
-.career.is-spot .role.is-hot::before {
-  background: var(--accent); border-color: var(--accent);
-  box-shadow: 0 0 0 4px var(--paper), 0 0 0 7px var(--accent-soft);
-}
 @media (prefers-reduced-motion: reduce) {
-  .spotlight > *, .career .role::before { transition: none; }
   .career-live-segment { animation: none; opacity: .85; transform: scaleY(1); }
 }
 
