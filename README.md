@@ -17,7 +17,7 @@ papers.html           Publications
 ## Editing content
 
 Open any page and fill in the `[bracketed]` placeholders — that's all real content.
-Your name is already set throughout; email links point to `cristian@turcan.nl`.
+Your name is already set throughout. Email links point to `cristian@turcan.nl`.
 
 ### Add a project
 
@@ -37,7 +37,7 @@ Every image currently points at `img/placeholder.svg`. To use a real image:
 
 1. Drop the file in `img/projects/` (e.g. `img/projects/nrf9151-cover.png`).
 2. Change that image's `src`. On project pages (inside `projects/`) the path is
-   `../img/projects/your-file.png`; on top-level pages it's `img/projects/your-file.png`.
+   `../img/projects/your-file.png`. On top-level pages it's `img/projects/your-file.png`.
 
 ### Optional bits (commented out — uncomment when ready)
 
@@ -60,7 +60,7 @@ Then open http://localhost:8000.
 
 ## Deploy (GitHub Pages)
 
-1. Create a public GitHub repo; push all these files to the root.
+1. Create a public GitHub repo. Push all these files to the root.
 2. **Settings → Pages** → Source: `Deploy from a branch` → `main` / `/ (root)`.
 3. **Custom domain:** enter `turcan.nl` (the `CNAME` file already contains it).
 4. At your DNS host, add these **alongside** the existing Zoho mail records

@@ -1,7 +1,7 @@
 # Encyclopédie II — design specification
 
 Read this file front to back before writing any code. It is law, not suggestion.
-Where it says **never**, it means never; where it says **exactly**, do not round.
+Where it says **never**, it means never. Where it says **exactly**, do not round.
 
 The site is turcan.nl: a personal site for an embedded/firmware engineer, set as
 the plate volume of an encyclopedia about one engineer. Volume I established the
@@ -77,7 +77,7 @@ Prototypes are in `pl1-candidates/dot-demo.html` and
   tile, `feTile` it, `feComposite arithmetic` against source luminance,
   threshold with `feComponentTransfer discrete` — returns **pure black**.
   `feImage` alone renders (measured: 2 distinct luminance values, mean 0.4 over
-  a 120×160 probe, consistent with a single 6px tile in the corner); adding
+  a 120×160 probe, consistent with a single 6px tile in the corner). Adding
   `feTile` collapses to 1 distinct value, mean 0. **Do not spend time on this
   path.** It is the approach every tutorial recommends and it is a dead end here.
 - **Canvas halftone works.** One dot per cell, radius derived from that cell's
@@ -115,7 +115,7 @@ const maxR = CELL * 0.5 * Math.SQRT2;
 const r = Math.min(maxR, maxR * Math.sqrt(lum) * (0.35 + 0.65 * t) + maxR * t * 0.55);
 ```
 
-Render it once to an offscreen canvas and use it as a mask; do **not** redraw it
+Render it once to an offscreen canvas and use it as a mask. Do **not** redraw it
 per frame at full-bleed.
 
 ### 3.3 Timing
@@ -151,8 +151,8 @@ or a new animation.
 | Page | The move |
 |---|---|
 | `index.html` | **Adam.** Michelangelo's hands, cropped hard to the finger gap, full-bleed, engraved to white line on azur like every other plate. Background to the page, arriving through the dissolve. **No text overlaps the hands.** |
-| `experience.html` | **One rule.** A single hairline runs the full page height; roles hang off it. The forge plate sits fixed full-bleed behind, content scrolling over it. |
-| `projects.html` | **Takeover.** Asymmetric plate grid; hovering a project lets its plate fill the entire viewport behind the list. |
+| `experience.html` | **One rule.** A single hairline runs the full page height. Roles hang off it. The forge plate sits fixed full-bleed behind, content scrolling over it. |
+| `projects.html` | **Takeover.** Asymmetric plate grid. Hovering a project lets its plate fill the entire viewport behind the list. |
 | `papers.html` | **Star chart.** Papers as plotted points, hairlines connecting related work. Sparse, dark, mostly empty field. |
 | `events.html` | **Refusal.** No images at all. Dense typographic ledger, brass rules, austere. This page exists to break the rhythm — do not "improve" it by adding a plate. |
 | `projects/*.html` | **Frontispiece.** Oversized plate, then text in two Encyclopédie columns. |
@@ -224,7 +224,7 @@ whole set. Consistency across images matters more than the quality of any one.
 - **No dependencies.** No GSAP, no Lenis, no WebGL library. Everything here is
   achievable in CSS plus a few dozen lines of vanilla JS, and the constraint is
   load-bearing: it is what stops the site drifting.
-- Cross-document View Transitions for navigation; graceful plain-load fallback.
+- Cross-document View Transitions for navigation. Graceful plain-load fallback.
 - Keep the plate payload near its current budget — the whole `img/plates/`
   directory is presently ~872KB and dropping alpha to composite by blend or tone
   is what got it there. Do not regress that.
@@ -257,10 +257,10 @@ A page is done when all of these hold:
 Recorded so they can be challenged rather than silently inherited:
 
 - Adam is rendered as an engraving matching the other plates — no colour anywhere
-  on the site. (Confirmed in discussion; the earlier "one colour moment" idea was
+  on the site. (Confirmed in discussion. The earlier "one colour moment" idea was
   rejected.)
 - Generated imagery is permitted, subject to §5.3.
-- The six per-page moves in §4 are approved in principle; individual moves may be
+- The six per-page moves in §4 are approved in principle. Individual moves may be
   swapped, but each page keeps exactly one and §2 is never relaxed to allow it.
 - No issue tracker is in use, despite what `CLAUDE.md` says. This file is the
   single source of truth.

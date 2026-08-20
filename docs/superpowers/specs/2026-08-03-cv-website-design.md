@@ -28,7 +28,7 @@ Accessible: semantic landmarks, skip link, focus rings, alt text.
 - **Home** (`index.html`) — hero (name, title, tagline, contacts, Download CV) + short about
   + skills + cards linking into each section.
 - **Experience** (`experience.html`) — work history (role · company · dates · bullets) + Education.
-- **Projects** (`projects.html`) — responsive card grid; each card → a detail page.
+- **Projects** (`projects.html`) — responsive card grid. Each card → a detail page.
   - **Project pages** (`projects/*.html`) — cover image, meta (role · dates · tech · links),
     write-up (Overview → What I built → Highlights), screenshot gallery, back-link.
   - **Template** (`projects/_template.html`) — copy to add a project.
@@ -70,7 +70,7 @@ Blog, CMS, contact form/backend, analytics, i18n, search. Add later if needed.
 
 ## Success criteria
 
-- Loads at `https://turcan.nl` with valid HTTPS; nav works across all pages.
+- Loads at `https://turcan.nl` with valid HTTPS. Nav works across all pages.
 - Renders cleanly mobile + desktop, light + dark.
 - Projects browsable: listing → detail pages with images and write-ups.
 - Experience, Events, Papers each present in a clean, scannable format.
