@@ -1,5 +1,5 @@
 /* =========================================================================
-   turcan.nl — technical range with a human heartbeat
+   turcan.nl: technical range with a human heartbeat
    Warm oat paper, charcoal ink, one kind-green accent. Display in Bricolage
    Grotesque, body in IBM Plex Sans. Warmth from voice, space, and colour.
    ========================================================================= */
@@ -202,7 +202,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .role__points li { margin: .3rem 0; }
 .role__points li::marker { color: var(--accent); }
 
-/* Stack reach — a compact vertical depth gauge down the right of each role,
+/* Stack reach: a compact vertical depth gauge down the right of each role,
    reading App (surface) → Metal, so it rhymes with the home-page range ladder
    instead of a flat chip row. Lit layers carry the accent and a soft halo; the
    rest stay ghosted, so the right edge of the column shows how deep each role
@@ -221,7 +221,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 
 /* ---- Experience: the career timeline ---- */
 /* Work roles hang off one vertical spine that runs from "Now" at the top down
-   into the recent past — newest first. The spine is solid (a nod to the home
+   into the recent past, newest first. The spine is solid (a nod to the home
    range ladder; distinct from the events page's dotted travel route). Live
    roles wear a filled node, past roles a quiet hollow one that fills on hover.
    Time reads down the left; stack-depth reads down the right. */
@@ -264,6 +264,49 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 /* Date promoted to a timeline station label above the title */
 .role__when { font-size: .78rem; font-weight: 600; letter-spacing: .03em; color: var(--faint); font-variant-numeric: tabular-nums; margin: 0 0 .32rem; }
 .role__now { color: var(--accent-str); }
+/* Quiet "still counting" duration next to Present on live roles */
+.role__still { display: inline-block; margin-left: .5rem; font-size: .72rem; font-weight: 500; color: var(--faint); font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.role__still::before { content: "·"; margin-right: .5rem; color: var(--border-str); }
+
+/* Bolder accent on the spine segment covering the two live roles, so
+   "parallel" reads visually and not just via the pill copy. Height is
+   set inline by JS on load (from the "Now" node down to the last live
+   role's node); falls back to 0 if the script doesn't run. */
+.career-live-segment {
+  position: absolute; left: .55rem; top: 1.15rem;
+  width: 3px; border-radius: 3px;
+  background: var(--accent);
+  transform-origin: top center; opacity: .85;
+  animation: careerLiveSeg .7s var(--ease) .35s both;
+  pointer-events: none;
+}
+@keyframes careerLiveSeg { from { transform: scaleY(0); opacity: 0; } to { transform: scaleY(1); opacity: .85; } }
+
+/* Card-to-card spotlight: hover (or focus) any role in the career spine
+   and the others dim + desaturate; the hovered one lifts with an accent
+   border and its spine node pops. Scoped to .career so the Selected Work
+   grid on the homepage (also .role) is untouched. */
+.career { --spot-dim: .38; --spot-desat: .55; }
+.career.is-spot .role { opacity: var(--spot-dim); filter: saturate(var(--spot-desat)); }
+.career.is-spot .role.is-hot {
+  opacity: 1; filter: none;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px -24px rgba(45, 86, 64, .55);
+}
+.career .role,
+.career .role::before {
+  transition: opacity .22s var(--ease), filter .22s var(--ease), transform .22s var(--ease),
+              border-color .22s var(--ease), box-shadow .22s var(--ease);
+}
+.career.is-spot .role.is-hot::before {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 7px var(--accent-soft);
+}
+@media (prefers-reduced-motion: reduce) {
+  .career .role, .career .role::before { transition: none; }
+  .career-live-segment { animation: none; opacity: .85; transform: scaleY(1); }
+}
 
 /* ---- Projects grid (Things built + Projects page) ---- */
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
@@ -286,8 +329,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .tag { font-size: .78rem; color: var(--accent-str); background: var(--accent-soft); border-radius: 999px; padding: .12rem .6rem; }
 
 /* ---- Projects index: the workbench, sorted by depth ---- */
-/* The one axis that unites an eclectic set — a browser platform, a geometry
-   solver, a quant book, a JIT in raw assembly — is how close to the metal each
+/* The one axis that unites an eclectic set (a browser platform, a geometry
+   solver, a quant book, a JIT in raw assembly) is how close to the metal each
    one runs. Bands descend from user-facing product down to machine code, so the
    reading order itself is the signature: it echoes the homepage range ladder
    without adding a fourth node-timeline. Cards are spec-forward, not screenshot-
@@ -299,7 +342,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   margin: 0 0 1.2rem; padding-bottom: .75rem; border-bottom: 1px solid var(--border);
 }
 /* Altitude gauge: three stacked bars filled from the top down to this band's
-   depth — more fill = deeper toward the metal, mirroring the reach strips. */
+   depth: more fill = deeper toward the metal, mirroring the reach strips. */
 .band__gauge { display: inline-flex; flex-direction: column; gap: 2.5px; margin-right: .2rem; }
 .band__gauge i { display: block; width: 15px; height: 3px; border-radius: 2px; background: var(--border-str); }
 .band--product .band__gauge i:nth-child(-n+1),
@@ -307,12 +350,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .band--metal   .band__gauge i:nth-child(-n+3) { background: var(--accent); }
 .band__label { font-family: var(--display); font-weight: 600; font-size: 1.12rem; letter-spacing: -.01em; color: var(--ink); margin: 0; }
 .band__hint { color: var(--muted); font-size: .9rem; margin: 0; }
-.band__hint::before { content: "— "; color: var(--border-str); }
+.band__hint::before { content: "· "; color: var(--border-str); }
 
 .band__items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
 .band__items--single { grid-template-columns: 1fr; }
 
-/* Spec-forward card — leads with domain + what it is + a compact spec line,
+/* Spec-forward card: leads with domain + what it is + a compact spec line,
    no thumbnail to break on missing art. */
 .project-card--spec .project-card__body { gap: .5rem; padding: 1.4rem 1.45rem 1.5rem; }
 .project-card__domain {
@@ -327,13 +370,13 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 }
 .project-card__spec > span:not(:last-child)::after { content: "·"; margin: 0 .5rem; color: var(--border-str); }
 .project-card__spec b { color: var(--muted); font-weight: 600; }
-/* "3 bots" suite line — makes the bundled work legible as a suite, not one item */
+/* "3 bots" suite line: makes the bundled work legible as a suite, not one item */
 .project-card__more { font-size: .82rem; color: var(--muted); margin: .1rem 0 0; }
 .project-card__more b { color: var(--accent-str); font-weight: 600; }
 
 /* Real screenshots earn their place when they show the actual work (the mesh
    GIF, the trading dashboard). Where there's no real capture yet, a designed
-   tile in the same frame carries a domain-specific motif — never a placeholder,
+   tile in the same frame carries a domain-specific motif, never a placeholder,
    so the grid stays even and nothing reads as missing. */
 .project-card__tile {
   aspect-ratio: 16 / 9; width: 100%; display: grid; place-items: center;
@@ -344,7 +387,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .project-card__tile .tile-on  { fill: var(--accent); }
 .project-card__tile .tile-on2 { fill: var(--accent-str); }
 
-/* Capstone — the deepest project anchors the page full-width, with a hint of
+/* Capstone: the deepest project anchors the page full-width, with a hint of
    the raw code it generates as its signature texture. */
 .project-card--capstone .project-card__body { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.5rem; align-items: center; padding: 1.6rem 1.7rem; }
 .project-card__capbody { display: flex; flex-direction: column; gap: .5rem; }
@@ -358,7 +401,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .project-card__code b { color: var(--accent-str); font-weight: 600; }
 .project-card__code .cm { color: var(--faint); opacity: .8; }
 
-/* Feature — a wider project that anchors its band full-width with a real
+/* Feature: a wider project that anchors its band full-width with a real
    screenshot beside the spec, when one card carries clearly more than the rest. */
 .project-card--feature { grid-column: 1 / -1; }
 @media (min-width: 721px) {
@@ -371,7 +414,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 }
 
 /* ---- Events: "the road here" timeline ---- */
-/* Open layout (no boxes) along a dotted travel route — echoes the homepage
+/* Open layout (no boxes) along a dotted travel route, echoes the homepage
    range ladder for cohesion. Years are route-marker pills; results wear a
    medal dot; photos are small postcard snapshots. */
 .timeline { position: relative; max-width: 660px; margin: .5rem 0 0; padding-left: 2.3rem; }
@@ -383,7 +426,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   );
 }
 
-/* Year milestone — a marker pill sitting on the route */
+/* Year milestone: a marker pill sitting on the route */
 .tl-year {
   position: relative; display: inline-block;
   font-family: var(--display); font-weight: 700; font-size: .8rem;
@@ -398,7 +441,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   background: var(--accent); box-shadow: 0 0 0 4px var(--paper);
 }
 
-/* Event stop — open, no card */
+/* Event stop: open, no card */
 .tl-event { position: relative; padding: 0 0 1.9rem; }
 .tl-event:last-child { padding-bottom: 0; }
 .tl-event::before {
@@ -426,7 +469,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 }
 .badge::before { content: ""; width: .44rem; height: .44rem; border-radius: 50%; background: var(--accent); flex: none; }
 
-/* Postcard snapshots — small, tidy row; empty state is a quiet tag, not a box */
+/* Postcard snapshots: small, tidy row; empty state is a quiet tag, not a box */
 .tl-photos { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .65rem; margin: .95rem 0 0; }
 .tl-photo { margin: 0; flex: 0 0 auto; width: 156px; max-width: 100%; }
 .tl-photo img {
@@ -453,7 +496,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 /* Each entry is laid out like the masthead of the paper itself: title, an
    author line with his name marked in green, a hairline rule, a compact meta
    strip (venue · status · year), keyword chips, a one-line lede, the abstract,
-   then real action links. Deliberately NOT a third node-timeline — the
+   then real action links. Deliberately NOT a third node-timeline; the
    homepage ladder and events route already own that motif. */
 .papers { max-width: var(--prose); }
 .paper { padding: 2.4rem 0; border-top: 1px solid var(--border); }
@@ -539,7 +582,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .gallery img { border-radius: var(--r-sm); border: 1px solid var(--border); width: 100%; }
 .gallery figcaption { font-size: .84rem; color: var(--faint); margin-top: .45rem; text-align: center; }
 
-/* Designed motif tiles for case pages with no real capture yet — the same
+/* Designed motif tiles for case pages with no real capture yet: the same
    visual language as the project-card tiles (soft-accent field, moss motif),
    sized for the case cover and the gallery. An image earns its place when it
    shows the real work; until then a domain motif keeps the page whole and
@@ -579,7 +622,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .reveal { opacity: 0; animation: rise .7s var(--ease) forwards; }
 .d1 { animation-delay: .06s; } .d2 { animation-delay: .14s; } .d3 { animation-delay: .22s; } .d4 { animation-delay: .3s; } .d5 { animation-delay: .4s; }
 
-/* Staggered entrance — direct children rise in document order (delay capped so
+/* Staggered entrance: direct children rise in document order (delay capped so
    long lists like the events timeline don't crawl in). */
 .reveal-seq > * { opacity: 0; animation: rise .6s var(--ease) both; }
 .reveal-seq > *:nth-child(1) { animation-delay: .05s; }
@@ -626,7 +669,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   html, body { background:#fff; }
   .skip-link, .theme-toggle { display:none !important; }
   .site-nav { position:static; backdrop-filter:none; background:#fff; }
-  /* animations may not run when printing — keep revealed content visible */
+  /* animations may not run when printing, keep revealed content visible */
   .reveal, .reveal-seq > * { opacity:1 !important; transform:none !important; animation:none !important; }
   /* dark screenshots waste ink and print as heavy black blocks */
   .project-card__thumb, .case__cover, .case__figure img, .case-tile { display:none; }
