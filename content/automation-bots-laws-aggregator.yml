@@ -8,20 +8,18 @@ hero:
 overview:
   title: 'Overview'
   body: >-
-    Legal acts publish on legis.md constantly, but nobody wants to watch the
-    feed. I wanted people to pick a handful of sectors &mdash; Fiscal,
-    S&#259;n&#259;tate, Munc&#259; &mdash; and get the matching acts pushed to
+    Legal acts publish on legis.md constantly, but nobody wants to scan all the fields and check constantly even if no new legal act appears.
+    I wanted people to pick a handful of sectors and get the matching acts pushed to
     them as they land, in Romanian, with a daily-digest option for anyone who
     would rather not be pinged in real time.
 
 built:
   title: 'What I built'
   body: >-
-    A second product on top of the event-aggregator&rsquo;s stack &mdash;
-    aiogram bot, Celery beat + workers, Redis broker, Postgres state, all in
-    Docker Compose. A scraper polls legis.md every 30&nbsp;minutes, a matcher
+    A second product on top of the event-aggregator&rsquo;s stack.
+    A scraper polls legis.md every 30&nbsp;minutes, a matcher
     fans an incoming act out to every subscribed user, and a delivery worker
-    sends the message with retry-on-429 and auto-pause the moment a user
+    sends the message and auto-pause the moment a user
     blocks the bot.
 
 highlights:

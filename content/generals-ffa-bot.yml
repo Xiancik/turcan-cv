@@ -12,34 +12,31 @@ overview:
     generals.io FFA is a real-time strategy game: each player starts with one
     general on a grid, grows an army, and spreads across land and cities,
     around impassable mountains, under fog of war. Capture a rival’s general
-    and you absorb <em>everything</em> they own. I
-    wanted to build a bot for it, but the honest first move wasn’t the bot.
-    It was the world it plays in.
+    and you absorb everything they own. I
+    wanted to build a bot for it, but the first move wasn’t the bot.
+    It was the world it will learn in.
 
 built:
   title: 'What I built'
   simulator: >-
-    It starts with the simulator: an engine matched to
+    It starts with the simulator, an engine matched to
     generals.io’s rules for 2-8 players: army growth (generals and cities
     tick up every turn, on every 25th turn every owned tile grows), movement
     and capture, neutral cities, and per-player fog of war that reveals only
-    a 1 tile around your own tiles. Map generation places generals with
+    a 1 tile around own general tiles. Map generation places generals with
     guaranteed mutual reachability, and the whole game is deterministic from
     a seed.
   evaluation: >-
-    To know whether a bot is any good, I built an evaluation
-    harness: it plays seeded games, ranks finishers by survival,
+    To know whether a bot is any good, I built an evaluation system, it plays seeded games, ranks finishers by survival,
     then land, then army, and converts those placements into pairwise Elo
     updates on a bot ladder.
   learning: >-
-    Then the <strong>learning layer</strong>: a behavior-cloning pipeline
-    that trains a network to imitate the heuristic. Each position is encoded
-    ego-centrically into 15 feature planes, moves into an
+    The <strong>learning layer</strong>: a pipeline
+    that trains a network to imitate the heuristic first afterwards learning with self-play. Each position is encoded, moves into an
     eight-directions-per-tile action space with a legality mask, and a
     fully-convolutional policy-value network (size-agnostic, so it plays
     any board) learns the heuristic’s moves against a placement-based value
-    target. The trained net drops into the same <code>Observation → Move</code>
-    slot as every other bot.
+    target.
 
 highlights:
   title: 'Highlights'
@@ -47,9 +44,6 @@ highlights:
     simulator: 'A deterministic, fog-of-war FFA simulator for 2-8 players, matched to generals.io’s rules.'
     heuristic: 'A heuristic commander with a defend / expand / gather priority ladder and enemy-general memory that survives fog.'
     elo: 'An Elo ladder and regression gauntlet that fold whole-game placements into one comparable rating.'
-    cloning: 'A behavior-cloning pipeline: 15-plane ego-centric encoder, masked eight-direction action space, and a fully-convolutional policy-value net that imitates the heuristic.'
-    next: 'Next, by design: a live-server client on the same <code>Observation</code> interface, and self-play PPO to push past the heuristic it currently imitates.'
-
 gallery:
   title: 'Gallery'
   fog_caption: 'Fog of war: the same game from one seat. The bot sees only a halo around its own tiles. Here it has just spotted an enemy general (★).'

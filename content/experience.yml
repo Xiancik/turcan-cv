@@ -6,18 +6,17 @@ page:
   eyebrow: 'Experience'
   title: 'Where I’ve been building'
   intro: >-
-    Four engineering roles, two of them live right now, plus two degrees at
-    TU Delft. Want the whole thing on paper?
+    Four engineering roles, two of them live right now, and two degrees at
+    TU Delft.
     <a href="cv.pdf" download>Grab the CV</a>.
 
 work:
   eyebrow: 'Work'
   title: 'Roles I’ve shipped in'
   lead: >-
-    Real, paid engineering, newest at the top. Two of these run in parallel
-    right now. The others trace back through 2024. Each role expands into
+    Real, paid engineering, newest at the top. Each role expands into
     the discrete projects that shipped inside it.
-  now: '<span class="career-now__tag">Now</span> Aug 2026: two roles live, in parallel'
+  now: '<span class="career-now__tag">Now</span> Aug 2026: two roles, in parallel'
   roles:
     offroad:
       when: 'Jan 2026 - <span class="role__now">Present</span>'
@@ -29,25 +28,13 @@ work:
         garmin:
           title: 'Garmin binding + MAUI app'
           summary: >-
-            A .NET 10 Android binding of Garmin’s native Health SDK
-            (Standard 4.7.0) and a MAUI companion app that pairs wearables and
-            streams 7 vital-sign types (heart rate, HRV, SpO₂, respiration,
-            stress, steps, accelerometer) to the VitalsIQ backend.
+            A .NET 10 Android binding of Garmin’s native Health SDK and a MAUI companion app that pairs wearables and
+            streams 7 vital-sign types (heart rate, HRV, SpO₂, ...) to the VitalsIQ backend.
           metric: '7 live vital types'
-        bindings:
-          title: 'Java → C# binding transforms'
-          summary: >-
-            Hand-authored transforms that pull the Java SDK cleanly into
-            .NET, resolving R8, Guava, SQLCipher and Gson interop conflicts,
-            plus an Android foreground service for resilient background sync.
-          metric: ''
         civtak:
           title: 'CivTAK plugin'
           summary: >-
-            A Java plugin for CivTAK (civilian ATAK) that surfaces wearable
-            vitals as an in-app pane and a live map marker, on a
-            device-independent, JUnit-tested core with a Messenger IPC bridge
-            to the MAUI app.
+            A Java plugin for CivTAK (civilian ATAK) that surfaces the VitalsIQ app as an in-app pane and a live map marker.
           metric: ''
         jabcode:
           title: 'JABCode C → C# port'
@@ -73,28 +60,8 @@ work:
           summary: >-
             AuraSense firmware in C/C++ on Zephyr RTOS and the nRF Connect
             SDK, architected as 11 self-contained driver components.
-          metric: '~3K LOC'
-        metering:
-          title: 'Acoustic metering pipeline'
-          summary: >-
-            Real-time A-weighted (3-stage biquad IIR) dBA and Leq over 10 s
-            windows from stereo 16 kHz PDM MEMS microphones, with calibrated
-            dB-SPL and clipping detection.
-          metric: ''
-        power:
-          title: 'Power profiling &amp; fix'
-          summary: >-
-            PPK2 differential profiling to root-cause the LTE-modem floor,
-            an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.
-          metric: '960 → 189 µA idle'
-        uplink:
-          title: 'LTE-M / NB-IoT uplink'
-          summary: >-
-            An nRF9151 serial-modem client (AT sockets, hand-written JSON
-            codec) talking to a Node.js / Express telemetry backend.
-          metric: ''
         testrig:
-          title: 'Factory test rig (Insyght Testsuite)'
+          title: 'Factory test framework (Insyght Testsuite)'
           summary: >-
             An automated end-of-line framework: a PySide6 head-unit GUI
             orchestrating multiple Raspberry Pi module units over MQTT,
@@ -113,11 +80,10 @@ work:
         1: >-
           Built an AI document-ingestion pipeline to parse PDFs, spreadsheets,
           and images (with OCR), then auto-summarise and classify content,
-          cutting manual screening from 10 minutes per document to 2.
+          cutting manual screening from 20 minutes per document to 2.
         2: >-
           Shipped a REST service and lightweight web UI that streamlined
-          analyst review, cutting document navigation and handling time by
-          roughly 60%.
+          analyst review, cutting document navigation and handling time.
     huawei:
       when: 'Dec 2024 - May 2025'
       title: 'Machine Learning Engineer Intern'
@@ -128,27 +94,23 @@ work:
         kws:
           title: 'English keyword-spotting pipeline'
           summary: >-
-            Designed the training and evaluation pipeline for an English
-            keyword-spotting model. WER dropped 1.1% alongside the precision
-            lift.
-          metric: 'precision 92 → 94%'
+            Develop the training and evaluation pipeline for an English
+            keyword-spotting model.
         dataset:
           title: 'Audio dataset curation'
           summary: >-
             Built, cleaned and validated large-scale audio datasets with
-            forced alignment and transfer learning. Corrupted data down from
-            10% to 2%.
+            forced alignment and transfer learning.
           metric: '100 → 300+ h data'
         benchmark:
-          title: 'ASR/TTS benchmark harness'
+          title: 'ASR/TTS benchmarks'
           summary: >-
             A reproducible benchmarking pipeline for ASR and TTS candidates,
             covering data loading, inference, scoring and reporting.
-          metric: 'eval 4 h → 1 h'
 
 education:
   eyebrow: 'Education'
-  title: 'Delft, twice over'
+  title: 'Delft, Netherlands'
   lead: 'The BSc just wrapped. The MSc starts this September, both at TU Delft.'
   entries:
     msc:

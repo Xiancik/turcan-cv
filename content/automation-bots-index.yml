@@ -11,15 +11,15 @@ overview:
     A cluster of automation projects, each solving a small real-world
     annoyance: being notified when remote data changes, grabbing a gym slot
     the instant it opens, pulling scattered local events into one feed,
-    pushing newly published legal acts to people who care about a given
-    sector, and applying once to every matching software-engineer listing
+    pushing newly published legal acts to people who care about a few
+    sectors, and applying once to every matching software-engineer listing
     on rabota.md. Each one is written up on its own page below.
 
 bots:
   title: 'The bots'
   change_tracking:
     name: 'Change-tracking bot →'
-    desc: 'Snapshot-diffs a paginated third-party API and alerts on Telegram the moment the data changes.'
+    desc: 'Diffs a paginated third-party API and alerts on Telegram the moment the data changes.'
   sso_booking:
     name: 'SSO booking bot →'
     desc: "Drives TU Delft's full NetID single sign-on and grabs a gym slot the instant it opens."

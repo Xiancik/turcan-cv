@@ -22,16 +22,15 @@ built:
     (&ldquo;CV DE PE SITE&rdquo; &rarr; consent &rarr; submit), and a SQLite
     store keyed by the site&rsquo;s stable job id for dedup. A Telegram
     notifier posts every apply, every skip with a reason, and every failure.
-    Runs on a systemd timer on a Hetzner VPS with a file-based kill switch.
+    Runs on a systemd timer on a Hetzner VPS.
 
 highlights:
   title: 'Highlights'
   items:
-    dry_run: 'Dry-run mode, per-run apply cap, and a PAUSED-file kill switch.'
+    dry_run: 'Dry-run mode, per-run apply cap.'
     email_only: 'Detects &ldquo;email your CV to&hellip;&rdquo; listings and skips them rather than force-applying.'
     dedup: 'Idempotent dedup keyed by the site&rsquo;s own numeric job id, so a re-run never re-applies.'
 
 gallery:
   title: 'Gallery'
   match_caption: 'Every decision is logged with an explicit reason'
-  killswitch_caption: 'A file on disk halts every apply cycle'
