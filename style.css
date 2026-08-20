@@ -591,17 +591,37 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .paper__abstract { color: var(--muted); margin: 0; }
 .paper__abstract em { color: var(--accent-str); font-style: italic; }
 
-.paper__links { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.2rem 0 0; }
+.paper__links { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.4rem 0 0; }
 .paper__link {
-  display: inline-flex; align-items: center; gap: .42rem;
-  font-size: .85rem; font-weight: 600; color: var(--accent-str);
-  border: 1px solid var(--border-str); border-radius: 999px; padding: .34rem .9rem;
-  transition: border-color .15s var(--ease), background .15s var(--ease), transform .15s var(--ease);
+  --pl-bg: var(--accent-soft);
+  --pl-fg: var(--accent-str);
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--pl-fg); background: var(--pl-bg);
+  border: 1px solid transparent; border-radius: 999px;
+  padding: .55rem 1.1rem .55rem .95rem;
+  transition: background .18s var(--ease), color .18s var(--ease), transform .18s var(--ease), box-shadow .18s var(--ease);
 }
-.paper__link:hover { border-color: var(--accent); background: var(--accent-soft); text-decoration: none; transform: translateY(-1px); }
-.paper__link svg { width: .95em; height: .95em; flex: none; }
-.paper__link--soon { color: var(--faint); border-style: dashed; }
-.paper__link--soon:hover { border-color: var(--border-str); background: transparent; transform: none; cursor: default; }
+.paper__link:hover {
+  --pl-bg: var(--accent);
+  color: #fff; text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px -10px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.paper__link:active { transform: translateY(0); }
+.paper__link-icon,
+.paper__link-arrow { width: 1em; height: 1em; flex: none; }
+.paper__link-arrow { transition: transform .2s var(--ease); margin-left: .05rem; }
+.paper__link:hover .paper__link-arrow { transform: translateX(3px); }
+.paper__link--soon {
+  --pl-bg: transparent; --pl-fg: var(--faint);
+  border-color: var(--border-str); border-style: dashed;
+}
+.paper__link--soon:hover {
+  --pl-bg: transparent; color: var(--faint);
+  transform: none; box-shadow: none; cursor: default;
+}
+.paper__link--soon:hover .paper__link-arrow { transform: none; }
 
 /* ---- Beyond the code (homepage personal) ---- */
 .personal { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
