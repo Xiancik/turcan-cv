@@ -60,8 +60,9 @@
               <h2 class="band__label"><!-- copy:projects.bands.product.label -->Product<!-- /copy --></h2>
               <p class="band__hint"><!-- copy:projects.bands.product.hint -->whole apps and services, from the browser in<!-- /copy --></p>
             </div>
-            <div class="band__items">
+            <div class="band__items band__items--single">
 
+              <template data-hidden-project="creator-match">
               <a class="project-card project-card--spec" href="projects/creator-match.html">
                 <div class="project-card__tile" aria-hidden="true">
                   <svg viewBox="0 0 160 90" role="img">
@@ -84,6 +85,7 @@
                   <div class="tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">pgvector</span><span class="tag">Claude</span></div>
                 </div>
               </a>
+              </template>
 
               <a class="project-card project-card--spec" href="projects/automation-bots/">
                 <img class="project-card__thumb" src="img/projects/automation-bots.svg" alt="Automation bots architecture: sources to scheduling and browser automation to Telegram delivery">
