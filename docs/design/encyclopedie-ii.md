@@ -1,11 +1,11 @@
-# Encyclopédie II — design specification
+# Encyclopédie II: design specification
 
 Read this file front to back before writing any code. It is law, not suggestion.
 Where it says **never**, it means never. Where it says **exactly**, do not round.
 
 The site is turcan.nl: a personal site for an embedded/firmware engineer, set as
 the plate volume of an encyclopedia about one engineer. Volume I established the
-material — real Diderot plates (1751-72, public domain), knocked out to white
+material: real Diderot plates (1751-72, public domain), knocked out to white
 line on cyanotype blue. Volume II keeps that material and changes the staging.
 
 ---
@@ -33,7 +33,7 @@ particular: **do not add a narrative**, and **do not add colour**.
 
 ---
 
-## 2. Invariants — the prohibitions
+## 2. Invariants: the prohibitions
 
 These hold on every page without exception. They are phrased as prohibitions
 because "keep it restrained" is unenforceable and this is not.
@@ -45,7 +45,7 @@ because "keep it restrained" is unenforceable and this is not.
   anywhere. Not in a hover state, not in a favicon, not in an error page.
 - **Three faces only.** Bodoni Moda (display), EB Garamond (body), IBM Plex Mono
   (micro-labels). Bricolage Grotesque is loaded in `fonts/` and is **not** to be
-  used — remove it if nothing references it.
+  used, so remove it if nothing references it.
 - **`Pl. N` top-left.** Every page carries a monospace plate number in the top
   left, and a hairline grid with crosshair tick marks.
 - **Brass is the only accent.** Rules, plate numbers, emphasis. Nothing else.
@@ -63,19 +63,19 @@ the layout.
 
 ## 3. The dissolve
 
-The signature move. An image or a line of type arrives as a coarse dot screen —
-reading as *printed texture*, not as a faded picture — and the dots grow until
+The signature move. An image or a line of type arrives as a coarse dot screen,
+reading as *printed texture*, not as a faded picture, and the dots grow until
 they overlap into the thing itself. Nothing fades. Nothing moves.
 
-### 3.1 Verified findings — read before implementing
+### 3.1 Verified findings: read before implementing
 
 These were measured in Chrome against `img/plates/forge.webp` on 2026-08-17.
 Prototypes are in `pl1-candidates/dot-demo.html` and
 `pl1-candidates/halftone-test.html`.
 
-- **`feTile` does not work.** The standard SVG halftone recipe — `feImage` a dot
+- **`feTile` does not work.** The standard SVG halftone recipe (`feImage` a dot
   tile, `feTile` it, `feComposite arithmetic` against source luminance,
-  threshold with `feComponentTransfer discrete` — returns **pure black**.
+  threshold with `feComponentTransfer discrete`) returns **pure black**.
   `feImage` alone renders (measured: 2 distinct luminance values, mean 0.4 over
   a 120×160 probe, consistent with a single 6px tile in the corner). Adding
   `feTile` collapses to 1 distinct value, mean 0. **Do not spend time on this
@@ -86,14 +86,14 @@ Prototypes are in `pl1-candidates/dot-demo.html` and
   `0.106 → 0.882 → 1.000` across `t = 0 → 0.5 → 1`. That is a genuine dot
   screen whose dot area tracks brightness.
 - **CSS `mask-image` with a tiled `radial-gradient` works** and is free. Uniform
-  dot size — texture, not true halftone — but GPU-composited.
+  dot size (texture, not true halftone) but GPU-composited.
 - **`document.startViewTransition` is available.**
 
 ### 3.2 The recipe
 
 Two tiers. Use both:
 
-**Motion** — CSS mask, for the ramp itself, because it animates on the GPU:
+**Motion**: CSS mask, for the ramp itself, because it animates on the GPU:
 
 ```css
 .plate {
@@ -106,7 +106,7 @@ Two tiers. Use both:
 }
 ```
 
-**Fidelity** — canvas halftone, for the resting first frame of hero plates,
+**Fidelity**: canvas halftone, for the resting first frame of hero plates,
 where the dot screen is held long enough to be read as printing:
 
 ```js
@@ -123,7 +123,7 @@ per frame at full-bleed.
 - Plate entry: **1400ms**, `cubic-bezier(.22,1,.36,1)` (measured cubic ease-out
   in the prototype).
 - Display type resolves **per word, 90ms apart**, starting *after* the plate
-  lands — never simultaneously.
+  lands, never simultaneously.
 - The published ramp is currently too fast in its middle: coverage hits 0.88 at
   `t = 0.5`. Bias the easing so the dots stay legible as dots for the first
   ~60% of the duration. This is a tuning constant, not a rewrite.
@@ -135,7 +135,7 @@ per frame at full-bleed.
   dissolve, no per-word type. This is not optional.
 - The dissolve is also the **page transition**, via cross-document View
   Transitions. Same dot screen, same easing. In browsers without support it
-  degrades to an ordinary page load, and that is an acceptable outcome — do not
+  degrades to an ordinary page load, and that is an acceptable outcome, so do not
   add a JS router to paper over it.
 
 ---
@@ -143,7 +143,7 @@ per frame at full-bleed.
 ## 4. The six pages
 
 Each page gets **one distinct structural move**. This is a deliberate departure
-from the reference, which uses one law throughout — the divergence is the point,
+from the reference, which uses one law throughout. The divergence is the point,
 and §2 is what holds it together. A page's move is structural: layout, scale,
 what is present and what is refused. It is never a new colour, a new typeface,
 or a new animation.
@@ -154,7 +154,7 @@ or a new animation.
 | `experience.html` | **One rule.** A single hairline runs the full page height. Roles hang off it. The forge plate sits fixed full-bleed behind, content scrolling over it. |
 | `projects.html` | **Takeover.** Asymmetric plate grid. Hovering a project lets its plate fill the entire viewport behind the list. |
 | `papers.html` | **Star chart.** Papers as plotted points, hairlines connecting related work. Sparse, dark, mostly empty field. |
-| `events.html` | **Refusal.** No images at all. Dense typographic ledger, brass rules, austere. This page exists to break the rhythm — do not "improve" it by adding a plate. |
+| `events.html` | **Refusal.** No images at all. Dense typographic ledger, brass rules, austere. This page exists to break the rhythm, so do not "improve" it by adding a plate. |
 | `projects/*.html` | **Frontispiece.** Oversized plate, then text in two Encyclopédie columns. |
 
 Every page keeps its `Pl. N`, its grid, and the dissolve.
@@ -178,7 +178,7 @@ reproduced image in existence from reading as a cliché.
 
 It must match the other plates: white line on azur, engraved, not a photograph
 of a fresco and not a filtered painting. There is a genuine historical precedent
-for this — 16th-century reproductive engravers (Giorgio Ghisi, Adamo Scultori)
+for this: 16th-century reproductive engravers (Giorgio Ghisi, Adamo Scultori)
 made line engravings after the Sistine ceiling, and that material is in
 open-access museum collections. **Look for an existing period engraving of the
 Creation of Adam before generating or deriving one.** If one exists, it is
@@ -190,7 +190,7 @@ strictly better than anything we make: it is native to the material.
 
 ### 5.3 Generated imagery
 
-Permitted, but with a formal role — never as filler, never mixed casually with
+Permitted, but with a formal role, never as filler, never mixed casually with
 real engravings at small scale.
 
 - Generated images are **engravings**, not paintings and not photographs.
@@ -225,7 +225,7 @@ whole set. Consistency across images matters more than the quality of any one.
   achievable in CSS plus a few dozen lines of vanilla JS, and the constraint is
   load-bearing: it is what stops the site drifting.
 - Cross-document View Transitions for navigation. Graceful plain-load fallback.
-- Keep the plate payload near its current budget — the whole `img/plates/`
+- Keep the plate payload near its current budget. The whole `img/plates/`
   directory is presently ~872KB and dropping alpha to composite by blend or tone
   is what got it there. Do not regress that.
 - Contrast: chalk on azur measures 5.8:1. Any new text colour must clear WCAG AA.
@@ -247,7 +247,7 @@ A page is done when all of these hold:
 6. The page works with JavaScript disabled: content is present and readable,
    plates are shown in their resolved state.
 7. Navigating between two pages triggers the dot transition where supported and
-   a plain load where not — with no layout shift in either case.
+   a plain load where not, with no layout shift in either case.
 8. Nothing animates except the dissolve.
 
 ---
@@ -256,7 +256,7 @@ A page is done when all of these hold:
 
 Recorded so they can be challenged rather than silently inherited:
 
-- Adam is rendered as an engraving matching the other plates — no colour anywhere
+- Adam is rendered as an engraving matching the other plates, no colour anywhere
   on the site. (Confirmed in discussion. The earlier "one colour moment" idea was
   rejected.)
 - Generated imagery is permitted, subject to §5.3.

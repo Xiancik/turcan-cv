@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event-Aggregation Microservice · Cristian Turcan</title>
+  <title>Event-Aggregation Microservice | Cristian Turcan</title>
   <meta name="description" content="A broker-based Telegram service that pulls scattered local events into a single feed.">
   <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
   <link rel="stylesheet" href="../../style.css">
@@ -30,11 +30,11 @@
 
       <article class="case">
         <div class="case__kicker">
-          <span class="eyebrow">Backend · microservice</span>
+          <span class="eyebrow"><!-- copy:automation-bots-event-aggregation.hero.eyebrow -->Backend · Microservice<!-- /copy --></span>
           <span class="badge">Product</span>
         </div>
-        <h1 class="case__title">Event-Aggregation Microservice</h1>
-        <p class="case__summary">A broker-based Telegram service that pulls scattered local events into a single feed.</p>
+        <h1 class="case__title"><!-- copy:automation-bots-event-aggregation.hero.title -->Event-Aggregation Microservice<!-- /copy --></h1>
+        <p class="case__summary"><!-- copy:automation-bots-event-aggregation.hero.summary -->A broker-based Telegram service that pulls scattered local events into a single feed.<!-- /copy --></p>
 
         <dl class="case__meta">
           <div><dt>Stack</dt><dd>Python, aiogram</dd></div>
@@ -59,20 +59,20 @@
           </svg>
         </div>
 
-        <h2>Overview</h2>
-        <p>Local events were scattered across sources with no single place to see them. I wanted one feed that gathered them in the background and delivered them over Telegram.</p>
+        <h2><!-- copy:automation-bots-event-aggregation.overview.title -->Overview<!-- /copy --></h2>
+        <p><!-- copy:automation-bots-event-aggregation.overview.body -->Local events were scattered across sources with no single place to see them. I wanted one feed that gathered them in the background and delivered them over Telegram.<!-- /copy --></p>
 
-        <h2>What I built</h2>
-        <p>A broker-based Telegram bot on aiogram, with Celery + Redis workers handling aggregation off the request path and PostgreSQL (managed with Alembic migrations) for storage. The whole stack is orchestrated via Docker Compose, so the bot, workers, broker, and database come up together as one reproducible unit.</p>
+        <h2><!-- copy:automation-bots-event-aggregation.built.title -->What I built<!-- /copy --></h2>
+        <p><!-- copy:automation-bots-event-aggregation.built.body -->A broker-based Telegram bot on aiogram, with Celery + Redis workers handling aggregation off the request path and PostgreSQL for storage. The whole stack is orchestrated via Docker Compose, so the bot, workers, broker, and database come up together as one reproducible unit.<!-- /copy --></p>
 
-        <h2>Highlights</h2>
+        <h2><!-- copy:automation-bots-event-aggregation.highlights.title -->Highlights<!-- /copy --></h2>
         <ul class="entry__points">
-          <li>Clean broker/worker separation with Celery + Redis.</li>
-          <li>PostgreSQL schema managed through Alembic migrations.</li>
-          <li>Reproducible multi-service stack via Docker Compose.</li>
+          <li><!-- copy:automation-bots-event-aggregation.highlights.items.broker -->Clean broker/worker separation with Celery + Redis.<!-- /copy --></li>
+          <li><!-- copy:automation-bots-event-aggregation.highlights.items.schema -->PostgreSQL schema managed through Alembic migrations.<!-- /copy --></li>
+          <li><!-- copy:automation-bots-event-aggregation.highlights.items.stack -->Reproducible multi-service stack via Docker Compose.<!-- /copy --></li>
         </ul>
 
-        <h2>Gallery</h2>
+        <h2><!-- copy:automation-bots-event-aggregation.gallery.title -->Gallery<!-- /copy --></h2>
         <div class="gallery">
           <figure>
             <div class="case-tile">
@@ -83,7 +83,7 @@
                 <rect class="tile-off" x="42" y="62" width="56" height="8" rx="4"/>
               </svg>
             </div>
-            <figcaption>Scattered sources, one Telegram feed</figcaption>
+            <figcaption><!-- copy:automation-bots-event-aggregation.gallery.feed_caption -->Scattered sources, one Telegram feed<!-- /copy --></figcaption>
           </figure>
           <figure>
             <div class="case-tile">
@@ -95,7 +95,7 @@
                 <path class="line-off" d="M112 42 c0 5 34 5 34 0" stroke-width="3"/>
               </svg>
             </div>
-            <figcaption>Broker, workers, and database in one stack</figcaption>
+            <figcaption><!-- copy:automation-bots-event-aggregation.gallery.arch_caption -->Broker, workers, and database in one stack<!-- /copy --></figcaption>
           </figure>
         </div>
       </article>

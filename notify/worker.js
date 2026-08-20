@@ -124,7 +124,7 @@ function formatMessage(payload, request, ua) {
   const location = [city, region, country].filter(Boolean).join(", ");
   const lines = [
     `<b>turcan.nl visit</b>`,
-    `<b>Page:</b> ${escapeHtml(path)}${title ? ` — ${escapeHtml(title)}` : ""}`,
+    `<b>Page:</b> ${escapeHtml(path)}${title ? `: ${escapeHtml(title)}` : ""}`,
   ];
   if (referrer) lines.push(`<b>From:</b> ${escapeHtml(referrer)}`);
   if (location) lines.push(`<b>Where:</b> ${escapeHtml(location)}`);

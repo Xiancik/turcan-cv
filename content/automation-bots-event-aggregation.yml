@@ -1,0 +1,32 @@
+# Prose for projects/automation-bots/event-aggregation.html. Edit here, then run `npm run build`.
+
+hero:
+  eyebrow: 'Backend · Microservice'
+  title: 'Event-Aggregation Microservice'
+  summary: 'A broker-based Telegram service that pulls scattered local events into a single feed.'
+
+overview:
+  title: 'Overview'
+  body: >-
+    Local events were scattered across sources with no single place to see them.
+    I wanted one feed that gathered them in the background and delivered them
+    over Telegram.
+
+built:
+  title: 'What I built'
+  body: >-
+    A broker-based Telegram bot on aiogram, with Celery + Redis workers handling
+    aggregation off the request path and PostgreSQL for storage. The whole stack is orchestrated via Docker Compose,
+    so the bot, workers, broker, and database come up together as one
+    reproducible unit.
+
+highlights:
+  title: 'Highlights'
+  items:
+    broker: 'Clean broker/worker separation with Celery + Redis.'
+    stack: 'Reproducible multi-service stack via Docker Compose.'
+
+gallery:
+  title: 'Gallery'
+  feed_caption: 'Scattered sources, one Telegram feed'
+  arch_caption: 'Broker, workers, and database in one stack'

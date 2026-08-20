@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSO Booking Bot · Cristian Turcan</title>
+  <title>SSO Booking Bot | Cristian Turcan</title>
   <meta name="description" content="A Playwright bot that drives TU Delft's NetID single sign-on and books a gym slot the instant it opens.">
   <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
   <link rel="stylesheet" href="../../style.css">
@@ -30,11 +30,11 @@
 
       <article class="case">
         <div class="case__kicker">
-          <span class="eyebrow">Automation · browser</span>
+          <span class="eyebrow"><!-- copy:automation-bots-sso-booking.hero.eyebrow -->Automation · browser<!-- /copy --></span>
           <span class="badge">Product</span>
         </div>
-        <h1 class="case__title">SSO Booking Bot</h1>
-        <p class="case__summary">A Playwright bot that logs in through TU Delft's NetID single sign-on and grabs a gym slot the instant it opens.</p>
+        <h1 class="case__title"><!-- copy:automation-bots-sso-booking.hero.title -->SSO Booking Bot<!-- /copy --></h1>
+        <p class="case__summary"><!-- copy:automation-bots-sso-booking.hero.summary -->A Playwright bot that logs in through TU Delft's NetID single sign-on and grabs a gym slot the instant it opens.<!-- /copy --></p>
 
         <dl class="case__meta">
           <div><dt>Stack</dt><dd>Python, Playwright</dd></div>
@@ -57,20 +57,20 @@
           </svg>
         </div>
 
-        <h2>Overview</h2>
-        <p>Gym slots open at a fixed time and disappear within seconds. I wanted one booked automatically the moment it went live. The catch: the booking page sits behind TU Delft's full NetID single sign-on, so there is no simple request to fire.</p>
+        <h2><!-- copy:automation-bots-sso-booking.overview.title -->Overview<!-- /copy --></h2>
+        <p><!-- copy:automation-bots-sso-booking.overview.body -->Gym slots are always full 2 days before the time and if one slot opens, it disappears within seconds. I wanted one booked automatically the moment it went live. The booking page sits behind TU Delft's full NetID single sign-on, so there is no simple request to fire.<!-- /copy --></p>
 
-        <h2>What I built</h2>
-        <p>A Playwright bot that drives the complete OIDC/SAML NetID single-sign-on flow end to end, then books the target slot as soon as it becomes available. It retries through the race conditions that show up when everyone hits &ldquo;book&rdquo; at the same instant, so a lost race becomes another attempt rather than a failure.</p>
+        <h2><!-- copy:automation-bots-sso-booking.built.title -->What I built<!-- /copy --></h2>
+        <p><!-- copy:automation-bots-sso-booking.built.body -->A Playwright bot that drives the complete OIDC/SAML NetID single-sign-on flow end to end, then books the target slot as soon as it becomes available.<!-- /copy --></p>
 
-        <h2>Highlights</h2>
+        <h2><!-- copy:automation-bots-sso-booking.highlights.title -->Highlights<!-- /copy --></h2>
         <ul class="entry__points">
-          <li>End-to-end automation of a real enterprise SSO flow (OIDC / SAML).</li>
-          <li>Retries on booking race conditions at the moment of contention.</li>
-          <li>Headless Playwright driving the full authenticated journey.</li>
+          <li><!-- copy:automation-bots-sso-booking.highlights.items.sso -->End-to-end automation of a real enterprise SSO flow.<!-- /copy --></li>
+          <li><!-- copy:automation-bots-sso-booking.highlights.items.retries -->Retries on booking race conditions at the moment of contention.<!-- /copy --></li>
+          <li><!-- copy:automation-bots-sso-booking.highlights.items.headless -->Headless Playwright driving the full authenticated journey.<!-- /copy --></li>
         </ul>
 
-        <h2>Gallery</h2>
+        <h2><!-- copy:automation-bots-sso-booking.gallery.title -->Gallery<!-- /copy --></h2>
         <div class="gallery">
           <figure>
             <div class="case-tile">
@@ -80,7 +80,7 @@
                 <rect class="tile-on2" x="76" y="55" width="8" height="16" rx="4"/>
               </svg>
             </div>
-            <figcaption>Driving the full NetID single sign-on</figcaption>
+            <figcaption><!-- copy:automation-bots-sso-booking.gallery.shield_caption -->Driving the full NetID single sign-on<!-- /copy --></figcaption>
           </figure>
           <figure>
             <div class="case-tile">
@@ -92,7 +92,7 @@
                 <path class="line-on" style="stroke:var(--accent-soft)" d="M73 63 l5 5 8 -11" stroke-width="3"/>
               </svg>
             </div>
-            <figcaption>The slot booked and confirmed</figcaption>
+            <figcaption><!-- copy:automation-bots-sso-booking.gallery.booking_caption -->The slot booked and confirmed<!-- /copy --></figcaption>
           </figure>
         </div>
       </article>

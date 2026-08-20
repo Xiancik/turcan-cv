@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects · Cristian Turcan</title>
+  <title>Projects | Cristian Turcan</title>
   <meta name="description" content="Selected projects: a generals.io game bot, 3D mesh simplification, algorithmic trading, automation bots, and a Brainfuck JIT.">
-  <meta property="og:title" content="Projects · Cristian Turcan">
+  <meta property="og:title" content="Projects | Cristian Turcan">
   <meta property="og:description" content="Selected projects: a generals.io game bot, 3D mesh simplification, algorithmic trading, automation bots, and a Brainfuck JIT.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://turcan.nl/projects.html">
@@ -46,9 +46,9 @@
   <main id="main">
     <div class="container">
       <div class="page-head reveal-seq">
-        <p class="eyebrow">Built for the love of it</p>
-        <h1>Projects</h1>
-        <p>Self-directed and competition work, laid out by how close to the metal it runs — from a browser product down to hand-written machine code.</p>
+        <p class="eyebrow"><!-- copy:projects.page.eyebrow -->Built for the love of it<!-- /copy --></p>
+        <h1><!-- copy:projects.page.title -->Projects<!-- /copy --></h1>
+        <p><!-- copy:projects.page.intro -->Self-directed and competition work, laid out by how close to the metal it runs, from a browser product down to hand-written machine code.<!-- /copy --></p>
       </div>
 
       <section class="section" aria-label="Projects by depth">
@@ -57,8 +57,8 @@
           <div class="band band--product">
             <div class="band__head">
               <span class="band__gauge" aria-hidden="true"><i></i><i></i><i></i></span>
-              <h2 class="band__label">Product</h2>
-              <p class="band__hint">whole apps and services, from the browser in</p>
+              <h2 class="band__label"><!-- copy:projects.bands.product.label -->Product<!-- /copy --></h2>
+              <p class="band__hint"><!-- copy:projects.bands.product.hint -->whole apps and services, from the browser in<!-- /copy --></p>
             </div>
             <div class="band__items">
 
@@ -77,10 +77,10 @@
                   </svg>
                 </div>
                 <div class="project-card__body">
-                  <div class="project-card__domain">Full-stack · AI</div>
-                  <div class="project-card__name">CreatorMatch</div>
-                  <p class="project-card__desc">A Moldova-only platform matching businesses with local creators through an AI-ranked shortlist.</p>
-                  <p class="project-card__spec"><span>Next.js + FastAPI</span><span>solo build</span><span>pgvector + Claude</span></p>
+                  <div class="project-card__domain"><!-- copy:projects.product.creator_match.domain -->Full-stack · AI<!-- /copy --></div>
+                  <div class="project-card__name"><!-- copy:projects.product.creator_match.name -->CreatorMatch<!-- /copy --></div>
+                  <p class="project-card__desc"><!-- copy:projects.product.creator_match.desc -->A Moldova-only platform matching businesses with local creators through an AI-ranked shortlist.<!-- /copy --></p>
+                  <p class="project-card__spec"><!-- copy:projects.product.creator_match.spec --><span>Next.js + FastAPI</span><span>solo build</span><span>pgvector + Claude</span><!-- /copy --></p>
                   <div class="tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">pgvector</span><span class="tag">Claude</span></div>
                 </div>
               </a>
@@ -88,11 +88,11 @@
               <a class="project-card project-card--spec" href="projects/automation-bots/">
                 <img class="project-card__thumb" src="img/projects/automation-bots.svg" alt="Automation bots architecture: sources to scheduling and browser automation to Telegram delivery">
                 <div class="project-card__body">
-                  <div class="project-card__domain">Automation · services</div>
-                  <div class="project-card__name">Telegram &amp; Automation Bots</div>
-                  <p class="project-card__desc">Small real-world annoyances, automated away — from change alerts to grabbing a gym slot the instant it opens.</p>
-                  <p class="project-card__more"><b>3 bots</b> — change-tracking · SSO booking · event aggregation</p>
-                  <p class="project-card__spec"><span>Python</span><span>aiogram + Celery</span><span>Playwright</span></p>
+                  <div class="project-card__domain"><!-- copy:projects.product.automation.domain -->Automation · services<!-- /copy --></div>
+                  <div class="project-card__name"><!-- copy:projects.product.automation.name -->Telegram &amp; Automation Bots<!-- /copy --></div>
+                  <p class="project-card__desc"><!-- copy:projects.product.automation.desc -->Small real-world annoyances, automated away: change alerts, a bot that grabs a gym slot the instant it opens, and one that applies to jobs for you.<!-- /copy --></p>
+                  <p class="project-card__more"><!-- copy:projects.product.automation.more --><b>5 bots</b>: change-tracking · SSO booking · event aggregation · legal acts · job auto-apply<!-- /copy --></p>
+                  <p class="project-card__spec"><!-- copy:projects.product.automation.spec --><span>Python</span><span>aiogram + Celery</span><span>Playwright</span><!-- /copy --></p>
                   <div class="tags"><span class="tag">Python</span><span class="tag">aiogram</span><span class="tag">Celery</span><span class="tag">Playwright</span></div>
                 </div>
               </a>
@@ -103,19 +103,19 @@
           <div class="band band--systems">
             <div class="band__head">
               <span class="band__gauge" aria-hidden="true"><i></i><i></i><i></i></span>
-              <h2 class="band__label">Systems &amp; compute</h2>
-              <p class="band__hint">numerical and market engines, scored against a judge</p>
+              <h2 class="band__label"><!-- copy:projects.bands.systems.label -->Systems &amp; compute<!-- /copy --></h2>
+              <p class="band__hint"><!-- copy:projects.bands.systems.hint -->numerical and market engines, scored against a judge<!-- /copy --></p>
             </div>
             <div class="band__items">
 
               <a class="project-card project-card--spec project-card--feature" href="projects/generals-ffa-bot.html">
                 <img class="project-card__thumb" src="img/projects/generals.png" alt="A generals.io free-for-all board mid-game: four armies in teal, red, blue and green carving up a grid of tiles, cities and mountains">
                 <div class="project-card__body">
-                  <div class="project-card__domain">Game AI · simulation</div>
-                  <div class="project-card__name">A generals.io FFA Bot</div>
-                  <p class="project-card__desc">A from-scratch lab for the real-time strategy game generals.io: a numpy battle simulator, a heuristic commander that plays through fog of war, and a neural policy trained to imitate it.</p>
-                  <p class="project-card__more"><b>Four parts</b> — simulator · heuristic bot · Elo ladder · neural policy</p>
-                  <p class="project-card__spec"><span>Python + PyTorch</span><span>self-directed</span><span><b>27</b> test files · <b>100</b> tests</span></p>
+                  <div class="project-card__domain"><!-- copy:projects.systems.generals.domain -->Game AI · simulation<!-- /copy --></div>
+                  <div class="project-card__name"><!-- copy:projects.systems.generals.name -->A generals.io FFA Bot<!-- /copy --></div>
+                  <p class="project-card__desc"><!-- copy:projects.systems.generals.desc -->A from-scratch lab for the real-time strategy game generals.io: a numpy battle simulator, a heuristic commander that plays through fog of war, and a neural policy trained to imitate it.<!-- /copy --></p>
+                  <p class="project-card__more"><!-- copy:projects.systems.generals.more --><b>Four parts</b>: simulator · heuristic bot · Elo ladder · neural policy<!-- /copy --></p>
+                  <p class="project-card__spec"><!-- copy:projects.systems.generals.spec --><span>Python + PyTorch</span><span>self-directed</span><span><b>27</b> test files · <b>100</b> tests</span><!-- /copy --></p>
                   <div class="tags"><span class="tag">Python</span><span class="tag">numpy</span><span class="tag">PyTorch</span><span class="tag">RL</span></div>
                 </div>
               </a>
@@ -123,10 +123,10 @@
               <a class="project-card project-card--spec" href="projects/mesh-simplification.html">
                 <img class="project-card__thumb" src="img/projects/mesh.gif" alt="A 3D mesh being progressively simplified, its triangle count dropping">
                 <div class="project-card__body">
-                  <div class="project-card__domain">Computational geometry</div>
-                  <div class="project-card__name">Perception-Aware 3D Mesh Simplification</div>
-                  <p class="project-card__desc">A from-scratch QEM edge-collapse solver for Huawei’s 2nd IMC Challenge, with a hand-built renderer to predict its own score.</p>
-                  <p class="project-card__spec"><span>C++</span><span>Huawei IMC</span><span><b>87.49</b> score · 7/7 cases</span></p>
+                  <div class="project-card__domain"><!-- copy:projects.systems.mesh.domain -->Computational geometry<!-- /copy --></div>
+                  <div class="project-card__name"><!-- copy:projects.systems.mesh.name -->Perception-Aware 3D Mesh Simplification<!-- /copy --></div>
+                  <p class="project-card__desc"><!-- copy:projects.systems.mesh.desc -->A from-scratch QEM edge-collapse solver for Huawei’s 2nd IMC Challenge, with a hand-built renderer to predict its own score.<!-- /copy --></p>
+                  <p class="project-card__spec"><!-- copy:projects.systems.mesh.spec --><span>C++</span><span>Huawei IMC</span><span><b>87.49</b> score · 7/7 cases</span><!-- /copy --></p>
                   <div class="tags"><span class="tag">C++</span><span class="tag">QEM</span><span class="tag">SSIM</span></div>
                 </div>
               </a>
@@ -134,10 +134,10 @@
               <a class="project-card project-card--spec" href="projects/prosperity4.html">
                 <img class="project-card__thumb" src="img/projects/prosperity.png" alt="Trading analytics dashboard with a rising PnL curve">
                 <div class="project-card__body">
-                  <div class="project-card__domain">Quantitative trading</div>
-                  <div class="project-card__name">IMC Prosperity 4 — Algorithmic Trading</div>
-                  <p class="project-card__desc">Options market-making on Black-Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.</p>
-                  <p class="project-card__spec"><span>Python</span><span>IMC Prosperity 4</span><span>NumPy · SciPy</span></p>
+                  <div class="project-card__domain"><!-- copy:projects.systems.prosperity.domain -->Quantitative trading<!-- /copy --></div>
+                  <div class="project-card__name"><!-- copy:projects.systems.prosperity.name -->IMC Prosperity 4: Algorithmic Trading<!-- /copy --></div>
+                  <p class="project-card__desc"><!-- copy:projects.systems.prosperity.desc -->Options market-making on Black-Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.<!-- /copy --></p>
+                  <p class="project-card__spec"><!-- copy:projects.systems.prosperity.spec --><span>Python</span><span>IMC Prosperity 4</span><span>NumPy · SciPy</span><!-- /copy --></p>
                   <div class="tags"><span class="tag">Black-Scholes</span><span class="tag">IV smile</span><span class="tag">backtesting</span></div>
                 </div>
               </a>
@@ -148,24 +148,24 @@
           <div class="band band--metal">
             <div class="band__head">
               <span class="band__gauge" aria-hidden="true"><i></i><i></i><i></i></span>
-              <h2 class="band__label">Bare metal</h2>
-              <p class="band__hint">no framework, no runtime — emitting machine code by hand</p>
+              <h2 class="band__label"><!-- copy:projects.bands.metal.label -->Bare metal<!-- /copy --></h2>
+              <p class="band__hint"><!-- copy:projects.bands.metal.hint -->no framework, no runtime: emitting machine code by hand<!-- /copy --></p>
             </div>
             <div class="band__items band__items--single">
 
               <a class="project-card project-card--spec project-card--capstone" href="projects/brainfuck-jit.html">
                 <div class="project-card__body">
                   <div class="project-card__capbody">
-                    <div class="project-card__domain">Assembly · compilers</div>
-                    <div class="project-card__name">A JIT Compiler for Brainfuck</div>
-                    <p class="project-card__desc">Rather than interpret, it emits native x86-64 into memory at run time and jumps into it — a hands-on tour of code generation all the way down to the instruction bytes.</p>
-                    <p class="project-card__spec"><span>x86-64 assembly</span><span>self-directed</span><span>source → native</span></p>
+                    <div class="project-card__domain"><!-- copy:projects.metal.brainfuck.domain -->Assembly · compilers<!-- /copy --></div>
+                    <div class="project-card__name"><!-- copy:projects.metal.brainfuck.name -->A JIT Compiler for Brainfuck<!-- /copy --></div>
+                    <p class="project-card__desc"><!-- copy:projects.metal.brainfuck.desc -->Rather than interpret, it emits native x86-64 into memory at run time and jumps into it, a hands-on tour of code generation all the way down to the instruction bytes.<!-- /copy --></p>
+                    <p class="project-card__spec"><!-- copy:projects.metal.brainfuck.spec --><span>x86-64 assembly</span><span>self-directed</span><span>source → native</span><!-- /copy --></p>
                     <div class="tags"><span class="tag">Assembly</span><span class="tag">JIT</span><span class="tag">Codegen</span></div>
                   </div>
 <pre class="project-card__code" aria-hidden="true"><span class="cm">. Brainfuck → x86-64, emitted at run time</span>
 +   →  <b>add</b> byte [rbx], 1
 &gt;   →  <b>inc</b> rbx
-[ ] →  <b>cmp</b> / <b>jz</b> — back-patched jumps</pre>
+[ ] →  <b>cmp</b> / <b>jz</b>, back-patched jumps</pre>
                 </div>
               </a>
 

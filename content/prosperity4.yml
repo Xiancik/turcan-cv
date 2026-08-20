@@ -1,0 +1,39 @@
+# Prose for projects/prosperity4.html. Edit here, then run `npm run build`.
+# Values may contain inline HTML (<em>, <a>, <b>, <span>). Structural tags
+# (<article>, <section>, <div>, <ul>, <h3>) live in the .html file.
+
+hero:
+  title: 'IMC Prosperity 4: Algorithmic Trading'
+  summary: 'Options market-making and statistical strategies for IMC’s Prosperity 4 algorithmic-trading competition.'
+
+overview:
+  title: 'Overview'
+  body: >-
+    Prosperity is a multi-round algorithmic-trading competition with a
+    simulated exchange. Each round exposes new instruments, including
+    options, that reward pricing them correctly and quoting two-sided
+    liquidity without taking on unwanted directional risk.
+
+built:
+  title: 'What I built'
+  body: >-
+    Options market-making built on Black-Scholes pricing with Greeks, fitting
+    the implied-volatility smile (a quadratic / LOOCV-polynomial and SVI
+    parameterisation) so quotes stay consistent across strikes, plus delta
+    hedging on the underlying. Alongside that, a mean-reversion strategy and
+    a hand-written stationarity / time-series test library (ADF, KPSS,
+    Ljung-Box, variance-ratio, and Phillips-Perron) feeding a grid-search
+    optimiser, all validated against a submodule backtester with a Dash
+    analytics dashboard.
+
+highlights:
+  title: 'Highlights'
+  items:
+    options: 'End-to-end options market-maker: pricing → IV smile → quoting → delta hedging.'
+    toolkit: 'Reusable statistical-testing toolkit for validating signal stationarity.'
+    gridsearch: 'Parallel grid-search tuning validated over a dedicated backtester.'
+
+gallery:
+  title: 'Gallery'
+  charts_caption: 'Price, order book &amp; own fills'
+  emeralds_caption: 'Per-product order-book depth'

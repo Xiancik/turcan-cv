@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telegram &amp; Automation Bots · Cristian Turcan</title>
-  <meta name="description" content="A change-tracking alert bot, an SSO booking automation, and a broker-based event-aggregation microservice.">
+  <title>Telegram &amp; Automation Bots | Cristian Turcan</title>
+  <meta name="description" content="A change-tracking alert bot, an SSO booking automation, an event-aggregation microservice, a legal-acts bot, and a job auto-apply bot.">
   <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
   <link rel="stylesheet" href="../../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
@@ -30,47 +30,63 @@
 
       <article class="case">
         <div class="case__kicker">
-          <span class="eyebrow">Automation · services</span>
+          <span class="eyebrow"><!-- copy:automation-bots-index.hero.eyebrow -->Automation · Services<!-- /copy --></span>
           <span class="badge">Product</span>
         </div>
-        <h1 class="case__title">Telegram &amp; Automation Bots</h1>
-        <p class="case__summary">A set of Python bots for tracking changes, automating logins, and aggregating local events.</p>
+        <h1 class="case__title"><!-- copy:automation-bots-index.hero.title -->Telegram &amp; Automation Bots<!-- /copy --></h1>
+        <p class="case__summary"><!-- copy:automation-bots-index.hero.summary -->A set of Python bots for tracking changes, automating logins, aggregating local content, and applying to jobs.<!-- /copy --></p>
 
         <dl class="case__meta">
           <div><dt>Stack</dt><dd>Python, python-telegram-bot, aiogram, Playwright</dd></div>
           <div><dt>Infra</dt><dd>Celery, Redis, PostgreSQL, Docker</dd></div>
-          <div><dt>Testing</dt><dd>pytest (41 tests / 8 modules)</dd></div>
+          <div><dt>Testing</dt><dd>pytest suites per bot</dd></div>
         </dl>
 
         <img class="case__cover" src="../../img/projects/automation-bots.svg" alt="Automation bots architecture: sources to scheduling and browser automation to change detection to Telegram delivery">
 
-        <h2>Overview</h2>
-        <p>A cluster of automation projects, each solving a small real-world annoyance: being notified when remote data changes, grabbing a gym slot the instant it opens, and pulling scattered local events into one feed. Each one is written up on its own page below.</p>
+        <h2><!-- copy:automation-bots-index.overview.title -->Overview<!-- /copy --></h2>
+        <p><!-- copy:automation-bots-index.overview.body -->A cluster of automation projects, each solving a small real-world annoyance: being notified when remote data changes, grabbing a gym slot the instant it opens, pulling scattered local events into one feed, pushing newly published legal acts to people who care about a given sector, and applying once to every matching software-engineer listing on rabota.md. Each one is written up on its own page below.<!-- /copy --></p>
 
-        <h2>The bots</h2>
+        <h2><!-- copy:automation-bots-index.bots.title -->The bots<!-- /copy --></h2>
         <div class="project-grid">
 
           <a class="project-card project-card--text" href="change-tracking.html">
             <div class="project-card__body">
-              <div class="project-card__name">Change-tracking bot →</div>
-              <p class="project-card__desc">Snapshot-diffs a paginated third-party API and alerts on Telegram the moment the data changes.</p>
+              <div class="project-card__name"><!-- copy:automation-bots-index.bots.change_tracking.name -->Change-tracking bot →<!-- /copy --></div>
+              <p class="project-card__desc"><!-- copy:automation-bots-index.bots.change_tracking.desc -->Snapshot-diffs a paginated third-party API and alerts on Telegram the moment the data changes.<!-- /copy --></p>
               <div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span><span class="tag">Telegram</span></div>
             </div>
           </a>
 
           <a class="project-card project-card--text" href="sso-booking.html">
             <div class="project-card__body">
-              <div class="project-card__name">SSO booking bot →</div>
-              <p class="project-card__desc">Drives TU Delft's full NetID single sign-on and grabs a gym slot the instant it opens.</p>
+              <div class="project-card__name"><!-- copy:automation-bots-index.bots.sso_booking.name -->SSO booking bot →<!-- /copy --></div>
+              <p class="project-card__desc"><!-- copy:automation-bots-index.bots.sso_booking.desc -->Drives TU Delft's full NetID single sign-on and grabs a gym slot the instant it opens.<!-- /copy --></p>
               <div class="tags"><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">OIDC / SAML</span></div>
             </div>
           </a>
 
           <a class="project-card project-card--text" href="event-aggregation.html">
             <div class="project-card__body">
-              <div class="project-card__name">Event-aggregation microservice →</div>
-              <p class="project-card__desc">A broker-based Telegram service that pulls scattered local events into a single feed.</p>
+              <div class="project-card__name"><!-- copy:automation-bots-index.bots.event_aggregation.name -->Event-aggregation microservice →<!-- /copy --></div>
+              <p class="project-card__desc"><!-- copy:automation-bots-index.bots.event_aggregation.desc -->A broker-based Telegram service that pulls scattered local events into a single feed.<!-- /copy --></p>
               <div class="tags"><span class="tag">aiogram</span><span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span></div>
+            </div>
+          </a>
+
+          <a class="project-card project-card--text" href="laws-aggregator.html">
+            <div class="project-card__body">
+              <div class="project-card__name"><!-- copy:automation-bots-index.bots.laws_aggregator.name -->Legal acts bot →<!-- /copy --></div>
+              <p class="project-card__desc"><!-- copy:automation-bots-index.bots.laws_aggregator.desc -->Pushes newly published Moldovan legal acts to users, filtered by the topic sectors they subscribe to.<!-- /copy --></p>
+              <div class="tags"><span class="tag">aiogram</span><span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span></div>
+            </div>
+          </a>
+
+          <a class="project-card project-card--text" href="rabota-apply.html">
+            <div class="project-card__body">
+              <div class="project-card__name"><!-- copy:automation-bots-index.bots.rabota_apply.name -->Job auto-apply bot →<!-- /copy --></div>
+              <p class="project-card__desc"><!-- copy:automation-bots-index.bots.rabota_apply.desc -->A scheduled Playwright bot that applies once, per criteria, to every new software-engineer listing on rabota.md.<!-- /copy --></p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">SQLite</span><span class="tag">systemd</span></div>
             </div>
           </a>
 

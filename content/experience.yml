@@ -1,0 +1,109 @@
+# Prose for experience.html. Edit here, then run `npm run build`.
+# Values may contain inline HTML (<em>, <a>, <b>, <span>). Structural tags
+# (<article>, <section>, <div>, <ul>, <h3>) live in the .html file.
+
+page:
+  eyebrow: 'Experience'
+  title: 'Where I’ve been building'
+  intro: >-
+    Four engineering roles, two of them live right now, plus two degrees at
+    TU Delft. Want the whole thing on paper?
+    <a href="cv.pdf" download>Grab the CV</a>.
+
+work:
+  eyebrow: 'Work'
+  title: 'Roles I’ve shipped in'
+  lead: >-
+    Real, paid engineering, newest at the top. Two of these run in parallel
+    right now. The others trace back through 2024.
+  now: '<span class="career-now__tag">Now</span> Aug 2026: two roles live, in parallel'
+  roles:
+    offroad:
+      when: 'Jan 2026 – <span class="role__now">Present</span>'
+      title: 'Software Engineer<span class="role__pt">Part-time</span>'
+      org: '<a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft, Netherlands'
+      summary: 'Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.'
+      points:
+        1: >-
+          Built a .NET 10 Android binding of Garmin’s native Health SDK
+          (Standard 4.7.0) and a MAUI app pairing wearables and streaming 7
+          vital-sign types (heart rate, HRV, SpO₂, respiration, stress, steps,
+          accelerometer) to the VitalsIQ backend.
+        2: >-
+          Authored the Java-to-C# binding transforms resolving R8, Guava,
+          SQLCipher, and Gson interop conflicts, plus an Android foreground
+          service for resilient background sync.
+        3: >-
+          Built a CivTAK (civilian ATAK) plugin in Java surfacing wearable
+          vitals as an in-app pane and map marker, on a device-independent,
+          JUnit-tested core with a Messenger IPC bridge to the MAUI app.
+        4: >-
+          Ported the full JABCode colour 2D-barcode library (encoder and
+          decoder with error correction) from C to C#.
+    insyght:
+      when: 'Aug 2025 – <span class="role__now">Present</span>'
+      title: 'Embedded Software Engineer<span class="role__pt">Part-time</span>'
+      org: '<a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft, Netherlands'
+      summary: 'Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor.'
+      points:
+        1: >-
+          Built the end-to-end noise-classifier pipeline (data preparation,
+          training, evaluation, and firmware integration) for on-device
+          inference: 92% accuracy at a size of only 40 KB.
+        2: >-
+          Developed the firmware in C/C++ on Zephyr RTOS / nRF Connect SDK,
+          architecting 11 self-contained driver components (~3K LOC).
+        3: >-
+          Built a real-time acoustic metering pipeline: A-weighted (3-stage
+          biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM
+          MEMS microphones, with calibrated dB-SPL and clipping detection.
+        4: >-
+          Cut measured idle current from ~960 µA to ~189 µA via PPK2
+          differential power profiling, root-causing the LTE-modem floor, an
+          LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.
+        5: >-
+          Implemented an LTE-M / NB-IoT uplink (nRF9151 serial modem, AT
+          sockets, hand-written JSON codec) to a Node.js / Express telemetry
+          backend.
+    altix:
+      when: 'Apr 2025 – Jun 2025'
+      title: 'Machine Learning Engineer Intern'
+      org: '<a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam, Netherlands'
+      summary: 'An AI document-ingestion pipeline that sped up analyst screening.'
+      points:
+        1: >-
+          Built an AI document-ingestion pipeline to parse PDFs, spreadsheets,
+          and images (with OCR), then auto-summarise and classify content,
+          cutting manual screening from 10 minutes per document to 2.
+        2: >-
+          Shipped a REST service and lightweight web UI that streamlined
+          analyst review, cutting document navigation and handling time by
+          roughly 60%.
+    huawei:
+      when: 'Dec 2024 – May 2025'
+      title: 'Machine Learning Engineer Intern'
+      org: '<a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam, Netherlands'
+      summary: 'Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.'
+      points:
+        1: 'Designed an English keyword-spotting pipeline. Precision went from 92% to 94% and WER dropped by 1.1%.'
+        2: >-
+          Built, cleaned, and validated large-scale audio datasets with forced
+          alignment and transfer learning. Expanded coverage from 100 to 300+
+          hours and reduced corrupted data from 10% to 2%.
+        3: 'Built a reproducible benchmarking pipeline for ASR/TTS candidates, cutting evaluation time from 4 hours to 1.'
+
+education:
+  eyebrow: 'Education'
+  title: 'Delft, twice over'
+  lead: 'The BSc just wrapped. The MSc starts this September, both at TU Delft.'
+  entries:
+    msc:
+      title: 'MSc Data Science &amp; Artificial Intelligence Technology'
+      org: '<a class="role__company" href="https://www.tudelft.nl/en/" target="_blank" rel="noopener noreferrer">Delft University of Technology</a> · Sep 2026 – Jun 2028'
+    bsc:
+      title: 'BSc (Honours) Computer Science &amp; Engineering'
+      org: 'Sep 2023 – Jun 2026'
+      summary: 'Honours Programme · Minor in Finance (Sep 2025 – Jan 2026).'
+
+footer:
+  contact: '<a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> <span aria-hidden="true">·</span> <a href="cv.pdf" download>CV (PDF)</a> <span aria-hidden="true">·</span> Cristian Turcan'

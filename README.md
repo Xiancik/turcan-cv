@@ -1,11 +1,11 @@
-# turcan.nl — personal site (CV + portfolio)
+# turcan.nl: personal site (CV + portfolio)
 
 Multi-page static site. No build step: plain HTML + one shared `style.css`.
 
 ## Pages
 
 ```
-index.html            Home — intro, skills, links into each section
+index.html            Home: intro, skills, links into each section
 experience.html       Work history + education
 projects.html         Project listing (card grid)
 projects/*.html       One page per project (case study)
@@ -16,8 +16,28 @@ papers.html           Publications
 
 ## Editing content
 
-Open any page and fill in the `[bracketed]` placeholders — that's all real content.
-Your name is already set throughout. Email links point to `cristian@turcan.nl`.
+Prose lives in `content/*.yml`: one file per page. Edit the YAML, then run:
+
+```bash
+npm run build
+```
+
+The build script scans each `.html` file for `<!-- copy:KEY -->…<!-- /copy -->` markers
+and replaces what's between them with the matching value from the yaml. Structural HTML
+(role cards, project cards, nav, footer) still lives in the `.html` files. Only prose
+comes from yaml. Values may contain inline HTML (`<em>`, `<a>`, `<b>`, `<span>`).
+
+Adding a new copy field:
+
+1. Add it to `content/<page>.yml` (e.g. `hero.tagline: "..."`).
+2. Wrap the phrase in the HTML: `<p><!-- copy:index.hero.tagline -->fallback text<!-- /copy --></p>`.
+3. `npm run build`: the fallback gets replaced by the yaml value.
+
+The build is idempotent (safe to re-run) and warns about missing / unused keys.
+
+All 15 pages are wired up: `index`, `experience`, `projects`, `events`, `papers`,
+every `projects/*.html` case study, and every `projects/automation-bots/*.html`.
+`<head>` tags, nav, and footer boilerplate stay in HTML.
 
 ### Add a project
 
@@ -39,7 +59,7 @@ Every image currently points at `img/placeholder.svg`. To use a real image:
 2. Change that image's `src`. On project pages (inside `projects/`) the path is
    `../img/projects/your-file.png`. On top-level pages it's `img/projects/your-file.png`.
 
-### Optional bits (commented out — uncomment when ready)
+### Optional bits (commented out. Uncomment when ready)
 
 - Headshot on the home hero (`img/photo.jpg`).
 - GitHub / LinkedIn links in the home hero.
@@ -53,6 +73,7 @@ already point at it.
 ## Preview locally
 
 ```bash
+npm run build
 python -m http.server 8000
 ```
 
@@ -64,16 +85,16 @@ Then open http://localhost:8000.
 2. **Settings → Pages** → Source: `Deploy from a branch` → `main` / `/ (root)`.
 3. **Custom domain:** enter `turcan.nl` (the `CNAME` file already contains it).
 4. At your DNS host, add these **alongside** the existing Zoho mail records
-   (do **not** touch `MX` / `SPF` / `DKIM` — email keeps working):
+   (do **not** touch `MX` / `SPF` / `DKIM`, so email keeps working):
 
-   Apex `turcan.nl` — four `A` records:
+   Apex `turcan.nl`: four `A` records:
    ```
    185.199.108.153
    185.199.109.153
    185.199.110.153
    185.199.111.153
    ```
-   Subdomain `www` — one `CNAME` → `USERNAME.github.io`.
+   Subdomain `www`: one `CNAME` → `USERNAME.github.io`.
 
 5. Tick **Enforce HTTPS** once the certificate provisions.
 

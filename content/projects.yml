@@ -1,0 +1,62 @@
+# Prose for projects.html. Edit here, then run `npm run build`.
+# Values may contain inline HTML (<em>, <a>, <b>, <span>). Structural tags
+# (<article>, <section>, <div>, <ul>, <h3>) live in the .html file.
+
+page:
+  eyebrow: 'Built for the love of it'
+  title: 'Projects'
+  intro: >-
+    Self-directed and competition work, laid out by how close to the metal it
+    runs, from a browser product down to hand-written machine code.
+
+bands:
+  product:
+    label: 'Product'
+    hint: 'whole apps and services, from the browser in'
+  systems:
+    label: 'Systems &amp; compute'
+    hint: 'numerical and market engines, scored against a judge'
+  metal:
+    label: 'Bare metal'
+    hint: 'no framework, no runtime: emitting machine code by hand'
+
+product:
+  creator_match:
+    domain: 'Full-stack · AI'
+    name: 'CreatorMatch'
+    desc: 'A Moldova-only platform matching businesses with local creators through an AI-ranked shortlist.'
+    spec: '<span>Next.js + FastAPI</span><span>solo build</span><span>pgvector + Claude</span>'
+  automation:
+    domain: 'Automation · services'
+    name: 'Telegram &amp; Automation Bots'
+    desc: 'Small real-world annoyances, automated away: change alerts, a bot that grabs a gym slot the instant it opens, and one that applies to jobs for you.'
+    more: '<b>5 bots</b>: change-tracking · SSO booking · event aggregation · legal acts · job auto-apply'
+    spec: '<span>Python</span><span>aiogram + Celery</span><span>Playwright</span>'
+
+systems:
+  generals:
+    domain: 'Game AI · simulation'
+    name: 'A generals.io FFA Bot'
+    desc: >-
+      A from-scratch lab for the real-time strategy game generals.io: a numpy
+      battle simulator, a heuristic commander that plays through fog of war,
+      and a neural policy trained to imitate it.
+    more: '<b>Four parts</b>: simulator · heuristic bot · Elo ladder · neural policy'
+    spec: '<span>Python + PyTorch</span><span>self-directed</span><span><b>27</b> test files · <b>100</b> tests</span>'
+  mesh:
+    domain: 'Computational geometry'
+    name: 'Perception-Aware 3D Mesh Simplification'
+    desc: 'A from-scratch QEM edge-collapse solver for Huawei’s 2nd IMC Challenge, with a hand-built renderer to predict its own score.'
+    spec: '<span>C++</span><span>Huawei IMC</span><span><b>87.49</b> score · 7/7 cases</span>'
+  prosperity:
+    domain: 'Quantitative trading'
+    name: 'IMC Prosperity 4: Algorithmic Trading'
+    desc: 'Options market-making on Black–Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.'
+    spec: '<span>Python</span><span>IMC Prosperity 4</span><span>NumPy · SciPy</span>'
+
+metal:
+  brainfuck:
+    domain: 'Assembly · compilers'
+    name: 'A JIT Compiler for Brainfuck'
+    desc: 'Rather than interpret, it emits native x86-64 into memory at run time and jumps into it, a hands-on tour of code generation all the way down to the instruction bytes.'
+    spec: '<span>x86-64 assembly</span><span>self-directed</span><span>source → native</span>'

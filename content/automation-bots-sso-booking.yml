@@ -1,0 +1,31 @@
+# Prose for projects/automation-bots/sso-booking.html. Edit here, then run `npm run build`.
+
+hero:
+  eyebrow: 'Automation · browser'
+  title: 'SSO Booking Bot'
+  summary: "A Playwright bot that logs in through TU Delft's NetID single sign-on and grabs a gym slot the instant it opens."
+
+overview:
+  title: 'Overview'
+  body: >-
+    Gym slots are always full 2 days before the time and if one slot opens, it disappears within seconds. I wanted one
+    booked automatically the moment it went live. The booking page
+    sits behind TU Delft's full NetID single sign-on, so there is no simple
+    request to fire.
+
+built:
+  title: 'What I built'
+  body: >-
+    A Playwright bot that drives the complete OIDC/SAML NetID single-sign-on
+    flow end to end, then books the target slot as soon as it becomes available.
+
+highlights:
+  title: 'Highlights'
+  items:
+    sso: 'End-to-end automation of a real enterprise SSO flow.'
+    headless: 'Headless Playwright driving the full authenticated journey.'
+
+gallery:
+  title: 'Gallery'
+  shield_caption: 'Driving the full NetID single sign-on'
+  booking_caption: 'The slot booked and confirmed'

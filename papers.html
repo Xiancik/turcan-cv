@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Papers · Cristian Turcan</title>
+  <title>Papers | Cristian Turcan</title>
   <meta name="description" content="Research on decision-focused learning and graph neural networks by Cristian Turcan.">
-  <meta property="og:title" content="Papers · Cristian Turcan">
+  <meta property="og:title" content="Papers | Cristian Turcan">
   <meta property="og:description" content="Research on decision-focused learning and graph neural networks by Cristian Turcan.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://turcan.nl/papers.html">
@@ -46,20 +46,20 @@
   <main id="main">
     <div class="container">
       <div class="page-head reveal-seq">
-        <p class="eyebrow">Research · TU Delft</p>
-        <h1>Questions worth a semester</h1>
-        <p>Two strands I chased at TU Delft — teaching models to make good <em>decisions</em>, not just good predictions. And graph neural networks for the graphs where similar things don’t connect.</p>
+        <p class="eyebrow"><!-- copy:papers.head.eyebrow -->Research · TU Delft<!-- /copy --></p>
+        <h1><!-- copy:papers.head.title -->Questions worth a semester<!-- /copy --></h1>
+        <p><!-- copy:papers.head.intro -->Two strands I chased at TU Delft: teaching models to make good <em>decisions</em>, not just good predictions. And graph neural networks for the graphs where similar things don’t connect.<!-- /copy --></p>
       </div>
 
       <section class="section papers reveal-seq" aria-label="Publications">
 
         <article class="paper">
-          <h2 class="paper__title">Learning Feasible Decisions Directly from Features for Combinatorial Optimization</h2>
-          <p class="paper__byline"><span class="me">Cristian Turcan</span> · first author</p>
+          <h2 class="paper__title"><!-- copy:papers.dfl.title -->Learning Feasible Decisions Directly from Features for Combinatorial Optimization<!-- /copy --></h2>
+          <p class="paper__byline"><!-- copy:papers.dfl.byline --><span class="me">Cristian Turcan</span> · first author<!-- /copy --></p>
 
           <div class="paper__meta">
-            <span class="paper__venue">TU Delft Honours Programme</span>
-            <span class="badge">Under review · BNAIC 2026</span>
+            <span class="paper__venue"><!-- copy:papers.dfl.venue -->TU Delft Honours Programme<!-- /copy --></span>
+            <span class="badge"><!-- copy:papers.dfl.badge -->Under review · BNAIC 2026<!-- /copy --></span>
             <span class="paper__year">2026</span>
           </div>
 
@@ -70,30 +70,24 @@
             <span class="tag">knapsack · TSP</span>
           </div>
 
-          <p class="paper__lede">A solver-free way to predict decisions that are feasible by construction — trained to minimise regret, not prediction error.</p>
-          <p class="paper__abstract">
-            Proposes <strong>LR-STE</strong>, which projects a neural predictor’s output onto the problem’s
-            linear relaxation and applies a feasibility-correction layer, trained end-to-end with a
-            straight-through estimator to minimise decision regret rather than prediction error. Benchmarked on
-            0/1 Knapsack and the Travelling Salesperson Problem against SPO+, two-stage predict-then-optimize,
-            and projection-free (STE) baselines.
-          </p>
+          <p class="paper__lede"><!-- copy:papers.dfl.lede -->A solver-free way to predict decisions that are feasible by construction, trained to minimise regret, not prediction error.<!-- /copy --></p>
+          <p class="paper__abstract"><!-- copy:papers.dfl.abstract -->Proposes <strong>LR-STE</strong>, which projects a neural predictor’s output onto the problem’s linear relaxation and applies a feasibility-correction layer, trained end-to-end with a straight-through estimator to minimise decision regret rather than prediction error. Benchmarked on 0/1 Knapsack and the Travelling Salesperson Problem against SPO+, two-stage predict-then-optimize, and projection-free (STE) baselines.<!-- /copy --></p>
 
           <p class="paper__links">
             <!-- TODO: replace the placeholder href with the real preprint/PDF URL -->
             <a class="paper__link" href="PASTE_BNAIC_PDF_URL">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
-              Read the paper
+              <!-- copy:papers.dfl.link -->Read the paper<!-- /copy -->
             </a>
           </p>
         </article>
 
         <article class="paper">
-          <h2 class="paper__title">Heterophilic Methods on Multi-Label Graphs</h2>
-          <p class="paper__byline"><span class="me">Cristian Turcan</span> · sole author</p>
+          <h2 class="paper__title"><!-- copy:papers.het.title -->Heterophilic Methods on Multi-Label Graphs<!-- /copy --></h2>
+          <p class="paper__byline"><!-- copy:papers.het.byline --><span class="me">Cristian Turcan</span> · sole author<!-- /copy --></p>
 
           <div class="paper__meta">
-            <span class="paper__venue">TU Delft · Bachelor thesis (CSE3000)</span>
+            <span class="paper__venue"><!-- copy:papers.het.venue -->TU Delft · Bachelor thesis (CSE3000)<!-- /copy --></span>
             <span class="paper__year">2026</span>
           </div>
 
@@ -104,21 +98,14 @@
             <span class="tag">gnnbench</span>
           </div>
 
-          <p class="paper__lede">On multi-label graphs, how tightly a graph “sticks together” predicts accuracy more than how clever the model is.</p>
-          <p class="paper__abstract">
-            Benchmarked 8 models — MLP and DeepWalk baselines plus 6 heterophily GNNs (H2GCN, GPR-GNN, LINKX,
-            FAGCN, ACM-GCN, Ordered GNN) — across 5 real and 2 synthetic multi-label graphs in PyTorch Geometric.
-            Controlled homophily and label-cardinality sweeps showed that node-classification performance tracks
-            graph homophily more than model sophistication. Built <em>gnnbench</em>, a config-driven pipeline with
-            a synthetic multi-label graph generator, hardened with split-leakage tests and parallelised as SLURM
-            array jobs on TU Delft’s DelftBlue cluster.
-          </p>
+          <p class="paper__lede"><!-- copy:papers.het.lede -->On multi-label graphs, how tightly a graph “sticks together” predicts accuracy more than how clever the model is.<!-- /copy --></p>
+          <p class="paper__abstract"><!-- copy:papers.het.abstract -->Benchmarked 8 models (MLP and DeepWalk baselines plus 6 heterophily GNNs: H2GCN, GPR-GNN, LINKX, FAGCN, ACM-GCN, Ordered GNN) across 5 real and 2 synthetic multi-label graphs in PyTorch Geometric. Controlled homophily and label-cardinality sweeps showed that node-classification performance tracks graph homophily more than model sophistication. Built <em>gnnbench</em>, a config-driven pipeline with a synthetic multi-label graph generator, hardened with split-leakage tests and parallelised as SLURM array jobs on TU Delft’s DelftBlue cluster.<!-- /copy --></p>
 
           <p class="paper__links">
             <!-- TODO: if a repository/PDF exists, replace the href. Otherwise delete this link -->
             <a class="paper__link" href="PASTE_THESIS_PDF_URL">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
-              Read the thesis
+              <!-- copy:papers.het.link -->Read the thesis<!-- /copy -->
             </a>
           </p>
         </article>

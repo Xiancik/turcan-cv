@@ -1,0 +1,81 @@
+# Prose for index.html. Edit here, then run `npm run build`.
+# Values may contain inline HTML (<em>, <a>, <b>, <span>). Structural tags
+# (<article>, <section>, <div>, <ul>, <h3>) live in the .html file.
+
+hero:
+  headline: 'I build software, <em>end to end</em>.'
+  sub: >-
+    Embedded systems, machine learning, and the software that ties them
+    together. I like every part of it.
+
+work:
+  eyebrow: 'Selected work'
+  title: 'Where I’ve been shipping'
+  lead: 'Real, paid, in-production work. The <a href="experience.html">full story lives here</a>.'
+  roles:
+    offroad:
+      title: 'Software Engineer<span class="role__pt">Part-time</span>'
+      org: '<a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft · Jan 2026 – Present'
+      summary: 'Turning Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.'
+    insyght:
+      title: 'Embedded Software Engineer<span class="role__pt">Part-time</span>'
+      org: '<a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft · Aug 2025 – Present'
+      summary: 'Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality monitor.'
+    altix:
+      title: 'Machine Learning Engineer Intern'
+      org: '<a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam · Apr 2025 – Jun 2025'
+      summary: 'An AI document-ingestion pipeline that took a lot of the grind out of analyst screening.'
+    huawei:
+      title: 'Machine Learning Engineer Intern'
+      org: '<a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam · Dec 2024 – May 2025'
+      summary: 'Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.'
+
+things:
+  eyebrow: 'Things I’ve built'
+  title: 'Side quests, for the love of it'
+  lead: 'Self-directed and competition work. <a href="projects.html">See them all</a>.'
+  projects:
+    mesh:
+      domain: 'Computational geometry'
+      name: 'Perception-Aware 3D Mesh Simplification'
+      desc: 'A from-scratch QEM mesh solver for Huawei’s IMC Challenge: all seven cases accepted.'
+    prosperity:
+      domain: 'Quantitative trading'
+      name: 'IMC Prosperity 4: Algorithmic Trading'
+      desc: 'Options market-making with Black–Scholes pricing, an IV-smile fit, and a time-series test library.'
+    automation:
+      domain: 'Automation · services'
+      name: 'Telegram &amp; Automation Bots'
+      desc: 'Small real-world annoyances, automated away: change alerts, a gym-slot grabber, an event feed.'
+    brainfuck:
+      domain: 'Assembly · compilers'
+      name: 'A JIT Compiler for Brainfuck'
+      desc: 'A just-in-time compiler written entirely in assembly, emitting native machine code by hand.'
+
+beyond:
+  eyebrow: 'Beyond the code'
+  title: 'Where I grew up, and what I do off the clock'
+  roots:
+    title: 'How I got here'
+    body: >-
+      I grew up in Moldova, a loud kid in a one-room apartment, me and my older
+      sister, parents who’d come from the village to the capital to study and
+      stayed. Family legend says my maths got good right after I took a knock to
+      the head at a taekwondo competition, a coincidence I’ve been happy to take
+      credit for ever since. I went to a small neighbourhood school where no one
+      expected much of me, and at ten I walked into my first olympiad and came
+      home with first in the district and second in the whole city. At the
+      parents’ evening after, the teacher wouldn’t stop praising me, and my
+      parents beamed.
+  off_clock:
+    title: 'When I’m not shipping'
+    body: >-
+      I’m back on the taekwondo mat these days, a beginner again, years after an
+      injury stopped me the first time. Otherwise: books I finish even when
+      they’ve stopped being good (I never drop one), board game nights with
+      friends, cooking, and always music.
+
+contact:
+  eyebrow: 'Say hello'
+  title: 'I’m always up for a good conversation.'
+  lead: 'About a role, a hard problem, or just what you’re building.'

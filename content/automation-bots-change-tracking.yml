@@ -1,0 +1,32 @@
+# Prose for projects/automation-bots/change-tracking.html. Edit here, then run `npm run build`.
+
+hero:
+  eyebrow: 'Automation · Monitoring'
+  title: 'Change-Tracking Bot'
+  summary: 'A Telegram bot that diffs a third-party API and alerts the moment the data changes.'
+
+overview:
+  title: 'Overview'
+  body: >-
+    Wanting to know the instant some remote data changes, without
+    sitting there refreshing it. The data lived behind a paginated third-party
+    API, so &ldquo;has anything changed?&rdquo; meant walking every page and
+    comparing it to what you saw last time.
+
+built:
+  title: 'What I built'
+  body: >-
+    The bot walks the paginated API, snapshots each page, and diffs it against
+    the last known state held in a thread-safe SQLite store. When it detects soething different
+    it pushes an alert to Telegram.
+
+highlights:
+  title: 'Highlights'
+  items:
+    persistence: 'Thread-safe SQLite persistence of the last-seen state.'
+    retry: "Retry/backoff that understands the API's pagination."
+
+gallery:
+  title: 'Gallery'
+  alert_caption: 'An alert the moment the data shifts'
+  diff_caption: 'Snapshot, then diff against the last known state'

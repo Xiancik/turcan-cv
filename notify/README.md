@@ -15,7 +15,7 @@ Bot token lives as a Worker secret so it's never in the page source.
 ### 1. Create the Telegram bot
 
 1. Open Telegram, message [@BotFather](https://t.me/BotFather).
-2. `/newbot` — pick a name (e.g. `turcan.nl visits`) and a username ending in `bot` (e.g. `turcan_nl_visits_bot`).
+2. `/newbot`: pick a name (e.g. `turcan.nl visits`) and a username ending in `bot` (e.g. `turcan_nl_visits_bot`).
 3. Save the token BotFather gives you. It looks like `123456789:AAE...`.
 
 ### 2. Get your chat_id
@@ -44,14 +44,14 @@ Wrangler prints the deployed URL, e.g. `https://turcan-cv-notify.<your-subdomain
 
 Edit `../notify.js` and replace `YOUR-SUBDOMAIN` in the `ENDPOINT` constant with what wrangler printed. The full URL should end in `/notify`.
 
-Commit and push — GitHub Pages will redeploy the site.
+Commit and push, and GitHub Pages will redeploy the site.
 
 ### 5. Test
 
 Open `https://turcan.nl` in a private window. You should get a Telegram message within a second or two. If nothing arrives:
 
 - `wrangler tail` (from `notify/`) streams live Worker logs.
-- Check the browser DevTools Network tab for the POST to `/notify` — 403 means the Origin isn't in `ALLOWED_ORIGINS` (edit `wrangler.toml`, redeploy).
+- Check the browser DevTools Network tab for the POST to `/notify`. A 403 means the Origin isn't in `ALLOWED_ORIGINS` (edit `wrangler.toml`, redeploy).
 
 ## Tuning
 
@@ -62,6 +62,6 @@ Open `https://turcan.nl` in a private window. You should get a Telegram message 
 
 ## Files
 
-- `worker.js` — Cloudflare Worker source.
-- `wrangler.toml` — Worker config (allowed origins, no secrets).
-- `../notify.js` — client beacon loaded by every page.
+- `worker.js`: Cloudflare Worker source.
+- `wrangler.toml`: Worker config (allowed origins, no secrets).
+- `../notify.js`: client beacon loaded by every page.

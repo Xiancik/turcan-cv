@@ -1,0 +1,34 @@
+# Prose for projects/automation-bots/index.html. Edit here, then run `npm run build`.
+
+hero:
+  eyebrow: 'Automation · Services'
+  title: 'Telegram &amp; Automation Bots'
+  summary: 'A set of Python bots for tracking changes, automating logins, aggregating local content, and applying to jobs.'
+
+overview:
+  title: 'Overview'
+  body: >-
+    A cluster of automation projects, each solving a small real-world
+    annoyance: being notified when remote data changes, grabbing a gym slot
+    the instant it opens, pulling scattered local events into one feed,
+    pushing newly published legal acts to people who care about a given
+    sector, and applying once to every matching software-engineer listing
+    on rabota.md. Each one is written up on its own page below.
+
+bots:
+  title: 'The bots'
+  change_tracking:
+    name: 'Change-tracking bot →'
+    desc: 'Snapshot-diffs a paginated third-party API and alerts on Telegram the moment the data changes.'
+  sso_booking:
+    name: 'SSO booking bot →'
+    desc: "Drives TU Delft's full NetID single sign-on and grabs a gym slot the instant it opens."
+  event_aggregation:
+    name: 'Event-aggregation microservice →'
+    desc: 'A broker-based Telegram service that pulls scattered local events into a single feed.'
+  laws_aggregator:
+    name: 'Legal acts bot →'
+    desc: 'Pushes newly published Moldovan legal acts to users, filtered by the topic sectors they subscribe to.'
+  rabota_apply:
+    name: 'Job auto-apply bot →'
+    desc: 'A scheduled Playwright bot that applies once, per criteria, to every new software-engineer listing on rabota.md.'

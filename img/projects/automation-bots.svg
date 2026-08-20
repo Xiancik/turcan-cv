@@ -34,7 +34,7 @@
     <!-- 2 Schedule & drive -->
     <rect class="card" x="330" y="205" width="250" height="230" rx="16"/>
     <text class="accent" x="356" y="252" font-size="24" font-weight="600">Schedule &amp; drive</text>
-    <text class="sub" x="356" y="292" font-size="19">Celery beat — polling</text>
+    <text class="sub" x="356" y="292" font-size="19">Celery beat: polling</text>
     <text class="sub" x="356" y="322" font-size="19">Playwright headless</text>
     <text class="sub" x="356" y="352" font-size="19">browser (SSO login)</text>
 

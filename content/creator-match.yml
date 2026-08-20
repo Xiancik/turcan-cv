@@ -1,0 +1,44 @@
+# Prose for projects/creator-match.html. Edit here, then run `npm run build`.
+# Values may contain inline HTML (<em>, <a>, <b>, <span>). Structural tags
+# (<article>, <section>, <div>, <ul>, <h3>) live in the .html file.
+
+hero:
+  title: 'CreatorMatch'
+  summary: 'A Moldova-only web platform that matches businesses with local Instagram, TikTok, and YouTube creators through an AI-ranked shortlist.'
+
+overview:
+  title: 'Overview'
+  body: >-
+    Global influencer tools (HypeAuditor, Upfluence, Modash) have thin-to-zero
+    coverage of Moldovan nano and micro creators, so local businesses have no
+    real way to find them. CreatorMatch closes that gap with a curated local
+    database those tools ignore. A business enters a product and a budget. The
+    platform returns a ranked shortlist of Moldovan creators, each with a fit
+    score, a known or estimated price, a score breakdown, and a ready-to-copy
+    English outreach draft. It is scoped to discovery: it produces the
+    shortlist and the drafts, and the business runs the actual outreach.
+
+built:
+  title: 'What I built'
+  body: >-
+    A multi-tenant web app on Next.js and FastAPI, structured as four
+    independently testable cores: a creator repository (Postgres + pgvector),
+    a pure-function pricing estimator, an explainable ranking engine, and an
+    LLM service behind a single swappable interface. Ranking runs in two
+    stages to keep LLM cost bounded: pgvector cosine similarity retrieves
+    candidates over the whole pool cheaply, then Claude scores brand fit and
+    drafts outreach for only the top candidates. A weighted, tunable score
+    (40% fit, 20% reach, 20% price, 20% quality) orders the results, with
+    every sub-score exposed as a per-result breakdown. Celery workers handle
+    database seeding, scraping, and embedding backfill off the request path,
+    and the pricing estimator prices every creator from Moldova-localized CPM
+    benchmarks when no real rate is known.
+
+highlights:
+  title: 'Highlights'
+  items:
+    two_stage: 'Two-stage matching: cheap pgvector retrieval over the full pool, then LLM re-scoring on the top candidates to control cost.'
+    explainable: 'Explainable ranking: a tunable weighted formula (fit / reach / price / quality) with a visible breakdown per creator.'
+    pricing: 'Reach-based pricing estimator with Moldova-localized CPM benchmarks, so every creator carries a known or clearly-labelled estimated price.'
+    moat: 'A curated local creator database as the moat, kept fresh by background scraping and manual curation.'
+    tenants: 'Multi-tenant business accounts, LLM-drafted English outreach, and CSV export of results.'

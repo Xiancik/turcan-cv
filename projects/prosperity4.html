@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IMC Prosperity 4: Algorithmic Trading · Cristian Turcan</title>
+  <title>IMC Prosperity 4: Algorithmic Trading | Cristian Turcan</title>
   <meta name="description" content="Options market-making and statistical trading strategies for the IMC Prosperity 4 competition.">
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
   <link rel="stylesheet" href="../style.css">
@@ -33,8 +33,8 @@
           <span class="eyebrow">Quantitative trading</span>
           <span class="badge">Systems &amp; compute</span>
         </div>
-        <h1 class="case__title">IMC Prosperity 4: Algorithmic Trading</h1>
-        <p class="case__summary">Options market-making and statistical strategies for IMC’s Prosperity 4 algorithmic-trading competition.</p>
+        <h1 class="case__title"><!-- copy:prosperity4.hero.title -->IMC Prosperity 4: Algorithmic Trading<!-- /copy --></h1>
+        <p class="case__summary"><!-- copy:prosperity4.hero.summary -->Options market-making and statistical strategies for IMC’s Prosperity 4 algorithmic-trading competition.<!-- /copy --></p>
 
         <dl class="case__meta">
           <div><dt>Context</dt><dd>IMC Prosperity 4</dd></div>
@@ -44,23 +44,23 @@
 
         <img class="case__cover" src="../img/projects/prosperity.png" alt="Prosperity 4 trading analytics dashboard showing price, a rising PnL curve and position">
 
-        <h2>Overview</h2>
-        <p>Prosperity is a multi-round algorithmic-trading competition with a simulated exchange. Each round exposes new instruments, including options, that reward pricing them correctly and quoting two-sided liquidity without taking on unwanted directional risk.</p>
+        <h2><!-- copy:prosperity4.overview.title -->Overview<!-- /copy --></h2>
+        <p><!-- copy:prosperity4.overview.body -->Prosperity is a multi-round algorithmic-trading competition with a simulated exchange. Each round exposes new instruments, including options, that reward pricing them correctly and quoting two-sided liquidity without taking on unwanted directional risk.<!-- /copy --></p>
 
-        <h2>What I built</h2>
-        <p>Options market-making built on Black-Scholes pricing with Greeks, fitting the implied-volatility smile (a quadratic / LOOCV-polynomial and SVI parameterisation) so quotes stay consistent across strikes, plus delta hedging on the underlying. Alongside that, a mean-reversion strategy and a hand-written stationarity / time-series test library (ADF, KPSS, Ljung-Box, variance-ratio, and Phillips-Perron) feeding a grid-search optimiser, all validated against a submodule backtester with a Dash analytics dashboard.</p>
+        <h2><!-- copy:prosperity4.built.title -->What I built<!-- /copy --></h2>
+        <p><!-- copy:prosperity4.built.body -->Options market-making built on Black-Scholes pricing with Greeks, fitting the implied-volatility smile (a quadratic / LOOCV-polynomial and SVI parameterisation) so quotes stay consistent across strikes, plus delta hedging on the underlying. Alongside that, a mean-reversion strategy and a hand-written stationarity / time-series test library (ADF, KPSS, Ljung-Box, variance-ratio, and Phillips-Perron) feeding a grid-search optimiser, all validated against a submodule backtester with a Dash analytics dashboard.<!-- /copy --></p>
 
-        <h2>Highlights</h2>
+        <h2><!-- copy:prosperity4.highlights.title -->Highlights<!-- /copy --></h2>
         <ul class="entry__points">
-          <li>End-to-end options market-maker: pricing → IV smile → quoting → delta hedging.</li>
-          <li>Reusable statistical-testing toolkit for validating signal stationarity.</li>
-          <li>Parallel grid-search tuning validated over a dedicated backtester.</li>
+          <li><!-- copy:prosperity4.highlights.items.options -->End-to-end options market-maker: pricing → IV smile → quoting → delta hedging.<!-- /copy --></li>
+          <li><!-- copy:prosperity4.highlights.items.toolkit -->Reusable statistical-testing toolkit for validating signal stationarity.<!-- /copy --></li>
+          <li><!-- copy:prosperity4.highlights.items.gridsearch -->Parallel grid-search tuning validated over a dedicated backtester.<!-- /copy --></li>
         </ul>
 
-        <h2>Gallery</h2>
+        <h2><!-- copy:prosperity4.gallery.title -->Gallery<!-- /copy --></h2>
         <div class="gallery">
-          <figure><img src="../img/projects/prosperity-charts.png" alt="Price chart with bid/ask levels and own trades"><figcaption>Price, order book &amp; own fills</figcaption></figure>
-          <figure><img src="../img/projects/prosperity-emeralds.png" alt="Per-product order-book depth view"><figcaption>Per-product order-book depth</figcaption></figure>
+          <figure><img src="../img/projects/prosperity-charts.png" alt="Price chart with bid/ask levels and own trades"><figcaption><!-- copy:prosperity4.gallery.charts_caption -->Price, order book &amp; own fills<!-- /copy --></figcaption></figure>
+          <figure><img src="../img/projects/prosperity-emeralds.png" alt="Per-product order-book depth view"><figcaption><!-- copy:prosperity4.gallery.emeralds_caption -->Per-product order-book depth<!-- /copy --></figcaption></figure>
         </div>
       </article>
 

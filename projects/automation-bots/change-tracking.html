@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Change-Tracking Bot · Cristian Turcan</title>
+  <title>Change-Tracking Bot | Cristian Turcan</title>
   <meta name="description" content="A Telegram bot that snapshot-diffs a paginated third-party API and alerts the moment the data changes.">
   <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
   <link rel="stylesheet" href="../../style.css">
@@ -30,11 +30,11 @@
 
       <article class="case">
         <div class="case__kicker">
-          <span class="eyebrow">Automation · monitoring</span>
+          <span class="eyebrow"><!-- copy:automation-bots-change-tracking.hero.eyebrow -->Automation · Monitoring<!-- /copy --></span>
           <span class="badge">Product</span>
         </div>
-        <h1 class="case__title">Change-Tracking Bot</h1>
-        <p class="case__summary">A Telegram bot that snapshot-diffs a paginated third-party API and alerts the moment the data changes.</p>
+        <h1 class="case__title"><!-- copy:automation-bots-change-tracking.hero.title -->Change-Tracking Bot<!-- /copy --></h1>
+        <p class="case__summary"><!-- copy:automation-bots-change-tracking.hero.summary -->A Telegram bot that diffs a third-party API and alerts the moment the data changes.<!-- /copy --></p>
 
         <dl class="case__meta">
           <div><dt>Stack</dt><dd>Python, SQLite</dd></div>
@@ -53,20 +53,20 @@
           </svg>
         </div>
 
-        <h2>Overview</h2>
-        <p>The annoyance: wanting to know the instant some remote data changes, without sitting there refreshing it. The data lived behind a paginated third-party API, so &ldquo;has anything changed?&rdquo; meant walking every page and comparing it to what you saw last time.</p>
+        <h2><!-- copy:automation-bots-change-tracking.overview.title -->Overview<!-- /copy --></h2>
+        <p><!-- copy:automation-bots-change-tracking.overview.body -->Wanting to know the instant some remote data changes, without sitting there refreshing it. The data lived behind a paginated third-party API, so &ldquo;has anything changed?&rdquo; meant walking every page and comparing it to what you saw last time.<!-- /copy --></p>
 
-        <h2>What I built</h2>
-        <p>The bot walks the paginated API, snapshots each page, and diffs it against the last known state held in a thread-safe SQLite store. When it detects a delta it pushes an alert to Telegram. Pagination-aware retry/backoff keeps it stable when the upstream is slow or flaky, and the core is covered by 41 unit tests across 8 modules.</p>
+        <h2><!-- copy:automation-bots-change-tracking.built.title -->What I built<!-- /copy --></h2>
+        <p><!-- copy:automation-bots-change-tracking.built.body -->The bot walks the paginated API, snapshots each page, and diffs it against the last known state held in a thread-safe SQLite store. When it detects soething different it pushes an alert to Telegram.<!-- /copy --></p>
 
-        <h2>Highlights</h2>
+        <h2><!-- copy:automation-bots-change-tracking.highlights.title -->Highlights<!-- /copy --></h2>
         <ul class="entry__points">
-          <li>Thread-safe SQLite persistence of the last-seen state.</li>
-          <li>Retry/backoff that understands the API's pagination.</li>
-          <li>41 unit tests across 8 modules.</li>
+          <li><!-- copy:automation-bots-change-tracking.highlights.items.persistence -->Thread-safe SQLite persistence of the last-seen state.<!-- /copy --></li>
+          <li><!-- copy:automation-bots-change-tracking.highlights.items.retry -->Retry/backoff that understands the API's pagination.<!-- /copy --></li>
+          <li><!-- copy:automation-bots-change-tracking.highlights.items.tests -->41 unit tests across 8 modules.<!-- /copy --></li>
         </ul>
 
-        <h2>Gallery</h2>
+        <h2><!-- copy:automation-bots-change-tracking.gallery.title -->Gallery<!-- /copy --></h2>
         <div class="gallery">
           <figure>
             <div class="case-tile">
@@ -77,7 +77,7 @@
                 <circle class="tile-on2" cx="118" cy="26" r="9"/>
               </svg>
             </div>
-            <figcaption>An alert the moment the data shifts</figcaption>
+            <figcaption><!-- copy:automation-bots-change-tracking.gallery.alert_caption -->An alert the moment the data shifts<!-- /copy --></figcaption>
           </figure>
           <figure>
             <div class="case-tile">
@@ -89,7 +89,7 @@
                 <path class="tile-on2" d="M119 38 l11 22 H108 Z"/>
               </svg>
             </div>
-            <figcaption>Snapshot, then diff against the last known state</figcaption>
+            <figcaption><!-- copy:automation-bots-change-tracking.gallery.diff_caption -->Snapshot, then diff against the last known state<!-- /copy --></figcaption>
           </figure>
         </div>
       </article>

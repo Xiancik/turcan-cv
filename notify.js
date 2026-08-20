@@ -2,7 +2,7 @@
   // Set this after deploying the worker (see notify/README.md).
   var ENDPOINT = "https://turcan-cv-notify.xiancik.workers.dev/notify";
 
-  // Dedupe window (ms) — one ping per visitor per 24h, across pages, tabs, and sessions.
+  // Dedupe window (ms): one ping per visitor per 24h, across pages, tabs, and sessions.
   var DEDUPE_MS = 24 * 60 * 60 * 1000;
 
   try {

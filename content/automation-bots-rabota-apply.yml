@@ -1,0 +1,37 @@
+# Prose for projects/automation-bots/rabota-apply.html. Edit here, then run `npm run build`.
+
+hero:
+  eyebrow: 'Automation · browser'
+  title: 'Job Auto-Apply Bot'
+  summary: "A scheduled Playwright bot that logs into rabota.md and applies once, per criteria, to every new software-engineer listing."
+
+overview:
+  title: 'Overview'
+  body: >-
+    New rabota.md postings are worth a look, but never a full sitting. I
+    wanted a bot that opened each one, decided whether it matched my keywords
+    and salary rule, and sent my CV &mdash; never twice for the same job, and
+    never silently.
+
+built:
+  title: 'What I built'
+  body: >-
+    Six small units: config, an auth module with cookie-cached login, a
+    read-only scraper, a matcher (keyword + salary + email-only filter), an
+    applier that drives the &ldquo;Trimite CV&rdquo; modal end to end
+    (&ldquo;CV DE PE SITE&rdquo; &rarr; consent &rarr; submit), and a SQLite
+    store keyed by the site&rsquo;s stable job id for dedup. A Telegram
+    notifier posts every apply, every skip with a reason, and every failure.
+    Runs on a systemd timer on a Hetzner VPS with a file-based kill switch.
+
+highlights:
+  title: 'Highlights'
+  items:
+    dry_run: 'Dry-run mode, per-run apply cap, and a PAUSED-file kill switch.'
+    email_only: 'Detects &ldquo;email your CV to&hellip;&rdquo; listings and skips them rather than force-applying.'
+    dedup: 'Idempotent dedup keyed by the site&rsquo;s own numeric job id, so a re-run never re-applies.'
+
+gallery:
+  title: 'Gallery'
+  match_caption: 'Every decision is logged with an explicit reason'
+  killswitch_caption: 'A file on disk halts every apply cycle'

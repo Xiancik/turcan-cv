@@ -1,11 +1,11 @@
 # turcan-cv
 
-The personal CV / portfolio site for Cristian Turcan (turcan.nl). A static, hand-authored HTML/CSS site whose job is to convince a technical hiring audience, in roughly one screen, that Cristian builds real, shipped things — then send them into the supporting detail.
+The personal CV / portfolio site for Cristian Turcan (turcan.nl). A static, hand-authored HTML/CSS site whose job is to convince a technical hiring audience, in roughly one screen, that Cristian builds real, shipped things, then send them into the supporting detail.
 
 ## Language
 
 **Selected Work**:
-The employment **Roles** featured on the homepage as the primary proof of ability, shown metric-forward. Deliberately means roles, **not** Projects — this site leads with paid, shipped work.
+The employment **Roles** featured on the homepage as the primary proof of ability, shown metric-forward. Deliberately means roles, **not** Projects. This site leads with paid, shipped work.
 _Avoid_: Featured projects, Portfolio, Highlights
 
 **Role**:
@@ -13,11 +13,11 @@ A paid employment position (e.g. Insyght, Offroad, Altix, Huawei). The primary u
 _Avoid_: Job, Position, Gig
 
 **Project**:
-A self-directed case study (e.g. Mesh Simplification, IMC Prosperity 4, Automation Bots). Supporting evidence only — lives on the Projects page, never featured on the homepage.
+A self-directed case study (e.g. Mesh Simplification, IMC Prosperity 4, Automation Bots). Supporting evidence only. It lives on the Projects page, never featured on the homepage.
 _Avoid_: Work (reserved for Roles), Portfolio piece, Side project
 
 **Positioning line**:
-The single hero statement of identity, leading with embedded systems + on-device ML. Replaces the old separate hero title, tagline, and About block — there is now one canonical self-description, not three.
+The single hero statement of identity, leading with embedded systems + on-device ML. Replaces the old separate hero title, tagline, and About block. There is now one canonical self-description, not three.
 _Avoid_: Tagline, Bio, About blurb, Summary
 
 **Metric**:

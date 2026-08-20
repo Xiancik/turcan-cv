@@ -1,0 +1,29 @@
+# Prose for projects/brainfuck-jit.html. Edit here, then run `npm run build`.
+# Values may contain inline HTML (<em>, <a>, <b>, <span>). Structural tags
+# (<article>, <section>, <div>, <ul>, <h3>) live in the .html file.
+
+hero:
+  title: 'JIT Compiler for Brainfuck'
+  summary: 'A just-in-time compiler for the Brainfuck language, written entirely in assembly.'
+
+overview:
+  title: 'Overview'
+  body: >-
+    A self-directed project driven by an interest in low-level programming. 
+    Rather than interpret Brainfuck, the compiler emits native
+    machine code at run time and jumps into it: a hands-on way to understand
+    how a JIT actually works, and to increase proficiency in assembly, all the way down to the instruction bytes.
+
+built:
+  title: 'What I built'
+  body: >-
+    A JIT that translates Brainfuck source into executable machine code in
+    memory and runs it directly, implemented entirely in assembly, handling
+    the language’s pointer/data operations and its loop constructs as
+    generated jumps.
+
+highlights:
+  title: 'Highlights'
+  items:
+    pipeline: 'Full pipeline from source to emitted, executable machine code.'
+    assembly: 'Written at the assembly level: no compiler framework or runtime.'

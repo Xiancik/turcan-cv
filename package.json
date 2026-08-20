@@ -1,0 +1,11 @@
+{
+  "name": "turcan-cv",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "yaml": "^2.6.0"
+  }
+}
