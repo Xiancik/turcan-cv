@@ -58,7 +58,7 @@
           <p class="section__lead"><!-- copy:experience.work.lead -->Real, paid engineering, newest at the top. Two of these run in parallel right now; the others trace back through 2024.<!-- /copy --></p>
         </div>
 
-        <div class="career">
+        <div class="career spotlight">
           <p class="career-now"><!-- copy:experience.work.now --><span class="career-now__tag">Now</span> Aug 2026: two roles live, in parallel<!-- /copy --></p>
 
           <span class="career-live-segment" aria-hidden="true" data-live-segment></span>
@@ -229,26 +229,8 @@
   </footer>
   <script src="theme.js"></script>
   <script src="notify.js" defer></script>
+  <script src="spotlight.js" defer></script>
   <script>
-    // Career spine: card-to-card spotlight (hover / focus a role → others dim)
-    (function () {
-      const career = document.querySelector('.career');
-      if (!career) return;
-      const cards = career.querySelectorAll('.role');
-      const setHot = (target) => {
-        career.classList.toggle('is-spot', !!target);
-        cards.forEach(c => c.classList.toggle('is-hot', c === target));
-      };
-      cards.forEach(c => {
-        c.addEventListener('mouseenter', () => setHot(c));
-        c.addEventListener('focusin',    () => setHot(c));
-      });
-      career.addEventListener('mouseleave', () => setHot(null));
-      career.addEventListener('focusout', (e) => {
-        if (!career.contains(e.relatedTarget)) setHot(null);
-      });
-    })();
-
     // Size the live-segment spine overlay from the "Now" node down to
     // the bottom of the last live-role node.
     (function () {
