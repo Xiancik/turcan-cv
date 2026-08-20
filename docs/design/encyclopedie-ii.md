@@ -5,7 +5,7 @@ Where it says **never**, it means never; where it says **exactly**, do not round
 
 The site is turcan.nl: a personal site for an embedded/firmware engineer, set as
 the plate volume of an encyclopedia about one engineer. Volume I established the
-material — real Diderot plates (1751–72, public domain), knocked out to white
+material — real Diderot plates (1751-72, public domain), knocked out to white
 line on cyanotype blue. Volume II keeps that material and changes the staging.
 
 ---
@@ -165,7 +165,7 @@ Every page keeps its `Pl. N`, its grid, and the dissolve.
 
 ### 5.1 The material
 
-Real 1751–72 Diderot plates, public domain, knocked out to white line on azur.
+Real 1751-72 Diderot plates, public domain, knocked out to white line on azur.
 Existing assets live in `img/plates/`, with candidates in `plate-candidates/`
 and `pl1-candidates/`. Public-domain sourcing is primary: Rijksmuseum, the Met,
 Smithsonian and British Museum open-access collections.
