@@ -266,23 +266,6 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 }
 .subproject__metric:empty { display: none; }
 
-/* Stack reach: a compact vertical depth gauge down the right of each role,
-   reading App (surface) → Metal, so it rhymes with the home-page range ladder
-   instead of a flat chip row. Lit layers carry the accent and a soft halo; the
-   rest stay ghosted, so the right edge of the column shows how deep each role
-   reached at a glance. */
-.reach {
-  list-style: none; margin: 0; padding: .1rem 0 .1rem 1rem;
-  align-self: start;
-  display: flex; flex-direction: column; gap: .34rem;
-  border-left: 1px solid var(--border);
-}
-.reach__cap { font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--faint); margin: 0 0 .12rem; }
-.reach__layer { display: flex; align-items: center; gap: .5rem; font-size: 0; color: var(--faint); line-height: 1.15; min-height: 1.05rem; }
-.reach__layer::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; border: 1.5px solid var(--border-str); flex: none; }
-.reach__layer.is-on { color: var(--accent-str); font-weight: 600; font-size: .78rem; }
-.reach__layer.is-on::before { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-
 /* ---- Experience: the career timeline ---- */
 /* Work roles hang off one vertical spine that runs from "Now" at the top down
    into the recent past, newest first. The spine is solid (a nod to the home
@@ -312,7 +295,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 }
 
 /* Each role sits on the spine via a node aligned to its logo */
-.career .role { position: relative; grid-template-columns: 60px 1fr minmax(112px, 136px); }
+.career .role { position: relative; }
 .career .role::before {
   content: ""; position: absolute; left: calc(-2.6rem + .6rem); top: 3.4rem; transform: translate(-50%, -50%);
   width: .8rem; height: .8rem; border-radius: 50%;
@@ -409,7 +392,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   margin: 0 0 1.2rem; padding-bottom: .75rem; border-bottom: 1px solid var(--border);
 }
 /* Altitude gauge: three stacked bars filled from the top down to this band's
-   depth: more fill = deeper toward the metal, mirroring the reach strips. */
+   depth: more fill = deeper toward the metal. */
 .band__gauge { display: inline-flex; flex-direction: column; gap: 2.5px; margin-right: .2rem; }
 .band__gauge i { display: block; width: 15px; height: 3px; border-radius: 2px; background: var(--border-str); }
 .band--product .band__gauge i:nth-child(-n+1),
@@ -775,12 +758,10 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   .career { padding-left: 2rem; }
   .career::before { left: .5rem; }
   .career-now::before, .career .role::before { left: calc(-2rem + .5rem); }
-  .career .role { grid-template-columns: 46px 1fr; }
   .career .role::before { top: 2.55rem; }
-  .career .role > .reach { grid-column: 1 / -1; margin-top: .5rem; }
   /* On narrow screens, drop the metric onto its own row under the title
      so long project titles never crowd the metric pill. */
-  .career .role .role__projects { padding-left: .85rem; grid-column: 1 / -1; }
+  .career .role .role__projects { padding-left: .85rem; }
   .subproject { grid-template-columns: 1fr; row-gap: .3rem; }
   .subproject__metric { grid-column: 1; grid-row: auto; justify-self: start; }
   .timeline { padding-left: 1.9rem; }
