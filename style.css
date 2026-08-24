@@ -508,8 +508,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
 .tl-photo--empty {
   width: auto; aspect-ratio: auto; display: inline-flex; align-items: center; gap: .4rem;
   white-space: nowrap; border: 1px dashed var(--border-str); border-radius: 999px;
-  padding: .3rem .8rem; color: var(--faint); font-size: .8rem;
-  background: color-mix(in srgb, var(--accent-soft) 32%, transparent);
+  padding: .3rem .8rem; color: var(--faint); font-size: .78rem; font-style: italic;
+  background: none;
 }
 .tl-photo--empty::before {
   content: ""; width: .95em; height: .95em; flex: none; background: currentColor;
