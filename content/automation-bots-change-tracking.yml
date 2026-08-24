@@ -17,7 +17,7 @@ built:
   title: 'What I built'
   body: >-
     The bot walks the paginated API, snapshots each page, and diffs it against
-    the last known state held in a thread-safe SQLite store. When it detects soething different
+    the last known state held in a thread-safe SQLite store. When it detects something different
     it pushes an alert to Telegram.
 
 highlights:
