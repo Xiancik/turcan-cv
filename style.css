@@ -223,7 +223,11 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; color: var(--ink
 .page--projects .page-head h1 { font-size: 104px; line-height: .92; }
 .page--events   .page-head h1 { font-size: 88px; }
 .page--papers   .page-head h1 { font-size: 80px; line-height: .95; max-width: 20ch; }
+.page--experience .page-head h1 { font-size: 76px; line-height: .96; }
 .case__title    { font-size: 72px; line-height: .96; letter-spacing: -.04em; margin: 0 0 22px; max-width: 26ch; }
+
+/* Education section h2 slightly smaller than main .section__title */
+.section__title--edu { font-size: 40px; }
 
 /* ---- Buttons ---- */
 .btn {
@@ -302,6 +306,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; color: var(--ink
   border: 1px solid var(--accent-line); border-radius: 0;
   padding: 2px 7px; margin: 0; white-space: nowrap;
 }
+
+/* Education pair: same hairline grid as .roles--proof, no top bar */
+.roles--edu { grid-template-columns: repeat(2, 1fr); }
+.roles--edu .role__body { padding: 26px 28px 30px; gap: 8px; }
+.roles--edu .role__logo { width: 40px; height: 40px; }
+.roles--edu .role__title { font-size: 19px; margin: 6px 0 0; }
 
 /* ---- Experience: rail rows + metric strip ---- */
 .career { display: block; padding: 0; }

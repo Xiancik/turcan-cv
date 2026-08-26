@@ -27,7 +27,7 @@
     })(window, document, "clarity", "script", "y4rjtlzhxl");
   </script>
 </head>
-<body>
+<body class="page--experience">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -46,305 +46,220 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <div class="page-head reveal-seq">
-        <p class="eyebrow"><!-- copy:experience.page.eyebrow -->Experience<!-- /copy --></p>
-        <h1><!-- copy:experience.page.title -->Where I’ve been building<!-- /copy --></h1>
-        <p><!-- copy:experience.page.intro -->Four engineering roles, two of them live right now, and two degrees at TU Delft. <a href="cv.pdf" download>Grab the CV</a>.<!-- /copy --></p>
+
+    <!-- PAGE HEAD -->
+    <section class="rail-row">
+      <div class="rail"><p class="eyebrow"><!-- copy:experience.page.eyebrow -->Experience<!-- /copy --></p></div>
+      <div class="bay">
+        <div class="page-head">
+          <h1><!-- copy:experience.page.title -->Where I’ve been building<!-- /copy --></h1>
+          <p><!-- copy:experience.page.intro -->Four engineering roles, two of them live right now, and two degrees at TU Delft. <a href="cv.pdf" download>Grab the CV</a>.<!-- /copy --></p>
+        </div>
       </div>
+    </section>
 
-      <section class="section" aria-labelledby="work-h">
-        <div class="section__head">
-          <p class="eyebrow"><!-- copy:experience.work.eyebrow -->Work<!-- /copy --></p>
-          <h2 class="section__title" id="work-h"><!-- copy:experience.work.title -->Roles I’ve shipped in<!-- /copy --></h2>
-          <p class="section__lead"><!-- copy:experience.work.lead -->Real, paid engineering, newest at the top. Each role expands into the discrete projects that shipped inside it.<!-- /copy --></p>
+    <!-- NOW -->
+    <div class="career-now">
+      <div class="career-now__rail"><span class="career-now__tag"><!-- copy:experience.work.now_tag -->Now<!-- /copy --></span></div>
+      <div class="career-now__body"><!-- copy:experience.work.now_body -->Aug 2026: two roles, in parallel<!-- /copy --></div>
+    </div>
+
+    <!-- ROLES -->
+    <div class="career">
+
+      <article class="role role--live">
+        <p class="role__when">
+          <!-- copy:experience.work.roles.offroad.when -->Jan 2026 - <span class="role__now">Present</span><!-- /copy -->
+          <span class="role__still" data-since="2026-01-01"></span>
+        </p>
+        <div class="role__body">
+          <div class="role__media">
+            <img class="role__logo" src="img/experience/offroad.png" alt="Offroad Apps logo" loading="lazy" width="44" height="44">
+            <span class="role__pt">Part-time</span>
+          </div>
+          <h3 class="role__title"><!-- copy:experience.work.roles.offroad.title -->Software Engineer<!-- /copy --></h3>
+          <p class="role__org"><!-- copy:experience.work.roles.offroad.org --><a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft, Netherlands<!-- /copy --></p>
+          <p class="role__summary"><!-- copy:experience.work.roles.offroad.summary -->Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.<!-- /copy --></p>
+          <ul class="role__metrics">
+            <li class="metric">7 live vital types</li>
+            <li class="metric">.NET 10 + MAUI</li>
+            <li class="metric">JABCode C→C#</li>
+          </ul>
+          <div class="role__projects" role="list" aria-label="Projects in this role">
+            <p class="role__projects-label"><!-- copy:experience.work.roles.offroad.projects_label -->Projects<!-- /copy --></p>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.garmin.title -->Garmin binding + MAUI app<!-- /copy --></h4>
+              <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.garmin.metric -->7 live vital types<!-- /copy --></p>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.garmin.summary -->A .NET 10 Android binding of Garmin’s native Health SDK and a MAUI companion app that pairs wearables and streams 7 vital-sign types (heart rate, HRV, SpO₂, ...) to the VitalsIQ backend.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.bindings.title -->Java → C# binding transforms<!-- /copy --></h4>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.bindings.summary -->Hand-authored transforms that pull the Java SDK cleanly into .NET, resolving R8, Guava, SQLCipher and Gson interop conflicts, plus an Android foreground service for resilient background sync.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.civtak.title -->CivTAK plugin<!-- /copy --></h4>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.civtak.summary -->A Java plugin for CivTAK (civilian ATAK) that surfaces the VitalsIQ app as an in-app pane and a live map marker.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.jabcode.title -->JABCode C → C# port<!-- /copy --></h4>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.jabcode.summary -->The full JABCode colour 2D-barcode library - encoder and decoder with Reed-Solomon error correction - ported from C to C#.<!-- /copy --></p>
+            </article>
+          </div>
         </div>
+      </article>
 
-        <div class="career">
-          <p class="career-now"><!-- copy:experience.work.now --><span class="career-now__tag">Now</span> Aug 2026: two roles, in parallel<!-- /copy --></p>
-
-          <span class="career-live-segment" aria-hidden="true" data-live-segment></span>
-
-          <article class="role role--live reveal d1">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/offroad.png" alt="Offroad Apps logo" loading="lazy" width="84" height="84">
-            </div>
-            <div class="role__body">
-              <p class="role__when"><!-- copy:experience.work.roles.offroad.when -->Jan 2026 - <span class="role__now">Present</span><!-- /copy --><span class="role__still" data-since="2026-01-01"></span></p>
-              <h3 class="role__title"><!-- copy:experience.work.roles.offroad.title -->Software Engineer<span class="role__pt">Part-time</span><!-- /copy --></h3>
-              <p class="role__org"><!-- copy:experience.work.roles.offroad.org --><a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft, Netherlands<!-- /copy --></p>
-              <p class="role__summary"><!-- copy:experience.work.roles.offroad.summary -->Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.<!-- /copy --></p>
-              <ul class="role__metrics">
-                <li class="metric">7 live vital types</li>
-                <li class="metric">.NET 10 + MAUI</li>
-                <li class="metric">JABCode C→C#</li>
-              </ul>
-              <div class="role__projects" role="list" aria-label="Projects in this role">
-                <p class="role__projects-label"><!-- copy:experience.work.roles.offroad.projects_label -->Projects<!-- /copy --></p>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.garmin.title -->Garmin binding + MAUI app<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.garmin.summary -->A .NET 10 Android binding of Garmin’s native Health SDK and a MAUI companion app that pairs wearables and streams 7 vital-sign types (heart rate, HRV, SpO₂, ...) to the VitalsIQ backend.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>.NET 10</li>
-                    <li>MAUI</li>
-                    <li>Garmin Health SDK</li>
-                    <li>Android</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.garmin.metric -->7 live vital types<!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.bindings.title -->Java → C# binding transforms<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.bindings.summary -->Hand-authored transforms that pull the Java SDK cleanly into .NET, resolving R8, Guava, SQLCipher and Gson interop conflicts, plus an Android foreground service for resilient background sync.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>MSBuild bindings</li>
-                    <li>R8</li>
-                    <li>Android</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.bindings.metric --><!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.civtak.title -->CivTAK plugin<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.civtak.summary -->A Java plugin for CivTAK (civilian ATAK) that surfaces the VitalsIQ app as an in-app pane and a live map marker.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>Java</li>
-                    <li>ATAK SDK</li>
-                    <li>JUnit</li>
-                    <li>Android IPC</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.civtak.metric --><!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.offroad.projects.jabcode.title -->JABCode C → C# port<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.offroad.projects.jabcode.summary -->The full JABCode colour 2D-barcode library - encoder and decoder with Reed-Solomon error correction - ported from C to C#.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>C</li>
-                    <li>C#</li>
-                    <li>Reed-Solomon</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.offroad.projects.jabcode.metric --><!-- /copy --></p>
-                </article>
-              </div>
-            </div>
-          </article>
-
-          <article class="role role--live reveal d2">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/insyght.svg" alt="Insyght.io logo" loading="lazy" width="84" height="84">
-            </div>
-            <div class="role__body">
-              <p class="role__when"><!-- copy:experience.work.roles.insyght.when -->Aug 2025 - <span class="role__now">Present</span><!-- /copy --><span class="role__still" data-since="2025-08-01"></span></p>
-              <h3 class="role__title"><!-- copy:experience.work.roles.insyght.title -->Embedded Software Engineer<span class="role__pt">Part-time</span><!-- /copy --></h3>
-              <p class="role__org"><!-- copy:experience.work.roles.insyght.org --><a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft, Netherlands<!-- /copy --></p>
-              <p class="role__summary"><!-- copy:experience.work.roles.insyght.summary -->Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor.<!-- /copy --></p>
-              <ul class="role__metrics">
-                <li class="metric">92% classifier @ 40 KB</li>
-                <li class="metric">960 → 189 µA idle</li>
-                <li class="metric">Zephyr RTOS</li>
-              </ul>
-              <div class="role__projects" role="list" aria-label="Projects in this role">
-                <p class="role__projects-label"><!-- copy:experience.work.roles.insyght.projects_label -->Projects<!-- /copy --></p>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.classifier.title -->On-device noise classifier<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.classifier.summary -->End-to-end pipeline (data preparation, training, evaluation and firmware integration) for on-device inference on the nRF54L15.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>Python</li>
-                    <li>TFLite Micro</li>
-                    <li>C</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.classifier.metric -->92% @ 40 KB<!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.firmware.title -->Zephyr firmware architecture<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.firmware.summary -->AuraSense firmware in C/C++ on Zephyr RTOS and the nRF Connect SDK, architected as 11 self-contained driver components.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>Zephyr RTOS</li>
-                    <li>nRF Connect SDK</li>
-                    <li>C/C++</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.firmware.metric -->~3K LOC<!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.metering.title -->Acoustic metering pipeline<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.metering.summary -->Real-time A-weighted (3-stage biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM MEMS microphones, with calibrated dB-SPL and clipping detection.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>DSP</li>
-                    <li>PDM</li>
-                    <li>fixed-point</li>
-                    <li>C</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.metering.metric --><!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.power.title -->Power profiling &amp; fix<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.power.summary -->PPK2 differential profiling to root-cause the LTE-modem floor, an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>PPK2</li>
-                    <li>nPM1300</li>
-                    <li>oscilloscope</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.power.metric -->960 → 189 µA idle<!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.uplink.title -->LTE-M / NB-IoT uplink<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.uplink.summary -->An nRF9151 serial-modem client (AT sockets, hand-written JSON codec) talking to a Node.js / Express telemetry backend.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>nRF9151</li>
-                    <li>AT commands</li>
-                    <li>Node.js</li>
-                    <li>Express</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.uplink.metric --><!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.testrig.title -->Factory test framework (Insyght Testsuite)<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.testrig.summary -->An automated end-of-line framework: a PySide6 head-unit GUI orchestrating multiple Raspberry Pi module units over MQTT, driving firmware flashing, hardware monitoring (voltage, current, temperature), AT-command network checks and HackRF-based RF signal generation.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>Python</li>
-                    <li>PySide6</li>
-                    <li>MQTT</li>
-                    <li>Raspberry Pi</li>
-                    <li>HackRF</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.testrig.metric --><!-- /copy --></p>
-                </article>
-              </div>
-            </div>
-          </article>
-
-          <article class="role reveal d3">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/altix.png" alt="Altix Capital logo" loading="lazy" width="84" height="84">
-            </div>
-            <div class="role__body">
-              <p class="role__when"><!-- copy:experience.work.roles.altix.when -->Apr 2025 - Jun 2025<!-- /copy --></p>
-              <h3 class="role__title"><!-- copy:experience.work.roles.altix.title -->Machine Learning Engineer Intern<!-- /copy --></h3>
-              <p class="role__org"><!-- copy:experience.work.roles.altix.org --><a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam, Netherlands<!-- /copy --></p>
-              <p class="role__summary"><!-- copy:experience.work.roles.altix.summary -->An AI document-ingestion pipeline that sped up analyst screening.<!-- /copy --></p>
-              <p class="role__project"><span class="role__project-label"><!-- copy:experience.work.roles.altix.project_label -->Project<!-- /copy --></span> <b><!-- copy:experience.work.roles.altix.project -->AltixDocs<!-- /copy --></b></p>
-              <ul class="role__metrics">
-                <li class="metric">10 → 2 min per doc</li>
-                <li class="metric">~60% faster review</li>
-              </ul>
-              <ul class="role__points">
-                <li><!-- copy:experience.work.roles.altix.points.1 -->Built an AI document-ingestion pipeline to parse PDFs, spreadsheets, and images (with OCR), then auto-summarise and classify content, cutting manual screening from 20 minutes per document to 2.<!-- /copy --></li>
-                <li><!-- copy:experience.work.roles.altix.points.2 -->Shipped a REST service and lightweight web UI that streamlined analyst review, cutting document navigation and handling time.<!-- /copy --></li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="role reveal d4">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/huawei.svg" alt="Huawei logo" loading="lazy" width="84" height="84">
-            </div>
-            <div class="role__body">
-              <p class="role__when"><!-- copy:experience.work.roles.huawei.when -->Dec 2024 - May 2025<!-- /copy --></p>
-              <h3 class="role__title"><!-- copy:experience.work.roles.huawei.title -->Machine Learning Engineer Intern<!-- /copy --></h3>
-              <p class="role__org"><!-- copy:experience.work.roles.huawei.org --><a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam, Netherlands<!-- /copy --></p>
-              <p class="role__summary"><!-- copy:experience.work.roles.huawei.summary -->Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.<!-- /copy --></p>
-              <ul class="role__metrics">
-                <li class="metric">precision 92 → 94%</li>
-                <li class="metric">100 → 300+ h data</li>
-                <li class="metric">eval 4 h → 1 h</li>
-              </ul>
-              <div class="role__projects" role="list" aria-label="Projects in this role">
-                <p class="role__projects-label"><!-- copy:experience.work.roles.huawei.projects_label -->Projects<!-- /copy --></p>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.kws.title -->English keyword-spotting pipeline<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.kws.summary -->Develop the training and evaluation pipeline for an English keyword-spotting model.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>PyTorch</li>
-                    <li>KWS</li>
-                    <li>speech DSP</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.kws.metric -->precision 92 → 94%<!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.dataset.title -->Audio dataset curation<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.dataset.summary -->Built, cleaned and validated large-scale audio datasets with forced alignment and transfer learning.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>MFA</li>
-                    <li>Python</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.dataset.metric -->100 → 300+ h data<!-- /copy --></p>
-                </article>
-                <article class="subproject" role="listitem">
-                  <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.benchmark.title -->ASR/TTS benchmarks<!-- /copy --></h4>
-                  <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.benchmark.summary -->A reproducible benchmarking pipeline for ASR and TTS candidates, covering data loading, inference, scoring and reporting.<!-- /copy --></p>
-                  <ul class="subproject__stack" aria-label="Stack">
-                    <li>Python</li>
-                    <li>ASR</li>
-                    <li>TTS</li>
-                  </ul>
-                  <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.benchmark.metric -->eval 4 h → 1 h<!-- /copy --></p>
-                </article>
-              </div>
-            </div>
-          </article>
+      <article class="role role--live">
+        <p class="role__when">
+          <!-- copy:experience.work.roles.insyght.when -->Aug 2025 - <span class="role__now">Present</span><!-- /copy -->
+          <span class="role__still" data-since="2025-08-01"></span>
+        </p>
+        <div class="role__body">
+          <div class="role__media">
+            <img class="role__logo" src="img/experience/insyght.svg" alt="Insyght.io logo" loading="lazy" width="44" height="44">
+            <span class="role__pt">Part-time</span>
+          </div>
+          <h3 class="role__title"><!-- copy:experience.work.roles.insyght.title -->Embedded Software Engineer<!-- /copy --></h3>
+          <p class="role__org"><!-- copy:experience.work.roles.insyght.org --><a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft, Netherlands<!-- /copy --></p>
+          <p class="role__summary"><!-- copy:experience.work.roles.insyght.summary -->Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor.<!-- /copy --></p>
+          <ul class="role__metrics">
+            <li class="metric">92% classifier @ 40 KB</li>
+            <li class="metric">960 → 189 µA idle</li>
+            <li class="metric">Zephyr RTOS</li>
+          </ul>
+          <div class="role__projects" role="list" aria-label="Projects in this role">
+            <p class="role__projects-label"><!-- copy:experience.work.roles.insyght.projects_label -->Projects<!-- /copy --></p>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.classifier.title -->On-device noise classifier<!-- /copy --></h4>
+              <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.classifier.metric -->92% @ 40 KB<!-- /copy --></p>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.classifier.summary -->End-to-end pipeline (data preparation, training, evaluation and firmware integration) for on-device inference on the nRF54L15.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.firmware.title -->Zephyr firmware architecture<!-- /copy --></h4>
+              <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.firmware.metric -->~3K LOC<!-- /copy --></p>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.firmware.summary -->AuraSense firmware in C/C++ on Zephyr RTOS and the nRF Connect SDK, architected as 11 self-contained driver components.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.metering.title -->Acoustic metering pipeline<!-- /copy --></h4>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.metering.summary -->Real-time A-weighted (3-stage biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM MEMS microphones, with calibrated dB-SPL and clipping detection.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.power.title -->Power profiling &amp; fix<!-- /copy --></h4>
+              <p class="subproject__metric"><!-- copy:experience.work.roles.insyght.projects.power.metric -->960 → 189 µA<!-- /copy --></p>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.power.summary -->PPK2 differential profiling to root-cause the LTE-modem floor, an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.uplink.title -->LTE-M / NB-IoT uplink<!-- /copy --></h4>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.uplink.summary -->An nRF9151 serial-modem client (AT sockets, hand-written JSON codec) talking to a Node.js / Express telemetry backend.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.insyght.projects.testrig.title -->Factory test framework (Insyght Testsuite)<!-- /copy --></h4>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.insyght.projects.testrig.summary -->An automated end-of-line framework: a PySide6 head-unit GUI orchestrating multiple Raspberry Pi module units over MQTT, driving firmware flashing, hardware monitoring (voltage, current, temperature), AT-command network checks and HackRF-based RF signal generation.<!-- /copy --></p>
+            </article>
+          </div>
         </div>
-      </section>
+      </article>
 
-      <section class="section" aria-labelledby="edu-h">
+      <article class="role">
+        <p class="role__when"><!-- copy:experience.work.roles.altix.when -->Apr 2025 - Jun 2025<!-- /copy --></p>
+        <div class="role__body">
+          <div class="role__media">
+            <img class="role__logo" src="img/experience/altix.png" alt="Altix Capital logo" loading="lazy" width="44" height="44">
+          </div>
+          <h3 class="role__title"><!-- copy:experience.work.roles.altix.title -->Machine Learning Engineer Intern<!-- /copy --></h3>
+          <p class="role__org"><!-- copy:experience.work.roles.altix.org --><a class="role__company" href="https://www.altix.nl/" target="_blank" rel="noopener noreferrer">Altix Capital</a> · Amsterdam, Netherlands<!-- /copy --></p>
+          <p class="role__summary"><!-- copy:experience.work.roles.altix.summary -->An AI document-ingestion pipeline that sped up analyst screening.<!-- /copy --></p>
+          <ul class="role__metrics">
+            <li class="metric">10 → 2 min per doc</li>
+            <li class="metric">~60% faster review</li>
+          </ul>
+          <ul class="role__points">
+            <li><!-- copy:experience.work.roles.altix.points.1 -->Built an AI document-ingestion pipeline to parse PDFs, spreadsheets, and images (with OCR), then auto-summarise and classify content, cutting manual screening from 20 minutes per document to 2.<!-- /copy --></li>
+            <li><!-- copy:experience.work.roles.altix.points.2 -->Shipped a REST service and lightweight web UI that streamlined analyst review, cutting document navigation and handling time.<!-- /copy --></li>
+          </ul>
+          <p class="role__project"><span class="role__project-label"><!-- copy:experience.work.roles.altix.project_label -->Project<!-- /copy --></span> <b><!-- copy:experience.work.roles.altix.project -->AltixDocs<!-- /copy --></b></p>
+        </div>
+      </article>
+
+      <article class="role">
+        <p class="role__when"><!-- copy:experience.work.roles.huawei.when -->Dec 2024 - May 2025<!-- /copy --></p>
+        <div class="role__body">
+          <div class="role__media">
+            <img class="role__logo" src="img/experience/huawei.svg" alt="Huawei logo" loading="lazy" width="44" height="44">
+          </div>
+          <h3 class="role__title"><!-- copy:experience.work.roles.huawei.title -->Machine Learning Engineer Intern<!-- /copy --></h3>
+          <p class="role__org"><!-- copy:experience.work.roles.huawei.org --><a class="role__company" href="https://www.huawei.com/en/" target="_blank" rel="noopener noreferrer">Huawei</a> · Amsterdam, Netherlands<!-- /copy --></p>
+          <p class="role__summary"><!-- copy:experience.work.roles.huawei.summary -->Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.<!-- /copy --></p>
+          <ul class="role__metrics">
+            <li class="metric">precision 92 → 94%</li>
+            <li class="metric">100 → 300+ h data</li>
+            <li class="metric">eval 4 h → 1 h</li>
+          </ul>
+          <div class="role__projects" role="list" aria-label="Projects in this role">
+            <p class="role__projects-label"><!-- copy:experience.work.roles.huawei.projects_label -->Projects<!-- /copy --></p>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.kws.title -->English keyword-spotting pipeline<!-- /copy --></h4>
+              <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.kws.metric -->92 → 94%<!-- /copy --></p>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.kws.summary -->Develop the training and evaluation pipeline for an English keyword-spotting model.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.dataset.title -->Audio dataset curation<!-- /copy --></h4>
+              <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.dataset.metric -->100 → 300+ h data<!-- /copy --></p>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.dataset.summary -->Built, cleaned and validated large-scale audio datasets with forced alignment and transfer learning.<!-- /copy --></p>
+            </article>
+            <article class="subproject" role="listitem">
+              <h4 class="subproject__title"><!-- copy:experience.work.roles.huawei.projects.benchmark.title -->ASR/TTS benchmarks<!-- /copy --></h4>
+              <p class="subproject__metric"><!-- copy:experience.work.roles.huawei.projects.benchmark.metric -->4 h → 1 h<!-- /copy --></p>
+              <p class="subproject__summary"><!-- copy:experience.work.roles.huawei.projects.benchmark.summary -->A reproducible benchmarking pipeline for ASR and TTS candidates, covering data loading, inference, scoring and reporting.<!-- /copy --></p>
+            </article>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- EDUCATION -->
+    <section class="rail-row rail-row--alt">
+      <div class="rail"><p class="eyebrow"><!-- copy:experience.education.eyebrow -->Education<!-- /copy --></p></div>
+      <div class="bay">
         <div class="section__head">
-          <p class="eyebrow"><!-- copy:experience.education.eyebrow -->Education<!-- /copy --></p>
-          <h2 class="section__title" id="edu-h"><!-- copy:experience.education.title -->Delft, Netherlands<!-- /copy --></h2>
+          <div>
+            <h2 class="section__title section__title--edu"><!-- copy:experience.education.title -->Delft, Netherlands<!-- /copy --></h2>
+          </div>
           <p class="section__lead"><!-- copy:experience.education.lead -->The BSc just wrapped. The MSc starts this September, both at TU Delft.<!-- /copy --></p>
         </div>
-
-        <div class="roles">
-          <article class="role reveal d1">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="84" height="84">
-            </div>
+        <div class="roles roles--proof roles--edu">
+          <article class="role">
             <div class="role__body">
+              <div class="role__media">
+                <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="40" height="40">
+              </div>
               <h3 class="role__title"><!-- copy:experience.education.entries.msc.title -->MSc Data Science &amp; Artificial Intelligence Technology<!-- /copy --></h3>
               <p class="role__org"><!-- copy:experience.education.entries.msc.org --><a class="role__company" href="https://www.tudelft.nl/en/" target="_blank" rel="noopener noreferrer">Delft University of Technology</a> · Sep 2026 - Jun 2028<!-- /copy --></p>
             </div>
           </article>
-
-          <article class="role reveal d2">
-            <div class="role__media">
-              <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="84" height="84">
-            </div>
+          <article class="role">
             <div class="role__body">
+              <div class="role__media">
+                <img class="role__logo" src="img/experience/tudelft.png" alt="Delft University of Technology logo" loading="lazy" width="40" height="40">
+              </div>
               <h3 class="role__title"><!-- copy:experience.education.entries.bsc.title -->BSc (Honours) Computer Science &amp; Engineering<!-- /copy --></h3>
               <p class="role__org"><!-- copy:experience.education.entries.bsc.org -->Sep 2023 - Jun 2026<!-- /copy --></p>
               <p class="role__summary"><!-- copy:experience.education.entries.bsc.summary -->Honours Programme · Minor in Finance (Sep 2025 - Jan 2026).<!-- /copy --></p>
             </div>
           </article>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p><!-- copy:experience.footer.contact --><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> <span aria-hidden="true">·</span> <a href="cv.pdf" download>CV (PDF)</a> <span aria-hidden="true">·</span> Cristian Turcan<!-- /copy --></p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><!-- copy:experience.footer.contact --><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> <span aria-hidden="true">·</span> <a href="cv.pdf" download>CV (PDF)</a> <span aria-hidden="true">·</span> Cristian Turcan<!-- /copy --></p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="theme.js"></script>
   <script src="notify.js" defer></script>
   <script>
-    // Size the live-segment spine overlay from the "Now" node down to
-    // the bottom of the last live-role node.
-    (function () {
-      const seg = document.querySelector('[data-live-segment]');
-      if (!seg) return;
-      const now  = document.querySelector('.career-now');
-      const live = document.querySelectorAll('.role--live');
-      if (!now || !live.length) return;
-      const size = () => {
-        const nowB  = now.getBoundingClientRect();
-        const lastB = live[live.length - 1].getBoundingClientRect();
-        const rem   = parseFloat(getComputedStyle(document.documentElement).fontSize);
-        const startY = nowB.top  + nowB.height / 2 + window.scrollY;
-        const endY   = lastB.top + 3.4 * rem       + window.scrollY;
-        seg.style.height = Math.max(0, endY - startY) + 'px';
-      };
-      size();
-      window.addEventListener('resize', size);
-    })();
-
     // Quiet "still counting" ticker next to Present on live roles
     (function () {
       const nodes = document.querySelectorAll('.role__still[data-since]');

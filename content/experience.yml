@@ -16,11 +16,12 @@ work:
   lead: >-
     Real, paid engineering, newest at the top. Each role expands into
     the discrete projects that shipped inside it.
-  now: '<span class="career-now__tag">Now</span> Aug 2026: two roles, in parallel'
+  now_tag: 'Now'
+  now_body: 'Aug 2026: two roles, in parallel'
   roles:
     offroad:
       when: 'Jan 2026 - <span class="role__now">Present</span>'
-      title: 'Software Engineer<span class="role__pt">Part-time</span>'
+      title: 'Software Engineer'
       org: '<a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft, Netherlands'
       summary: 'Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.'
       projects_label: 'Projects'
@@ -44,7 +45,7 @@ work:
           metric: ''
     insyght:
       when: 'Aug 2025 - <span class="role__now">Present</span>'
-      title: 'Embedded Software Engineer<span class="role__pt">Part-time</span>'
+      title: 'Embedded Software Engineer'
       org: '<a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft, Netherlands'
       summary: 'Firmware for <em>AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor.'
       projects_label: 'Projects'
