@@ -194,6 +194,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; color: var(--ink
 .num-row { display: grid; grid-template-columns: var(--rail-home) 1fr; border-bottom: 1px solid var(--border-str); }
 .num-row > .num { border-right: 1px solid var(--border); padding: 56px 0 0 20px; font-size: 14px; font-weight: 600; color: var(--faintest); }
 .num-row > .bay { padding: 56px var(--pad-r) 64px var(--pad-l); }
+.num-row--alt { background: var(--paper-alt); }
 
 /* ---- Labels, heads, rules ---- */
 .eyebrow {

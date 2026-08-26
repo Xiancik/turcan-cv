@@ -3,10 +3,12 @@
 # (<article>, <section>, <div>, <ul>, <h3>) live in the .html file.
 
 hero:
+  eyebrow: 'Positioning'
   headline: 'I build software, <em>end to end</em>.'
   sub: >-
     Embedded systems, machine learning, and the software that ties them
     together. I like every part of it.
+  caption: 'Delft, NL · shipping since 2024'
 
 work:
   eyebrow: 'Selected work'
@@ -14,11 +16,11 @@ work:
   lead: 'Real, paid, in-production work. The <a href="experience.html">full story lives here</a>.'
   roles:
     offroad:
-      title: 'Software Engineer<span class="role__pt">Part-time</span>'
+      title: 'Software Engineer'
       org: '<a class="role__company" href="https://offroadapps.nl/vitalsiq/?lang=en" target="_blank" rel="noopener noreferrer">Offroad Apps (VitalsIQ)</a> · Delft · Jan 2026 - Present'
       summary: 'Vitals streamed live from Garmin wearables into a companion app, a tactical mapping plugin, and a barcode library rewritten from scratch.'
     insyght:
-      title: 'Embedded Software Engineer<span class="role__pt">Part-time</span>'
+      title: 'Embedded Software Engineer'
       org: '<a class="role__company" href="https://insyght.io/en/" target="_blank" rel="noopener noreferrer">Insyght.io</a> · Delft · Aug 2025 - Present'
       summary: 'Firmware, an on-device noise classifier, and the factory test framework.'
     altix:
