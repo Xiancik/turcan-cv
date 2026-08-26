@@ -629,10 +629,17 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; color: var(--ink
 .case__meta dd { font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
 
 .case__cover {
-  width: 100%; max-height: 460px; object-fit: cover;
-  border: 0; border-radius: 0; margin: 0;
-  background: var(--field); border-bottom: 1px solid var(--border-str);
   display: block;
+  max-width: min(100%, 780px);
+  max-height: 420px;
+  width: auto;
+  height: auto;
+  margin: 44px auto;
+  padding: 24px;
+  object-fit: contain;
+  background: var(--field);
+  border: 1px solid var(--border-str);
+  border-radius: 0;
 }
 
 .case__section { display: grid; grid-template-columns: var(--rail) 1fr; border-bottom: 1px solid var(--border-str); }
