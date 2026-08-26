@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<style>
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/bricolage-grotesque-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/bricolage-grotesque-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-sans-latin-400-italic.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2")}
+body{margin:0;background:#e8e3d7;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17px;line-height:1.7;color:#232019;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:#2e5640;text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:2px}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;gap:56px;padding:40px 0 80px">
+
+<p style="margin:0;padding:0 40px;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6b665c">Baseline · turcan.nl as it stands today · light theme · 940px container</p>
+
+<!-- ============ HOME ============ -->
+<div style="background:#f3efe6;border:1px solid #d6cdb8;width:1180px;margin:0 40px">
+  <div style="position:sticky;top:0;z-index:10;background:rgba(243,239,230,.88);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid #e4ddcd">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:1.25rem;padding-block:.85rem">
+      <a href="#home" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;color:#232019;letter-spacing:-.01em">Cristian Turcan</a>
+      <nav style="display:flex;gap:1.25rem;flex-wrap:wrap;margin-left:auto">
+        <a href="#exp" style="color:#534d41;font-size:.92rem">Experience</a>
+        <a href="#proj" style="color:#534d41;font-size:.92rem">Projects</a>
+        <a href="#home" style="color:#534d41;font-size:.92rem">Events</a>
+        <a href="#home" style="color:#534d41;font-size:.92rem">Papers</a>
+      </nav>
+      <button type="button" style="width:44px;height:44px;margin:-10px -8px -10px 0;border-radius:50%;border:0;background:none;color:#534d41;cursor:pointer;font-size:1.05rem;line-height:1;display:grid;place-items:center">&#9790;</button>
+    </div>
+  </div>
+
+  <div id="home" style="padding:4.5rem 0 3.25rem">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+      <div style="display:grid;grid-template-columns:1fr 132px;gap:2rem;align-items:start">
+        <div>
+          <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.12;font-size:3rem;margin:0 0 1.15rem;max-width:18ch;color:#232019">I build software, <em style="font-style:normal;color:#2e5640">end to end</em>.</h1>
+          <p style="font-size:1.12rem;color:#534d41;margin:0 0 1.75rem;max-width:46ch">Embedded systems, machine learning, and the software that ties them together. I like every part of it.</p>
+          <nav style="display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.4rem">
+            <a href="mailto:cristian@turcan.nl" style="color:#232019;border-bottom:1px solid #d6cdb8;padding-bottom:1px">cristian@turcan.nl</a>
+            <a href="#home" style="color:#232019;border-bottom:1px solid #d6cdb8;padding-bottom:1px">LinkedIn</a>
+            <a href="#home" style="display:inline-flex;align-items:center;gap:.5rem;background:#3d6b4f;color:#fff;font-weight:600;font-size:.95rem;padding:.6rem 1.15rem;border-radius:999px">Download CV <span aria-hidden="true">↓</span></a>
+          </nav>
+        </div>
+        <img src="img/cristian.jpg" width="132" height="132" alt="Cristian Turcan" style="order:2;width:132px;height:132px;border-radius:20px;object-fit:cover;border:1px solid #d6cdb8;box-shadow:0 1px 0 rgba(0,0,0,.02),0 14px 30px -18px rgba(45,86,64,.5)">
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:3.25rem 0;border-top:1px solid #e4ddcd">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+      <div style="margin:0 0 2.25rem;max-width:680px">
+        <p style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2e5640;margin:0 0 1rem;display:inline-flex;align-items:center;gap:.55rem"><span style="width:1.6rem;height:2px;background:#3d6b4f;border-radius:2px"></span>Selected work</p>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.7rem;margin:0 0 .55rem;letter-spacing:-.015em;line-height:1.2">Where I’ve been building</h2>
+        <p style="color:#534d41;margin:0;font-size:1.06rem">Real, paid, in-production work. The <a href="#exp">full story lives here</a>.</p>
+      </div>
+
+      <div style="display:grid;gap:1rem">
+        <article style="display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <div style="width:60px"><img src="img/experience/offroad.png" alt="Offroad Apps logo" width="60" height="60" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;color:#232019;line-height:1.2">Software Engineer<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:.74rem;color:#2e5640;background:#e3ead9;padding:.12rem .5rem;border-radius:999px;margin-left:.55rem;vertical-align:middle;white-space:nowrap">Part-time</span></h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem;font-variant-numeric:tabular-nums"><a href="#home" style="color:#534d41;border-bottom:1px solid #d6cdb8">Offroad Apps (VitalsIQ)</a> · Delft · Jan 2026 - Present</p>
+            <p style="margin:0 0 .7rem;color:#232019">Vitals streamed live from Garmin wearables into a companion app, a tactical mapping plugin, and a barcode library rewritten from scratch.</p>
+          </div>
+        </article>
+
+        <article style="display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <div style="width:60px"><img src="img/experience/insyght.svg" alt="Insyght.io logo" width="60" height="60" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;color:#232019;line-height:1.2">Embedded Software Engineer<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:.74rem;color:#2e5640;background:#e3ead9;padding:.12rem .5rem;border-radius:999px;margin-left:.55rem;vertical-align:middle;white-space:nowrap">Part-time</span></h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem;font-variant-numeric:tabular-nums"><a href="#home" style="color:#534d41;border-bottom:1px solid #d6cdb8">Insyght.io</a> · Delft · Aug 2025 - Present</p>
+            <p style="margin:0 0 .7rem;color:#232019">Firmware, an on-device noise classifier, and the factory test framework.</p>
+          </div>
+        </article>
+
+        <article style="display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <div style="width:60px"><img src="img/experience/altix.png" alt="Altix Capital logo" width="60" height="60" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;color:#232019;line-height:1.2">Machine Learning Engineer Intern</h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem;font-variant-numeric:tabular-nums"><a href="#home" style="color:#534d41;border-bottom:1px solid #d6cdb8">Altix Capital</a> · Amsterdam · Apr 2025 - Jun 2025</p>
+            <p style="margin:0 0 .7rem;color:#232019">Documents, spreadsheets and scans parsed, summarised and classified, plus the service and interface analysts screen in.</p>
+          </div>
+        </article>
+
+        <article style="display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <div style="width:60px"><img src="img/experience/huawei.svg" alt="Huawei logo" width="60" height="60" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;color:#232019;line-height:1.2">Machine Learning Engineer Intern</h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem;font-variant-numeric:tabular-nums"><a href="#home" style="color:#534d41;border-bottom:1px solid #d6cdb8">Huawei</a> · Amsterdam · Dec 2024 - May 2025</p>
+            <p style="margin:0 0 .7rem;color:#232019">Keyword spotting, audio dataset curation, and benchmarking for speech recognition and synthesis.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:3.25rem 0;border-top:1px solid #e4ddcd">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+      <div style="margin:0 0 2.25rem;max-width:680px">
+        <p style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2e5640;margin:0 0 1rem;display:inline-flex;align-items:center;gap:.55rem"><span style="width:1.6rem;height:2px;background:#3d6b4f;border-radius:2px"></span>Things I’ve built</p>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.7rem;margin:0 0 .55rem;letter-spacing:-.015em;line-height:1.2">Side quests, for the love of it</h2>
+        <p style="color:#534d41;margin:0;font-size:1.06rem">Self-directed and competition work. <a href="#proj">See them all</a>.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem">
+        <a href="#proj" style="display:flex;flex-direction:column;overflow:hidden;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit">
+          <img src="img/projects/mesh.gif" alt="A 3D mesh being progressively simplified" style="aspect-ratio:16/9;object-fit:cover;width:100%;background:#e3ead9;border-bottom:1px solid #e4ddcd">
+          <div style="padding:1.4rem 1.45rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Computational Geometry</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3;margin:-.05rem 0 0">Perception-Aware 3D Mesh Simplification</div>
+            <p style="color:#534d41;font-size:.95rem;margin:0">A QEM mesh solver for Huawei’s IMC Challenge.</p>
+            <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c;font-variant-numeric:tabular-nums"><span>C++&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>Huawei IMC&nbsp;&nbsp;·&nbsp;&nbsp;</span><span><b style="color:#534d41">87.49</b> score</span></p>
+            <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">C++</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">QEM</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">SSIM</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#proj" style="display:flex;flex-direction:column;overflow:hidden;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit">
+          <img src="img/projects/prosperity.png" alt="Trading analytics dashboard with a rising PnL curve" style="aspect-ratio:16/9;object-fit:cover;width:100%;background:#e3ead9;border-bottom:1px solid #e4ddcd">
+          <div style="padding:1.4rem 1.45rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Quantitative Trading</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3;margin:-.05rem 0 0">IMC Prosperity 4: Algorithmic Trading</div>
+            <p style="color:#534d41;font-size:.95rem;margin:0">Options market-making with Black-Scholes pricing, an IV-smile fit, and a time-series test library.</p>
+            <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c;font-variant-numeric:tabular-nums"><span>Python&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>IMC Prosperity 4&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>NumPy · SciPy</span></p>
+            <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Black-Scholes</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">IV smile</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">backtesting</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#proj" style="display:flex;flex-direction:column;overflow:hidden;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit">
+          <img src="img/projects/automation-bots-dark.svg" alt="Automation bots architecture" style="aspect-ratio:16/9;object-fit:cover;width:100%;background:#e3ead9;border-bottom:1px solid #e4ddcd">
+          <div style="padding:1.4rem 1.45rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Automation · Services</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3;margin:-.05rem 0 0">Telegram &amp; Automation Bots</div>
+            <p style="color:#534d41;font-size:.95rem;margin:0">Small real-world issues, automated away: change alerts, a gym-slot grabber, an event feed.</p>
+            <p style="font-size:.82rem;color:#534d41;margin:.1rem 0 0"><b style="color:#2e5640;font-weight:600">3 bots</b>: change-tracking · SSO booking · event aggregation</p>
+            <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c;font-variant-numeric:tabular-nums"><span>Python&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>aiogram + Celery&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>Playwright</span></p>
+            <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Python</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">aiogram</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Celery</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Playwright</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#proj" style="display:flex;flex-direction:column;overflow:hidden;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit">
+          <div style="aspect-ratio:16/9;width:100%;display:grid;place-items:center;background:#e3ead9;border-bottom:1px solid #e4ddcd;overflow:hidden">
+            <svg viewBox="0 0 160 90" style="width:70%;height:auto;display:block">
+              <rect x="20" y="24" width="38" height="8" rx="4" fill="#3d6b4f"/>
+              <rect x="64" y="24" width="52" height="8" rx="4" fill="#d6cdb8"/>
+              <rect x="34" y="41" width="40" height="8" rx="4" fill="#d6cdb8"/>
+              <rect x="80" y="41" width="28" height="8" rx="4" fill="#2e5640"/>
+              <rect x="34" y="58" width="28" height="8" rx="4" fill="#d6cdb8"/>
+              <rect x="68" y="58" width="48" height="8" rx="4" fill="#d6cdb8"/>
+            </svg>
+          </div>
+          <div style="padding:1.4rem 1.45rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Assembly · Compilers</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3;margin:-.05rem 0 0">A JIT Compiler for Brainfuck</div>
+            <p style="color:#534d41;font-size:.95rem;margin:0">A just-in-time compiler written entirely in assembly, emitting native machine code by hand.</p>
+            <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c;font-variant-numeric:tabular-nums"><span>x86-64 assembly&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>self-directed&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>source → native</span></p>
+            <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Assembly</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">JIT</span>
+              <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Codegen</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:3.25rem 0;border-top:1px solid #e4ddcd">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+      <div style="margin:0 0 2.25rem;max-width:680px">
+        <p style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2e5640;margin:0 0 1rem;display:inline-flex;align-items:center;gap:.55rem"><span style="width:1.6rem;height:2px;background:#3d6b4f;border-radius:2px"></span>Beyond the code</p>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.7rem;margin:0 0 .55rem;letter-spacing:-.015em;line-height:1.2">Where I grew up, and what I do off the clock</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.1rem">
+        <div style="background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .6rem">How I got here</h3>
+          <p style="margin:0;color:#534d41">I grew up in Moldova, a loud kid in a one-room apartment, me and my older sister. A family legend says my maths got good right after I took a knock to the head at a taekwondo competition, a coincidence I find funny and decided to stick to it. I went to a small neighbourhood school, and at ten I walked into my first olympiad and came home with first in the district and second in the whole city.</p>
+        </div>
+        <div style="background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .6rem">When I’m not shipping</h3>
+          <p style="margin:0;color:#534d41">I’m back in the taekwondo these days, a beginner again, years after an injury stopped me. Otherwise: books I finish even when they’ve stopped being good (I never drop one), board game nights with friends, cooking, and always music.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:4.25rem 0 4.5rem;border-top:1px solid #e4ddcd">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+      <p style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2e5640;margin:0 0 1rem;display:inline-flex;align-items:center;gap:.55rem;justify-content:center"><span style="width:1.6rem;height:2px;background:#3d6b4f;border-radius:2px"></span>Say hello</p>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:2.15rem;margin:0 0 .75rem;letter-spacing:-.015em;line-height:1.2">I’m always up for a good conversation.</h2>
+      <p style="color:#534d41;max-width:40ch;margin:0 auto 1.75rem;font-size:1.08rem">About a role, a hard problem, or just what you’re building.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.75rem 1.4rem;justify-content:center;align-items:center">
+        <a href="mailto:cristian@turcan.nl" style="display:inline-flex;align-items:center;gap:.5rem;background:#3d6b4f;color:#fff;font-weight:600;font-size:.95rem;padding:.6rem 1.15rem;border-radius:999px">cristian@turcan.nl</a>
+        <a href="#home" style="color:#232019;border-bottom:1px solid #d6cdb8;padding-bottom:1px">LinkedIn</a>
+        <a href="#home" style="color:#232019;border-bottom:1px solid #d6cdb8;padding-bottom:1px">Download CV ↓</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #e4ddcd;padding:2rem 0;color:#6b665c;font-size:.9rem;margin-top:1rem">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+      <p style="margin:0">Made in Delft, by Cristian Turcan.</p>
+      <p style="margin-top:.5rem;font-size:.8rem;color:#6b665c">Uses <a href="#home" style="color:#534d41">Microsoft Clarity</a> for anonymous usage analytics.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ EXPERIENCE ============ -->
+<div id="exp" style="background:#f3efe6;border:1px solid #d6cdb8;width:1180px;margin:0 40px">
+  <div style="background:rgba(243,239,230,.88);border-bottom:1px solid #e4ddcd">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:1.25rem;padding-block:.85rem">
+      <a href="#home" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;color:#232019">Cristian Turcan</a>
+      <nav style="display:flex;gap:1.25rem;margin-left:auto">
+        <a href="#exp" style="color:#2e5640;font-size:.92rem;font-weight:600">Experience</a>
+        <a href="#proj" style="color:#534d41;font-size:.92rem">Projects</a>
+        <a href="#exp" style="color:#534d41;font-size:.92rem">Events</a>
+        <a href="#exp" style="color:#534d41;font-size:.92rem">Papers</a>
+      </nav>
+      <button type="button" style="width:44px;height:44px;margin:-10px -8px -10px 0;border-radius:50%;border:0;background:none;color:#534d41;cursor:pointer;font-size:1.05rem;display:grid;place-items:center">&#9790;</button>
+    </div>
+  </div>
+
+  <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+    <div style="padding:3.25rem 0 .5rem;max-width:680px">
+      <p style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2e5640;margin:0 0 1rem;display:inline-flex;align-items:center;gap:.55rem"><span style="width:1.6rem;height:2px;background:#3d6b4f;border-radius:2px"></span>Experience</p>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:2.75rem;margin:0 0 .6rem;letter-spacing:-.025em;line-height:1.2">Where I’ve been building</h1>
+      <p style="color:#534d41;margin:0;font-size:1.08rem">Four engineering roles, two of them live right now, and two degrees at TU Delft. <a href="#exp">Grab the CV</a>.</p>
+    </div>
+
+    <div style="padding:3.25rem 0">
+      <div style="margin:0 0 2.25rem;max-width:680px">
+        <p style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2e5640;margin:0 0 1rem;display:inline-flex;align-items:center;gap:.55rem"><span style="width:1.6rem;height:2px;background:#3d6b4f;border-radius:2px"></span>Work</p>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.7rem;margin:0 0 .55rem;letter-spacing:-.015em;line-height:1.2">Roles I’ve shipped in</h2>
+        <p style="color:#534d41;margin:0;font-size:1.06rem">Real, paid engineering, newest at the top. Each role expands into the discrete projects that shipped inside it.</p>
+      </div>
+
+      <div style="position:relative;padding-left:2.6rem;display:grid;gap:1rem">
+        <div style="content:'';position:absolute;left:.6rem;top:1rem;bottom:1.6rem;width:2px;border-radius:2px;background:linear-gradient(#3d6b4f,#d6cdb8)"></div>
+        <div style="position:absolute;left:.55rem;top:1.15rem;width:3px;height:640px;border-radius:3px;background:#3d6b4f;opacity:.85"></div>
+
+        <p style="position:relative;margin:0 0 .1rem;display:inline-flex;align-items:baseline;gap:.55rem;font-size:.84rem;color:#534d41">
+          <span style="position:absolute;left:calc(-2.6rem + .6rem);top:50%;transform:translate(-50%,-50%);width:.82rem;height:.82rem;border-radius:50%;background:#3d6b4f;box-shadow:0 0 0 4px #f3efe6"></span>
+          <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:#2e5640;background:#e3ead9;padding:.2rem .62rem;border-radius:999px">Now</span> Aug 2026: two roles, in parallel</p>
+
+        <article style="position:relative;display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <span style="position:absolute;left:calc(-2.6rem + .6rem);top:3.4rem;transform:translate(-50%,-50%);width:.8rem;height:.8rem;border-radius:50%;background:#3d6b4f;border:2px solid #3d6b4f;box-shadow:0 0 0 4px #f3efe6,0 0 0 7px #e3ead9"></span>
+          <div style="width:60px"><img src="img/experience/offroad.png" alt="Offroad Apps logo" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <p style="font-size:.78rem;font-weight:600;letter-spacing:.03em;color:#6b665c;margin:0 0 .32rem;font-variant-numeric:tabular-nums">Jan 2026 - <span style="color:#2e5640">Present</span><span style="display:inline-block;margin-left:.5rem;font-size:.72rem;font-weight:500;color:#6b665c">· 7 mo, still counting</span></p>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;line-height:1.2">Software Engineer<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:.74rem;color:#2e5640;background:#e3ead9;padding:.12rem .5rem;border-radius:999px;margin-left:.55rem;vertical-align:middle">Part-time</span></h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem"><a href="#exp" style="color:#534d41;border-bottom:1px solid #d6cdb8">Offroad Apps (VitalsIQ)</a> · Delft, Netherlands</p>
+            <p style="margin:0 0 .7rem;color:#232019">Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.</p>
+            <ul style="list-style:none;margin:0;padding:0;color:#6b665c;font-size:.88rem;font-variant-numeric:tabular-nums">
+              <li style="display:inline">7 live vital types&nbsp;&nbsp;·&nbsp;&nbsp;</li><li style="display:inline">.NET 10 + MAUI&nbsp;&nbsp;·&nbsp;&nbsp;</li><li style="display:inline">JABCode C→C#</li>
+            </ul>
+            <div style="margin:1rem 0 0;padding-left:1.15rem;border-left:1px solid #e4ddcd;display:grid;gap:.9rem">
+              <p style="font-weight:700;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:#6b665c;margin:0 0 -.1rem">Projects</p>
+              <article style="display:grid;grid-template-columns:1fr auto;column-gap:1rem;row-gap:.35rem;align-items:baseline">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;color:#232019;margin:0;line-height:1.3;grid-column:1">Garmin binding + MAUI app</h4>
+                <p style="grid-column:2;grid-row:1;margin:0;white-space:nowrap;font-weight:600;font-size:.76rem;color:#2e5640;background:#e3ead9;padding:.12rem .58rem;border-radius:999px">7 live vital types</p>
+                <p style="grid-column:1/-1;margin:0;color:#534d41;font-size:.93rem;line-height:1.55">A .NET 10 Android binding of Garmin’s native Health SDK and a MAUI companion app that pairs wearables and streams 7 vital-sign types (heart rate, HRV, SpO₂, ...) to the VitalsIQ backend.</p>
+                <ul style="grid-column:1/-1;list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">.NET 10</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">MAUI</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Garmin Health SDK</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Android</li>
+                </ul>
+              </article>
+              <article style="display:grid;row-gap:.35rem">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;color:#232019;margin:0;line-height:1.3">Java → C# binding transforms</h4>
+                <p style="margin:0;color:#534d41;font-size:.93rem;line-height:1.55">Hand-authored transforms that pull the Java SDK cleanly into .NET, resolving R8, Guava, SQLCipher and Gson interop conflicts, plus an Android foreground service for resilient background sync.</p>
+                <ul style="list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">MSBuild bindings</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">R8</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Android</li>
+                </ul>
+              </article>
+              <article style="display:grid;row-gap:.35rem">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;color:#232019;margin:0;line-height:1.3">CivTAK plugin</h4>
+                <p style="margin:0;color:#534d41;font-size:.93rem;line-height:1.55">A Java plugin for CivTAK (civilian ATAK) that surfaces the VitalsIQ app as an in-app pane and a live map marker.</p>
+                <ul style="list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Java</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">ATAK SDK</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">JUnit</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Android IPC</li>
+                </ul>
+              </article>
+              <article style="display:grid;row-gap:.35rem">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;color:#232019;margin:0;line-height:1.3">JABCode C → C# port</h4>
+                <p style="margin:0;color:#534d41;font-size:.93rem;line-height:1.55">The full JABCode colour 2D-barcode library - encoder and decoder with Reed-Solomon error correction - ported from C to C#.</p>
+                <ul style="list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">C</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">C#</li>
+                  <li style="font-size:.72rem;font-weight:500;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Reed-Solomon</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </article>
+
+        <article style="position:relative;display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <span style="position:absolute;left:calc(-2.6rem + .6rem);top:3.4rem;transform:translate(-50%,-50%);width:.8rem;height:.8rem;border-radius:50%;background:#3d6b4f;border:2px solid #3d6b4f;box-shadow:0 0 0 4px #f3efe6,0 0 0 7px #e3ead9"></span>
+          <div style="width:60px"><img src="img/experience/insyght.svg" alt="Insyght.io logo" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <p style="font-size:.78rem;font-weight:600;letter-spacing:.03em;color:#6b665c;margin:0 0 .32rem;font-variant-numeric:tabular-nums">Aug 2025 - <span style="color:#2e5640">Present</span><span style="display:inline-block;margin-left:.5rem;font-size:.72rem;font-weight:500;color:#6b665c">· 1y, still counting</span></p>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;line-height:1.2">Embedded Software Engineer<span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:.74rem;color:#2e5640;background:#e3ead9;padding:.12rem .5rem;border-radius:999px;margin-left:.55rem;vertical-align:middle">Part-time</span></h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem"><a href="#exp" style="color:#534d41;border-bottom:1px solid #d6cdb8">Insyght.io</a> · Delft, Netherlands</p>
+            <p style="margin:0 0 .7rem;color:#232019">Firmware for <em style="color:#2e5640;font-style:italic">AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor.</p>
+            <ul style="list-style:none;margin:0;padding:0;color:#6b665c;font-size:.88rem;font-variant-numeric:tabular-nums">
+              <li style="display:inline">92% classifier @ 40 KB&nbsp;&nbsp;·&nbsp;&nbsp;</li><li style="display:inline">960 → 189 µA idle&nbsp;&nbsp;·&nbsp;&nbsp;</li><li style="display:inline">Zephyr RTOS</li>
+            </ul>
+            <div style="margin:1rem 0 0;padding-left:1.15rem;border-left:1px solid #e4ddcd;display:grid;gap:.9rem">
+              <p style="font-weight:700;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:#6b665c;margin:0 0 -.1rem">Projects</p>
+              <article style="display:grid;grid-template-columns:1fr auto;column-gap:1rem;row-gap:.35rem;align-items:baseline">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3;grid-column:1">On-device noise classifier</h4>
+                <p style="grid-column:2;grid-row:1;margin:0;white-space:nowrap;font-weight:600;font-size:.76rem;color:#2e5640;background:#e3ead9;padding:.12rem .58rem;border-radius:999px">92% @ 40 KB</p>
+                <p style="grid-column:1/-1;margin:0;color:#534d41;font-size:.93rem;line-height:1.55">End-to-end pipeline (data preparation, training, evaluation and firmware integration) for on-device inference on the nRF54L15.</p>
+                <ul style="grid-column:1/-1;list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Python</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">TFLite Micro</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">C</li>
+                </ul>
+              </article>
+              <article style="display:grid;grid-template-columns:1fr auto;column-gap:1rem;row-gap:.35rem;align-items:baseline">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3;grid-column:1">Zephyr firmware architecture</h4>
+                <p style="grid-column:2;grid-row:1;margin:0;white-space:nowrap;font-weight:600;font-size:.76rem;color:#2e5640;background:#e3ead9;padding:.12rem .58rem;border-radius:999px">~3K LOC</p>
+                <p style="grid-column:1/-1;margin:0;color:#534d41;font-size:.93rem;line-height:1.55">AuraSense firmware in C/C++ on Zephyr RTOS and the nRF Connect SDK, architected as 11 self-contained driver components.</p>
+                <ul style="grid-column:1/-1;list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Zephyr RTOS</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">nRF Connect SDK</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">C/C++</li>
+                </ul>
+              </article>
+              <article style="display:grid;row-gap:.35rem">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3">Acoustic metering pipeline</h4>
+                <p style="margin:0;color:#534d41;font-size:.93rem;line-height:1.55">Real-time A-weighted (3-stage biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM MEMS microphones, with calibrated dB-SPL and clipping detection.</p>
+                <ul style="list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">DSP</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">PDM</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">fixed-point</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">C</li>
+                </ul>
+              </article>
+              <article style="display:grid;grid-template-columns:1fr auto;column-gap:1rem;row-gap:.35rem;align-items:baseline">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3;grid-column:1">Power profiling &amp; fix</h4>
+                <p style="grid-column:2;grid-row:1;margin:0;white-space:nowrap;font-weight:600;font-size:.76rem;color:#2e5640;background:#e3ead9;padding:.12rem .58rem;border-radius:999px">960 → 189 µA idle</p>
+                <p style="grid-column:1/-1;margin:0;color:#534d41;font-size:.93rem;line-height:1.55">PPK2 differential profiling to root-cause the LTE-modem floor, an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.</p>
+                <ul style="grid-column:1/-1;list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">PPK2</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">nPM1300</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">oscilloscope</li>
+                </ul>
+              </article>
+              <article style="display:grid;row-gap:.35rem">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3">LTE-M / NB-IoT uplink</h4>
+                <p style="margin:0;color:#534d41;font-size:.93rem;line-height:1.55">An nRF9151 serial-modem client (AT sockets, hand-written JSON codec) talking to a Node.js / Express telemetry backend.</p>
+                <ul style="list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">nRF9151</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">AT commands</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Node.js</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Express</li>
+                </ul>
+              </article>
+              <article style="display:grid;row-gap:.35rem">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3">Factory test framework (Insyght Testsuite)</h4>
+                <p style="margin:0;color:#534d41;font-size:.93rem;line-height:1.55">An automated end-of-line framework: a PySide6 head-unit GUI orchestrating multiple Raspberry Pi module units over MQTT, driving firmware flashing, hardware monitoring (voltage, current, temperature), AT-command network checks and HackRF-based RF signal generation.</p>
+                <ul style="list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Python</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">PySide6</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">MQTT</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Raspberry Pi</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">HackRF</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </article>
+
+        <article style="position:relative;display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <span style="position:absolute;left:calc(-2.6rem + .6rem);top:3.4rem;transform:translate(-50%,-50%);width:.8rem;height:.8rem;border-radius:50%;background:#fbf9f4;border:2px solid #d6cdb8;box-shadow:0 0 0 4px #f3efe6"></span>
+          <div style="width:60px"><img src="img/experience/altix.png" alt="Altix Capital logo" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <p style="font-size:.78rem;font-weight:600;letter-spacing:.03em;color:#6b665c;margin:0 0 .32rem;font-variant-numeric:tabular-nums">Apr 2025 - Jun 2025</p>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;line-height:1.2">Machine Learning Engineer Intern</h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem"><a href="#exp" style="color:#534d41;border-bottom:1px solid #d6cdb8">Altix Capital</a> · Amsterdam, Netherlands</p>
+            <p style="margin:0 0 .7rem;color:#232019">An AI document-ingestion pipeline that sped up analyst screening.</p>
+            <p style="margin:0 0 .55rem;font-size:.84rem;color:#534d41"><span style="font-weight:600;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:#2e5640;margin-right:.5rem">Project</span> <b style="color:#232019;font-weight:600">AltixDocs</b></p>
+            <ul style="list-style:none;margin:0;padding:0;color:#6b665c;font-size:.88rem;font-variant-numeric:tabular-nums">
+              <li style="display:inline">10 → 2 min per doc&nbsp;&nbsp;·&nbsp;&nbsp;</li><li style="display:inline">~60% faster review</li>
+            </ul>
+            <ul style="margin:.85rem 0 0;padding-left:1.1rem;color:#534d41;font-size:.97rem">
+              <li style="margin:.3rem 0">Built an AI document-ingestion pipeline to parse PDFs, spreadsheets, and images (with OCR), then auto-summarise and classify content, cutting manual screening from 20 minutes per document to 2.</li>
+              <li style="margin:.3rem 0">Shipped a REST service and lightweight web UI that streamlined analyst review, cutting document navigation and handling time.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article style="position:relative;display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <span style="position:absolute;left:calc(-2.6rem + .6rem);top:3.4rem;transform:translate(-50%,-50%);width:.8rem;height:.8rem;border-radius:50%;background:#fbf9f4;border:2px solid #d6cdb8;box-shadow:0 0 0 4px #f3efe6"></span>
+          <div style="width:60px"><img src="img/experience/huawei.svg" alt="Huawei logo" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <p style="font-size:.78rem;font-weight:600;letter-spacing:.03em;color:#6b665c;margin:0 0 .32rem;font-variant-numeric:tabular-nums">Dec 2024 - May 2025</p>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;line-height:1.2">Machine Learning Engineer Intern</h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem"><a href="#exp" style="color:#534d41;border-bottom:1px solid #d6cdb8">Huawei</a> · Amsterdam, Netherlands</p>
+            <p style="margin:0 0 .7rem;color:#232019">Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.</p>
+            <ul style="list-style:none;margin:0;padding:0;color:#6b665c;font-size:.88rem;font-variant-numeric:tabular-nums">
+              <li style="display:inline">precision 92 → 94%&nbsp;&nbsp;·&nbsp;&nbsp;</li><li style="display:inline">100 → 300+ h data&nbsp;&nbsp;·&nbsp;&nbsp;</li><li style="display:inline">eval 4 h → 1 h</li>
+            </ul>
+            <div style="margin:1rem 0 0;padding-left:1.15rem;border-left:1px solid #e4ddcd;display:grid;gap:.9rem">
+              <p style="font-weight:700;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:#6b665c;margin:0 0 -.1rem">Projects</p>
+              <article style="display:grid;grid-template-columns:1fr auto;column-gap:1rem;row-gap:.35rem;align-items:baseline">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3;grid-column:1">English keyword-spotting pipeline</h4>
+                <p style="grid-column:2;grid-row:1;margin:0;white-space:nowrap;font-weight:600;font-size:.76rem;color:#2e5640;background:#e3ead9;padding:.12rem .58rem;border-radius:999px">precision 92 → 94%</p>
+                <p style="grid-column:1/-1;margin:0;color:#534d41;font-size:.93rem;line-height:1.55">Develop the training and evaluation pipeline for an English keyword-spotting model.</p>
+                <ul style="grid-column:1/-1;list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">PyTorch</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">KWS</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">speech DSP</li>
+                </ul>
+              </article>
+              <article style="display:grid;grid-template-columns:1fr auto;column-gap:1rem;row-gap:.35rem;align-items:baseline">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3;grid-column:1">Audio dataset curation</h4>
+                <p style="grid-column:2;grid-row:1;margin:0;white-space:nowrap;font-weight:600;font-size:.76rem;color:#2e5640;background:#e3ead9;padding:.12rem .58rem;border-radius:999px">100 → 300+ h data</p>
+                <p style="grid-column:1/-1;margin:0;color:#534d41;font-size:.93rem;line-height:1.55">Built, cleaned and validated large-scale audio datasets with forced alignment and transfer learning.</p>
+                <ul style="grid-column:1/-1;list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">MFA</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Python</li>
+                </ul>
+              </article>
+              <article style="display:grid;grid-template-columns:1fr auto;column-gap:1rem;row-gap:.35rem;align-items:baseline">
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:.97rem;margin:0;line-height:1.3;grid-column:1">ASR/TTS benchmarks</h4>
+                <p style="grid-column:2;grid-row:1;margin:0;white-space:nowrap;font-weight:600;font-size:.76rem;color:#2e5640;background:#e3ead9;padding:.12rem .58rem;border-radius:999px">eval 4 h → 1 h</p>
+                <p style="grid-column:1/-1;margin:0;color:#534d41;font-size:.93rem;line-height:1.55">A reproducible benchmarking pipeline for ASR and TTS candidates, covering data loading, inference, scoring and reporting.</p>
+                <ul style="grid-column:1/-1;list-style:none;margin:.05rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.3rem">
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">Python</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">ASR</li>
+                  <li style="font-size:.72rem;color:#6b665c;border:1px solid #e4ddcd;border-radius:999px;padding:.08rem .55rem">TTS</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div style="padding:3.25rem 0;border-top:1px solid #e4ddcd">
+      <div style="margin:0 0 2.25rem;max-width:680px">
+        <p style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2e5640;margin:0 0 1rem;display:inline-flex;align-items:center;gap:.55rem"><span style="width:1.6rem;height:2px;background:#3d6b4f;border-radius:2px"></span>Education</p>
+        <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.7rem;margin:0 0 .55rem;letter-spacing:-.015em;line-height:1.2">Delft, Netherlands</h2>
+        <p style="color:#534d41;margin:0;font-size:1.06rem">The BSc just wrapped. The MSc starts this September, both at TU Delft.</p>
+      </div>
+      <div style="display:grid;gap:1rem">
+        <article style="display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <div style="width:60px"><img src="img/experience/tudelft.png" alt="Delft University of Technology logo" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;line-height:1.2">MSc Data Science &amp; Artificial Intelligence Technology</h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0"><a href="#exp" style="color:#534d41;border-bottom:1px solid #d6cdb8">Delft University of Technology</a> · Sep 2026 - Jun 2028</p>
+          </div>
+        </article>
+        <article style="display:grid;grid-template-columns:60px 1fr;gap:1.25rem;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;padding:1.5rem 1.65rem">
+          <div style="width:60px"><img src="img/experience/tudelft.png" alt="Delft University of Technology logo" style="width:60px;height:60px;border-radius:8px;object-fit:contain;background:#fff;border:1px solid #e4ddcd;padding:7px"></div>
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;margin:0 0 .12rem;line-height:1.2">BSc (Honours) Computer Science &amp; Engineering</h3>
+            <p style="color:#534d41;font-size:.93rem;margin:0 0 .55rem">Sep 2023 - Jun 2026</p>
+            <p style="margin:0;color:#232019">Honours Programme · Minor in Finance (Sep 2025 - Jan 2026).</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #e4ddcd;padding:2rem 0;color:#6b665c;font-size:.9rem;margin-top:1rem">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+      <p style="margin:0"><a href="mailto:cristian@turcan.nl" style="color:#534d41">cristian@turcan.nl</a> · <a href="#exp" style="color:#534d41">CV (PDF)</a> · Cristian Turcan</p>
+      <p style="margin-top:.5rem;font-size:.8rem">Uses <a href="#exp" style="color:#534d41">Microsoft Clarity</a> for anonymous usage analytics.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROJECTS ============ -->
+<div id="proj" style="background:#f3efe6;border:1px solid #d6cdb8;width:1180px;margin:0 40px">
+  <div style="background:rgba(243,239,230,.88);border-bottom:1px solid #e4ddcd">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;gap:1.25rem;padding-block:.85rem">
+      <a href="#home" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;color:#232019">Cristian Turcan</a>
+      <nav style="display:flex;gap:1.25rem;margin-left:auto">
+        <a href="#exp" style="color:#534d41;font-size:.92rem">Experience</a>
+        <a href="#proj" style="color:#2e5640;font-size:.92rem;font-weight:600">Projects</a>
+        <a href="#proj" style="color:#534d41;font-size:.92rem">Events</a>
+        <a href="#proj" style="color:#534d41;font-size:.92rem">Papers</a>
+      </nav>
+      <button type="button" style="width:44px;height:44px;margin:-10px -8px -10px 0;border-radius:50%;border:0;background:none;color:#534d41;cursor:pointer;font-size:1.05rem;display:grid;place-items:center">&#9790;</button>
+    </div>
+  </div>
+
+  <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+    <div style="padding:3.25rem 0 .5rem;max-width:680px">
+      <p style="font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#2e5640;margin:0 0 1rem;display:inline-flex;align-items:center;gap:.55rem"><span style="width:1.6rem;height:2px;background:#3d6b4f;border-radius:2px"></span>Built for the love of it</p>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:2.75rem;margin:0 0 .6rem;letter-spacing:-.025em;line-height:1.2">Projects</h1>
+      <p style="color:#534d41;margin:0;font-size:1.08rem">Self-directed and competition work, laid out by how close to the metal it runs, from a browser product down to hand-written machine code.</p>
+    </div>
+
+    <div style="padding:3.25rem 0;display:grid;gap:2.9rem">
+      <div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.35rem .85rem;margin:0 0 1.2rem;padding-bottom:.75rem;border-bottom:1px solid #e4ddcd">
+          <span style="display:inline-flex;flex-direction:column;gap:2.5px;margin-right:.2rem"><i style="display:block;width:15px;height:3px;border-radius:2px;background:#3d6b4f"></i><i style="display:block;width:15px;height:3px;border-radius:2px;background:#d6cdb8"></i><i style="display:block;width:15px;height:3px;border-radius:2px;background:#d6cdb8"></i></span>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.12rem;letter-spacing:-.01em;color:#232019;margin:0">Product</h2>
+          <p style="color:#534d41;font-size:.9rem;margin:0">· whole apps and services, from the browser in</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr;gap:1.1rem">
+          <a href="#proj" style="display:flex;flex-direction:column;overflow:hidden;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit">
+            <img src="img/projects/automation-bots-dark.svg" alt="Automation bots architecture" style="aspect-ratio:16/9;object-fit:cover;width:100%;background:#e3ead9;border-bottom:1px solid #e4ddcd">
+            <div style="padding:1.4rem 1.45rem 1.5rem;display:flex;flex-direction:column;gap:.5rem">
+              <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Automation · services</div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3">Telegram &amp; Automation Bots</div>
+              <p style="color:#534d41;font-size:.95rem;margin:0">Small real-world annoyances, automated away: change alerts, a bot that grabs a gym slot the instant it opens, and one that applies to jobs for you.</p>
+              <p style="font-size:.82rem;color:#534d41;margin:.1rem 0 0"><b style="color:#2e5640;font-weight:600">5 bots</b>: change-tracking · SSO booking · event aggregation · legal acts · job auto-apply</p>
+              <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c"><span>Python&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>aiogram + Celery&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>Playwright</span></p>
+              <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Python</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">aiogram</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Celery</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Playwright</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.35rem .85rem;margin:0 0 1.2rem;padding-bottom:.75rem;border-bottom:1px solid #e4ddcd">
+          <span style="display:inline-flex;flex-direction:column;gap:2.5px;margin-right:.2rem"><i style="display:block;width:15px;height:3px;border-radius:2px;background:#3d6b4f"></i><i style="display:block;width:15px;height:3px;border-radius:2px;background:#3d6b4f"></i><i style="display:block;width:15px;height:3px;border-radius:2px;background:#d6cdb8"></i></span>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.12rem;letter-spacing:-.01em;color:#232019;margin:0">Systems &amp; compute</h2>
+          <p style="color:#534d41;font-size:.9rem;margin:0">· numerical and market engines, scored against a judge</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem">
+          <a href="#proj" style="grid-column:1/-1;display:grid;grid-template-columns:1.08fr 1fr;align-items:stretch;overflow:hidden;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit">
+            <img src="img/projects/generals.png" alt="A generals.io free-for-all board mid-game" style="height:100%;min-height:268px;object-fit:cover;width:100%;background:#e3ead9;border-right:1px solid #e4ddcd">
+            <div style="padding:1.6rem 1.7rem;display:flex;flex-direction:column;gap:.5rem;justify-content:center">
+              <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Game AI · simulation</div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3">A generals.io FFA Bot</div>
+              <p style="color:#534d41;font-size:.95rem;margin:0">A from-scratch lab for the real-time strategy game generals.io: a numpy battle simulator, a heuristic commander that plays through fog of war, and a neural policy trained to imitate it.</p>
+              <p style="font-size:.82rem;color:#534d41;margin:.1rem 0 0"><b style="color:#2e5640;font-weight:600">Four parts</b>: simulator · heuristic bot · Elo ladder · neural policy</p>
+              <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c"><span>Python + PyTorch&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>self-directed&nbsp;&nbsp;·&nbsp;&nbsp;</span><span><b style="color:#534d41">27</b> test files · <b style="color:#534d41">100</b> tests</span></p>
+              <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Python</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">numpy</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">PyTorch</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">RL</span>
+              </div>
+            </div>
+          </a>
+          <a href="#proj" style="display:flex;flex-direction:column;overflow:hidden;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit">
+            <img src="img/projects/mesh.gif" alt="A 3D mesh being progressively simplified" style="aspect-ratio:16/9;object-fit:cover;width:100%;background:#e3ead9;border-bottom:1px solid #e4ddcd">
+            <div style="padding:1.4rem 1.45rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
+              <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Computational geometry</div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3">Perception-Aware 3D Mesh Simplification</div>
+              <p style="color:#534d41;font-size:.95rem;margin:0">A from-scratch QEM edge-collapse solver for Huawei’s 2nd IMC Challenge, with a hand-built renderer to predict its own score.</p>
+              <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c"><span>C++&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>Huawei IMC&nbsp;&nbsp;·&nbsp;&nbsp;</span><span><b style="color:#534d41">87.49</b> score · 7/7 cases</span></p>
+              <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">C++</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">QEM</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">SSIM</span>
+              </div>
+            </div>
+          </a>
+          <a href="#proj" style="display:flex;flex-direction:column;overflow:hidden;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit">
+            <img src="img/projects/prosperity.png" alt="Trading analytics dashboard with a rising PnL curve" style="aspect-ratio:16/9;object-fit:cover;width:100%;background:#e3ead9;border-bottom:1px solid #e4ddcd">
+            <div style="padding:1.4rem 1.45rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1">
+              <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Quantitative trading</div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3">IMC Prosperity 4: Algorithmic Trading</div>
+              <p style="color:#534d41;font-size:.95rem;margin:0">Options market-making on Black-Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.</p>
+              <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c"><span>Python&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>IMC Prosperity 4&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>NumPy · SciPy</span></p>
+              <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Black-Scholes</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">IV smile</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">backtesting</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.35rem .85rem;margin:0 0 1.2rem;padding-bottom:.75rem;border-bottom:1px solid #e4ddcd">
+          <span style="display:inline-flex;flex-direction:column;gap:2.5px;margin-right:.2rem"><i style="display:block;width:15px;height:3px;border-radius:2px;background:#3d6b4f"></i><i style="display:block;width:15px;height:3px;border-radius:2px;background:#3d6b4f"></i><i style="display:block;width:15px;height:3px;border-radius:2px;background:#3d6b4f"></i></span>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.12rem;letter-spacing:-.01em;color:#232019;margin:0">Bare metal</h2>
+          <p style="color:#534d41;font-size:.9rem;margin:0">· no framework, no runtime: emitting machine code by hand</p>
+        </div>
+        <a href="#proj" style="display:block;background:#fbf9f4;border:1px solid #e4ddcd;border-radius:12px;color:inherit;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:1.5rem;align-items:center;padding:1.6rem 1.7rem">
+            <div style="display:flex;flex-direction:column;gap:.5rem">
+              <div style="font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#2e5640">Assembly · compilers</div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.16rem;color:#232019;line-height:1.3">A JIT Compiler for Brainfuck</div>
+              <p style="color:#534d41;font-size:.95rem;margin:0">Rather than interpret, it emits native x86-64 into memory at run time and jumps into it, a hands-on tour of code generation all the way down to the instruction bytes.</p>
+              <p style="display:flex;flex-wrap:wrap;margin:.15rem 0 0;font-size:.82rem;color:#6b665c"><span>x86-64 assembly&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>self-directed&nbsp;&nbsp;·&nbsp;&nbsp;</span><span>source → native</span></p>
+              <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem">
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Assembly</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">JIT</span>
+                <span style="font-size:.78rem;color:#2e5640;background:#e3ead9;border-radius:999px;padding:.12rem .6rem">Codegen</span>
+              </div>
+            </div>
+            <pre style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.78rem;line-height:1.75;color:#6b665c;white-space:pre;background:rgba(227,234,217,.42);border:1px solid #e4ddcd;border-radius:8px;padding:.75rem .9rem;margin:0;overflow-x:auto"><span style="opacity:.8">. Brainfuck → x86-64, emitted at run time</span>
++   →  <b style="color:#2e5640">add</b> byte [rbx], 1
+&gt;   →  <b style="color:#2e5640">inc</b> rbx
+[ ] →  <b style="color:#2e5640">cmp</b> / <b style="color:#2e5640">jz</b>, back-patched jumps</pre>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #e4ddcd;padding:2rem 0;color:#6b665c;font-size:.9rem;margin-top:1rem">
+    <div style="max-width:940px;margin:0 auto;padding:0 1.5rem">
+      <p style="margin:0"><a href="mailto:cristian@turcan.nl" style="color:#534d41">cristian@turcan.nl</a> · Cristian Turcan</p>
+      <p style="margin-top:.5rem;font-size:.8rem">Uses <a href="#proj" style="color:#534d41">Microsoft Clarity</a> for anonymous usage analytics.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

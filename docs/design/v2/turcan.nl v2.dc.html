@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<style>
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/bricolage-grotesque-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/bricolage-grotesque-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-sans-latin-400-italic.woff2") format("woff2")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2")}
+body{margin:0;background:#e6e0d2;font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:17px;line-height:1.7;color:#232019;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:#2e5640;text-decoration:none}
+a:hover{color:#232019}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;opacity:1 !important;transform:none !important}}
+</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;gap:64px;padding:40px 0 96px">
+
+<p style="margin:0;padding:0 44px;font-size:12px;letter-spacing:.14em;color:#6b665c">Turn 1 · turcan.nl refined — same oat &amp; moss, pushed hard · <a href="#1a">1a</a> home · <a href="#1b">1b</a> experience · <a href="#1c">1c</a> projects · <a href="#1d">1d</a> events · <a href="#1e">1e</a> papers · <a href="#1f">1f</a> case study</p>
+
+<!-- ================= 1a · HOME ================= -->
+<section id="1a" style="margin:0 44px;position:relative;width:1440px;background:#f3efe6;border:1px solid #cfc6b2">
+  <sc-if value="{{ showGrain }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:multiply;opacity:.075;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div></sc-if>
+
+  <div style="position:absolute;top:-30px;left:0;z-index:4;font-size:13.5px;font-weight:600;color:#3d6b4f;background:#e3ead9;padding:4px 9px">1a</div>
+
+  <!-- nav: hairline, mono, edge to edge -->
+  <header style="position:relative;z-index:2;display:flex;align-items:baseline;gap:40px;padding:26px 56px 22px;border-bottom:1px solid #232019">
+    <a href="#1a" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;color:#232019">Cristian Turcan</a>
+    <span style="font-size:14px;color:#6b665c">Software &amp; embedded engineer · Delft</span>
+    <nav style="display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:600">
+      <a href="#1a-exp" style="color:#232019;padding-bottom:3px;border-bottom:2px solid #3d6b4f">Experience</a>
+      <a href="#1a-proj" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="border-bottom:2px solid #3d6b4f;color:#232019">Projects</a>
+      <a href="#1a" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="border-bottom:2px solid #3d6b4f;color:#232019">Events</a>
+      <a href="#1a" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="border-bottom:2px solid #3d6b4f;color:#232019">Papers</a>
+    </nav>
+  </header>
+
+  <!-- HERO: asymmetric. giant type left, tall portrait right -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:96px 1fr 340px;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #e0d8c5;padding:34px 0 0 20px;font-size:14px;font-weight:600;color:#8a8272">01</div>
+
+    <div style="padding:64px 56px 60px 40px">
+      <p style="margin:0 0 30px;font-size:14px;font-weight:600;color:#3d6b4f;animation:fade .5s ease .05s both">Positioning</p>
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:96px;line-height:.94;letter-spacing:-.035em;margin:0 0 34px;color:#232019;text-wrap:balance;animation:rise .8s cubic-bezier(.2,.7,.3,1) .1s both">I build software, <em style="font-style:normal;color:#3d6b4f">end to end</em>.</h1>
+      <div style="height:1px;background:#232019;transform-origin:left;animation:rule .9s cubic-bezier(.2,.7,.3,1) .35s both;margin:0 0 26px"></div>
+      <p style="font-size:23px;line-height:1.55;color:#403a30;margin:0 0 40px;max-width:34ch;animation:rise .7s cubic-bezier(.2,.7,.3,1) .3s both">Embedded systems, machine learning, and the software that ties them together. I like every part of it.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;animation:rise .7s cubic-bezier(.2,.7,.3,1) .42s both">
+        <a href="#1a" style="display:inline-flex;align-items:center;gap:12px;background:#232019;color:#f3efe6;font-size:16px;font-weight:600;padding:15px 24px" style-hover="background:#3d6b4f;color:#f3efe6">Download CV <span aria-hidden="true">↓</span></a>
+        <a href="mailto:cristian@turcan.nl" style="font-size:16px;color:#232019;border-bottom:1px solid #3d6b4f;padding-bottom:3px">cristian@turcan.nl</a>
+        <a href="#1a" style="font-size:16px;color:#534d41;border-bottom:1px solid #cfc6b2;padding-bottom:3px" style-hover="color:#232019;border-bottom:1px solid #3d6b4f">LinkedIn</a>
+      </div>
+    </div>
+
+    <div style="border-left:1px solid #e0d8c5;border-bottom:1px solid #e0d8c5;align-self:start;margin:56px 0 0;height:400px;position:relative;background:#ece6d9;animation:fade .9s ease .15s both">
+      <img src="img/cristian.jpg" alt="Cristian Turcan" style="width:100%;height:100%;object-fit:cover;object-position:50% 18%;filter:saturate(.86) contrast(1.04)">
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(35,32,25,.42),rgba(35,32,25,0) 46%)"></div>
+      <p style="position:absolute;left:22px;bottom:20px;margin:0;font-size:14px;font-weight:600;color:#f3efe6">Delft, NL · shipping since 2024</p>
+    </div>
+  </div>
+
+  <!-- 02 SELECTED WORK: four equal cards, hairline-separated, moss top bar -->
+  <div id="1a-exp" style="position:relative;z-index:2;display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #e0d8c5;padding:56px 0 0 20px;font-size:14px;font-weight:600;color:#8a8272">02</div>
+    <div style="padding:56px 56px 64px 40px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid #232019;margin-bottom:2px">
+        <div>
+          <p style="margin:0 0 14px;font-size:14px;font-weight:600;color:#3d6b4f">Selected work</p>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:46px;line-height:1.02;letter-spacing:-.03em;margin:0;color:#232019">Where I’ve been building</h2>
+        </div>
+        <p style="margin:0 0 4px;color:#534d41;font-size:16px;max-width:30ch">Real, paid, in-production work. The <a href="#1a-exp" style="color:#2e5640;border-bottom:1px solid #a9bfa8">full story lives here</a>.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#cfc6b2;border:1px solid #cfc6b2;border-top:0">
+        <article style="background:#f8f5ee;padding:0" style-hover="background:#fdfcf8">
+          <div style="height:5px;background:#3d6b4f"></div>
+          <div style="padding:24px 22px 28px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <img src="img/experience/offroad.png" alt="Offroad Apps logo" style="width:38px;height:38px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:5px">
+              <span style="font-size:13.5px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:2px 7px">Part-time</span>
+            </div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;line-height:1.15;letter-spacing:-.02em;margin:6px 0 0;color:#232019">Software Engineer</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#6b665c;font-variant-numeric:tabular-nums"><a href="#1a" style="color:#403a30;border-bottom:1px solid #cfc6b2">Offroad Apps (VitalsIQ)</a><br>Delft · Jan 2026 – Present</p>
+            <div style="height:1px;background:#e0d8c5;margin:2px 0"></div>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#403a30">Vitals streamed live from Garmin wearables into a companion app, a tactical mapping plugin, and a barcode library rewritten from scratch.</p>
+          </div>
+        </article>
+
+        <article style="background:#f8f5ee" style-hover="background:#fdfcf8">
+          <div style="height:5px;background:#3d6b4f"></div>
+          <div style="padding:24px 22px 28px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <img src="img/experience/insyght.svg" alt="Insyght.io logo" style="width:38px;height:38px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:5px">
+              <span style="font-size:13.5px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:2px 7px">Part-time</span>
+            </div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;line-height:1.15;letter-spacing:-.02em;margin:6px 0 0;color:#232019">Embedded Software Engineer</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#6b665c;font-variant-numeric:tabular-nums"><a href="#1a" style="color:#403a30;border-bottom:1px solid #cfc6b2">Insyght.io</a><br>Delft · Aug 2025 – Present</p>
+            <div style="height:1px;background:#e0d8c5;margin:2px 0"></div>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#403a30">Firmware, an on-device noise classifier, and the factory test framework.</p>
+          </div>
+        </article>
+
+        <article style="background:#f8f5ee" style-hover="background:#fdfcf8">
+          <div style="height:5px;background:#cfc6b2"></div>
+          <div style="padding:24px 22px 28px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <img src="img/experience/altix.png" alt="Altix Capital logo" style="width:38px;height:38px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:5px">
+            </div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;line-height:1.15;letter-spacing:-.02em;margin:6px 0 0;color:#232019">Machine Learning Engineer Intern</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#6b665c;font-variant-numeric:tabular-nums"><a href="#1a" style="color:#403a30;border-bottom:1px solid #cfc6b2">Altix Capital</a><br>Amsterdam · Apr – Jun 2025</p>
+            <div style="height:1px;background:#e0d8c5;margin:2px 0"></div>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#403a30">Documents, spreadsheets and scans parsed, summarised and classified, plus the service and interface analysts screen in.</p>
+          </div>
+        </article>
+
+        <article style="background:#f8f5ee" style-hover="background:#fdfcf8">
+          <div style="height:5px;background:#cfc6b2"></div>
+          <div style="padding:24px 22px 28px;display:flex;flex-direction:column;gap:12px;height:100%;box-sizing:border-box">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <img src="img/experience/huawei.svg" alt="Huawei logo" style="width:38px;height:38px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:5px">
+            </div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;line-height:1.15;letter-spacing:-.02em;margin:6px 0 0;color:#232019">Machine Learning Engineer Intern</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#6b665c;font-variant-numeric:tabular-nums"><a href="#1a" style="color:#403a30;border-bottom:1px solid #cfc6b2">Huawei</a><br>Amsterdam · Dec 2024 – May 2025</p>
+            <div style="height:1px;background:#e0d8c5;margin:2px 0"></div>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#403a30">Keyword spotting, audio dataset curation, and benchmarking for speech recognition and synthesis.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 THINGS BUILT: asymmetric grid -->
+  <div id="1a-proj" style="position:relative;z-index:2;display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #e0d8c5;padding:56px 0 0 20px;font-size:14px;font-weight:600;color:#8a8272">03</div>
+    <div style="padding:56px 56px 64px 40px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid #232019;margin-bottom:28px">
+        <div>
+          <p style="margin:0 0 14px;font-size:14px;font-weight:600;color:#3d6b4f">Things I’ve built</p>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:46px;line-height:1.02;letter-spacing:-.03em;margin:0;color:#232019">Side quests, for the love of it</h2>
+        </div>
+        <p style="margin:0 0 4px;color:#534d41;font-size:16px;max-width:30ch">Self-directed and competition work. <a href="#1a-proj" style="color:#2e5640;border-bottom:1px solid #a9bfa8">See them all</a>.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:24px">
+        <a href="#1a-proj" style="grid-column:span 3;display:flex;flex-direction:column;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;overflow:hidden" style-hover="border:1px solid #3d6b4f">
+          <img src="img/projects/mesh.gif" alt="A 3D mesh being progressively simplified, its triangle count dropping" style="width:100%;aspect-ratio:16/9;object-fit:cover;background:#ece6d9;border-bottom:1px solid #e0d8c5">
+          <div style="padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px">
+            <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Computational Geometry</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:24px;line-height:1.14;letter-spacing:-.02em;color:#232019">Perception-Aware 3D Mesh Simplification</div>
+            <p style="color:#403a30;font-size:15px;line-height:1.6;margin:0;flex:1">A QEM mesh solver for Huawei’s IMC Challenge.</p>
+            <p style="margin:0;font-size:14.5px;color:#6b665c;font-variant-numeric:tabular-nums">C++ · Huawei IMC · <b style="color:#232019">87.49</b> score</p>
+            <sc-if value="{{ showTags }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:2px">
+              <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:2px 7px">C++</span>
+              <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:2px 7px">QEM</span>
+              <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:2px 7px">SSIM</span>
+            </div></sc-if>
+          </div>
+        </a>
+
+        <a href="#1a-proj" style="grid-column:span 3;display:flex;flex-direction:column;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;overflow:hidden" style-hover="border:1px solid #3d6b4f">
+          <img src="img/projects/prosperity.png" alt="Trading analytics dashboard with a rising PnL curve" style="width:100%;aspect-ratio:16/9;object-fit:cover;background:#ece6d9;border-bottom:1px solid #e0d8c5">
+          <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Quantitative Trading</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:21px;line-height:1.14;letter-spacing:-.02em;color:#232019">IMC Prosperity 4: Algorithmic Trading</div>
+            <p style="color:#403a30;font-size:14.5px;line-height:1.6;margin:0;flex:1">Options market-making with Black-Scholes pricing, an IV-smile fit, and a time-series test library.</p>
+            <p style="margin:0;font-size:14.5px;color:#6b665c">Python · IMC Prosperity 4 · NumPy · SciPy</p>
+            <sc-if value="{{ showTags }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:2px">
+              <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:2px 7px">Black-Scholes</span>
+              <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:2px 7px">IV smile</span>
+            </div></sc-if>
+          </div>
+        </a>
+
+        <a href="#1a-proj" style="grid-column:span 3;display:flex;flex-direction:column;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;overflow:hidden" style-hover="border:1px solid #3d6b4f">
+          <img src="img/projects/automation-bots.svg" alt="Automation bots architecture: sources to scheduling and browser automation to Telegram delivery" style="width:100%;aspect-ratio:16/9;object-fit:contain;background:#ece6d9;border-bottom:1px solid #e0d8c5">
+          <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Automation · Services</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:21px;line-height:1.14;letter-spacing:-.02em;color:#232019">Telegram &amp; Automation Bots</div>
+            <p style="color:#403a30;font-size:14.5px;line-height:1.6;margin:0;flex:1">Small real-world issues, automated away: change alerts, a gym-slot grabber, an event feed.</p>
+            <p style="margin:0;font-size:14px;color:#403a30"><b style="color:#2e5640;font-weight:600">3 bots</b>: change-tracking · SSO booking · event aggregation</p>
+            <p style="margin:0;font-size:14.5px;color:#6b665c">Python · aiogram + Celery · Playwright</p>
+          </div>
+        </a>
+
+        <a href="#1a-proj" style="grid-column:span 3;display:flex;flex-direction:column;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;overflow:hidden" style-hover="border:1px solid #3d6b4f">
+          <div style="aspect-ratio:21/9;width:100%;display:grid;place-items:center;background:#ece6d9;border-bottom:1px solid #e0d8c5;overflow:hidden">
+            <svg viewBox="0 0 160 90" style="width:62%;height:auto;display:block">
+              <rect x="20" y="24" width="38" height="8" fill="#3d6b4f"/>
+              <rect x="64" y="24" width="52" height="8" fill="#cfc6b2"/>
+              <rect x="34" y="41" width="40" height="8" fill="#cfc6b2"/>
+              <rect x="80" y="41" width="28" height="8" fill="#2e5640"/>
+              <rect x="34" y="58" width="28" height="8" fill="#cfc6b2"/>
+              <rect x="68" y="58" width="48" height="8" fill="#cfc6b2"/>
+            </svg>
+          </div>
+          <div style="padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Assembly · Compilers</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:21px;line-height:1.14;letter-spacing:-.02em;color:#232019">A JIT Compiler for Brainfuck</div>
+            <p style="color:#403a30;font-size:14.5px;line-height:1.6;margin:0;flex:1">A just-in-time compiler written entirely in assembly, emitting native machine code by hand.</p>
+            <p style="margin:0;font-size:14.5px;color:#6b665c">x86-64 assembly · self-directed · source → native</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 BEYOND THE CODE -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:96px 1fr;border-bottom:1px solid #cfc6b2;background:#efe9dc">
+    <div style="border-right:1px solid #e0d8c5;padding:56px 0 0 20px;font-size:14px;font-weight:600;color:#8a8272">04</div>
+    <div style="padding:56px 56px 64px 40px">
+      <p style="margin:0 0 14px;font-size:14px;font-weight:600;color:#3d6b4f">Beyond the code</p>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:46px;line-height:1.02;letter-spacing:-.03em;margin:0 0 34px;color:#232019;max-width:24ch">Where I grew up, and what I do off the clock</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:52px;border-top:1px solid #232019;padding-top:28px">
+        <div>
+          <h3 style="font-size:14px;font-weight:600;color:#6b665c;margin:0 0 14px">How I got here</h3>
+          <p style="margin:0;color:#403a30;font-size:17px;line-height:1.72;text-wrap:pretty">I grew up in Moldova, a loud kid in a one-room apartment, me and my older sister. A family legend says my maths got good right after I took a knock to the head at a taekwondo competition, a coincidence I find funny and decided to stick to it. I went to a small neighbourhood school, and at ten I walked into my first olympiad and came home with first in the district and second in the whole city.</p>
+        </div>
+        <div>
+          <h3 style="font-size:14px;font-weight:600;color:#6b665c;margin:0 0 14px">When I’m not shipping</h3>
+          <p style="margin:0;color:#403a30;font-size:17px;line-height:1.72;text-wrap:pretty">I’m back in the taekwondo these days, a beginner again, years after an injury stopped me. Otherwise: books I finish even when they’ve stopped being good (I never drop one), board game nights with friends, cooking, and always music.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 CONTACT -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:96px 1fr;background:#232019;color:#f3efe6">
+    <div style="border-right:1px solid #3a3529;padding:56px 0 0 20px;font-size:14px;font-weight:600;color:#8a8272">05</div>
+    <div style="padding:66px 56px 60px 40px">
+      <p style="margin:0 0 18px;font-size:14px;font-weight:600;color:#9fd3af">Say hello</p>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:64px;line-height:1;letter-spacing:-.035em;margin:0 0 20px;color:#f3efe6;max-width:22ch">I’m always up for a good conversation.</h2>
+      <p style="color:#c6bfae;font-size:20px;margin:0 0 40px;max-width:40ch">About a role, a hard problem, or just what you’re building.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px 30px;align-items:center">
+        <a href="mailto:cristian@turcan.nl" style="display:inline-flex;align-items:center;background:#f3efe6;color:#232019;font-size:16px;font-weight:600;padding:15px 24px" style-hover="background:#9fd3af;color:#232019">cristian@turcan.nl</a>
+        <a href="#1a" style="font-size:16px;color:#e0d8c5;border-bottom:1px solid #575043;padding-bottom:3px" style-hover="color:#9fd3af;border-bottom:1px solid #9fd3af">LinkedIn</a>
+        <a href="#1a" style="font-size:16px;color:#e0d8c5;border-bottom:1px solid #575043;padding-bottom:3px" style-hover="color:#9fd3af;border-bottom:1px solid #9fd3af">Download CV ↓</a>
+      </div>
+      <div style="height:1px;background:#3a3529;margin:56px 0 18px"></div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px;color:#8a8272">
+        <p style="margin:0">Made in Delft, by Cristian Turcan.</p>
+        <p style="margin:0">Uses <a href="#1a" style="color:#c6bfae;border-bottom:1px solid #575043">Microsoft Clarity</a> for anonymous usage analytics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 1b · EXPERIENCE ================= -->
+<section id="1b" style="margin:0 44px;position:relative;width:1440px;background:#f3efe6;border:1px solid #cfc6b2">
+  <sc-if value="{{ showGrain }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:multiply;opacity:.075;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n2)'/%3E%3C/svg%3E&quot;)"></div></sc-if>
+  <div style="position:absolute;top:-30px;left:0;z-index:4;font-size:13.5px;font-weight:600;color:#3d6b4f;background:#e3ead9;padding:4px 9px">1b</div>
+
+  <header style="position:relative;z-index:2;display:flex;align-items:baseline;gap:40px;padding:26px 56px 22px;border-bottom:1px solid #232019">
+    <a href="#1a" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;color:#232019">Cristian Turcan</a>
+    <span style="font-size:14px;color:#6b665c">Experience</span>
+    <nav style="display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:600">
+      <a href="#1b" style="color:#232019;padding-bottom:3px;border-bottom:2px solid #3d6b4f">Experience</a>
+      <a href="#1c" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Projects</a>
+      <a href="#1b" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Events</a>
+      <a href="#1b" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Papers</a>
+    </nav>
+  </header>
+
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:60px 24px 40px 20px">
+      <p style="margin:0;font-size:14px;font-weight:600;color:#3d6b4f">Experience</p>
+    </div>
+    <div style="padding:60px 56px 48px 40px">
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:76px;line-height:.96;letter-spacing:-.035em;margin:0 0 26px;color:#232019">Where I’ve been building</h1>
+      <p style="color:#403a30;margin:0;font-size:20px;max-width:52ch">Four engineering roles, two of them live right now, and two degrees at TU Delft. <a href="#1b" style="color:#2e5640;border-bottom:1px solid #a9bfa8">Grab the CV</a>.</p>
+    </div>
+  </div>
+
+  <!-- one rule: dates in the rail, roles hang off the hairline -->
+  <div style="position:relative;z-index:2">
+    <sc-if value="{{ showNowBanner }}" hint-placeholder-val="{{ true }}"><div style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+      <div style="border-right:1px solid #232019;padding:34px 26px 30px 20px;text-align:right">
+        <p style="margin:0;display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #3d6b4f;padding:5px 9px">
+          <span style="width:7px;height:7px;background:#3d6b4f;display:block"></span>Now · two roles
+        </p>
+      </div>
+      <div style="padding:34px 56px 30px 40px;font-size:14px;color:#8a8272;display:flex;align-items:center">Aug 2026 · two roles, in parallel</div>
+    </div></sc-if>
+    <div style="padding:0">
+
+      <article style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2;background:#f3efe6" style-hover="background:#f8f5ee">
+        <div style="padding:44px 26px 40px 20px;box-sizing:border-box;text-align:right;border-right:1px solid #232019">
+          <p style="margin:0 0 12px;font-size:15px;font-weight:600;color:#232019;font-variant-numeric:tabular-nums">Jan 2026 —<br><span style="color:#3d6b4f">Present</span></p>
+          <p style="margin:0;font-size:13.5px;color:#8a8272">7 mo, still counting</p>
+        </div>
+        <div style="padding:40px 56px 44px 40px">
+          <div>
+            <div style="display:flex;align-items:center;gap:14px;margin:0 0 14px">
+              <img src="img/experience/offroad.png" alt="Offroad Apps logo" style="width:44px;height:44px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:6px">
+              <span style="font-size:13.5px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 8px">Part-time</span>
+            </div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:32px;line-height:1.06;letter-spacing:-.03em;margin:0 0 10px;color:#232019">Software Engineer</h3>
+            <p style="margin:0 0 18px;font-size:15px;color:#6b665c"><a href="#1b" style="color:#403a30;border-bottom:1px solid #cfc6b2">Offroad Apps (VitalsIQ)</a> · Delft, Netherlands</p>
+            <p style="margin:0 0 22px;color:#232019;font-size:21px;line-height:1.55;max-width:62ch">Garmin wearables into a live vital-sign pipeline feeding a .NET MAUI companion app and an ATAK plugin.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0;border-top:1px solid #232019;border-bottom:1px solid #cfc6b2">
+              <p style="margin:0;padding:10px 18px 10px 0;font-size:16px;font-weight:600;color:#232019;font-variant-numeric:tabular-nums">7 live vital types</p>
+              <p style="margin:0;padding:10px 18px;font-size:16px;font-weight:600;color:#232019;border-left:1px solid #e0d8c5">.NET 10 + MAUI</p>
+              <p style="margin:0;padding:10px 18px;font-size:16px;font-weight:600;color:#232019;border-left:1px solid #e0d8c5">JABCode C→C#</p>
+            </div>
+          </div>
+          <div style="margin-top:30px;border-top:1px solid #232019;padding-top:20px">
+            <p style="margin:0 0 16px;font-size:13.5px;font-weight:600;color:#8a8272">Projects</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px 34px">
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                  <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">Garmin binding + MAUI app</h4>
+                  <span style="font-size:13.5px;font-weight:600;white-space:nowrap;color:#2e5640">7 types</span>
+                </div>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">A .NET 10 Android binding of Garmin’s native Health SDK and a MAUI companion app that pairs wearables and streams 7 vital-sign types (heart rate, HRV, SpO₂, ...) to the VitalsIQ backend.</p>
+              </div>
+              <div>
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">Java → C# binding transforms</h4>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">Hand-authored transforms that pull the Java SDK cleanly into .NET, resolving R8, Guava, SQLCipher and Gson interop conflicts, plus an Android foreground service for resilient background sync.</p>
+              </div>
+              <div>
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">CivTAK plugin</h4>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">A Java plugin for CivTAK (civilian ATAK) that surfaces the VitalsIQ app as an in-app pane and a live map marker.</p>
+              </div>
+              <div>
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">JABCode C → C# port</h4>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">The full JABCode colour 2D-barcode library - encoder and decoder with Reed-Solomon error correction - ported from C to C#.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2;background:#f3efe6" style-hover="background:#f8f5ee">
+        <div style="padding:44px 26px 40px 20px;box-sizing:border-box;text-align:right;border-right:1px solid #232019">
+          <p style="margin:0 0 12px;font-size:15px;font-weight:600;color:#232019;font-variant-numeric:tabular-nums">Aug 2025 —<br><span style="color:#3d6b4f">Present</span></p>
+          <p style="margin:0;font-size:13.5px;color:#8a8272">1y, still counting</p>
+        </div>
+        <div style="padding:40px 56px 44px 40px">
+          <div>
+            <div style="display:flex;align-items:center;gap:14px;margin:0 0 14px">
+              <img src="img/experience/insyght.svg" alt="Insyght.io logo" style="width:44px;height:44px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:6px">
+              <span style="font-size:13.5px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 8px">Part-time</span>
+            </div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:32px;line-height:1.06;letter-spacing:-.03em;margin:0 0 10px;color:#232019">Embedded Software Engineer</h3>
+            <p style="margin:0 0 18px;font-size:15px;color:#6b665c"><a href="#1b" style="color:#403a30;border-bottom:1px solid #cfc6b2">Insyght.io</a> · Delft, Netherlands</p>
+            <p style="margin:0 0 22px;color:#232019;font-size:21px;line-height:1.55;max-width:62ch">Firmware for <em style="font-style:italic;color:#2e5640">AuraSense</em>, a solar-powered nRF54L15 + nRF9151 noise and air-quality IoT monitor.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0;border-top:1px solid #232019;border-bottom:1px solid #cfc6b2">
+              <p style="margin:0;padding:10px 18px 10px 0;font-size:16px;font-weight:600;color:#232019;font-variant-numeric:tabular-nums">92% classifier @ 40 KB</p>
+              <p style="margin:0;padding:10px 18px;font-size:16px;font-weight:600;color:#232019;border-left:1px solid #e0d8c5;font-variant-numeric:tabular-nums">960 → 189 µA idle</p>
+              <p style="margin:0;padding:10px 18px;font-size:16px;font-weight:600;color:#232019;border-left:1px solid #e0d8c5">Zephyr RTOS</p>
+            </div>
+          </div>
+          <div style="margin-top:30px;border-top:1px solid #232019;padding-top:20px">
+            <p style="margin:0 0 16px;font-size:13.5px;font-weight:600;color:#8a8272">Projects</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px 34px">
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                  <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">On-device noise classifier</h4>
+                  <span style="font-size:13.5px;font-weight:600;white-space:nowrap;color:#2e5640">92% @ 40 KB</span>
+                </div>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">End-to-end pipeline (data preparation, training, evaluation and firmware integration) for on-device inference on the nRF54L15.</p>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                  <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">Zephyr firmware architecture</h4>
+                  <span style="font-size:13.5px;font-weight:600;white-space:nowrap;color:#2e5640">~3K LOC</span>
+                </div>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">AuraSense firmware in C/C++ on Zephyr RTOS and the nRF Connect SDK, architected as 11 self-contained driver components.</p>
+              </div>
+              <div>
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">Acoustic metering pipeline</h4>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">Real-time A-weighted (3-stage biquad IIR) dBA and Leq over 10 s windows from stereo 16 kHz PDM MEMS microphones, with calibrated dB-SPL and clipping detection.</p>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                  <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">Power profiling &amp; fix</h4>
+                  <span style="font-size:13.5px;font-weight:600;white-space:nowrap;color:#2e5640">960 → 189 µA</span>
+                </div>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">PPK2 differential profiling to root-cause the LTE-modem floor, an LDO-vs-DC/DC path, and a mis-wired PMIC GPIO.</p>
+              </div>
+              <div>
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">LTE-M / NB-IoT uplink</h4>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">An nRF9151 serial-modem client (AT sockets, hand-written JSON codec) talking to a Node.js / Express telemetry backend.</p>
+              </div>
+              <div>
+                <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">Factory test framework (Insyght Testsuite)</h4>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">An automated end-of-line framework: a PySide6 head-unit GUI orchestrating multiple Raspberry Pi module units over MQTT, driving firmware flashing, hardware monitoring (voltage, current, temperature), AT-command network checks and HackRF-based RF signal generation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2;background:#f3efe6" style-hover="background:#f8f5ee">
+        <div style="padding:44px 26px 40px 20px;box-sizing:border-box;text-align:right;border-right:1px solid #232019">
+          <p style="margin:0;font-size:15px;font-weight:600;color:#232019;font-variant-numeric:tabular-nums">Apr 2025 —<br>Jun 2025</p>
+        </div>
+        <div style="padding:40px 56px 44px 40px">
+          <div>
+            <div style="display:flex;align-items:center;gap:14px;margin:0 0 14px">
+              <img src="img/experience/altix.png" alt="Altix Capital logo" style="width:44px;height:44px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:6px">
+            </div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:32px;line-height:1.06;letter-spacing:-.03em;margin:0 0 10px;color:#232019">Machine Learning Engineer Intern</h3>
+            <p style="margin:0 0 18px;font-size:15px;color:#6b665c"><a href="#1b" style="color:#403a30;border-bottom:1px solid #cfc6b2">Altix Capital</a> · Amsterdam, Netherlands</p>
+            <p style="margin:0 0 22px;color:#232019;font-size:21px;line-height:1.55;max-width:62ch">An AI document-ingestion pipeline that sped up analyst screening.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0;border-top:1px solid #232019;border-bottom:1px solid #cfc6b2">
+              <p style="margin:0;padding:10px 18px 10px 0;font-size:16px;font-weight:600;color:#232019;font-variant-numeric:tabular-nums">10 → 2 min per doc</p>
+              <p style="margin:0;padding:10px 18px;font-size:16px;font-weight:600;color:#232019;border-left:1px solid #e0d8c5;font-variant-numeric:tabular-nums">~60% faster review</p>
+            </div>
+            <ul style="margin:22px 0 0;padding-left:20px;color:#403a30;font-size:16px;line-height:1.65">
+              <li style="margin:.3rem 0">Built an AI document-ingestion pipeline to parse PDFs, spreadsheets, and images (with OCR), then auto-summarise and classify content, cutting manual screening from 20 minutes per document to 2.</li>
+              <li style="margin:.3rem 0">Shipped a REST service and lightweight web UI that streamlined analyst review, cutting document navigation and handling time.</li>
+            </ul>
+          </div>
+          <div style="margin-top:30px;border-top:1px solid #232019;padding-top:20px;display:flex;align-items:baseline;gap:16px">
+            <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Project</p>
+            <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;color:#232019;margin:0">AltixDocs</h4>
+          </div>
+        </div>
+      </article>
+
+      <article style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2;background:#f3efe6" style-hover="background:#f8f5ee">
+        <div style="padding:44px 26px 40px 20px;box-sizing:border-box;text-align:right;border-right:1px solid #232019">
+          <p style="margin:0;font-size:15px;font-weight:600;color:#232019;font-variant-numeric:tabular-nums">Dec 2024 —<br>May 2025</p>
+        </div>
+        <div style="padding:40px 56px 44px 40px">
+          <div>
+            <div style="display:flex;align-items:center;gap:14px;margin:0 0 14px">
+              <img src="img/experience/huawei.svg" alt="Huawei logo" style="width:44px;height:44px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:6px">
+            </div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:32px;line-height:1.06;letter-spacing:-.03em;margin:0 0 10px;color:#232019">Machine Learning Engineer Intern</h3>
+            <p style="margin:0 0 18px;font-size:15px;color:#6b665c"><a href="#1b" style="color:#403a30;border-bottom:1px solid #cfc6b2">Huawei</a> · Amsterdam, Netherlands</p>
+            <p style="margin:0 0 22px;color:#232019;font-size:21px;line-height:1.55;max-width:62ch">Keyword-spotting and ASR/TTS data and benchmarking pipelines for speech models.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0;border-top:1px solid #232019;border-bottom:1px solid #cfc6b2">
+              <p style="margin:0;padding:10px 18px 10px 0;font-size:16px;font-weight:600;color:#232019;font-variant-numeric:tabular-nums">precision 92 → 94%</p>
+              <p style="margin:0;padding:10px 18px;font-size:16px;font-weight:600;color:#232019;border-left:1px solid #e0d8c5;font-variant-numeric:tabular-nums">100 → 300+ h data</p>
+              <p style="margin:0;padding:10px 18px;font-size:16px;font-weight:600;color:#232019;border-left:1px solid #e0d8c5;font-variant-numeric:tabular-nums">eval 4 h → 1 h</p>
+            </div>
+          </div>
+          <div style="margin-top:30px;border-top:1px solid #232019;padding-top:20px">
+            <p style="margin:0 0 16px;font-size:13.5px;font-weight:600;color:#8a8272">Projects</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px 34px">
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                  <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">English keyword-spotting pipeline</h4>
+                  <span style="font-size:13.5px;font-weight:600;white-space:nowrap;color:#2e5640">92 → 94%</span>
+                </div>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">Develop the training and evaluation pipeline for an English keyword-spotting model.</p>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                  <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">Audio dataset curation</h4>
+                  <span style="font-size:13.5px;font-weight:600;white-space:nowrap;color:#2e5640">300+ h</span>
+                </div>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">Built, cleaned and validated large-scale audio datasets with forced alignment and transfer learning.</p>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                  <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#232019;margin:0;line-height:1.3">ASR/TTS benchmarks</h4>
+                  <span style="font-size:13.5px;font-weight:600;white-space:nowrap;color:#2e5640">4 h → 1 h</span>
+                </div>
+                <p style="margin:5px 0 0;color:#534d41;font-size:14px;line-height:1.55">A reproducible benchmarking pipeline for ASR and TTS candidates, covering data loading, inference, scoring and reporting.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- education -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;background:#efe9dc;border-top:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:52px 24px 52px 20px">
+      <p style="margin:0;font-size:14px;font-weight:600;color:#3d6b4f">Education</p>
+    </div>
+    <div style="padding:52px 56px 60px 40px">
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:40px;line-height:1.02;letter-spacing:-.03em;margin:0 0 12px;color:#232019">Delft, Netherlands</h2>
+      <p style="color:#403a30;margin:0 0 32px;font-size:18px;max-width:52ch">The BSc just wrapped. The MSc starts this September, both at TU Delft.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#cfc6b2;border:1px solid #cfc6b2">
+        <div style="background:#f6f2ea;padding:24px 26px;display:flex;gap:16px">
+          <img src="img/experience/tudelft.png" alt="Delft University of Technology logo" style="width:40px;height:40px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:5px">
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;line-height:1.2;letter-spacing:-.02em;margin:0 0 8px;color:#232019">MSc Data Science &amp; Artificial Intelligence Technology</h3>
+            <p style="margin:0;font-size:14.5px;color:#6b665c"><a href="#1b" style="color:#403a30;border-bottom:1px solid #cfc6b2">Delft University of Technology</a> · Sep 2026 – Jun 2028</p>
+          </div>
+        </div>
+        <div style="background:#f6f2ea;padding:24px 26px;display:flex;gap:16px">
+          <img src="img/experience/tudelft.png" alt="Delft University of Technology logo" style="width:40px;height:40px;object-fit:contain;background:#fff;border:1px solid #e0d8c5;padding:5px">
+          <div>
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;line-height:1.2;letter-spacing:-.02em;margin:0 0 8px;color:#232019">BSc (Honours) Computer Science &amp; Engineering</h3>
+            <p style="margin:0 0 8px;font-size:14.5px;color:#6b665c">Sep 2023 – Jun 2026</p>
+            <p style="margin:0;color:#403a30;font-size:15px">Honours Programme · Minor in Finance (Sep 2025 - Jan 2026).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:2;background:#232019;color:#8a8272;padding:26px 56px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px">
+    <p style="margin:0"><a href="mailto:cristian@turcan.nl" style="color:#e0d8c5;border-bottom:1px solid #575043">cristian@turcan.nl</a> · <a href="#1b" style="color:#e0d8c5;border-bottom:1px solid #575043">CV (PDF)</a> · Cristian Turcan</p>
+    <p style="margin:0">Uses <a href="#1b" style="color:#c6bfae;border-bottom:1px solid #575043">Microsoft Clarity</a> for anonymous usage analytics.</p>
+  </div>
+</section>
+
+<!-- ================= 1c · PROJECTS ================= -->
+<section id="1c" style="margin:0 44px;position:relative;width:1440px;background:#f3efe6;border:1px solid #cfc6b2">
+  <sc-if value="{{ showGrain }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:multiply;opacity:.075;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n3'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n3)'/%3E%3C/svg%3E&quot;)"></div></sc-if>
+  <div style="position:absolute;top:-30px;left:0;z-index:4;font-size:13.5px;font-weight:600;color:#3d6b4f;background:#e3ead9;padding:4px 9px">1c</div>
+
+  <header style="position:relative;z-index:2;display:flex;align-items:baseline;gap:40px;padding:26px 56px 22px;border-bottom:1px solid #232019">
+    <a href="#1a" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;color:#232019">Cristian Turcan</a>
+    <span style="font-size:14px;color:#6b665c">Projects</span>
+    <nav style="display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:600">
+      <a href="#1b" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Experience</a>
+      <a href="#1c" style="color:#232019;padding-bottom:3px;border-bottom:2px solid #3d6b4f">Projects</a>
+      <a href="#1c" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Events</a>
+      <a href="#1c" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Papers</a>
+    </nav>
+  </header>
+
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:60px 24px 40px 20px">
+      <p style="margin:0;font-size:14px;font-weight:600;color:#3d6b4f">Built for the love of it</p>
+    </div>
+    <div style="padding:60px 56px 48px 40px">
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:104px;line-height:.92;letter-spacing:-.04em;margin:0 0 26px;color:#232019">Projects</h1>
+      <p style="color:#403a30;margin:0;font-size:20px;max-width:58ch">Self-directed and competition work, laid out by how close to the metal it runs, from a browser product down to hand-written machine code.</p>
+    </div>
+  </div>
+
+  <!-- band: product -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:44px 24px 44px 20px">
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:14px">
+        <i style="display:block;width:26px;height:4px;background:#3d6b4f"></i>
+        <i style="display:block;width:26px;height:4px;background:#d9d1bd"></i>
+        <i style="display:block;width:26px;height:4px;background:#d9d1bd"></i>
+      </div>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:24px;line-height:1.1;letter-spacing:-.02em;margin:0 0 8px;color:#232019">Product</h2>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#8a8272">whole apps and services, from the browser in</p>
+    </div>
+    <div style="padding:44px 56px 48px 40px">
+      <a href="#1c" style="display:grid;grid-template-columns:1fr 1fr;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;overflow:hidden" style-hover="border:1px solid #3d6b4f">
+        <img src="img/projects/automation-bots.svg" alt="Automation bots architecture: sources to scheduling and browser automation to Telegram delivery" style="width:100%;height:100%;min-height:200px;object-fit:cover;background:#ece6d9;border-right:1px solid #e0d8c5">
+        <div style="padding:24px 26px;display:flex;flex-direction:column;gap:10px;justify-content:center">
+          <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Automation · services</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:25px;line-height:1.1;letter-spacing:-.022em;color:#232019">Telegram &amp; Automation Bots</div>
+          <p style="color:#403a30;font-size:16px;line-height:1.6;margin:0">Small real-world annoyances, automated away: change alerts, a bot that grabs a gym slot the instant it opens, and one that applies to jobs for you.</p>
+          <p style="margin:0;font-size:15px;color:#403a30"><b style="color:#2e5640;font-weight:600">5 bots</b>: change-tracking · SSO booking · event aggregation · legal acts · job auto-apply</p>
+          <p style="margin:0;font-size:14.5px;color:#6b665c">Python · aiogram + Celery · Playwright</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- band: systems -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:44px 24px 44px 20px">
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:14px">
+        <i style="display:block;width:26px;height:4px;background:#3d6b4f"></i>
+        <i style="display:block;width:26px;height:4px;background:#3d6b4f"></i>
+        <i style="display:block;width:26px;height:4px;background:#d9d1bd"></i>
+      </div>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:24px;line-height:1.1;letter-spacing:-.02em;margin:0 0 8px;color:#232019">Systems &amp; compute</h2>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#8a8272">numerical and market engines, scored against a judge</p>
+    </div>
+    <div style="padding:44px 56px 48px 40px;display:grid;gap:24px">
+      <a href="#1c" style="display:grid;grid-template-columns:1.08fr 1fr;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;overflow:hidden" style-hover="border:1px solid #3d6b4f">
+        <img src="img/projects/generals.png" alt="A generals.io free-for-all board mid-game: four armies carving up a grid of tiles, cities and mountains" style="width:100%;height:100%;min-height:212px;object-fit:cover;background:#ece6d9;border-right:1px solid #e0d8c5">
+        <div style="padding:24px 26px;display:flex;flex-direction:column;gap:10px;justify-content:center">
+          <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Game AI · simulation</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:25px;line-height:1.1;letter-spacing:-.022em;color:#232019">A generals.io FFA Bot</div>
+          <p style="color:#403a30;font-size:16px;line-height:1.6;margin:0">A from-scratch lab for the real-time strategy game generals.io: a numpy battle simulator, a heuristic commander that plays through fog of war, and a neural policy trained to imitate it.</p>
+          <p style="margin:0;font-size:15px;color:#403a30"><b style="color:#2e5640;font-weight:600">Four parts</b>: simulator · heuristic bot · Elo ladder · neural policy</p>
+          <p style="margin:0;font-size:14.5px;color:#6b665c;font-variant-numeric:tabular-nums">Python + PyTorch · self-directed · <b style="color:#232019">27</b> test files · <b style="color:#232019">100</b> tests</p>
+        </div>
+      </a>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <a href="#1c" style="display:flex;flex-direction:column;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;overflow:hidden" style-hover="border:1px solid #3d6b4f">
+          <img src="img/projects/mesh.gif" alt="A 3D mesh being progressively simplified, its triangle count dropping" style="width:100%;aspect-ratio:16/9;object-fit:cover;background:#ece6d9;border-bottom:1px solid #e0d8c5">
+          <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Computational geometry</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:23px;line-height:1.12;letter-spacing:-.022em;color:#232019">Perception-Aware 3D Mesh Simplification</div>
+            <p style="color:#403a30;font-size:15px;line-height:1.6;margin:0;flex:1">A from-scratch QEM edge-collapse solver for Huawei’s 2nd IMC Challenge, with a hand-built renderer to predict its own score.</p>
+            <p style="margin:0;font-size:14.5px;color:#6b665c;font-variant-numeric:tabular-nums">C++ · Huawei IMC · <b style="color:#232019">87.49</b> score · 7/7 cases</p>
+          </div>
+        </a>
+        <a href="#1c" style="display:flex;flex-direction:column;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;overflow:hidden" style-hover="border:1px solid #3d6b4f">
+          <img src="img/projects/prosperity.png" alt="Trading analytics dashboard with a rising PnL curve" style="width:100%;aspect-ratio:16/9;object-fit:cover;background:#ece6d9;border-bottom:1px solid #e0d8c5">
+          <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+            <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Quantitative trading</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:23px;line-height:1.12;letter-spacing:-.022em;color:#232019">IMC Prosperity 4: Algorithmic Trading</div>
+            <p style="color:#403a30;font-size:15px;line-height:1.6;margin:0;flex:1">Options market-making on Black-Scholes pricing with an IV-smile fit, delta hedging, and a hand-written time-series test library.</p>
+            <p style="margin:0;font-size:14.5px;color:#6b665c">Python · IMC Prosperity 4 · NumPy · SciPy</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- band: bare metal -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;background:#efe9dc">
+    <div style="border-right:1px solid #232019;padding:44px 24px 44px 20px">
+      <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:14px">
+        <i style="display:block;width:26px;height:4px;background:#3d6b4f"></i>
+        <i style="display:block;width:26px;height:4px;background:#3d6b4f"></i>
+        <i style="display:block;width:26px;height:4px;background:#3d6b4f"></i>
+      </div>
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:24px;line-height:1.1;letter-spacing:-.02em;margin:0 0 8px;color:#232019">Bare metal</h2>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#8a8272">no framework, no runtime: emitting machine code by hand</p>
+    </div>
+    <div style="padding:44px 56px 56px 40px">
+      <a href="#1c" style="display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:center;background:#f8f5ee;border:1px solid #cfc6b2;color:inherit;padding:30px 32px" style-hover="border:1px solid #3d6b4f">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-size:13.5px;font-weight:600;color:#3d6b4f">Assembly · compilers</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;color:#232019">A JIT Compiler for Brainfuck</div>
+          <p style="color:#403a30;font-size:16px;line-height:1.6;margin:0">Rather than interpret, it emits native x86-64 into memory at run time and jumps into it, a hands-on tour of code generation all the way down to the instruction bytes.</p>
+          <p style="margin:0;font-size:14.5px;color:#6b665c">x86-64 assembly · self-directed · source → native</p>
+        </div>
+        <pre style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.9;color:#534d41;white-space:pre;background:#f3efe6;border:1px solid #e0d8c5;padding:18px 20px;margin:0;overflow-x:auto"><span style="color:#8a8272">. Brainfuck → x86-64, emitted at run time</span>
++   →  <b style="color:#2e5640">add</b> byte [rbx], 1
+&gt;   →  <b style="color:#2e5640">inc</b> rbx
+[ ] →  <b style="color:#2e5640">cmp</b> / <b style="color:#2e5640">jz</b>, back-patched jumps</pre>
+      </a>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:2;background:#232019;color:#8a8272;padding:26px 56px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px">
+    <p style="margin:0"><a href="mailto:cristian@turcan.nl" style="color:#e0d8c5;border-bottom:1px solid #575043">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p style="margin:0">Uses <a href="#1c" style="color:#c6bfae;border-bottom:1px solid #575043">Microsoft Clarity</a> for anonymous usage analytics.</p>
+  </div>
+</section>
+
+<!-- ================= 1d · EVENTS ================= -->
+<section id="1d" style="margin:0 44px;position:relative;width:1440px;background:#f3efe6;border:1px solid #cfc6b2">
+  <sc-if value="{{ showGrain }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:multiply;opacity:.075;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n4'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n4)'/%3E%3C/svg%3E&quot;)"></div></sc-if>
+  <div style="position:absolute;top:-30px;left:0;z-index:4;font-size:13.5px;font-weight:600;color:#3d6b4f;background:#e3ead9;padding:4px 9px">1d</div>
+
+  <header style="position:relative;z-index:2;display:flex;align-items:baseline;gap:40px;padding:26px 56px 22px;border-bottom:1px solid #232019">
+    <a href="#1a" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;color:#232019">Cristian Turcan</a>
+    <span style="font-size:14px;color:#6b665c">Events</span>
+    <nav style="display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:600">
+      <a href="#1b" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Experience</a>
+      <a href="#1c" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Projects</a>
+      <a href="#1d" style="color:#232019;padding-bottom:3px;border-bottom:2px solid #3d6b4f">Events</a>
+      <a href="#1e" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Papers</a>
+    </nav>
+  </header>
+
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:60px 26px 40px 20px;text-align:right">
+      <p style="margin:0;font-size:14px;font-weight:600;color:#3d6b4f">Events</p>
+    </div>
+    <div style="padding:60px 56px 48px 40px">
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:88px;line-height:.94;letter-spacing:-.04em;margin:0 0 26px;color:#232019">The road here</h1>
+      <p style="color:#403a30;margin:0;font-size:20px;line-height:1.55;max-width:62ch">National olympiads in Moldova, an online ICPC challenge, quant open days in Dublin, and trading hackathons across Europe, the competitions and trips that got me here.</p>
+    </div>
+  </div>
+
+  <!-- ledger: years in the rail, no imagery -->
+  <div style="position:relative;z-index:2">
+    <div style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+      <div style="border-right:1px solid #232019;padding:34px 26px 18px 20px;text-align:right">
+        <p style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.03em;color:#232019;font-variant-numeric:tabular-nums">2026</p>
+      </div>
+      <div style="padding:0">
+        <article style="padding:34px 56px 32px 40px;background:#f3efe6" style-hover="background:#f8f5ee">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;margin:0;color:#232019">AlgoTrade 2026 Hackathon</h3>
+            <span style="font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 10px;white-space:nowrap">Participant</span>
+          </div>
+          <p style="margin:8px 0 10px;font-size:15px;color:#6b665c;font-variant-numeric:tabular-nums">Croatia · Jun 2026</p>
+          <p style="margin:0;color:#403a30;font-size:17px;max-width:64ch">Algorithmic-trading hackathon: built and competed with a live trading strategy.</p>
+        </article>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+      <div style="border-right:1px solid #232019;padding:34px 26px 18px 20px;text-align:right">
+        <p style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.03em;color:#232019;font-variant-numeric:tabular-nums">2025</p>
+      </div>
+      <div style="padding:0">
+        <article style="padding:34px 56px 32px 40px;border-bottom:1px solid #e0d8c5;background:#f3efe6" style-hover="background:#f8f5ee">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;margin:0;color:#232019">AlgoTrade 2025 Hackathon</h3>
+            <span style="font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 10px;white-space:nowrap">7th place</span>
+          </div>
+          <p style="margin:8px 0 10px;font-size:15px;color:#6b665c;font-variant-numeric:tabular-nums">Croatia · Jun 2025</p>
+          <p style="margin:0 0 14px;color:#403a30;font-size:17px;max-width:64ch">Algorithmic-trading hackathon: built and competed with a live trading strategy.</p>
+          <p style="margin:0;display:inline-block;font-size:14px;font-style:italic;color:#8a8272;border:1px dashed #cfc6b2;padding:5px 12px">A photo from Croatia, coming</p>
+        </article>
+        <article style="padding:34px 56px 32px 40px;border-bottom:1px solid #e0d8c5;background:#f3efe6" style-hover="background:#f8f5ee">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;margin:0;color:#232019">Jane Street: Estimathon</h3>
+            <span style="font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 10px;white-space:nowrap">Competitor</span>
+          </div>
+          <p style="margin:8px 0 10px;font-size:15px;color:#6b665c;font-variant-numeric:tabular-nums">Netherlands · May 2025</p>
+          <p style="margin:0;color:#403a30;font-size:17px;max-width:64ch">Jane Street’s team estimation competition, alongside traders and quants.</p>
+        </article>
+        <article style="padding:34px 56px 32px 40px;background:#f3efe6" style-hover="background:#f8f5ee">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;margin:0;color:#232019">Susquehanna International Group (SIG): Open Days</h3>
+            <span style="font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 10px;white-space:nowrap">Selected participant</span>
+          </div>
+          <p style="margin:8px 0 10px;font-size:15px;color:#6b665c;font-variant-numeric:tabular-nums">Dublin, Ireland · Apr 2025</p>
+          <p style="margin:0 0 14px;color:#403a30;font-size:17px;max-width:64ch">A 3-day immersion at SIG with training sessions on options pricing and market making.</p>
+          <p style="margin:0;display:inline-block;font-size:14px;font-style:italic;color:#8a8272;border:1px dashed #cfc6b2;padding:5px 12px">A photo from Dublin, coming</p>
+        </article>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+      <div style="border-right:1px solid #232019;padding:34px 26px 18px 20px;text-align:right">
+        <p style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.03em;color:#232019;font-variant-numeric:tabular-nums">2024</p>
+      </div>
+      <div>
+        <article style="padding:34px 56px 32px 40px;background:#f3efe6" style-hover="background:#f8f5ee">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;margin:0;color:#232019">Post World Finals Online ICPC Challenge 2023</h3>
+            <span style="font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 10px;white-space:nowrap">4th prize</span>
+          </div>
+          <p style="margin:8px 0 10px;font-size:15px;color:#6b665c;font-variant-numeric:tabular-nums">Online · May 2024</p>
+          <p style="margin:0;color:#403a30;font-size:17px;max-width:64ch">Competitive-programming optimisation challenge run after the ICPC World Finals.</p>
+        </article>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+      <div style="border-right:1px solid #232019;padding:34px 26px 18px 20px;text-align:right">
+        <p style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.03em;color:#232019;font-variant-numeric:tabular-nums">2023</p>
+      </div>
+      <div>
+        <article style="padding:34px 56px 32px 40px;background:#f3efe6" style-hover="background:#f8f5ee">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;margin:0;color:#232019">National Mathematical Olympiad</h3>
+            <span style="font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 10px;white-space:nowrap">Bronze prize</span>
+          </div>
+          <p style="margin:8px 0 10px;font-size:15px;color:#6b665c;font-variant-numeric:tabular-nums">Republic of Moldova · Mar 2023</p>
+          <p style="margin:0;color:#403a30;font-size:17px;max-width:64ch">National-level mathematics olympiad.</p>
+        </article>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+      <div style="border-right:1px solid #232019;padding:34px 26px 18px 20px;text-align:right">
+        <p style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.03em;color:#232019;font-variant-numeric:tabular-nums">2022</p>
+      </div>
+      <div>
+        <article style="padding:34px 56px 32px 40px;background:#f3efe6" style-hover="background:#f8f5ee">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;margin:0;color:#232019">National Mathematical Olympiad</h3>
+            <span style="font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 10px;white-space:nowrap">Silver prize</span>
+          </div>
+          <p style="margin:8px 0 10px;font-size:15px;color:#6b665c;font-variant-numeric:tabular-nums">Republic of Moldova · Mar 2022</p>
+          <p style="margin:0 0 14px;color:#403a30;font-size:17px;max-width:64ch">National-level mathematics olympiad.</p>
+          <p style="margin:0;display:inline-block;font-size:14px;font-style:italic;color:#8a8272;border:1px dashed #cfc6b2;padding:5px 12px">A photo from Moldova, coming</p>
+        </article>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:200px 1fr">
+      <div style="border-right:1px solid #232019;padding:34px 26px 18px 20px;text-align:right">
+        <p style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:34px;letter-spacing:-.03em;color:#232019;font-variant-numeric:tabular-nums">2021</p>
+      </div>
+      <div>
+        <article style="padding:34px 56px 40px 40px;background:#f3efe6" style-hover="background:#f8f5ee">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap">
+            <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:27px;line-height:1.1;letter-spacing:-.025em;margin:0;color:#232019">National Informatics Olympiad “Game of Code”</h3>
+            <span style="font-size:14px;font-weight:600;color:#3d6b4f;border:1px solid #a9bfa8;padding:3px 10px;white-space:nowrap">Bronze prize</span>
+          </div>
+          <p style="margin:8px 0 10px;font-size:15px;color:#6b665c;font-variant-numeric:tabular-nums">Moldova State University · Dec 2021</p>
+          <p style="margin:0;color:#403a30;font-size:17px;max-width:64ch">National competitive-programming olympiad.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:2;background:#232019;color:#8a8272;padding:26px 56px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px">
+    <p style="margin:0"><a href="mailto:cristian@turcan.nl" style="color:#e0d8c5;border-bottom:1px solid #575043">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p style="margin:0">Uses <a href="#1d" style="color:#c6bfae;border-bottom:1px solid #575043">Microsoft Clarity</a> for anonymous usage analytics.</p>
+  </div>
+</section>
+
+<!-- ================= 1e · PAPERS ================= -->
+<section id="1e" style="margin:0 44px;position:relative;width:1440px;background:#f3efe6;border:1px solid #cfc6b2">
+  <sc-if value="{{ showGrain }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:multiply;opacity:.075;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n5'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n5)'/%3E%3C/svg%3E&quot;)"></div></sc-if>
+  <div style="position:absolute;top:-30px;left:0;z-index:4;font-size:13.5px;font-weight:600;color:#3d6b4f;background:#e3ead9;padding:4px 9px">1e</div>
+
+  <header style="position:relative;z-index:2;display:flex;align-items:baseline;gap:40px;padding:26px 56px 22px;border-bottom:1px solid #232019">
+    <a href="#1a" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;color:#232019">Cristian Turcan</a>
+    <span style="font-size:14px;color:#6b665c">Papers</span>
+    <nav style="display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:600">
+      <a href="#1b" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Experience</a>
+      <a href="#1c" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Projects</a>
+      <a href="#1d" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Events</a>
+      <a href="#1e" style="color:#232019;padding-bottom:3px;border-bottom:2px solid #3d6b4f">Papers</a>
+    </nav>
+  </header>
+
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:60px 26px 40px 20px;text-align:right">
+      <p style="margin:0;font-size:14px;font-weight:600;color:#3d6b4f">Research · TU Delft</p>
+    </div>
+    <div style="padding:60px 56px 48px 40px">
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:80px;line-height:.95;letter-spacing:-.04em;margin:0 0 26px;color:#232019;max-width:20ch">Questions worth a semester</h1>
+      <p style="color:#403a30;margin:0;font-size:20px;line-height:1.55;max-width:62ch">Two strands I chased at TU Delft: teaching models to make good <em style="font-style:italic;color:#2e5640">decisions</em>, not just good predictions. And graph neural networks for the graphs where similar things don’t connect.</p>
+    </div>
+  </div>
+
+  <article style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:48px 26px 48px 20px;text-align:right">
+      <p style="margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid #cfc6b2;font-size:14px;font-weight:600;color:#6b665c">Paper <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;color:#3d6b4f;vertical-align:-.05em">I</span></p>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div>
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Venue</p>
+          <p style="margin:0;font-size:15px;color:#232019">TU Delft Honours Programme</p>
+        </div>
+        <div>
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Year</p>
+          <p style="margin:0;font-size:15px;color:#232019;font-variant-numeric:tabular-nums">2026</p>
+        </div>
+        <div>
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Status</p>
+          <p style="margin:0;font-size:15px;font-weight:600;color:#2e5640">Under review · BNAIC 2026</p>
+        </div>
+      </div>
+    </div>
+    <div style="padding:48px 56px 48px 40px;max-width:74ch">
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:38px;line-height:1.06;letter-spacing:-.03em;margin:0 0 12px;color:#232019">Learning Feasible Decisions Directly from Features for Combinatorial Optimization</h2>
+      <p style="margin:0 0 22px;padding-bottom:20px;border-bottom:1px solid #cfc6b2;color:#6b665c;font-size:16px"><span style="color:#2e5640;font-weight:600">Cristian Turcan</span> · first author</p>
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:22px;line-height:1.35;letter-spacing:-.015em;color:#232019;margin:0 0 18px">A solver-free way to predict decisions that are feasible by construction, trained to minimise regret, not prediction error.</p>
+      <p style="color:#403a30;margin:0 0 24px;font-size:17px;line-height:1.7;text-wrap:pretty">Proposes <strong style="color:#232019;font-weight:600">LR-STE</strong>, which projects a neural predictor’s output onto the problem’s linear relaxation and applies a feasibility-correction layer, trained end-to-end with a straight-through estimator to minimise decision regret rather than prediction error. Benchmarked on 0/1 Knapsack and the Travelling Salesperson Problem against SPO+, two-stage predict-then-optimize, and projection-free (STE) baselines.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px">
+        <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:3px 9px">decision-focused learning</span>
+        <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:3px 9px">predict-then-optimize</span>
+        <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:3px 9px">LR-STE</span>
+        <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:3px 9px">knapsack · TSP</span>
+      </div>
+      <a href="#1e" style="display:inline-flex;align-items:center;gap:12px;background:#232019;color:#f3efe6;font-size:16px;font-weight:600;padding:15px 24px" style-hover="background:#3d6b4f;color:#f3efe6">Read the paper <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+
+  <article style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;background:#efe9dc">
+    <div style="border-right:1px solid #232019;padding:48px 26px 48px 20px;text-align:right">
+      <p style="margin:0 0 22px;padding-bottom:16px;border-bottom:1px solid #cfc6b2;font-size:14px;font-weight:600;color:#6b665c">Paper <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;color:#3d6b4f;vertical-align:-.05em">II</span></p>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div>
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Venue</p>
+          <p style="margin:0;font-size:15px;color:#232019">TU Delft · Bachelor thesis (CSE3000)</p>
+        </div>
+        <div>
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Year</p>
+          <p style="margin:0;font-size:15px;color:#232019;font-variant-numeric:tabular-nums">2026</p>
+        </div>
+        <div>
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Scope</p>
+          <p style="margin:0;font-size:15px;font-weight:600;color:#2e5640;font-variant-numeric:tabular-nums">8 models · 7 graphs</p>
+        </div>
+      </div>
+    </div>
+    <div style="padding:48px 56px 56px 40px;max-width:74ch">
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:38px;line-height:1.06;letter-spacing:-.03em;margin:0 0 12px;color:#232019">Heterophilic Methods on Multi-Label Graphs</h2>
+      <p style="margin:0 0 22px;padding-bottom:20px;border-bottom:1px solid #cfc6b2;color:#6b665c;font-size:16px"><span style="color:#2e5640;font-weight:600">Cristian Turcan</span> · sole author</p>
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:22px;line-height:1.35;letter-spacing:-.015em;color:#232019;margin:0 0 18px">On multi-label graphs, how tightly a graph “sticks together” predicts accuracy more than how clever the model is.</p>
+      <p style="color:#403a30;margin:0 0 24px;font-size:17px;line-height:1.7;text-wrap:pretty">Benchmarked 8 models (MLP and DeepWalk baselines plus 6 heterophily GNNs: H2GCN, GPR-GNN, LINKX, FAGCN, ACM-GCN, Ordered GNN) across 5 real and 2 synthetic multi-label graphs in PyTorch Geometric. Controlled homophily and label-cardinality sweeps showed that node-classification performance tracks graph homophily more than model sophistication. Built <em style="font-style:italic;color:#2e5640">gnnbench</em>, a config-driven pipeline with a synthetic multi-label graph generator, hardened with split-leakage tests and parallelised as SLURM array jobs on TU Delft’s DelftBlue cluster.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px">
+        <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:3px 9px">heterophilic GNNs</span>
+        <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:3px 9px">multi-label graphs</span>
+        <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:3px 9px">PyTorch Geometric</span>
+        <span style="font-size:13.5px;color:#2e5640;border:1px solid #a9bfa8;padding:3px 9px">gnnbench</span>
+      </div>
+      <a href="#1e" style="display:inline-flex;align-items:center;gap:12px;background:#232019;color:#f3efe6;font-size:16px;font-weight:600;padding:15px 24px" style-hover="background:#3d6b4f;color:#f3efe6">Read the thesis <span aria-hidden="true">→</span></a>
+    </div>
+  </article>
+
+  <div style="position:relative;z-index:2;background:#232019;color:#8a8272;padding:26px 56px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px">
+    <p style="margin:0"><a href="mailto:cristian@turcan.nl" style="color:#e0d8c5;border-bottom:1px solid #575043">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p style="margin:0">Uses <a href="#1e" style="color:#c6bfae;border-bottom:1px solid #575043">Microsoft Clarity</a> for anonymous usage analytics.</p>
+  </div>
+</section>
+
+<!-- ================= 1f · CASE STUDY ================= -->
+<section id="1f" style="margin:0 44px;position:relative;width:1440px;background:#f3efe6;border:1px solid #cfc6b2">
+  <sc-if value="{{ showGrain }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:multiply;opacity:.075;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n6'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n6)'/%3E%3C/svg%3E&quot;)"></div></sc-if>
+  <div style="position:absolute;top:-30px;left:0;z-index:4;font-size:13.5px;font-weight:600;color:#3d6b4f;background:#e3ead9;padding:4px 9px">1f</div>
+
+  <header style="position:relative;z-index:2;display:flex;align-items:baseline;gap:40px;padding:26px 56px 22px;border-bottom:1px solid #232019">
+    <a href="#1a" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em;color:#232019">Cristian Turcan</a>
+    <span style="font-size:14px;color:#6b665c">Case study</span>
+    <nav style="display:flex;gap:26px;margin-left:auto;font-size:15px;font-weight:600">
+      <a href="#1b" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Experience</a>
+      <a href="#1c" style="color:#232019;padding-bottom:3px;border-bottom:2px solid #3d6b4f">Projects</a>
+      <a href="#1d" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Events</a>
+      <a href="#1e" style="color:#534d41;padding-bottom:3px;border-bottom:2px solid transparent" style-hover="color:#232019;border-bottom:2px solid #3d6b4f">Papers</a>
+    </nav>
+  </header>
+
+  <!-- frontispiece -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:34px 26px 40px 20px;text-align:right">
+      <a href="#1c" style="font-size:15px;color:#534d41" style-hover="color:#232019">← Back to projects</a>
+      <p style="margin:26px 0 0;font-size:14px;font-weight:600;color:#3d6b4f">Computational geometry</p>
+    </div>
+    <div style="padding:34px 56px 44px 40px">
+      <h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:72px;line-height:.96;letter-spacing:-.04em;margin:0 0 22px;color:#232019;max-width:26ch">Perception-Aware 3D Mesh Simplification</h1>
+      <p style="color:#403a30;margin:0 0 30px;font-size:21px;line-height:1.55;max-width:60ch">A from-scratch C++ solver for Huawei’s 2nd IMC Challenge: simplify large 3D meshes while preserving how they look to a viewer.</p>
+      <div style="display:flex;flex-wrap:wrap;border-top:1px solid #232019;border-bottom:1px solid #cfc6b2">
+        <div style="padding:14px 26px 14px 0">
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Context</p>
+          <p style="margin:0;font-size:16px;font-weight:600;color:#232019">Huawei 2nd IMC Challenge</p>
+        </div>
+        <div style="padding:14px 26px;border-left:1px solid #e0d8c5">
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Role</p>
+          <p style="margin:0;font-size:16px;font-weight:600;color:#232019">Sole author</p>
+        </div>
+        <div style="padding:14px 26px;border-left:1px solid #e0d8c5">
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Stack</p>
+          <p style="margin:0;font-size:16px;font-weight:600;color:#232019">C++, computational geometry</p>
+        </div>
+        <div style="padding:14px 26px;border-left:1px solid #e0d8c5">
+          <p style="margin:0;font-size:13.5px;font-weight:600;color:#8a8272">Score</p>
+          <p style="margin:0;font-size:16px;font-weight:600;color:#2e5640;font-variant-numeric:tabular-nums">87.49 · 7/7 cases</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:2;border-bottom:1px solid #cfc6b2;background:#ece6d9">
+    <img src="img/projects/mesh.gif" alt="Animation of a 3D mesh being progressively simplified from 10,242 to 836 vertices" style="width:100%;max-height:460px;object-fit:cover;display:block">
+  </div>
+
+  <!-- two-column body -->
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid #cfc6b2">
+    <div style="border-right:1px solid #232019;padding:48px 26px 48px 20px;text-align:right">
+      <p style="margin:0;font-size:14px;font-weight:600;color:#3d6b4f">The work</p>
+    </div>
+    <div style="padding:48px 56px 52px 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+        <div>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;line-height:1.1;letter-spacing:-.025em;margin:0 0 14px;color:#232019">Overview</h2>
+          <p style="margin:0;color:#403a30;font-size:17px;line-height:1.72;text-wrap:pretty">The challenge: reduce a mesh’s triangle count as far as possible while keeping it visually faithful, scored by a hidden judge combining structural similarity and geometric error. With no access to the judge, the hard part is being able to <em style="font-style:italic;color:#2e5640">predict your own score</em> before submitting.</p>
+        </div>
+        <div>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;line-height:1.1;letter-spacing:-.025em;margin:0 0 14px;color:#232019">What I built</h2>
+          <p style="margin:0;color:#403a30;font-size:17px;line-height:1.72;text-wrap:pretty">A quadric error metric (QEM) edge-collapse simplifier driven by a best-first priority queue, so the cheapest-error collapses happen first. To self-score against the hidden judge I implemented my own software renderer, plus from-scratch SSIM and Hausdorff-distance metrics, then used identity probes to reverse-engineer how the scorer weighted them. The pipeline is size-adaptive (separate small/large paths) and includes visibility / screen-coverage weighting and crease constraints so silhouettes survive aggressive decimation.</p>
+        </div>
+      </div>
+
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;line-height:1.1;letter-spacing:-.025em;margin:44px 0 18px;color:#232019">Highlights</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#cfc6b2;border:1px solid #cfc6b2">
+        <p style="margin:0;background:#f8f5ee;padding:22px 24px;color:#403a30;font-size:16px;line-height:1.6">Compressed closed-manifold meshes up to 1.1M vertices.</p>
+        <p style="margin:0;background:#f8f5ee;padding:22px 24px;color:#403a30;font-size:16px;line-height:1.6">Judge score of 87.49 with all 7 test cases accepted.</p>
+        <p style="margin:0;background:#f8f5ee;padding:22px 24px;color:#403a30;font-size:16px;line-height:1.6">Backed by a C++ unit-test suite; OBJ visualizers and amalgamation/submit tooling around the core.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:2;display:grid;grid-template-columns:200px 1fr;background:#efe9dc">
+    <div style="border-right:1px solid #232019;padding:48px 26px 48px 20px;text-align:right">
+      <p style="margin:0;font-size:14px;font-weight:600;color:#3d6b4f">Gallery</p>
+    </div>
+    <div style="padding:48px 56px 56px 40px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
+        <figure style="margin:0">
+          <img src="img/projects/mesh-original.png" alt="Original dense mesh in the viewer" style="width:100%;border:1px solid #cfc6b2;background:#ece6d9">
+          <figcaption style="margin-top:10px;font-size:14.5px;color:#6b665c;font-variant-numeric:tabular-nums">Original: 10,242 vertices</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <img src="img/projects/mesh.png" alt="Simplified wireframe mesh in the viewer" style="width:100%;border:1px solid #cfc6b2;background:#ece6d9">
+          <figcaption style="margin-top:10px;font-size:14.5px;color:#6b665c;font-variant-numeric:tabular-nums">Simplified: 836 vertices, SSIM 0.95</figcaption>
+        </figure>
+      </div>
+      <a href="#1c" style="display:inline-block;margin:34px 0 0;font-size:15px;color:#534d41" style-hover="color:#232019">← Back to projects</a>
+    </div>
+  </div>
+
+  <div style="position:relative;z-index:2;background:#232019;color:#8a8272;padding:26px 56px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px">
+    <p style="margin:0"><a href="mailto:cristian@turcan.nl" style="color:#e0d8c5;border-bottom:1px solid #575043">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p style="margin:0">Uses <a href="#1f" style="color:#c6bfae;border-bottom:1px solid #575043">Microsoft Clarity</a> for anonymous usage analytics.</p>
+  </div>
+</section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showGrain&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Texture&quot;},&quot;showTags&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Density&quot;},&quot;showNowBanner&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Density&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showGrain: this.props.showGrain ?? true,
+      showTags: this.props.showTags ?? true,
+      showNowBanner: this.props.showNowBanner ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
