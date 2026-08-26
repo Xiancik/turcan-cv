@@ -46,20 +46,17 @@
                   </dl>
         </div>
       </section>
-
-      <!-- COVER -->
-      <img class="case__cover" src="../img/projects/generals.png" alt="A generals.io free-for-all board late in a game: four armies in teal, red, blue and green have carved up a grid of tiles, with cities, mountains and generals marked">
-
       <!-- THE WORK -->
       <section class="case__section">
         <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
         <div class="case__section-body">
-          <div class="case__cols">
-            <div>
+          <div class="case__work">
+            <figure class="case__cover-fig">
+              <img class="case__cover" src="../img/projects/generals.png" alt="A generals.io free-for-all board late in a game: four armies in teal, red, blue and green have carved up a grid of tiles, with cities, mountains and generals marked">
+            </figure>
+            <div class="case__work-prose">
               <h2><!-- copy:generals-ffa-bot.overview.title -->Overview<!-- /copy --></h2>
                       <p><!-- copy:generals-ffa-bot.overview.body -->generals.io FFA is a real-time strategy game: each player starts with one general on a grid, grows an army, and spreads across land and cities, around impassable mountains, under fog of war. Capture a rival’s general and you absorb everything they own. I wanted to build a bot for it, but the first move wasn’t the bot. It was the world it will learn in.<!-- /copy --></p>
-            </div>
-            <div>
               <h2><!-- copy:generals-ffa-bot.built.title -->What I built<!-- /copy --></h2>
                       <p><!-- copy:generals-ffa-bot.built.simulator -->It starts with the simulator, an engine matched to generals.io’s rules for 2-8 players: army growth (generals and cities tick up every turn, on every 25th turn every owned tile grows), movement and capture, neutral cities, and per-player fog of war that reveals only a 1 tile around own general tiles. Map generation places generals with guaranteed mutual reachability, and the whole game is deterministic from a seed.<!-- /copy --></p>
                       <p><!-- copy:generals-ffa-bot.built.heuristic -->On top sits a <strong>heuristic commander</strong>, a priority ladder: defend the general first, then grab adjacent land, take an affordable neutral city, otherwise gather the largest army and march it toward the nearest enemy, remembering where enemy generals were last seen even after they slip back into fog. Pathfinding is plain breadth-first search over passable tiles.<!-- /copy --></p>

@@ -52,15 +52,11 @@
       <section class="case__section">
         <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
         <div class="case__section-body">
-          <div class="case__cols">
-            <div>
-              <h2><!-- copy:creator-match.overview.title -->Overview<!-- /copy --></h2>
+          <div class="case__work-prose">
+            <h2><!-- copy:creator-match.overview.title -->Overview<!-- /copy --></h2>
                       <p><!-- copy:creator-match.overview.body -->Global influencer tools (HypeAuditor, Upfluence, Modash) have thin-to-zero coverage of Moldovan nano and micro creators, so local businesses have no real way to find them. CreatorMatch closes that gap with a curated local database those tools ignore. A business enters a product and a budget. The platform returns a ranked shortlist of Moldovan creators, each with a fit score, a known or estimated price, a score breakdown, and a ready-to-copy English outreach draft. It is scoped to discovery: it produces the shortlist and the drafts, and the business runs the actual outreach.<!-- /copy --></p>
-            </div>
-            <div>
-              <h2><!-- copy:creator-match.built.title -->What I built<!-- /copy --></h2>
+            <h2><!-- copy:creator-match.built.title -->What I built<!-- /copy --></h2>
                       <p><!-- copy:creator-match.built.body -->A multi-tenant web app on Next.js and FastAPI, structured as four independently testable cores: a creator repository (Postgres + pgvector), a pure-function pricing estimator, an explainable ranking engine, and an LLM service behind a single swappable interface. Ranking runs in two stages to keep LLM cost bounded: pgvector cosine similarity retrieves candidates over the whole pool cheaply, then Claude scores brand fit and drafts outreach for only the top candidates. A weighted, tunable score (40% fit, 20% reach, 20% price, 20% quality) orders the results, with every sub-score exposed as a per-result breakdown. Celery workers handle database seeding, scraping, and embedding backfill off the request path, and the pricing estimator prices every creator from Moldova-localized CPM benchmarks when no real rate is known.<!-- /copy --></p>
-            </div>
           </div>
           <h2><!-- copy:creator-match.highlights.title -->Highlights<!-- /copy --></h2>
                   <ul class="entry__points">

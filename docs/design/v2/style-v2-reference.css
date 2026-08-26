@@ -307,9 +307,17 @@ img { max-width: 100%; height: auto; display: block; }
   overflow: hidden; transition: border-color .15s var(--ease);
 }
 .project-card:hover { border-color: var(--accent); transform: none; box-shadow: none; }
-.project-card__thumb { border-radius: 0; background: var(--field); border-bottom: 1px solid var(--border); aspect-ratio: 16 / 9; }
+.project-card__thumb { border-radius: 0; aspect-ratio: 16 / 9; background: var(--field); border-bottom: 1px solid var(--border); object-fit: contain; padding: 22px; box-sizing: border-box; }
 .project-card--feature { display: grid; grid-template-columns: 1.08fr 1fr; }
-.project-card--feature .project-card__thumb { aspect-ratio: auto; min-height: 212px; height: 100%; border-bottom: 0; border-right: 1px solid var(--border); }
+/* The image cell keeps a FIXED 16/9 ratio. Never "height:100% + min-height" on an
+   auto-height grid row: height:100% cannot resolve against an indefinite row, so the
+   img falls back to its intrinsic ratio and drives the row height. generals.png is
+   square (690x690) and inflated its card to 594px with 375px of dead space. A fixed
+   ratio letterboxes any source capture on the mat instead. */
+.project-card--feature .project-card__thumb {
+  width: 100%; height: auto; aspect-ratio: 16 / 9; min-height: 0;
+  padding: 26px; border-bottom: 0; border-right: 1px solid var(--border);
+}
 .project-card__body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; }
 .project-card--feature .project-card__body { padding: 24px 26px; justify-content: center; }
 .project-card__domain { font-size: 13.5px; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--accent); }
@@ -415,13 +423,16 @@ img { max-width: 100%; height: auto; display: block; }
 .case__meta div:first-child { padding-left: 0; border-left: 0; }
 .case__meta dt { font-size: 13.5px; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--faintest); }
 .case__meta dd { font-size: 16px; font-weight: 600; color: var(--ink); margin: 0; }
-.case__cover {
-  width: 100%; max-height: 460px; object-fit: cover;
-  border: 0; border-radius: 0; margin: 0;
-  background: var(--field); border-bottom: 1px solid var(--border-str);
+/* On an individual project page the cover sits BESIDE the prose, not in its own row. */
+.case__work { display: grid; grid-template-columns: 1.05fr 1fr; gap: 44px; align-items: start; }
+.case__cover-fig {
+  margin: 0; box-sizing: border-box;
+  background: var(--field); border: 1px solid var(--border-str); padding: 18px;
 }
+.case__cover { width: 100%; height: auto; display: block; border: 0; border-radius: 0; margin: 0; }
+.case__cover-fig figcaption { margin: 12px 0 0; font-size: 14.5px; color: var(--faint); }
 .case__section { display: grid; grid-template-columns: var(--rail) 1fr; border-bottom: 1px solid var(--border-str); }
-.case__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+
 .case h2 { font-size: 28px; line-height: 1.1; letter-spacing: -.025em; margin: 0 0 14px; }
 .case p { font-size: 17px; line-height: 1.72; color: var(--ink-body); text-wrap: pretty; }
 .entry__points {   /* highlights become a hairline grid, not a bullet list */
@@ -431,7 +442,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .entry__points li { background: var(--surface); padding: 22px 24px; font-size: 16px; line-height: 1.6; color: var(--ink-body); margin: 0; }
 .gallery { grid-template-columns: 1fr 1fr; gap: 26px; margin: 0; }
-.gallery img { border: 1px solid var(--border-str); border-radius: 0; background: var(--field); }
+.gallery img { width: 100%; height: auto; object-fit: contain; border: 1px solid var(--border-str); border-radius: 0; padding: 16px; box-sizing: border-box; background: var(--field); }
 .gallery figcaption { text-align: left; font-size: 14.5px; color: var(--faint); margin-top: 10px; }
 
 /* ---- Contact + footer: ink bars --------------------------------------- */
@@ -496,7 +507,7 @@ img { max-width: 100%; height: auto; display: block; }
   .career .role__title { font-size: 25px; }
   .contact__title { font-size: 34px; }
   .roles--proof { grid-template-columns: repeat(2, 1fr); }
-  .role__projects, .entry__points, .case__cols, .gallery,
+  .role__projects, .entry__points, .case__work, .gallery,
   .project-card--feature, .project-card--capstone .project-card__body { grid-template-columns: 1fr; }
   .project-card--feature .project-card__thumb { min-height: 0; aspect-ratio: 16 / 9; border-right: 0; border-bottom: 1px solid var(--border); }
   .role__metrics .metric { border-left: 0; border-top: 1px solid var(--border); padding-left: 0; width: 100%; }

@@ -46,20 +46,17 @@
                   </dl>
         </div>
       </section>
-
-      <!-- COVER -->
-      <img class="case__cover" src="../img/projects/mesh.gif" alt="Animation of a 3D mesh being progressively simplified from 10,242 to 836 vertices">
-
       <!-- THE WORK -->
       <section class="case__section">
         <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
         <div class="case__section-body">
-          <div class="case__cols">
-            <div>
+          <div class="case__work">
+            <figure class="case__cover-fig">
+              <img class="case__cover" src="../img/projects/mesh.gif" alt="Animation of a 3D mesh being progressively simplified from 10,242 to 836 vertices">
+            </figure>
+            <div class="case__work-prose">
               <h2><!-- copy:mesh-simplification.overview.title -->Overview<!-- /copy --></h2>
                       <p><!-- copy:mesh-simplification.overview.body -->The challenge: reduce a mesh’s triangle count as far as possible while keeping it visually faithful, scored by a hidden judge combining structural similarity and geometric error. With no access to the judge, the hard part is being able to <em>predict your own score</em> before submitting.<!-- /copy --></p>
-            </div>
-            <div>
               <h2><!-- copy:mesh-simplification.built.title -->What I built<!-- /copy --></h2>
                       <p><!-- copy:mesh-simplification.built.body -->A quadric error metric (QEM) edge-collapse simplifier driven by a best-first priority queue, so the cheapest-error collapses happen first. To self-score against the hidden judge I implemented my own software renderer, plus from-scratch SSIM and Hausdorff-distance metrics, then used identity probes to reverse-engineer how the scorer weighted them. The pipeline is size-adaptive (separate small/large paths) and includes visibility / screen-coverage weighting and crease constraints so silhouettes survive aggressive decimation.<!-- /copy --></p>
             </div>

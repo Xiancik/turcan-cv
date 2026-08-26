@@ -51,10 +51,14 @@ and exact. Recreate them precisely. Where a value is not stated, keep what the s
    Brainfuck code sample on `projects.html` / the case study, which is real code.
 3. Numbers (dates, metrics, scores, counts) keep `font-variant-numeric: tabular-nums`.
 4. **No rounded corners, no box-shadows, no gradients** except the hero portrait scrim.
+5. **Screenshots are never blown up full-bleed.** Every project/case image is
+   `object-fit: contain` on a `--field` ground with a paper mat (22px on cards, 26px on wide
+   feature cards, 34px on the case cover, 16px in the gallery). The existing captures are
+   dark and low-res; cropping them to fill a wide frame looks coarse. Treat them as inset
+   specimens. Only the hero portrait uses `cover`.
 5. Dark mode stays. New tokens have dark values in the reference CSS.
 6. `prefers-reduced-motion: reduce` renders every final state immediately.
 7. Bricolage Grotesque and IBM Plex Sans stay self-hosted from `fonts/` — no new font files.
-
 ## Design tokens
 
 Existing tokens keep their values. Light theme:
@@ -210,9 +214,15 @@ Bands stay, but the band head moves into the rail: the 3-bar altitude gauge (26�
 4px gaps, filled `--accent` down to the band's depth), a 24px/700 label, and the existing
 hint at 14px `--faintest`. The content column holds the cards.
 
-- Product: one card, `1.15fr 1fr`, image left (`min-height:200px`), body right.
-- Systems & compute: the generals.io feature card (`1.08fr 1fr`, `min-height:212px`), then
-  mesh and prosperity side by side at `aspect-ratio:16/9`.
+- Product: one card, `1fr 1fr`, image left, body right.
+- Systems & compute: the generals.io feature card as a full-width image-left / text-right row
+  (`1.08fr 1fr`), then mesh and prosperity side by side in a 2-up grid with the image on top.
+- **The image cell must carry a fixed `aspect-ratio: 16/9` with `height:auto`** — never
+  `height:100%` + `min-height`. On an auto-height grid row `height:100%` cannot resolve, so
+  the img falls back to its intrinsic ratio and drives the row: `generals.png` is square
+  (690×690) and inflated its card to 594px tall with 375px of dead space. A fixed ratio
+  letterboxes any source capture on the paper mat and keeps every card in the band the
+  same height.
 - Bare metal: `--paper-alt` band, the Brainfuck capstone as `1.25fr 1fr` — 27px title and
   spec on the left, the code sample on the right: `--paper` ground, `--border` hairline,
   12.5px `ui-monospace` (**the one place monospace survives**), mnemonics in `--accent-str`.
@@ -245,9 +255,12 @@ are until real URLs exist.
 "Frontispiece": rail carries "← Back to projects" plus the domain label; content carries a
 72px h1, the 21px summary, and the meta as a **horizontal cell strip** under an ink rule
 (Context / Role / Stack / Score — 13.5px/600 label over 16px/600 value, `--border` left
-hairlines). Then the cover image full-bleed edge to edge on `--field`, `max-height:460px`,
-`object-fit:cover`. Then the body: rail label "The work", content in two 48px-gapped
-columns (Overview | What I built) at 17px/1.72, then "Highlights" as a 3-up hairline grid of
+hairlines). There is **no separate cover row**: the cover sits *beside* the prose in the
+"The work" section — a `1.05fr 1fr` two-column grid, `align-items:start`, with the captioned
+figure on the left (`--field` ground, 18px mat, `--border-str` hairline) and Overview +
+What I built stacked on the right. This is the individual-project pattern: image one side,
+text the other. Do not run the cover full-bleed (at 640×360 it leaves ~400px of dead field)
+and do not give it its own rail row. Then: "Highlights" as a 3-up hairline grid of
 `--surface` cells at 16px. Then a `--paper-alt` gallery band: two figures side by side,
 `--border-str` framed on `--field`, captions at 14.5px `--faint` tabular, and the back link.
 Apply the same skeleton to `brainfuck-jit`, `creator-match`, `generals-ffa-bot`,

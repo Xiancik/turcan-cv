@@ -46,20 +46,17 @@
                   </dl>
         </div>
       </section>
-
-      <!-- COVER -->
-      <img class="case__cover" src="../img/projects/prosperity.png" alt="Prosperity 4 trading analytics dashboard showing price, a rising PnL curve and position">
-
       <!-- THE WORK -->
       <section class="case__section">
         <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
         <div class="case__section-body">
-          <div class="case__cols">
-            <div>
+          <div class="case__work">
+            <figure class="case__cover-fig">
+              <img class="case__cover" src="../img/projects/prosperity.png" alt="Prosperity 4 trading analytics dashboard showing price, a rising PnL curve and position">
+            </figure>
+            <div class="case__work-prose">
               <h2><!-- copy:prosperity4.overview.title -->Overview<!-- /copy --></h2>
                       <p><!-- copy:prosperity4.overview.body -->Prosperity is a multi-round algorithmic-trading competition with a simulated exchange. Each round exposes new instruments, including options, that reward pricing them correctly and quoting two-sided liquidity without taking on unwanted directional risk.<!-- /copy --></p>
-            </div>
-            <div>
               <h2><!-- copy:prosperity4.built.title -->What I built<!-- /copy --></h2>
                       <p><!-- copy:prosperity4.built.body -->Options market-making built on Black-Scholes pricing with Greeks, fitting the implied-volatility smile (a quadratic / LOOCV-polynomial and SVI parameterisation) so quotes stay consistent across strikes, plus delta hedging on the underlying. Alongside that, a mean-reversion strategy and a hand-written stationarity / time-series test library (ADF, KPSS, Ljung-Box, variance-ratio, and Phillips-Perron) feeding a grid-search optimiser, all validated against a submodule backtester with a Dash analytics dashboard.<!-- /copy --></p>
             </div>
