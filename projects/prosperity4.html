@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -28,57 +28,69 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="../projects.html">← Back to projects</a>
+    <article class="case">
 
-      <article class="case">
-        <div class="case__kicker">
-          <span class="eyebrow">Quantitative trading</span>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../projects.html">← Back to projects</a>
+          <p class="eyebrow">Quantitative trading</p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title"><!-- copy:prosperity4.hero.title -->IMC Prosperity 4: Algorithmic Trading<!-- /copy --></h1>
+          <p class="case__summary"><!-- copy:prosperity4.hero.summary -->Options market-making and statistical strategies for IMC’s Prosperity 4 algorithmic-trading competition.<!-- /copy --></p>
+          <dl class="case__meta">
+                    <div><dt>Context</dt><dd>IMC Prosperity 4</dd></div>
+                    <div><dt>Stack</dt><dd>Python, NumPy, pandas, SciPy</dd></div>
+                    <div><dt>Focus</dt><dd>Market-making, time-series</dd></div>
+                  </dl>
         </div>
-        <h1 class="case__title"><!-- copy:prosperity4.hero.title -->IMC Prosperity 4: Algorithmic Trading<!-- /copy --></h1>
-        <p class="case__summary"><!-- copy:prosperity4.hero.summary -->Options market-making and statistical strategies for IMC’s Prosperity 4 algorithmic-trading competition.<!-- /copy --></p>
+      </section>
 
-        <dl class="case__meta">
-          <div><dt>Context</dt><dd>IMC Prosperity 4</dd></div>
-          <div><dt>Stack</dt><dd>Python, NumPy, pandas, SciPy</dd></div>
-          <div><dt>Focus</dt><dd>Market-making, time-series</dd></div>
-        </dl>
+      <!-- COVER -->
+      <img class="case__cover" src="../img/projects/prosperity.png" alt="Prosperity 4 trading analytics dashboard showing price, a rising PnL curve and position">
 
-        <img class="case__cover" src="../img/projects/prosperity.png" alt="Prosperity 4 trading analytics dashboard showing price, a rising PnL curve and position">
-
-        <h2><!-- copy:prosperity4.overview.title -->Overview<!-- /copy --></h2>
-        <p><!-- copy:prosperity4.overview.body -->Prosperity is a multi-round algorithmic-trading competition with a simulated exchange. Each round exposes new instruments, including options, that reward pricing them correctly and quoting two-sided liquidity without taking on unwanted directional risk.<!-- /copy --></p>
-
-        <h2><!-- copy:prosperity4.built.title -->What I built<!-- /copy --></h2>
-        <p><!-- copy:prosperity4.built.body -->Options market-making built on Black-Scholes pricing with Greeks, fitting the implied-volatility smile (a quadratic / LOOCV-polynomial and SVI parameterisation) so quotes stay consistent across strikes, plus delta hedging on the underlying. Alongside that, a mean-reversion strategy and a hand-written stationarity / time-series test library (ADF, KPSS, Ljung-Box, variance-ratio, and Phillips-Perron) feeding a grid-search optimiser, all validated against a submodule backtester with a Dash analytics dashboard.<!-- /copy --></p>
-
-        <h2><!-- copy:prosperity4.highlights.title -->Highlights<!-- /copy --></h2>
-        <ul class="entry__points">
-          <li><!-- copy:prosperity4.highlights.items.options -->End-to-end options market-maker: pricing → IV smile → quoting → delta hedging.<!-- /copy --></li>
-          <li><!-- copy:prosperity4.highlights.items.toolkit -->Reusable statistical-testing toolkit for validating signal stationarity.<!-- /copy --></li>
-          <li><!-- copy:prosperity4.highlights.items.gridsearch -->Parallel grid-search tuning validated over a dedicated backtester.<!-- /copy --></li>
-        </ul>
-
-        <h2><!-- copy:prosperity4.gallery.title -->Gallery<!-- /copy --></h2>
-        <div class="gallery">
-          <figure><img src="../img/projects/prosperity-charts.png" alt="Price chart with bid/ask levels and own trades"><figcaption><!-- copy:prosperity4.gallery.charts_caption -->Price, order book &amp; own fills<!-- /copy --></figcaption></figure>
-          <figure><img src="../img/projects/prosperity-emeralds.png" alt="Per-product order-book depth view"><figcaption><!-- copy:prosperity4.gallery.emeralds_caption -->Per-product order-book depth<!-- /copy --></figcaption></figure>
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2><!-- copy:prosperity4.overview.title -->Overview<!-- /copy --></h2>
+                      <p><!-- copy:prosperity4.overview.body -->Prosperity is a multi-round algorithmic-trading competition with a simulated exchange. Each round exposes new instruments, including options, that reward pricing them correctly and quoting two-sided liquidity without taking on unwanted directional risk.<!-- /copy --></p>
+            </div>
+            <div>
+              <h2><!-- copy:prosperity4.built.title -->What I built<!-- /copy --></h2>
+                      <p><!-- copy:prosperity4.built.body -->Options market-making built on Black-Scholes pricing with Greeks, fitting the implied-volatility smile (a quadratic / LOOCV-polynomial and SVI parameterisation) so quotes stay consistent across strikes, plus delta hedging on the underlying. Alongside that, a mean-reversion strategy and a hand-written stationarity / time-series test library (ADF, KPSS, Ljung-Box, variance-ratio, and Phillips-Perron) feeding a grid-search optimiser, all validated against a submodule backtester with a Dash analytics dashboard.<!-- /copy --></p>
+            </div>
+          </div>
+          <h2><!-- copy:prosperity4.highlights.title -->Highlights<!-- /copy --></h2>
+                  <ul class="entry__points">
+                    <li><!-- copy:prosperity4.highlights.items.options -->End-to-end options market-maker: pricing → IV smile → quoting → delta hedging.<!-- /copy --></li>
+                    <li><!-- copy:prosperity4.highlights.items.toolkit -->Reusable statistical-testing toolkit for validating signal stationarity.<!-- /copy --></li>
+                    <li><!-- copy:prosperity4.highlights.items.gridsearch -->Parallel grid-search tuning validated over a dedicated backtester.<!-- /copy --></li>
+                  </ul>
         </div>
-      </article>
+      </section>
 
-      <a class="back-link" href="../projects.html">← Back to projects</a>
-    </div>
+      <!-- GALLERY -->
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"><p class="eyebrow">Gallery</p></aside>
+        <div class="case__section-body">
+          <div class="gallery">
+                    <figure><img src="../img/projects/prosperity-charts.png" alt="Price chart with bid/ask levels and own trades"><figcaption><!-- copy:prosperity4.gallery.charts_caption -->Price, order book &amp; own fills<!-- /copy --></figcaption></figure>
+                    <figure><img src="../img/projects/prosperity-emeralds.png" alt="Per-product order-book depth view"><figcaption><!-- copy:prosperity4.gallery.emeralds_caption -->Per-product order-book depth<!-- /copy --></figcaption></figure>
+                  </div>
+          <p><a class="back-link" href="../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
+
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="../theme.js"></script>
   <script src="../notify.js" defer></script>

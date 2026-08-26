@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -25,59 +25,75 @@
         <a href="../events.html">Events</a>
         <a href="../papers.html">Papers</a>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span class="theme-toggle__icon" aria-hidden="true">&#9790;</span></button>
     </div>
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="../projects.html">← Back to projects</a>
+    <article class="case">
 
-      <article class="case">
-        <h1 class="case__title">[Project name]</h1>
-        <p class="case__summary">[One-line summary of what it is and why it matters.]</p>
-
-        <dl class="case__meta">
-          <div><dt>Role</dt><dd>[e.g. Firmware lead]</dd></div>
-          <div><dt>Timeframe</dt><dd>[2024-2025]</dd></div>
-          <div><dt>Stack</dt><dd>[C, Zephyr, KiCad]</dd></div>
-          <div><dt>Links</dt><dd><a href="#">Repo</a> · <a href="#">Demo</a></dd></div>
-        </dl>
-
-        <img class="case__cover" src="../img/placeholder.svg" alt="[Describe the cover image]">
-
-        <h2>Overview</h2>
-        <p>[The problem or context. What needed to exist, and the constraints.]</p>
-
-        <h2>What I built</h2>
-        <p>[Your approach and the key technical decisions. What you personally did.]</p>
-
-        <h2>Highlights</h2>
-        <ul class="entry__points">
-          <li>[Notable result, metric, or hard problem solved.]</li>
-          <li>[Another highlight.]</li>
-        </ul>
-
-        <h2>Gallery</h2>
-        <div class="gallery">
-          <figure><img src="../img/placeholder.svg" alt="[Describe]"><figcaption>[Caption]</figcaption></figure>
-          <figure><img src="../img/placeholder.svg" alt="[Describe]"><figcaption>[Caption]</figcaption></figure>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../projects.html">← Back to projects</a>
+          <p class="eyebrow">[Domain]</p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title">[Project name]</h1>
+          <p class="case__summary">[One-line summary of what it is and why it matters.]</p>
+          <dl class="case__meta">
+            <div><dt>Context</dt><dd>[Where / when]</dd></div>
+            <div><dt>Role</dt><dd>[e.g. Sole author]</dd></div>
+            <div><dt>Stack</dt><dd>[C++, Zephyr, ...]</dd></div>
+            <div><dt>Score</dt><dd>[if applicable]</dd></div>
+          </dl>
         </div>
-      </article>
+      </section>
 
-      <a class="back-link" href="../projects.html">← Back to projects</a>
-    </div>
+      <!-- COVER -->
+      <img class="case__cover" src="../img/placeholder.svg" alt="[Describe the cover image]">
+
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2>Overview</h2>
+              <p>[The problem or context. What needed to exist, and the constraints.]</p>
+            </div>
+            <div>
+              <h2>What I built</h2>
+              <p>[Your approach and the key technical decisions. What you personally did.]</p>
+            </div>
+          </div>
+          <h2>Highlights</h2>
+          <ul class="entry__points">
+            <li>[Notable result, metric, or hard problem solved.]</li>
+            <li>[Another highlight.]</li>
+            <li>[A third highlight.]</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"><p class="eyebrow">Gallery</p></aside>
+        <div class="case__section-body">
+          <div class="gallery">
+            <figure><img src="../img/placeholder.svg" alt="[Describe]"><figcaption>[Caption]</figcaption></figure>
+            <figure><img src="../img/placeholder.svg" alt="[Describe]"><figcaption>[Caption]</figcaption></figure>
+          </div>
+          <p><a class="back-link" href="../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
+
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
   </footer>
-  <button class="theme-toggle" type="button" aria-label="Toggle color theme"><span class="theme-toggle__icon" aria-hidden="true">&#9790;</span></button>
   <script src="../theme.js"></script>
   <script src="../notify.js" defer></script>
 </body>

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -28,96 +28,89 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="index.html">← Back to automation bots</a>
+    <article class="case">
 
-      <article class="case">
-        <div class="case__kicker">
-          <span class="eyebrow"><!-- copy:automation-bots-laws-aggregator.hero.eyebrow -->Automation · Alerts<!-- /copy --></span>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../../projects.html">← Back to projects</a>
+          <p class="eyebrow"><!-- copy:automation-bots-laws-aggregator.hero.eyebrow -->Automation · Alerts<!-- /copy --></p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title"><!-- copy:automation-bots-laws-aggregator.hero.title -->Legal Acts Bot<!-- /copy --></h1>
+          <p class="case__summary"><!-- copy:automation-bots-laws-aggregator.hero.summary -->A Telegram bot that pushes newly published Moldovan legal acts to users, filtered by the topic sectors they subscribe to.<!-- /copy --></p>
+          <dl class="case__meta">
+                    <div><dt>Stack</dt><dd>Python, aiogram</dd></div>
+                    <div><dt>Workers</dt><dd>Celery + Redis</dd></div>
+                    <div><dt>Data</dt><dd>PostgreSQL</dd></div>
+                    <div><dt>Source</dt><dd>legis.md, polled every 30&nbsp;min</dd></div>
+                  </dl>
         </div>
-        <h1 class="case__title"><!-- copy:automation-bots-laws-aggregator.hero.title -->Legal Acts Bot<!-- /copy --></h1>
-        <p class="case__summary"><!-- copy:automation-bots-laws-aggregator.hero.summary -->A Telegram bot that pushes newly published Moldovan legal acts to users, filtered by the topic sectors they subscribe to.<!-- /copy --></p>
+      </section>
 
-        <dl class="case__meta">
-          <div><dt>Stack</dt><dd>Python, aiogram</dd></div>
-          <div><dt>Workers</dt><dd>Celery + Redis</dd></div>
-          <div><dt>Data</dt><dd>PostgreSQL</dd></div>
-          <div><dt>Source</dt><dd>legis.md, polled every 30&nbsp;min</dd></div>
-        </dl>
-
-        <div class="case-tile case-tile--cover">
-          <svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A stream of legal acts filtered through user-selected sectors, then delivered to a chat">
-            <rect class="line-off" x="18" y="20" width="46" height="16" rx="4" stroke-width="3"/>
-            <rect class="line-off" x="18" y="46" width="46" height="16" rx="4" stroke-width="3"/>
-            <rect class="line-off" x="18" y="72" width="46" height="16" rx="4" stroke-width="3"/>
-            <path class="line-on" d="M64 28 C90 28 90 55 108 55" stroke-width="3"/>
-            <path class="line-on" d="M64 54 H108" stroke-width="3"/>
-            <path class="line-on" d="M64 80 C90 80 90 55 108 55" stroke-width="3"/>
-            <rect class="tile-on" x="108" y="40" width="34" height="30" rx="6"/>
-            <path class="line-off" style="stroke:var(--accent-soft)" d="M114 55 l6 6 12 -14" stroke-width="3"/>
-            <path class="line-off" d="M142 55 h20" stroke-width="3"/>
-            <rect class="line-off" x="164" y="24" width="58" height="62" rx="9" stroke-width="3"/>
-            <rect class="tile-on2" x="174" y="36" width="38" height="8" rx="4"/>
-            <rect class="tile-off" x="174" y="52" width="38" height="6" rx="3"/>
-            <rect class="tile-off" x="174" y="66" width="26" height="6" rx="3"/>
-          </svg>
-        </div>
-
-        <h2><!-- copy:automation-bots-laws-aggregator.overview.title -->Overview<!-- /copy --></h2>
-        <p><!-- copy:automation-bots-laws-aggregator.overview.body -->Legal acts publish on legis.md constantly, but nobody wants to scan all the fields and check constantly even if no new legal act appears. I wanted people to pick a handful of sectors and get the matching acts pushed to them as they land, in Romanian, with a daily-digest option for anyone who would rather not be pinged in real time.<!-- /copy --></p>
-
-        <h2><!-- copy:automation-bots-laws-aggregator.built.title -->What I built<!-- /copy --></h2>
-        <p><!-- copy:automation-bots-laws-aggregator.built.body -->A second product on top of the event-aggregator&rsquo;s stack. A scraper polls legis.md every 30&nbsp;minutes, a matcher fans an incoming act out to every subscribed user, and a delivery worker sends the message and auto-pause the moment a user blocks the bot.<!-- /copy --></p>
-
-        <h2><!-- copy:automation-bots-laws-aggregator.highlights.title -->Highlights<!-- /copy --></h2>
-        <ul class="entry__points">
-          <li><!-- copy:automation-bots-laws-aggregator.highlights.items.idempotent -->Idempotent deliveries table so re-runs never double-send.<!-- /copy --></li>
-          <li><!-- copy:automation-bots-laws-aggregator.highlights.items.staleness -->Fixture-tested parser with a 24h staleness alert if legis.md&rsquo;s HTML shifts.<!-- /copy --></li>
-          <li><!-- copy:automation-bots-laws-aggregator.highlights.items.ux -->Romanian UI, inline sector keyboard, realtime &harr; daily-digest toggle.<!-- /copy --></li>
-        </ul>
-
-        <h2><!-- copy:automation-bots-laws-aggregator.gallery.title -->Gallery<!-- /copy --></h2>
-        <div class="gallery">
-          <figure>
-            <div class="case-tile">
-              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An inline keyboard of topic sectors with some selected">
-                <rect class="line-off" x="18" y="20" width="60" height="16" rx="4" stroke-width="3"/>
-                <rect class="tile-on"  x="84" y="20" width="60" height="16" rx="4"/>
-                <rect class="tile-on"  x="18" y="44" width="60" height="16" rx="4"/>
-                <rect class="line-off" x="84" y="44" width="60" height="16" rx="4" stroke-width="3"/>
-                <rect class="line-off" x="18" y="68" width="60" height="16" rx="4" stroke-width="3"/>
-                <rect class="tile-on"  x="84" y="68" width="60" height="16" rx="4"/>
-              </svg>
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2><!-- copy:automation-bots-laws-aggregator.overview.title -->Overview<!-- /copy --></h2>
+                      <p><!-- copy:automation-bots-laws-aggregator.overview.body -->Legal acts publish on legis.md constantly, but nobody wants to scan all the fields and check constantly even if no new legal act appears. I wanted people to pick a handful of sectors and get the matching acts pushed to them as they land, in Romanian, with a daily-digest option for anyone who would rather not be pinged in real time.<!-- /copy --></p>
             </div>
-            <figcaption><!-- copy:automation-bots-laws-aggregator.gallery.topics_caption -->Multi-select sector keyboard<!-- /copy --></figcaption>
-          </figure>
-          <figure>
-            <div class="case-tile">
-              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Telegram message with a legal act title, date, and link">
-                <path class="line-on" d="M28 24 h100 a10 10 0 0 1 10 10 v34 a10 10 0 0 1 -10 10 H70 l-14 14 v-14 H28 a10 10 0 0 1 -10 -10 V34 a10 10 0 0 1 10 -10 Z" stroke-width="3"/>
-                <rect class="tile-on"  x="36" y="34" width="82" height="8" rx="4"/>
-                <rect class="tile-off" x="36" y="48" width="66" height="6" rx="3"/>
-                <rect class="tile-off" x="36" y="60" width="52" height="6" rx="3"/>
-              </svg>
+            <div>
+              <h2><!-- copy:automation-bots-laws-aggregator.built.title -->What I built<!-- /copy --></h2>
+                      <p><!-- copy:automation-bots-laws-aggregator.built.body -->A second product on top of the event-aggregator&rsquo;s stack. A scraper polls legis.md every 30&nbsp;minutes, a matcher fans an incoming act out to every subscribed user, and a delivery worker sends the message and auto-pause the moment a user blocks the bot.<!-- /copy --></p>
             </div>
-            <figcaption><!-- copy:automation-bots-laws-aggregator.gallery.delivery_caption -->One act, delivered as it lands<!-- /copy --></figcaption>
-          </figure>
+          </div>
+          <h2><!-- copy:automation-bots-laws-aggregator.highlights.title -->Highlights<!-- /copy --></h2>
+                  <ul class="entry__points">
+                    <li><!-- copy:automation-bots-laws-aggregator.highlights.items.idempotent -->Idempotent deliveries table so re-runs never double-send.<!-- /copy --></li>
+                    <li><!-- copy:automation-bots-laws-aggregator.highlights.items.staleness -->Fixture-tested parser with a 24h staleness alert if legis.md&rsquo;s HTML shifts.<!-- /copy --></li>
+                    <li><!-- copy:automation-bots-laws-aggregator.highlights.items.ux -->Romanian UI, inline sector keyboard, realtime &harr; daily-digest toggle.<!-- /copy --></li>
+                  </ul>
         </div>
-      </article>
+      </section>
 
-      <a class="back-link" href="index.html">← Back to automation bots</a>
-    </div>
+      <!-- GALLERY -->
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"><p class="eyebrow">Gallery</p></aside>
+        <div class="case__section-body">
+          <div class="gallery">
+                    <figure>
+                      <div class="case-tile">
+                        <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An inline keyboard of topic sectors with some selected">
+                          <rect class="line-off" x="18" y="20" width="60" height="16" rx="4" stroke-width="3"/>
+                          <rect class="tile-on"  x="84" y="20" width="60" height="16" rx="4"/>
+                          <rect class="tile-on"  x="18" y="44" width="60" height="16" rx="4"/>
+                          <rect class="line-off" x="84" y="44" width="60" height="16" rx="4" stroke-width="3"/>
+                          <rect class="line-off" x="18" y="68" width="60" height="16" rx="4" stroke-width="3"/>
+                          <rect class="tile-on"  x="84" y="68" width="60" height="16" rx="4"/>
+                        </svg>
+                      </div>
+                      <figcaption><!-- copy:automation-bots-laws-aggregator.gallery.topics_caption -->Multi-select sector keyboard<!-- /copy --></figcaption>
+                    </figure>
+                    <figure>
+                      <div class="case-tile">
+                        <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Telegram message with a legal act title, date, and link">
+                          <path class="line-on" d="M28 24 h100 a10 10 0 0 1 10 10 v34 a10 10 0 0 1 -10 10 H70 l-14 14 v-14 H28 a10 10 0 0 1 -10 -10 V34 a10 10 0 0 1 10 -10 Z" stroke-width="3"/>
+                          <rect class="tile-on"  x="36" y="34" width="82" height="8" rx="4"/>
+                          <rect class="tile-off" x="36" y="48" width="66" height="6" rx="3"/>
+                          <rect class="tile-off" x="36" y="60" width="52" height="6" rx="3"/>
+                        </svg>
+                      </div>
+                      <figcaption><!-- copy:automation-bots-laws-aggregator.gallery.delivery_caption -->One act, delivered as it lands<!-- /copy --></figcaption>
+                    </figure>
+                  </div>
+          <p><a class="back-link" href="../../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
+
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="../../theme.js"></script>
   <script src="../../notify.js" defer></script>

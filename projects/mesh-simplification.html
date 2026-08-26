@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -28,57 +28,69 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="../projects.html">← Back to projects</a>
+    <article class="case">
 
-      <article class="case">
-        <div class="case__kicker">
-          <span class="eyebrow">Computational geometry</span>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../projects.html">← Back to projects</a>
+          <p class="eyebrow">Computational geometry</p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title"><!-- copy:mesh-simplification.hero.title -->Perception-Aware 3D Mesh Simplification<!-- /copy --></h1>
+          <p class="case__summary"><!-- copy:mesh-simplification.hero.summary -->A from-scratch C++ solver for Huawei’s 2nd IMC Challenge: simplify large 3D meshes while preserving how they look to a viewer.<!-- /copy --></p>
+          <dl class="case__meta">
+                    <div><dt>Context</dt><dd>Huawei 2nd IMC Challenge</dd></div>
+                    <div><dt>Role</dt><dd>Sole author</dd></div>
+                    <div><dt>Stack</dt><dd>C++, computational geometry</dd></div>
+                  </dl>
         </div>
-        <h1 class="case__title"><!-- copy:mesh-simplification.hero.title -->Perception-Aware 3D Mesh Simplification<!-- /copy --></h1>
-        <p class="case__summary"><!-- copy:mesh-simplification.hero.summary -->A from-scratch C++ solver for Huawei’s 2nd IMC Challenge: simplify large 3D meshes while preserving how they look to a viewer.<!-- /copy --></p>
+      </section>
 
-        <dl class="case__meta">
-          <div><dt>Context</dt><dd>Huawei 2nd IMC Challenge</dd></div>
-          <div><dt>Role</dt><dd>Sole author</dd></div>
-          <div><dt>Stack</dt><dd>C++, computational geometry</dd></div>
-        </dl>
+      <!-- COVER -->
+      <img class="case__cover" src="../img/projects/mesh.gif" alt="Animation of a 3D mesh being progressively simplified from 10,242 to 836 vertices">
 
-        <img class="case__cover" src="../img/projects/mesh.gif" alt="Animation of a 3D mesh being progressively simplified from 10,242 to 836 vertices">
-
-        <h2><!-- copy:mesh-simplification.overview.title -->Overview<!-- /copy --></h2>
-        <p><!-- copy:mesh-simplification.overview.body -->The challenge: reduce a mesh’s triangle count as far as possible while keeping it visually faithful, scored by a hidden judge combining structural similarity and geometric error. With no access to the judge, the hard part is being able to <em>predict your own score</em> before submitting.<!-- /copy --></p>
-
-        <h2><!-- copy:mesh-simplification.built.title -->What I built<!-- /copy --></h2>
-        <p><!-- copy:mesh-simplification.built.body -->A quadric error metric (QEM) edge-collapse simplifier driven by a best-first priority queue, so the cheapest-error collapses happen first. To self-score against the hidden judge I implemented my own software renderer, plus from-scratch SSIM and Hausdorff-distance metrics, then used identity probes to reverse-engineer how the scorer weighted them. The pipeline is size-adaptive (separate small/large paths) and includes visibility / screen-coverage weighting and crease constraints so silhouettes survive aggressive decimation.<!-- /copy --></p>
-
-        <h2><!-- copy:mesh-simplification.highlights.title -->Highlights<!-- /copy --></h2>
-        <ul class="entry__points">
-          <li><!-- copy:mesh-simplification.highlights.items.scale -->Compressed closed-manifold meshes up to 1.1M vertices.<!-- /copy --></li>
-          <li><!-- copy:mesh-simplification.highlights.items.score -->Judge score of 87.49 with all 7 test cases accepted.<!-- /copy --></li>
-          <li><!-- copy:mesh-simplification.highlights.items.tooling -->Backed by a C++ unit-test suite; OBJ visualizers and amalgamation/submit tooling around the core.<!-- /copy --></li>
-        </ul>
-
-        <h2><!-- copy:mesh-simplification.gallery.title -->Gallery<!-- /copy --></h2>
-        <div class="gallery">
-          <figure><img src="../img/projects/mesh-original.png" alt="Original dense mesh in the viewer"><figcaption><!-- copy:mesh-simplification.gallery.original_caption -->Original: 10,242 vertices<!-- /copy --></figcaption></figure>
-          <figure><img src="../img/projects/mesh.png" alt="Simplified wireframe mesh in the viewer"><figcaption><!-- copy:mesh-simplification.gallery.simplified_caption -->Simplified: 836 vertices, SSIM 0.95<!-- /copy --></figcaption></figure>
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2><!-- copy:mesh-simplification.overview.title -->Overview<!-- /copy --></h2>
+                      <p><!-- copy:mesh-simplification.overview.body -->The challenge: reduce a mesh’s triangle count as far as possible while keeping it visually faithful, scored by a hidden judge combining structural similarity and geometric error. With no access to the judge, the hard part is being able to <em>predict your own score</em> before submitting.<!-- /copy --></p>
+            </div>
+            <div>
+              <h2><!-- copy:mesh-simplification.built.title -->What I built<!-- /copy --></h2>
+                      <p><!-- copy:mesh-simplification.built.body -->A quadric error metric (QEM) edge-collapse simplifier driven by a best-first priority queue, so the cheapest-error collapses happen first. To self-score against the hidden judge I implemented my own software renderer, plus from-scratch SSIM and Hausdorff-distance metrics, then used identity probes to reverse-engineer how the scorer weighted them. The pipeline is size-adaptive (separate small/large paths) and includes visibility / screen-coverage weighting and crease constraints so silhouettes survive aggressive decimation.<!-- /copy --></p>
+            </div>
+          </div>
+          <h2><!-- copy:mesh-simplification.highlights.title -->Highlights<!-- /copy --></h2>
+                  <ul class="entry__points">
+                    <li><!-- copy:mesh-simplification.highlights.items.scale -->Compressed closed-manifold meshes up to 1.1M vertices.<!-- /copy --></li>
+                    <li><!-- copy:mesh-simplification.highlights.items.score -->Judge score of 87.49 with all 7 test cases accepted.<!-- /copy --></li>
+                    <li><!-- copy:mesh-simplification.highlights.items.tooling -->Backed by a C++ unit-test suite; OBJ visualizers and amalgamation/submit tooling around the core.<!-- /copy --></li>
+                  </ul>
         </div>
-      </article>
+      </section>
 
-      <a class="back-link" href="../projects.html">← Back to projects</a>
-    </div>
+      <!-- GALLERY -->
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"><p class="eyebrow">Gallery</p></aside>
+        <div class="case__section-body">
+          <div class="gallery">
+                    <figure><img src="../img/projects/mesh-original.png" alt="Original dense mesh in the viewer"><figcaption><!-- copy:mesh-simplification.gallery.original_caption -->Original: 10,242 vertices<!-- /copy --></figcaption></figure>
+                    <figure><img src="../img/projects/mesh.png" alt="Simplified wireframe mesh in the viewer"><figcaption><!-- copy:mesh-simplification.gallery.simplified_caption -->Simplified: 836 vertices, SSIM 0.95<!-- /copy --></figcaption></figure>
+                  </div>
+          <p><a class="back-link" href="../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
+
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="../theme.js"></script>
   <script src="../notify.js" defer></script>

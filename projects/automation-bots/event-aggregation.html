@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -28,93 +28,88 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="index.html">← Back to automation bots</a>
+    <article class="case">
 
-      <article class="case">
-        <div class="case__kicker">
-          <span class="eyebrow"><!-- copy:automation-bots-event-aggregation.hero.eyebrow -->Backend · Microservice<!-- /copy --></span>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../../projects.html">← Back to projects</a>
+          <p class="eyebrow"><!-- copy:automation-bots-event-aggregation.hero.eyebrow -->Backend · Microservice<!-- /copy --></p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title"><!-- copy:automation-bots-event-aggregation.hero.title -->Event-Aggregation Microservice<!-- /copy --></h1>
+          <p class="case__summary"><!-- copy:automation-bots-event-aggregation.hero.summary -->A broker-based Telegram service that pulls scattered local events into a single feed.<!-- /copy --></p>
+          <dl class="case__meta">
+                    <div><dt>Stack</dt><dd>Python, aiogram</dd></div>
+                    <div><dt>Workers</dt><dd>Celery + Redis</dd></div>
+                    <div><dt>Data</dt><dd>PostgreSQL (Alembic)</dd></div>
+                    <div><dt>Infra</dt><dd>Docker Compose</dd></div>
+                  </dl>
         </div>
-        <h1 class="case__title"><!-- copy:automation-bots-event-aggregation.hero.title -->Event-Aggregation Microservice<!-- /copy --></h1>
-        <p class="case__summary"><!-- copy:automation-bots-event-aggregation.hero.summary -->A broker-based Telegram service that pulls scattered local events into a single feed.<!-- /copy --></p>
+      </section>
 
-        <dl class="case__meta">
-          <div><dt>Stack</dt><dd>Python, aiogram</dd></div>
-          <div><dt>Workers</dt><dd>Celery + Redis</dd></div>
-          <div><dt>Data</dt><dd>PostgreSQL (Alembic)</dd></div>
-          <div><dt>Infra</dt><dd>Docker Compose</dd></div>
-        </dl>
-
-        <div class="case-tile case-tile--cover">
-          <svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Several event sources merging through a hub into one feed">
-            <circle class="tile-off" cx="34" cy="28" r="11"/>
-            <circle class="tile-off" cx="34" cy="55" r="11"/>
-            <circle class="tile-off" cx="34" cy="82" r="11"/>
-            <path class="line-on" d="M46 28 C88 28 84 55 118 55" stroke-width="3"/>
-            <path class="line-on" d="M46 55 H118" stroke-width="3"/>
-            <path class="line-on" d="M46 82 C88 82 84 55 118 55" stroke-width="3"/>
-            <circle class="tile-on" cx="132" cy="55" r="14"/>
-            <path class="line-off" d="M150 55 h18" stroke-width="3"/>
-            <rect class="tile-on"  x="174" y="30" width="52" height="10" rx="5"/>
-            <rect class="tile-off" x="174" y="50" width="52" height="10" rx="5"/>
-            <rect class="tile-off" x="174" y="70" width="52" height="10" rx="5"/>
-          </svg>
-        </div>
-
-        <h2><!-- copy:automation-bots-event-aggregation.overview.title -->Overview<!-- /copy --></h2>
-        <p><!-- copy:automation-bots-event-aggregation.overview.body -->Local events were scattered across sources with no single place to see them. I wanted one feed that gathered them in the background and delivered them over Telegram.<!-- /copy --></p>
-
-        <h2><!-- copy:automation-bots-event-aggregation.built.title -->What I built<!-- /copy --></h2>
-        <p><!-- copy:automation-bots-event-aggregation.built.body -->A broker-based Telegram bot on aiogram, with Celery + Redis workers handling aggregation off the request path and PostgreSQL for storage. The whole stack is orchestrated via Docker Compose, so the bot, workers, broker, and database come up together as one reproducible unit.<!-- /copy --></p>
-
-        <h2><!-- copy:automation-bots-event-aggregation.highlights.title -->Highlights<!-- /copy --></h2>
-        <ul class="entry__points">
-          <li><!-- copy:automation-bots-event-aggregation.highlights.items.broker -->Clean broker/worker separation with Celery + Redis.<!-- /copy --></li>
-          <li><!-- copy:automation-bots-event-aggregation.highlights.items.schema -->PostgreSQL schema managed through Alembic migrations.<!-- /copy --></li>
-          <li><!-- copy:automation-bots-event-aggregation.highlights.items.stack -->Reproducible multi-service stack via Docker Compose.<!-- /copy --></li>
-        </ul>
-
-        <h2><!-- copy:automation-bots-event-aggregation.gallery.title -->Gallery<!-- /copy --></h2>
-        <div class="gallery">
-          <figure>
-            <div class="case-tile">
-              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A single aggregated feed of items">
-                <rect class="line-off" x="30" y="18" width="100" height="64" rx="10" stroke-width="3"/>
-                <rect class="tile-on"  x="42" y="30" width="76" height="10" rx="5"/>
-                <rect class="tile-off" x="42" y="48" width="76" height="8" rx="4"/>
-                <rect class="tile-off" x="42" y="62" width="56" height="8" rx="4"/>
-              </svg>
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2><!-- copy:automation-bots-event-aggregation.overview.title -->Overview<!-- /copy --></h2>
+                      <p><!-- copy:automation-bots-event-aggregation.overview.body -->Local events were scattered across sources with no single place to see them. I wanted one feed that gathered them in the background and delivered them over Telegram.<!-- /copy --></p>
             </div>
-            <figcaption><!-- copy:automation-bots-event-aggregation.gallery.feed_caption -->Scattered sources, one Telegram feed<!-- /copy --></figcaption>
-          </figure>
-          <figure>
-            <div class="case-tile">
-              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The service architecture: bot, worker, and database">
-                <rect class="line-off" x="16" y="40" width="34" height="24" rx="6" stroke-width="3"/>
-                <rect class="tile-on"  x="64" y="40" width="34" height="24" rx="6"/>
-                <path class="line-on" d="M50 52 h14 M98 52 h14" stroke-width="3"/>
-                <path class="line-off" d="M112 42 c0 -5 34 -5 34 0 v20 c0 5 -34 5 -34 0 Z" stroke-width="3"/>
-                <path class="line-off" d="M112 42 c0 5 34 5 34 0" stroke-width="3"/>
-              </svg>
+            <div>
+              <h2><!-- copy:automation-bots-event-aggregation.built.title -->What I built<!-- /copy --></h2>
+                      <p><!-- copy:automation-bots-event-aggregation.built.body -->A broker-based Telegram bot on aiogram, with Celery + Redis workers handling aggregation off the request path and PostgreSQL for storage. The whole stack is orchestrated via Docker Compose, so the bot, workers, broker, and database come up together as one reproducible unit.<!-- /copy --></p>
             </div>
-            <figcaption><!-- copy:automation-bots-event-aggregation.gallery.arch_caption -->Broker, workers, and database in one stack<!-- /copy --></figcaption>
-          </figure>
+          </div>
+          <h2><!-- copy:automation-bots-event-aggregation.highlights.title -->Highlights<!-- /copy --></h2>
+                  <ul class="entry__points">
+                    <li><!-- copy:automation-bots-event-aggregation.highlights.items.broker -->Clean broker/worker separation with Celery + Redis.<!-- /copy --></li>
+                    <li><!-- copy:automation-bots-event-aggregation.highlights.items.schema -->PostgreSQL schema managed through Alembic migrations.<!-- /copy --></li>
+                    <li><!-- copy:automation-bots-event-aggregation.highlights.items.stack -->Reproducible multi-service stack via Docker Compose.<!-- /copy --></li>
+                  </ul>
         </div>
-      </article>
+      </section>
 
-      <a class="back-link" href="index.html">← Back to automation bots</a>
-    </div>
+      <!-- GALLERY -->
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"><p class="eyebrow">Gallery</p></aside>
+        <div class="case__section-body">
+          <div class="gallery">
+                    <figure>
+                      <div class="case-tile">
+                        <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A single aggregated feed of items">
+                          <rect class="line-off" x="30" y="18" width="100" height="64" rx="10" stroke-width="3"/>
+                          <rect class="tile-on"  x="42" y="30" width="76" height="10" rx="5"/>
+                          <rect class="tile-off" x="42" y="48" width="76" height="8" rx="4"/>
+                          <rect class="tile-off" x="42" y="62" width="56" height="8" rx="4"/>
+                        </svg>
+                      </div>
+                      <figcaption><!-- copy:automation-bots-event-aggregation.gallery.feed_caption -->Scattered sources, one Telegram feed<!-- /copy --></figcaption>
+                    </figure>
+                    <figure>
+                      <div class="case-tile">
+                        <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The service architecture: bot, worker, and database">
+                          <rect class="line-off" x="16" y="40" width="34" height="24" rx="6" stroke-width="3"/>
+                          <rect class="tile-on"  x="64" y="40" width="34" height="24" rx="6"/>
+                          <path class="line-on" d="M50 52 h14 M98 52 h14" stroke-width="3"/>
+                          <path class="line-off" d="M112 42 c0 -5 34 -5 34 0 v20 c0 5 -34 5 -34 0 Z" stroke-width="3"/>
+                          <path class="line-off" d="M112 42 c0 5 34 5 34 0" stroke-width="3"/>
+                        </svg>
+                      </div>
+                      <figcaption><!-- copy:automation-bots-event-aggregation.gallery.arch_caption -->Broker, workers, and database in one stack<!-- /copy --></figcaption>
+                    </figure>
+                  </div>
+          <p><a class="back-link" href="../../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
+
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="../../theme.js"></script>
   <script src="../../notify.js" defer></script>

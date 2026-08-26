@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -28,87 +28,87 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="index.html">← Back to automation bots</a>
+    <article class="case">
 
-      <article class="case">
-        <div class="case__kicker">
-          <span class="eyebrow"><!-- copy:automation-bots-change-tracking.hero.eyebrow -->Automation · Monitoring<!-- /copy --></span>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../../projects.html">← Back to projects</a>
+          <p class="eyebrow"><!-- copy:automation-bots-change-tracking.hero.eyebrow -->Automation · Monitoring<!-- /copy --></p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title"><!-- copy:automation-bots-change-tracking.hero.title -->Change-Tracking Bot<!-- /copy --></h1>
+          <p class="case__summary"><!-- copy:automation-bots-change-tracking.hero.summary -->A Telegram bot that diffs a third-party API and alerts the moment the data changes.<!-- /copy --></p>
+          <dl class="case__meta">
+                    <div><dt>Stack</dt><dd>Python, SQLite</dd></div>
+                    <div><dt>Interface</dt><dd>Telegram</dd></div>
+                    <div><dt>Testing</dt><dd>pytest (41 tests / 8 modules)</dd></div>
+                  </dl>
         </div>
-        <h1 class="case__title"><!-- copy:automation-bots-change-tracking.hero.title -->Change-Tracking Bot<!-- /copy --></h1>
-        <p class="case__summary"><!-- copy:automation-bots-change-tracking.hero.summary -->A Telegram bot that diffs a third-party API and alerts the moment the data changes.<!-- /copy --></p>
+      </section>
 
-        <dl class="case__meta">
-          <div><dt>Stack</dt><dd>Python, SQLite</dd></div>
-          <div><dt>Interface</dt><dd>Telegram</dd></div>
-          <div><dt>Testing</dt><dd>pytest (41 tests / 8 modules)</dd></div>
-        </dl>
-
-        <div class="case-tile case-tile--cover">
-          <svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A tracked list with one changed row raising an alert">
-            <rect class="line-off" x="26" y="16" width="150" height="82" rx="12" stroke-width="3"/>
-            <rect class="tile-off" x="44" y="36" width="104" height="8" rx="4"/>
-            <rect class="tile-off" x="44" y="54" width="82" height="8" rx="4"/>
-            <rect class="tile-on"  x="44" y="72" width="114" height="9" rx="4.5"/>
-            <circle class="line-on"  cx="200" cy="34" r="20" stroke-width="3"/>
-            <circle class="tile-on2" cx="200" cy="34" r="10"/>
-          </svg>
-        </div>
-
-        <h2><!-- copy:automation-bots-change-tracking.overview.title -->Overview<!-- /copy --></h2>
-        <p><!-- copy:automation-bots-change-tracking.overview.body -->Wanting to know the instant some remote data changes, without sitting there refreshing it. The data lived behind a paginated third-party API, so &ldquo;has anything changed?&rdquo; meant walking every page and comparing it to what you saw last time.<!-- /copy --></p>
-
-        <h2><!-- copy:automation-bots-change-tracking.built.title -->What I built<!-- /copy --></h2>
-        <p><!-- copy:automation-bots-change-tracking.built.body -->The bot walks the paginated API, snapshots each page, and diffs it against the last known state held in a thread-safe SQLite store. When it detects something different it pushes an alert to Telegram.<!-- /copy --></p>
-
-        <h2><!-- copy:automation-bots-change-tracking.highlights.title -->Highlights<!-- /copy --></h2>
-        <ul class="entry__points">
-          <li><!-- copy:automation-bots-change-tracking.highlights.items.persistence -->Thread-safe SQLite persistence of the last-seen state.<!-- /copy --></li>
-          <li><!-- copy:automation-bots-change-tracking.highlights.items.retry -->Retry/backoff that understands the API's pagination.<!-- /copy --></li>
-          <li><!-- copy:automation-bots-change-tracking.highlights.items.tests -->41 unit tests across 8 modules.<!-- /copy --></li>
-        </ul>
-
-        <h2><!-- copy:automation-bots-change-tracking.gallery.title -->Gallery<!-- /copy --></h2>
-        <div class="gallery">
-          <figure>
-            <div class="case-tile">
-              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A chat notification bubble with an alert dot">
-                <path class="line-on" d="M28 24 h84 a12 12 0 0 1 12 12 v26 a12 12 0 0 1 -12 12 H66 l-16 16 v-16 H28 a12 12 0 0 1 -12 -12 V36 a12 12 0 0 1 12 -12 Z" stroke-width="3"/>
-                <rect class="tile-off" x="36" y="40" width="66" height="6" rx="3"/>
-                <rect class="tile-off" x="36" y="54" width="44" height="6" rx="3"/>
-                <circle class="tile-on2" cx="118" cy="26" r="9"/>
-              </svg>
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2><!-- copy:automation-bots-change-tracking.overview.title -->Overview<!-- /copy --></h2>
+                      <p><!-- copy:automation-bots-change-tracking.overview.body -->Wanting to know the instant some remote data changes, without sitting there refreshing it. The data lived behind a paginated third-party API, so &ldquo;has anything changed?&rdquo; meant walking every page and comparing it to what you saw last time.<!-- /copy --></p>
             </div>
-            <figcaption><!-- copy:automation-bots-change-tracking.gallery.alert_caption -->An alert the moment the data shifts<!-- /copy --></figcaption>
-          </figure>
-          <figure>
-            <div class="case-tile">
-              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two snapshots compared, showing a difference">
-                <rect class="line-off" x="18" y="26" width="46" height="48" rx="8" stroke-width="3"/>
-                <rect class="line-off" x="96" y="26" width="46" height="48" rx="8" stroke-width="3"/>
-                <path class="line-on" d="M70 50 h18" stroke-width="3"/>
-                <path class="line-on" d="M82 43 l9 7 -9 7" stroke-width="3"/>
-                <path class="tile-on2" d="M119 38 l11 22 H108 Z"/>
-              </svg>
+            <div>
+              <h2><!-- copy:automation-bots-change-tracking.built.title -->What I built<!-- /copy --></h2>
+                      <p><!-- copy:automation-bots-change-tracking.built.body -->The bot walks the paginated API, snapshots each page, and diffs it against the last known state held in a thread-safe SQLite store. When it detects something different it pushes an alert to Telegram.<!-- /copy --></p>
             </div>
-            <figcaption><!-- copy:automation-bots-change-tracking.gallery.diff_caption -->Snapshot, then diff against the last known state<!-- /copy --></figcaption>
-          </figure>
+          </div>
+          <h2><!-- copy:automation-bots-change-tracking.highlights.title -->Highlights<!-- /copy --></h2>
+                  <ul class="entry__points">
+                    <li><!-- copy:automation-bots-change-tracking.highlights.items.persistence -->Thread-safe SQLite persistence of the last-seen state.<!-- /copy --></li>
+                    <li><!-- copy:automation-bots-change-tracking.highlights.items.retry -->Retry/backoff that understands the API's pagination.<!-- /copy --></li>
+                    <li><!-- copy:automation-bots-change-tracking.highlights.items.tests -->41 unit tests across 8 modules.<!-- /copy --></li>
+                  </ul>
         </div>
-      </article>
+      </section>
 
-      <a class="back-link" href="index.html">← Back to automation bots</a>
-    </div>
+      <!-- GALLERY -->
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"><p class="eyebrow">Gallery</p></aside>
+        <div class="case__section-body">
+          <div class="gallery">
+                    <figure>
+                      <div class="case-tile">
+                        <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A chat notification bubble with an alert dot">
+                          <path class="line-on" d="M28 24 h84 a12 12 0 0 1 12 12 v26 a12 12 0 0 1 -12 12 H66 l-16 16 v-16 H28 a12 12 0 0 1 -12 -12 V36 a12 12 0 0 1 12 -12 Z" stroke-width="3"/>
+                          <rect class="tile-off" x="36" y="40" width="66" height="6" rx="3"/>
+                          <rect class="tile-off" x="36" y="54" width="44" height="6" rx="3"/>
+                          <circle class="tile-on2" cx="118" cy="26" r="9"/>
+                        </svg>
+                      </div>
+                      <figcaption><!-- copy:automation-bots-change-tracking.gallery.alert_caption -->An alert the moment the data shifts<!-- /copy --></figcaption>
+                    </figure>
+                    <figure>
+                      <div class="case-tile">
+                        <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two snapshots compared, showing a difference">
+                          <rect class="line-off" x="18" y="26" width="46" height="48" rx="8" stroke-width="3"/>
+                          <rect class="line-off" x="96" y="26" width="46" height="48" rx="8" stroke-width="3"/>
+                          <path class="line-on" d="M70 50 h18" stroke-width="3"/>
+                          <path class="line-on" d="M82 43 l9 7 -9 7" stroke-width="3"/>
+                          <path class="tile-on2" d="M119 38 l11 22 H108 Z"/>
+                        </svg>
+                      </div>
+                      <figcaption><!-- copy:automation-bots-change-tracking.gallery.diff_caption -->Snapshot, then diff against the last known state<!-- /copy --></figcaption>
+                    </figure>
+                  </div>
+          <p><a class="back-link" href="../../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
+
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="../../theme.js"></script>
   <script src="../../notify.js" defer></script>

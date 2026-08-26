@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -28,100 +28,93 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="index.html">← Back to automation bots</a>
+    <article class="case">
 
-      <article class="case">
-        <div class="case__kicker">
-          <span class="eyebrow"><!-- copy:automation-bots-rabota-apply.hero.eyebrow -->Automation · browser<!-- /copy --></span>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../../projects.html">← Back to projects</a>
+          <p class="eyebrow"><!-- copy:automation-bots-rabota-apply.hero.eyebrow -->Automation · browser<!-- /copy --></p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title"><!-- copy:automation-bots-rabota-apply.hero.title -->Job Auto-Apply Bot<!-- /copy --></h1>
+          <p class="case__summary"><!-- copy:automation-bots-rabota-apply.hero.summary -->A scheduled Playwright bot that logs into rabota.md and applies once, per criteria, to every new software-engineer listing.<!-- /copy --></p>
+          <dl class="case__meta">
+                    <div><dt>Stack</dt><dd>Python, Playwright, SQLite</dd></div>
+                    <div><dt>Notifier</dt><dd>Telegram (apply, skip, failure)</dd></div>
+                    <div><dt>Runtime</dt><dd>systemd timer on a Hetzner VPS</dd></div>
+                  </dl>
         </div>
-        <h1 class="case__title"><!-- copy:automation-bots-rabota-apply.hero.title -->Job Auto-Apply Bot<!-- /copy --></h1>
-        <p class="case__summary"><!-- copy:automation-bots-rabota-apply.hero.summary -->A scheduled Playwright bot that logs into rabota.md and applies once, per criteria, to every new software-engineer listing.<!-- /copy --></p>
+      </section>
 
-        <dl class="case__meta">
-          <div><dt>Stack</dt><dd>Python, Playwright, SQLite</dd></div>
-          <div><dt>Notifier</dt><dd>Telegram (apply, skip, failure)</dd></div>
-          <div><dt>Runtime</dt><dd>systemd timer on a Hetzner VPS</dd></div>
-        </dl>
-
-        <div class="case-tile case-tile--cover">
-          <svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A list of listings feeding a matcher, an applier, and a dedup store">
-            <rect class="line-off" x="20" y="18" width="60" height="12" rx="3" stroke-width="3"/>
-            <rect class="line-off" x="20" y="36" width="60" height="12" rx="3" stroke-width="3"/>
-            <rect class="line-off" x="20" y="54" width="60" height="12" rx="3" stroke-width="3"/>
-            <rect class="line-off" x="20" y="72" width="60" height="12" rx="3" stroke-width="3"/>
-            <path class="line-on" d="M80 42 h20" stroke-width="3"/>
-            <path class="line-on" d="M80 60 h20" stroke-width="3"/>
-            <rect class="tile-on" x="100" y="34" width="34" height="34" rx="6"/>
-            <path class="line-off" style="stroke:var(--accent-soft)" d="M108 51 l6 6 12 -14" stroke-width="3"/>
-            <path class="line-off" d="M134 51 h22" stroke-width="3"/>
-            <rect class="line-off" x="156" y="26" width="66" height="60" rx="9" stroke-width="3"/>
-            <rect class="tile-on2" x="166" y="38" width="46" height="8" rx="4"/>
-            <rect class="tile-off" x="166" y="52" width="46" height="6" rx="3"/>
-            <rect class="tile-off" x="166" y="64" width="30" height="6" rx="3"/>
-          </svg>
-        </div>
-
-        <h2><!-- copy:automation-bots-rabota-apply.overview.title -->Overview<!-- /copy --></h2>
-        <p><!-- copy:automation-bots-rabota-apply.overview.body -->New rabota.md postings are worth a look, but never a full sitting. I wanted a bot that opened each one, decided whether it matched my keywords and salary rule, and sent my CV &mdash; never twice for the same job, and never silently.<!-- /copy --></p>
-
-        <h2><!-- copy:automation-bots-rabota-apply.built.title -->What I built<!-- /copy --></h2>
-        <p><!-- copy:automation-bots-rabota-apply.built.body -->Six small units: config, an auth module with cookie-cached login, a read-only scraper, a matcher (keyword + salary + email-only filter), an applier that drives the &ldquo;Trimite CV&rdquo; modal end to end (&ldquo;CV DE PE SITE&rdquo; &rarr; consent &rarr; submit), and a SQLite store keyed by the site&rsquo;s stable job id for dedup. A Telegram notifier posts every apply, every skip with a reason, and every failure. Runs on a systemd timer on a Hetzner VPS.<!-- /copy --></p>
-
-        <h2><!-- copy:automation-bots-rabota-apply.highlights.title -->Highlights<!-- /copy --></h2>
-        <ul class="entry__points">
-          <li><!-- copy:automation-bots-rabota-apply.highlights.items.dry_run -->Dry-run mode, per-run apply cap.<!-- /copy --></li>
-          <li><!-- copy:automation-bots-rabota-apply.highlights.items.email_only -->Detects &ldquo;email your CV to&hellip;&rdquo; listings and skips them rather than force-applying.<!-- /copy --></li>
-          <li><!-- copy:automation-bots-rabota-apply.highlights.items.dedup -->Idempotent dedup keyed by the site&rsquo;s own numeric job id, so a re-run never re-applies.<!-- /copy --></li>
-        </ul>
-
-        <h2><!-- copy:automation-bots-rabota-apply.gallery.title -->Gallery<!-- /copy --></h2>
-        <div class="gallery">
-          <figure>
-            <div class="case-tile">
-              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A list of decisions: applied, skipped, applied">
-                <rect class="tile-on"  x="20" y="20" width="14" height="14" rx="3"/>
-                <path class="line-off" style="stroke:var(--accent-soft)" d="M23 27 l4 4 6 -8" stroke-width="3"/>
-                <rect class="line-off" x="42" y="22" width="98" height="10" rx="4" stroke-width="3"/>
-                <rect class="line-off" x="20" y="44" width="14" height="14" rx="3" stroke-width="3"/>
-                <path class="line-off" d="M23 46 l8 10 M31 46 l-8 10" stroke-width="3"/>
-                <rect class="line-off" x="42" y="46" width="82" height="10" rx="4" stroke-width="3"/>
-                <rect class="tile-on"  x="20" y="68" width="14" height="14" rx="3"/>
-                <path class="line-off" style="stroke:var(--accent-soft)" d="M23 75 l4 4 6 -8" stroke-width="3"/>
-                <rect class="line-off" x="42" y="70" width="90" height="10" rx="4" stroke-width="3"/>
-              </svg>
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2><!-- copy:automation-bots-rabota-apply.overview.title -->Overview<!-- /copy --></h2>
+                      <p><!-- copy:automation-bots-rabota-apply.overview.body -->New rabota.md postings are worth a look, but never a full sitting. I wanted a bot that opened each one, decided whether it matched my keywords and salary rule, and sent my CV &mdash; never twice for the same job, and never silently.<!-- /copy --></p>
             </div>
-            <figcaption><!-- copy:automation-bots-rabota-apply.gallery.match_caption -->Every decision is logged with an explicit reason<!-- /copy --></figcaption>
-          </figure>
-          <figure>
-            <div class="case-tile">
-              <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A paused indicator toggled by a file on disk">
-                <circle class="line-off" cx="80" cy="52" r="30" stroke-width="3"/>
-                <rect class="tile-on"  x="68" y="38" width="8" height="28" rx="2"/>
-                <rect class="tile-on"  x="84" y="38" width="8" height="28" rx="2"/>
-                <path class="line-on" d="M50 88 h60" stroke-width="3"/>
-                <rect class="line-off" x="66" y="16" width="28" height="10" rx="3" stroke-width="3"/>
-                <path class="line-off" d="M80 26 v10" stroke-width="3"/>
-              </svg>
+            <div>
+              <h2><!-- copy:automation-bots-rabota-apply.built.title -->What I built<!-- /copy --></h2>
+                      <p><!-- copy:automation-bots-rabota-apply.built.body -->Six small units: config, an auth module with cookie-cached login, a read-only scraper, a matcher (keyword + salary + email-only filter), an applier that drives the &ldquo;Trimite CV&rdquo; modal end to end (&ldquo;CV DE PE SITE&rdquo; &rarr; consent &rarr; submit), and a SQLite store keyed by the site&rsquo;s stable job id for dedup. A Telegram notifier posts every apply, every skip with a reason, and every failure. Runs on a systemd timer on a Hetzner VPS.<!-- /copy --></p>
             </div>
-            <figcaption><!-- copy:automation-bots-rabota-apply.gallery.killswitch_caption -->A file on disk halts every apply cycle<!-- /copy --></figcaption>
-          </figure>
+          </div>
+          <h2><!-- copy:automation-bots-rabota-apply.highlights.title -->Highlights<!-- /copy --></h2>
+                  <ul class="entry__points">
+                    <li><!-- copy:automation-bots-rabota-apply.highlights.items.dry_run -->Dry-run mode, per-run apply cap.<!-- /copy --></li>
+                    <li><!-- copy:automation-bots-rabota-apply.highlights.items.email_only -->Detects &ldquo;email your CV to&hellip;&rdquo; listings and skips them rather than force-applying.<!-- /copy --></li>
+                    <li><!-- copy:automation-bots-rabota-apply.highlights.items.dedup -->Idempotent dedup keyed by the site&rsquo;s own numeric job id, so a re-run never re-applies.<!-- /copy --></li>
+                  </ul>
         </div>
-      </article>
+      </section>
 
-      <a class="back-link" href="index.html">← Back to automation bots</a>
-    </div>
+      <!-- GALLERY -->
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"><p class="eyebrow">Gallery</p></aside>
+        <div class="case__section-body">
+          <div class="gallery">
+                    <figure>
+                      <div class="case-tile">
+                        <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A list of decisions: applied, skipped, applied">
+                          <rect class="tile-on"  x="20" y="20" width="14" height="14" rx="3"/>
+                          <path class="line-off" style="stroke:var(--accent-soft)" d="M23 27 l4 4 6 -8" stroke-width="3"/>
+                          <rect class="line-off" x="42" y="22" width="98" height="10" rx="4" stroke-width="3"/>
+                          <rect class="line-off" x="20" y="44" width="14" height="14" rx="3" stroke-width="3"/>
+                          <path class="line-off" d="M23 46 l8 10 M31 46 l-8 10" stroke-width="3"/>
+                          <rect class="line-off" x="42" y="46" width="82" height="10" rx="4" stroke-width="3"/>
+                          <rect class="tile-on"  x="20" y="68" width="14" height="14" rx="3"/>
+                          <path class="line-off" style="stroke:var(--accent-soft)" d="M23 75 l4 4 6 -8" stroke-width="3"/>
+                          <rect class="line-off" x="42" y="70" width="90" height="10" rx="4" stroke-width="3"/>
+                        </svg>
+                      </div>
+                      <figcaption><!-- copy:automation-bots-rabota-apply.gallery.match_caption -->Every decision is logged with an explicit reason<!-- /copy --></figcaption>
+                    </figure>
+                    <figure>
+                      <div class="case-tile">
+                        <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A paused indicator toggled by a file on disk">
+                          <circle class="line-off" cx="80" cy="52" r="30" stroke-width="3"/>
+                          <rect class="tile-on"  x="68" y="38" width="8" height="28" rx="2"/>
+                          <rect class="tile-on"  x="84" y="38" width="8" height="28" rx="2"/>
+                          <path class="line-on" d="M50 88 h60" stroke-width="3"/>
+                          <rect class="line-off" x="66" y="16" width="28" height="10" rx="3" stroke-width="3"/>
+                          <path class="line-off" d="M80 26 v10" stroke-width="3"/>
+                        </svg>
+                      </div>
+                      <figcaption><!-- copy:automation-bots-rabota-apply.gallery.killswitch_caption -->A file on disk halts every apply cycle<!-- /copy --></figcaption>
+                    </figure>
+                  </div>
+          <p><a class="back-link" href="../../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
+
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="../../theme.js"></script>
   <script src="../../notify.js" defer></script>

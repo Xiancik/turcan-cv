@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -28,48 +28,60 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="../projects.html">← Back to projects</a>
+    <article class="case">
 
-      <article class="case">
-        <div class="case__kicker">
-          <span class="eyebrow">Assembly · compilers</span>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../projects.html">← Back to projects</a>
+          <p class="eyebrow">Assembly · compilers</p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title"><!-- copy:brainfuck-jit.hero.title -->JIT Compiler for Brainfuck<!-- /copy --></h1>
+          <p class="case__summary"><!-- copy:brainfuck-jit.hero.summary -->A just-in-time compiler for the Brainfuck language, written entirely in assembly.<!-- /copy --></p>
+          <dl class="case__meta">
+                    <div><dt>Type</dt><dd>Self-directed</dd></div>
+                    <div><dt>Stack</dt><dd>Assembly</dd></div>
+                    <div><dt>Theme</dt><dd>Low-level code generation</dd></div>
+                  </dl>
         </div>
-        <h1 class="case__title"><!-- copy:brainfuck-jit.hero.title -->JIT Compiler for Brainfuck<!-- /copy --></h1>
-        <p class="case__summary"><!-- copy:brainfuck-jit.hero.summary -->A just-in-time compiler for the Brainfuck language, written entirely in assembly.<!-- /copy --></p>
+      </section>
 
-        <dl class="case__meta">
-          <div><dt>Type</dt><dd>Self-directed</dd></div>
-          <div><dt>Stack</dt><dd>Assembly</dd></div>
-          <div><dt>Theme</dt><dd>Low-level code generation</dd></div>
-        </dl>
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2><!-- copy:brainfuck-jit.overview.title -->Overview<!-- /copy --></h2>
+                      <p><!-- copy:brainfuck-jit.overview.body -->A self-directed project driven by an interest in low-level programming.  Rather than interpret Brainfuck, the compiler emits native machine code at run time and jumps into it: a hands-on way to understand how a JIT actually works, and to increase proficiency in assembly, all the way down to the instruction bytes.<!-- /copy --></p>
+            </div>
+            <div>
+              <h2><!-- copy:brainfuck-jit.built.title -->What I built<!-- /copy --></h2>
+                      <p><!-- copy:brainfuck-jit.built.body -->A JIT that translates Brainfuck source into executable machine code in memory and runs it directly, implemented entirely in assembly, handling the language’s pointer/data operations and its loop constructs as generated jumps.<!-- /copy --></p>
+            </div>
+          </div>
+          <h2><!-- copy:brainfuck-jit.highlights.title -->Highlights<!-- /copy --></h2>
+                  <ul class="entry__points">
+                    <li><!-- copy:brainfuck-jit.highlights.items.pipeline -->Full pipeline from source to emitted, executable machine code.<!-- /copy --></li>
+                    <li><!-- copy:brainfuck-jit.highlights.items.assembly -->Written at the assembly level: no compiler framework or runtime.<!-- /copy --></li>
+                  </ul>
+        </div>
+      </section>
 
-        <h2><!-- copy:brainfuck-jit.overview.title -->Overview<!-- /copy --></h2>
-        <p><!-- copy:brainfuck-jit.overview.body -->A self-directed project driven by an interest in low-level programming.  Rather than interpret Brainfuck, the compiler emits native machine code at run time and jumps into it: a hands-on way to understand how a JIT actually works, and to increase proficiency in assembly, all the way down to the instruction bytes.<!-- /copy --></p>
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"></aside>
+        <div class="case__section-body">
+          <p><a class="back-link" href="../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
 
-        <h2><!-- copy:brainfuck-jit.built.title -->What I built<!-- /copy --></h2>
-        <p><!-- copy:brainfuck-jit.built.body -->A JIT that translates Brainfuck source into executable machine code in memory and runs it directly, implemented entirely in assembly, handling the language’s pointer/data operations and its loop constructs as generated jumps.<!-- /copy --></p>
-
-        <h2><!-- copy:brainfuck-jit.highlights.title -->Highlights<!-- /copy --></h2>
-        <ul class="entry__points">
-          <li><!-- copy:brainfuck-jit.highlights.items.pipeline -->Full pipeline from source to emitted, executable machine code.<!-- /copy --></li>
-          <li><!-- copy:brainfuck-jit.highlights.items.assembly -->Written at the assembly level: no compiler framework or runtime.<!-- /copy --></li>
-        </ul>
-      </article>
-
-      <a class="back-link" href="../projects.html">← Back to projects</a>
-    </div>
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="../theme.js"></script>
   <script src="../notify.js" defer></script>

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../style.css">
   <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark");}catch(e){}</script>
 </head>
-<body>
+<body class="page--case">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
 
@@ -28,52 +28,64 @@
   </header>
 
   <main id="main">
-    <div class="container">
-      <a class="back-link" href="../projects.html">← Back to projects</a>
+    <article class="case">
 
-      <article class="case">
-        <div class="case__kicker">
-          <span class="eyebrow">Full-stack · AI</span>
+      <!-- FRONTISPIECE -->
+      <section class="case__head">
+        <aside class="case__rail">
+          <a class="back-link" href="../projects.html">← Back to projects</a>
+          <p class="eyebrow">Full-stack · AI</p>
+        </aside>
+        <div class="case__body">
+          <h1 class="case__title"><!-- copy:creator-match.hero.title -->CreatorMatch<!-- /copy --></h1>
+          <p class="case__summary"><!-- copy:creator-match.hero.summary -->A Moldova-only web platform that matches businesses with local Instagram, TikTok, and YouTube creators through an AI-ranked shortlist.<!-- /copy --></p>
+          <dl class="case__meta">
+                    <div><dt>Role</dt><dd>Solo: design and build</dd></div>
+                    <div><dt>Frontend</dt><dd>Next.js, React, TypeScript</dd></div>
+                    <div><dt>Backend</dt><dd>FastAPI, Postgres + pgvector, Redis, Celery</dd></div>
+                    <div><dt>AI</dt><dd>Claude, vector embeddings</dd></div>
+                  </dl>
         </div>
-        <h1 class="case__title"><!-- copy:creator-match.hero.title -->CreatorMatch<!-- /copy --></h1>
-        <p class="case__summary"><!-- copy:creator-match.hero.summary -->A Moldova-only web platform that matches businesses with local Instagram, TikTok, and YouTube creators through an AI-ranked shortlist.<!-- /copy --></p>
+      </section>
 
-        <dl class="case__meta">
-          <div><dt>Role</dt><dd>Solo: design and build</dd></div>
-          <div><dt>Frontend</dt><dd>Next.js, React, TypeScript</dd></div>
-          <div><dt>Backend</dt><dd>FastAPI, Postgres + pgvector, Redis, Celery</dd></div>
-          <div><dt>AI</dt><dd>Claude, vector embeddings</dd></div>
-        </dl>
+      <!-- THE WORK -->
+      <section class="case__section">
+        <aside class="case__section-rail"><p class="eyebrow">The work</p></aside>
+        <div class="case__section-body">
+          <div class="case__cols">
+            <div>
+              <h2><!-- copy:creator-match.overview.title -->Overview<!-- /copy --></h2>
+                      <p><!-- copy:creator-match.overview.body -->Global influencer tools (HypeAuditor, Upfluence, Modash) have thin-to-zero coverage of Moldovan nano and micro creators, so local businesses have no real way to find them. CreatorMatch closes that gap with a curated local database those tools ignore. A business enters a product and a budget. The platform returns a ranked shortlist of Moldovan creators, each with a fit score, a known or estimated price, a score breakdown, and a ready-to-copy English outreach draft. It is scoped to discovery: it produces the shortlist and the drafts, and the business runs the actual outreach.<!-- /copy --></p>
+            </div>
+            <div>
+              <h2><!-- copy:creator-match.built.title -->What I built<!-- /copy --></h2>
+                      <p><!-- copy:creator-match.built.body -->A multi-tenant web app on Next.js and FastAPI, structured as four independently testable cores: a creator repository (Postgres + pgvector), a pure-function pricing estimator, an explainable ranking engine, and an LLM service behind a single swappable interface. Ranking runs in two stages to keep LLM cost bounded: pgvector cosine similarity retrieves candidates over the whole pool cheaply, then Claude scores brand fit and drafts outreach for only the top candidates. A weighted, tunable score (40% fit, 20% reach, 20% price, 20% quality) orders the results, with every sub-score exposed as a per-result breakdown. Celery workers handle database seeding, scraping, and embedding backfill off the request path, and the pricing estimator prices every creator from Moldova-localized CPM benchmarks when no real rate is known.<!-- /copy --></p>
+            </div>
+          </div>
+          <h2><!-- copy:creator-match.highlights.title -->Highlights<!-- /copy --></h2>
+                  <ul class="entry__points">
+                    <li><!-- copy:creator-match.highlights.items.two_stage -->Two-stage matching: cheap pgvector retrieval over the full pool, then LLM re-scoring on the top candidates to control cost.<!-- /copy --></li>
+                    <li><!-- copy:creator-match.highlights.items.explainable -->Explainable ranking: a tunable weighted formula (fit / reach / price / quality) with a visible breakdown per creator.<!-- /copy --></li>
+                    <li><!-- copy:creator-match.highlights.items.pricing -->Reach-based pricing estimator with Moldova-localized CPM benchmarks, so every creator carries a known or clearly-labelled estimated price.<!-- /copy --></li>
+                    <li><!-- copy:creator-match.highlights.items.moat -->A curated local creator database as the moat, kept fresh by background scraping and manual curation.<!-- /copy --></li>
+                    <li><!-- copy:creator-match.highlights.items.tenants -->Multi-tenant business accounts, LLM-drafted English outreach, and CSV export of results.<!-- /copy --></li>
+                  </ul>
+        </div>
+      </section>
 
-        <h2><!-- copy:creator-match.overview.title -->Overview<!-- /copy --></h2>
-        <p><!-- copy:creator-match.overview.body -->Global influencer tools (HypeAuditor, Upfluence, Modash) have thin-to-zero coverage of Moldovan nano and micro creators, so local businesses have no real way to find them. CreatorMatch closes that gap with a curated local database those tools ignore. A business enters a product and a budget. The platform returns a ranked shortlist of Moldovan creators, each with a fit score, a known or estimated price, a score breakdown, and a ready-to-copy English outreach draft. It is scoped to discovery: it produces the shortlist and the drafts, and the business runs the actual outreach.<!-- /copy --></p>
+      <section class="case__section case__section--alt">
+        <aside class="case__section-rail"></aside>
+        <div class="case__section-body">
+          <p><a class="back-link" href="../projects.html">← Back to projects</a></p>
+        </div>
+      </section>
 
-        <h2><!-- copy:creator-match.built.title -->What I built<!-- /copy --></h2>
-        <p><!-- copy:creator-match.built.body -->A multi-tenant web app on Next.js and FastAPI, structured as four independently testable cores: a creator repository (Postgres + pgvector), a pure-function pricing estimator, an explainable ranking engine, and an LLM service behind a single swappable interface. Ranking runs in two stages to keep LLM cost bounded: pgvector cosine similarity retrieves candidates over the whole pool cheaply, then Claude scores brand fit and drafts outreach for only the top candidates. A weighted, tunable score (40% fit, 20% reach, 20% price, 20% quality) orders the results, with every sub-score exposed as a per-result breakdown. Celery workers handle database seeding, scraping, and embedding backfill off the request path, and the pricing estimator prices every creator from Moldova-localized CPM benchmarks when no real rate is known.<!-- /copy --></p>
-
-        <h2><!-- copy:creator-match.highlights.title -->Highlights<!-- /copy --></h2>
-        <ul class="entry__points">
-          <li><!-- copy:creator-match.highlights.items.two_stage -->Two-stage matching: cheap pgvector retrieval over the full pool, then LLM re-scoring on the top candidates to control cost.<!-- /copy --></li>
-          <li><!-- copy:creator-match.highlights.items.explainable -->Explainable ranking: a tunable weighted formula (fit / reach / price / quality) with a visible breakdown per creator.<!-- /copy --></li>
-          <li><!-- copy:creator-match.highlights.items.pricing -->Reach-based pricing estimator with Moldova-localized CPM benchmarks, so every creator carries a known or clearly-labelled estimated price.<!-- /copy --></li>
-          <li><!-- copy:creator-match.highlights.items.moat -->A curated local creator database as the moat, kept fresh by background scraping and manual curation.<!-- /copy --></li>
-          <li><!-- copy:creator-match.highlights.items.tenants -->Multi-tenant business accounts, LLM-drafted English outreach, and CSV export of results.<!-- /copy --></li>
-        </ul>
-      </article>
-
-      <a class="back-link" href="../projects.html">← Back to projects</a>
-    </div>
+    </article>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a>
-        <span aria-hidden="true">·</span>
-        Cristian Turcan
-      </p>
-      <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
-    </div>
+    <p><a href="mailto:cristian@turcan.nl">cristian@turcan.nl</a> · Cristian Turcan</p>
+    <p class="footer__note">Uses <a href="https://clarity.microsoft.com/terms" rel="noopener">Microsoft Clarity</a> for anonymous usage analytics.</p>
   </footer>
   <script src="../theme.js"></script>
   <script src="../notify.js" defer></script>
